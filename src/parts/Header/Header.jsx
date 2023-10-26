@@ -1,18 +1,25 @@
 import { BsWhatsapp } from "react-icons/bs";
 import { useSearchParams } from "react-router-dom";
+import { observer } from "mobx-react-lite";
 import SocialLink from "../../components/SocialLink/SocialLink";
 import RecordButton from "../../components/RecordButton/RecordButton";
 import { contactNumber, urlToWhatsApp } from "../../utils/globalConstants";
 import { navigatePanel } from "./consts";
 import logo from "../../assets/logo.svg";
+import modal from "../../store/modal";
 import "./Header.scss";
 
-const Header = () => {
+const Header = observer(() => {
+  const { setIsOpenModal } = modal;
   // eslint-disable-next-line no-unused-vars
   const [_, setSearchParams] = useSearchParams({ block: "" });
 
   const handleClickLink = (link) => {
     setSearchParams({ block: link });
+  };
+
+  const handleClickButton = () => {
+    setIsOpenModal(true);
   };
 
   return (
@@ -41,10 +48,10 @@ const Header = () => {
           icon={<BsWhatsapp cssClasses="header__icon" color={"#827a7a"} beat />}
           url={urlToWhatsApp}
         />
-        <RecordButton />
+        <RecordButton onClick={handleClickButton} />
       </div>
     </header>
   );
-};
+});
 
 export default Header;
