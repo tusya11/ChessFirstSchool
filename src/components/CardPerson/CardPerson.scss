@@ -1,0 +1,98 @@
+.card-person__container {
+  //   position: absolute;
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  width: 300px;
+  min-height: 400px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.75);
+  border-left: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 20px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.05);
+  transform-style: preserve-3d;
+}
+
+.card-person__element {
+  position: absolute;
+  top: 50px;
+  left: -30px;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateZ(80px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.75);
+  border-left: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 10px;
+  box-shadow: 0 25px 45px rgba(255, 255, 255, 0.05);
+}
+
+.card-person__element.bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("https://static.tildacdn.com/tild6531-3031-4930-b262-343261633837/noroot.png");
+  background-size: 50px;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.card-person__container:hover .card-person__element.bg::before {
+  opacity: 1;
+}
+
+.card-person__element.imgBox {
+  top: 0;
+  left: initial;
+  right: 60px;
+  width: 120px;
+  height: 120px;
+  padding: 10px;
+  transform: translateZ(120px);
+
+  img {
+    position: absolute;
+    width: calc(100% - 20px);
+    border-radius: 8px;
+    height: calc(100% - 20px);
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.75);
+    border-left: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 10px;
+    box-shadow: 0 25px 45px rgba(255, 255, 255, 0.05);
+    // opacity: 0;
+    transition: 0.5s;
+  }
+
+  .card-person__container:hover .card-person__element.imgBox::before {
+    opacity: 1;
+  }
+}
+
+.card-person__name {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  justify-content: center;
+  color: white;
+  flex-direction: column;
+  text-align: center;
+  gap: 10px;
+}
+
+.card-person__dignity {
+  font-size: 14px;
+  color: orange;
+}
+
+.card-person__description {
+  overflow: hidden;
+  max-height: 100px;
+}

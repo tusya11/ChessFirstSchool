@@ -1,0 +1,30 @@
+.record-button__container {
+  a {
+    text-decoration: none;
+  }
+
+  .record-btn {
+    display: flex;
+    padding: 14px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 15px;
+    background: #29a354;
+    flex-shrink: 0;
+    border: none;
+    color: #fff;
+    font-family: "", sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .record-btn:hover {
+    background: linear-gradient(
+      96deg,
+      #29a354 3.79%,
+      rgba(193, 67, 67, 0) 136.56%
+    );
+    transition: 0.5s;
+  }
+}

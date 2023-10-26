@@ -1,0 +1,122 @@
+.price__container {
+  padding-bottom: 100px;
+  background: white;
+
+  .price__main-text {
+    color: #0c0531;
+    text-align: center;
+    font-family: Lexend, sans-serif;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 125%;
+    z-index: 1;
+
+    h2 {
+      margin: 100px 0 100px;
+    }
+  }
+
+  .price__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+
+    .price__card {
+      min-width: 300px;
+      display: flex;
+      flex-direction: column;
+
+      .price__header-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        background: #29a354;
+        border-radius: 20px 20px 0 0;
+        color: white;
+
+        .price__image {
+          font-size: 30px;
+          display: flex;
+        }
+
+        p {
+          color: #0c0531;
+          font-family: Lexend, sans-serif;
+          font-size: 32px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 125%;
+          color: white;
+        }
+      }
+    }
+
+    .price__content-price {
+      border: 2px solid #29a354;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .price__block {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      padding: 10px 0;
+
+      .price__cost {
+        color: #0c0531;
+        text-align: center;
+        font-family: Lexend, sans-serif;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 125%;
+      }
+
+      .price__quantity {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+
+        p {
+          margin: 0;
+          color: #29a354;
+          font-family: Lexend, sans-serif;
+          font-size: 28px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+        }
+
+        span {
+          color: #827a7a;
+          font-family: Poppins, sans-serif;
+          font-size: 22px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 150%;
+        }
+      }
+    }
+
+    .price__block:hover {
+      background: #29a354;
+      border-radius: 10px;
+      cursor: pointer;
+
+      p {
+        color: white;
+      }
+
+      span {
+        color: white;
+      }
+    }
+  }
+}

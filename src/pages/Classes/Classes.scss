@@ -1,0 +1,163 @@
+.classes__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  .classes__image {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+  }
+
+  .classes__main-text {
+    color: #0c0531;
+    text-align: center;
+    font-family: Lexend, sans-serif;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 125%;
+    z-index: 1;
+
+    h2 {
+      margin: 40px 0 100px;
+    }
+  }
+
+  .classes__content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .classes__card {
+    position: relative;
+    max-width: 400px;
+  }
+
+  .classes__card:nth-child(odd) {
+    padding: 30px 0 30px 30px;
+
+    .classes__title {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      color: #0c0531;
+      font-family: Lexend, sans-serif;
+      font-size: 25px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 125%;
+    }
+
+    span {
+      display: flex;
+      align-items: flex-start;
+      text-align: initial;
+      color: #827a7a;
+      font-family: Poppins, sans-serif;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+    }
+  }
+  .classes__card:nth-child(even) {
+    padding: 30px 30px 40px 0;
+
+    .classes__title {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      color: #0c0531;
+      font-family: Lexend, sans-serif;
+      font-size: 25px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 125%;
+    }
+
+    span {
+      display: flex;
+      align-items: flex-end;
+      text-align: end;
+      color: #827a7a;
+      font-family: Poppins, sans-serif;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+    }
+  }
+
+  .classes__card::before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    border: solid #29a354;
+    left: 0;
+  }
+
+  .classes__card:nth-child(odd)::before {
+    left: 0px;
+    top: -5px;
+    bottom: -5px;
+    border-width: 5px 0 5px 5px;
+    border-radius: 50px 0 0 50px;
+  }
+
+  .classes__card:nth-child(even)::before {
+    left: 50%;
+    top: 0px;
+    bottom: 0px;
+    border-width: 5px 5px 5px 0;
+    border-radius: 0 50px 50px 0;
+  }
+
+  .classes__card:first-child::before {
+    border-top: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .classes__card:last-child:nth-child(odd)::before {
+    border-bottom: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .classes__card:last-child:nth-child(even)::before {
+    border-bottom: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .classes__title {
+    position: relative;
+  }
+
+  .classes__title::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 999px;
+    border: 3px solid #29a354;
+  }
+
+  .classes__card:nth-child(even) > .classes__title::before {
+    text-align: right;
+  }
+
+  .classes__card:nth-child(odd) > .classes__title::before {
+    left: -36px;
+  }
+
+  .classes__card:nth-child(even) > .classes__title::before {
+    right: -40px;
+  }
+}
