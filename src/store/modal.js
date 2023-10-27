@@ -17,7 +17,7 @@ class Modal {
     this.isOpenModal = isOpen;
   };
 
-  setIsShowAlert = (info) => {
+  setAlertMsg = (info) => {
     this.alertMsg = info;
   };
 }
