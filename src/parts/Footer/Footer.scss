@@ -5,6 +5,23 @@
   align-items: center;
   justify-content: center;
 
+  .footer__docs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    :hover {
+      color: green;
+      transition: 0.7s;
+      cursor: pointer;
+    }
+  }
+
   .footer__block {
     display: flex;
     flex-direction: column;
