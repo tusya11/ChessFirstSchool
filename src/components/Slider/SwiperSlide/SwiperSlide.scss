@@ -2,6 +2,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  .button__open {
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+  }
 }
 
 .card {
@@ -14,38 +22,61 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  min-height: 200px;
+  min-height: 250px;
   min-width: 300px;
-  // transition: transform 1s;
-  // transform-style: preserve-3d;
+  gap: 15px;
+
+  h3,
+  p {
+    margin: 0;
+  }
+  transition: transform 1s;
+  transform-style: preserve-3d;
 }
 
-// .card__back {
-//   height: 100%;
-//   width: 100%;
-//   display: flex;
-//   flex-direction: column;
-//   transform: rotateY(180deg);
-//   backface-visibility: hidden;
+.card__back {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  overflow-y: auto;
+  transform: translate(180deg);
 
-//   .image,
-//   .dignity,
-//   h3 {
-//     display: none;
-//   }
+  .card__description {
+    text-align: justify;
+    color: #686363;
+    font-family: Noto Sans, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
 
-//   p {
-//     align-items: center;
-//     justify-content: center;
-//     margin: 0;
-//     color: #827a7a;
-//     font-family: Poppins, sans-serif;
-//     font-size: 15px;
-//     font-style: normal;
-//     font-weight: 400;
-//     line-height: 150%;
-//   }
-// }
+  .card__back-header {
+    display: flex;
+    align-items: center;
+
+    .card__image_back {
+      height: 40px;
+      width: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    svg {
+      font-size: 20px;
+    }
+
+    svg:hover {
+      cursor: pointer;
+      padding: 7px;
+      border-radius: 20px;
+      background-color: #ccc;
+    }
+  }
+}
 
 .card__front {
   display: flex;
@@ -66,7 +97,6 @@
   padding: 3px;
   background: #fff;
   border-radius: 50%;
-  margin-bottom: 20px;
 
   img {
     width: 100%;
@@ -80,6 +110,6 @@ h3 {
   text-align: center;
 }
 
-// .card:hover {
+// .rotate {
 //   transform: rotateY(180deg);
 // }
