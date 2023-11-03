@@ -184,7 +184,6 @@ const SignUpContent = observer(() => {
         {loading ? (
           <LoadingButton
             loading
-            loadingPosition="start"
             variant="container"
             className="sign-up-content__button_btn"
             color="success"

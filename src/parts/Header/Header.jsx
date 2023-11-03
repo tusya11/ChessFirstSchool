@@ -45,7 +45,7 @@ const Header = observer(() => {
           <a href={`tel:${contactNumber}`}>{contactNumber}</a>
         </div>
         <SocialLink
-          icon={<BsWhatsapp cssClasses="header__icon" color={"#827a7a"} beat />}
+          icon={<BsWhatsapp color={"#827a7a"} />}
           url={urlToWhatsApp}
         />
         <RecordButton onClick={handleClickButton} />
