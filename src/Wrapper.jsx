@@ -16,10 +16,12 @@ const Wrapper = observer(() => {
   };
 
   useEffect(() => {
-    if (alertMsg.visible) {
-      setTimeout(() => setAlertMsg({}), 2000);
-    }
-  }, [alertMsg, setAlertMsg]);
+    const timer = setTimeout(() => setAlertMsg({}), 2000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [alertMsg.visible, setAlertMsg]);
 
   return (
     <div style={{ position: "relative" }}>
