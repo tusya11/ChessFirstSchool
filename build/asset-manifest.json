@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e296ef6e.css",
+    "main.js": "/static/js/main.f9c02b97.js",
+    "static/media/main_boy.png": "/static/media/main_boy.bfd2da864afbb607e527.png",
+    "static/media/chess-image.svg": "/static/media/chess-image.d40edb69c6293f65e963a7db28404324.svg",
+    "static/media/offer.pdf": "/static/media/offer.a90cc835f3a0efb91e86.pdf",
+    "static/media/plays.jpeg": "/static/media/plays.21467c24cab6160af280.jpeg",
+    "static/media/privacy_policy.pdf": "/static/media/privacy_policy.abd2450bfae1382df5bb.pdf",
+    "static/media/champions.png": "/static/media/champions.2676e0b93bfdb97c32d0.png",
+    "static/media/preview_back.png": "/static/media/preview_back.fa32d4885c2dd51f7928.png",
+    "static/media/replays.png": "/static/media/replays.369a47feb2728869e79d.png",
+    "static/media/book_about.svg": "/static/media/book_about.f01655b8e301035e1629614c62871f30.svg",
+    "static/media/logo.svg": "/static/media/logo.7f445b4bdff4cdc038a69b3fda3c23c0.svg",
+    "static/media/brain.svg": "/static/media/brain.1e55f76085cbd53f0561a851a0aa0cce.svg",
+    "static/media/man_people.svg": "/static/media/man_people.59a881fa5472100850f7db1939ee2922.svg",
+    "static/media/cap.svg": "/static/media/cap.de9d5e99bde167da5f8d7c2d32c49f80.svg",
+    "static/media/computer.svg": "/static/media/computer.f3ed0b5616e2fcf3785e8fdbc77e1037.svg",
+    "static/media/kid.svg": "/static/media/kid.819c89662a379cdc327e9e5c7df10472.svg",
+    "static/media/hourglass.svg": "/static/media/hourglass.ef62cf8d09edb6faf8b001cd4d148c30.svg",
+    "index.html": "/index.html",
+    "main.e296ef6e.css.map": "/static/css/main.e296ef6e.css.map",
+    "main.f9c02b97.js.map": "/static/js/main.f9c02b97.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e296ef6e.css",
+    "static/js/main.f9c02b97.js"
+  ]
+}
