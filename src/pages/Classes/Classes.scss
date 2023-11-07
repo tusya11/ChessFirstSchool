@@ -18,14 +18,14 @@
     color: #0c0531;
     text-align: center;
     font-family: Lexend, sans-serif;
-    font-size: 60px;
+    font-size: 7vh;
     font-style: normal;
     font-weight: 700;
     line-height: 125%;
     z-index: 1;
 
     h2 {
-      margin: 40px 0 100px;
+      margin: 3vh 0 10vh;
     }
   }
 
@@ -34,11 +34,12 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    margin-top: 6vh;
   }
 
   .classes__card {
     position: relative;
-    max-width: 400px;
+    max-width: 30vw;
   }
 
   .classes__card:nth-child(odd) {
@@ -50,7 +51,7 @@
       align-items: flex-start;
       color: #0c0531;
       font-family: Lexend, sans-serif;
-      font-size: 25px;
+      font-size: 3vh;
       font-style: normal;
       font-weight: 600;
       line-height: 125%;
@@ -62,7 +63,7 @@
       text-align: initial;
       color: #827a7a;
       font-family: Poppins, sans-serif;
-      font-size: 16px;
+      font-size: 2vh;
       font-style: normal;
       font-weight: 400;
       line-height: 150%;
@@ -89,7 +90,7 @@
       text-align: end;
       color: #827a7a;
       font-family: Poppins, sans-serif;
-      font-size: 16px;
+      font-size: 2vh;
       font-style: normal;
       font-weight: 400;
       line-height: 150%;

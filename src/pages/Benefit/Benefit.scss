@@ -7,11 +7,11 @@
     color: #0c0531;
     text-align: center;
     font-family: Lexend, sans-serif;
-    font-size: 60px;
+    font-size: 7vh;
     font-style: normal;
     font-weight: 700;
     line-height: 125%;
-    margin: 80px 0px;
+    margin: 3vh 0px;
   }
 
   .benefit__content {
@@ -26,15 +26,13 @@
       justify-content: center;
       display: flex;
       flex-direction: column;
-      gap: 40px;
+      gap: 4.5vh;
 
       .benefit__content-card {
         text-align: initial;
-        padding: 15px;
-        width: 50%;
-        height: 120px;
-        border-radius: 11px;
-        border-radius: 15px;
+        padding: 1.8vh 1vw;
+        width: 22vw;
+        height: 15vh;
         border: 1px solid #29a354;
         border-radius: 20px;
         position: relative;
@@ -47,12 +45,13 @@
         .benefit__text {
           display: flex;
           flex-direction: column;
-          gap: 16px;
+          gap: 1vh;
+          height: 100%;
 
           p {
             color: #0c0531;
             font-family: Noto Sans, sans-serif;
-            font-size: 24px;
+            font-size: 1.7vw;
             font-style: normal;
             font-weight: 600;
             line-height: normal;
@@ -62,7 +61,7 @@
           span {
             color: #827a7a;
             font-family: Noto Sans, sans-serif;
-            font-size: 18px;
+            font-size: 1.3vw;
             font-style: normal;
             font-weight: 400;
             line-height: normal;
@@ -71,12 +70,12 @@
 
         .benefit__image-card {
           position: absolute;
-          font-size: 30px;
+          font-size: 2.3vw;
           position: absolute;
-          left: 26px;
-          top: -31px;
+          left: 2vw;
+          top: -4.5vh;
           display: flex;
-          padding: 10px;
+          padding: 1.3vh;
           align-items: center;
           justify-content: center;
           border-radius: 100px;

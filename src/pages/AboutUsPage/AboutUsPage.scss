@@ -15,8 +15,8 @@
     border: 8px solid #fff;
 
     img {
-      max-width: 550px;
-      max-height: 550px;
+      max-width: 44vw;
+      max-height: 45vh;
       width: 100%;
       object-fit: cover;
       border-radius: 20px;
@@ -43,11 +43,11 @@
     .about-us-page__card {
       display: flex;
       align-items: center;
-      max-width: 90%;
+      max-width: 90vw;
 
       .about-us-page__image {
-        min-width: 70px;
-        min-height: 60px;
+        min-width: 5vw;
+        min-height: 6vh;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -57,16 +57,16 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 10px;
+        gap: 0.8vh;
 
         p {
           margin: 0;
           color: #0c0531;
           font-family: Lexend, sans-serif;
-          font-size: 25px;
+          font-size: 1.5vw;
           font-style: normal;
           font-weight: 600;
-          line-height: 125%; /* 31.25px */
+          line-height: 125%;
         }
 
         span {
@@ -74,23 +74,23 @@
           padding: 0;
           color: #827a7a;
           font-family: Poppins, sans-serif;
-          font-size: 19px;
+          font-size: 1.2vw;
           font-style: normal;
           font-weight: 400;
-          line-height: 150%; /* 28.5px */
+          line-height: 150%;
         }
       }
     }
 
     h2 {
-      max-width: 90%;
+      max-width: 90vw;
       text-align: initial;
       color: #0c0531;
       font-family: Lexend, sans-serif;
-      font-size: 60px;
+      font-size: 6.5vh;
       font-style: normal;
       font-weight: 700;
-      line-height: 125%; /* 75px */
+      line-height: 125%;
       margin: 0;
     }
   }

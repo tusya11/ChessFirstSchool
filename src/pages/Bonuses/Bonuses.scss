@@ -5,14 +5,14 @@
     color: #0c0531;
     text-align: center;
     font-family: Lexend, sans-serif;
-    font-size: 60px;
+    font-size: 7vh;
     font-style: normal;
     font-weight: 700;
     line-height: 125%;
     z-index: 1;
 
     h2 {
-      margin: 100px 0 100px;
+      margin: 10vh 0 10vh;
     }
   }
 
@@ -29,13 +29,13 @@
     grid-template-columns: 1fr 1fr;
     align-items: center;
     justify-content: center;
-    gap: 50px;
+    gap: 5vw;
 
     .bonuses__content-card {
       text-align: initial;
-      padding: 20px;
-      width: 70%;
-      height: 120px;
+      padding: 1vw;
+      width: 35vw;
+      height: 14vh;
       border: 1px solid #29a354;
       border-radius: 20px;
       position: relative;
@@ -46,12 +46,14 @@
       .bonuses__text {
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: 1vh;
+        height: 100%;
+        justify-content: space-evenly;
 
         p {
           color: #0c0531;
           font-family: Noto Sans, sans-serif;
-          font-size: 24px;
+          font-size: 2.8vh;
           font-style: normal;
           font-weight: 600;
           line-height: normal;
@@ -61,7 +63,7 @@
         span {
           color: #827a7a;
           font-family: Noto Sans, sans-serif;
-          font-size: 18px;
+          font-size: 1.9vh;
           font-style: normal;
           font-weight: 400;
           line-height: normal;

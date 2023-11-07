@@ -24,6 +24,7 @@ const SwiperSlideComponent = ({ item }) => {
       <div className={clsx("card", isFlipOver && "rotate")}>
         {isFlipOver ? (
           <div className="card__back">
+            <div className="card__description">{item.description}</div>
             <div className="card__back-header">
               <div
                 className="card__image_back"
@@ -32,7 +33,6 @@ const SwiperSlideComponent = ({ item }) => {
                 <BiArrowBack />
               </div>
             </div>
-            <div className="card__description">{item.description}</div>
           </div>
         ) : (
           <>

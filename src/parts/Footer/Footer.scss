@@ -4,15 +4,17 @@
   color: white;
   align-items: center;
   justify-content: center;
+  padding: 10vh 0;
 
   .footer__docs {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 2vw;
 
     a {
       text-decoration: none;
       color: white;
+      font-size: 1.4vw;
     }
 
     :hover {
@@ -25,10 +27,9 @@
   .footer__block {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 4vh;
     align-items: center;
     justify-content: center;
-    padding-bottom: 40px;
   }
 
   .footer__icons {

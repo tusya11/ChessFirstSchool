@@ -12,10 +12,10 @@
     z-index: 3;
     color: #0c0531;
     font-family: Lexend, sans-serif;
-    font-size: 90px;
+    font-size: 7vw;
     font-style: normal;
     font-weight: 600;
-    line-height: 125%; /* 112.5px */
+    line-height: 125%;
     top: 7%;
     left: 0;
     right: 0;
@@ -23,7 +23,7 @@
     .preview__text-color {
       color: #29a354;
       font-family: "Lexend", sans-serif;
-      font-size: 90px;
+      font-size: 7.3vw;
       font-style: normal;
       font-weight: 600;
       line-height: 125%;
@@ -32,6 +32,7 @@
 
   .preview__image-background {
     z-index: 1;
+    height: 100vh;
     display: flex;
     position: absolute;
     transform: rotate(360deg) scaleX(-1);
@@ -44,7 +45,7 @@
 
     img {
       height: 100%;
-      width: 70%;
+      width: 80vw;
       position: absolute;
       left: 0;
     }
@@ -55,12 +56,12 @@
     z-index: 2;
     color: #827a7a;
     font-family: Lexend, sans-serif;
-    font-size: 22px;
+    font-size: 1.8vw;
     font-style: normal;
     font-weight: 500;
-    line-height: 150%; /* 33px */
+    line-height: 150%;
     width: 550px;
-    right: 8%;
+    right: 6vw;
     bottom: 20%;
     letter-spacing: 2px;
   }

@@ -2,7 +2,7 @@
   position: sticky;
   width: 100%;
   top: 0;
-  height: 95px;
+  height: 12.2vh;
   display: grid;
   grid-template-columns: 1fr 2fr 1.2fr;
   background: white;
@@ -16,8 +16,8 @@
 }
 
 .header__image {
-  height: 95px;
-  width: 95px;
+  height: 9vh;
+  width: 9vw;
   cursor: pointer;
   border-radius: 5px;
   transform: scale(1.8);
@@ -35,19 +35,17 @@
 .header__navigate-block {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 2vw;
   justify-content: flex-start;
-  font-size: 14px;
   height: 100%;
   transition: all 0.5s ease-in-out;
 
   .header__navigate-item {
     color: #827a7a;
-    font-size: 1.1rem;
+    font-size: 1.3vw;
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
-
     font-family: Lexend, sans-serif;
     text-decoration: none;
     transition: all 0.5s ease-in-out;
@@ -72,13 +70,13 @@
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding-right: 30px;
+  gap: 2vw;
 
   .header__number-phone a {
     text-decoration: none;
     color: #827a7a;
     transition: all 0.5s ease-in-out;
+    font-size: 1.2vw;
   }
 
   .header__number-phone a:hover {
