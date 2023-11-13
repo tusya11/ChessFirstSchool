@@ -4,6 +4,11 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  height: 100%;
+
+  @media screen and (max-width: 700px) {
+    width: 100%;
+  }
 
   .classes__image {
     width: 100%;
@@ -12,6 +17,11 @@
     justify-content: center;
     position: absolute;
     top: 0;
+    width: 100%;
+
+    @media screen and (max-width: 700px) {
+      top: 25px;
+    }
   }
 
   .classes__main-text {
@@ -24,6 +34,12 @@
     line-height: 125%;
     z-index: 1;
 
+    @media screen and (max-width: 700px) {
+      width: 100%;
+      font-size: 3.5vh;
+      line-height: 150%;
+    }
+
     h2 {
       margin: 3vh 0 10vh;
     }
@@ -35,11 +51,20 @@
     flex-direction: column;
     justify-content: center;
     margin-top: 6vh;
+
+    @media screen and (max-width: 700px) {
+      margin-top: 0;
+      width: 100%;
+    }
   }
 
   .classes__card {
     position: relative;
     max-width: 30vw;
+
+    @media screen and (max-width: 700px) {
+      max-width: 60vw;
+    }
   }
 
   .classes__card:nth-child(odd) {

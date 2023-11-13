@@ -12,6 +12,12 @@
     font-weight: 700;
     line-height: 125%;
 
+    @media screen and (max-width: 700px) {
+      width: 100%;
+      font-size: 3vh;
+      line-height: 150%;
+    }
+
     h2 {
       margin: 9vh 0;
     }

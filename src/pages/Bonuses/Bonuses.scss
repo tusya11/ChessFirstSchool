@@ -1,6 +1,14 @@
 .bonuses__container {
   height: 100vh;
 
+  @media screen and (max-width: 700px) {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: auto;
+    padding-bottom: 50px;
+  }
+
   .bonuses__main-text {
     color: #0c0531;
     text-align: center;
@@ -11,8 +19,18 @@
     line-height: 125%;
     z-index: 1;
 
+    @media screen and (max-width: 700px) {
+      width: 100%;
+      font-size: 3.5vh;
+      line-height: 150%;
+    }
+
     h2 {
       margin: 10vh 0 10vh;
+
+      @media screen and (max-width: 700px) {
+        margin: 6vh 0 6vh;
+      }
     }
   }
 
@@ -31,6 +49,11 @@
     justify-content: center;
     gap: 5vw;
 
+    @media screen and (max-width: 700px) {
+      grid-template-columns: 1fr;
+      gap: 5vh;
+    }
+
     .bonuses__content-card {
       text-align: initial;
       padding: 1vw;
@@ -43,12 +66,22 @@
       justify-content: center;
       align-items: center;
 
+      @media screen and (max-width: 700px) {
+        width: 65vw;
+        height: 20vh;
+      }
+
       .bonuses__text {
         display: flex;
         flex-direction: column;
         gap: 1vh;
         height: 100%;
         justify-content: space-evenly;
+
+        @media screen and (max-width: 700px) {
+          padding: 8px 10px;
+          width: 100%;
+        }
 
         p {
           color: #0c0531;
@@ -67,6 +100,10 @@
           font-style: normal;
           font-weight: 400;
           line-height: normal;
+
+          @media screen and (max-width: 700px) {
+            text-align: justify;
+          }
         }
       }
 

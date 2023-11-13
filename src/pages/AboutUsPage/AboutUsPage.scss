@@ -5,6 +5,10 @@
   grid-template-columns: 1fr 1fr;
   align-items: center;
 
+  @media screen and (max-width: 700px) {
+    grid-template-columns: 1fr;
+  }
+
   .about-us-page__content-image {
     height: 100%;
     width: 100%;
@@ -14,6 +18,12 @@
     border-radius: 20px;
     border: 8px solid #fff;
 
+    @media screen and (max-width: 700px) {
+      height: auto;
+      box-sizing: border-box;
+      padding: 0 5px;
+    }
+
     img {
       max-width: 44vw;
       max-height: 45vh;
@@ -21,6 +31,10 @@
       object-fit: cover;
       border-radius: 20px;
       border: 8px solid #fff;
+
+      @media screen and (max-width: 700px) {
+        max-width: 100%;
+      }
     }
   }
 
@@ -32,18 +46,36 @@
     align-items: baseline;
     justify-content: center;
 
+    @media screen and (max-width: 700px) {
+      align-items: center;
+      gap: 20px;
+    }
+
     .about-us-page__content-text {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       text-align: initial;
       gap: 30px;
+
+      @media screen and (max-width: 700px) {
+        width: 100%;
+        align-items: center;
+      }
     }
 
     .about-us-page__card {
       display: flex;
       align-items: center;
       max-width: 90vw;
+
+      @media screen and (max-width: 700px) {
+        max-width: 100%;
+        width: 90%;
+        display: grid;
+        grid-template-columns: 55px 1fr;
+        gap: 10px;
+      }
 
       .about-us-page__image {
         min-width: 5vw;
@@ -67,6 +99,10 @@
           font-style: normal;
           font-weight: 600;
           line-height: 125%;
+
+          @media screen and (max-width: 700px) {
+            font-size: 2.2vh;
+          }
         }
 
         span {
@@ -78,6 +114,10 @@
           font-style: normal;
           font-weight: 400;
           line-height: 150%;
+
+          @media screen and (max-width: 700px) {
+            font-size: 1.8vh;
+          }
         }
       }
     }
@@ -92,6 +132,15 @@
       font-weight: 700;
       line-height: 125%;
       margin: 0;
+
+      @media screen and (max-width: 700px) {
+        width: 100%;
+        text-align: center;
+        max-width: 100%;
+        font-size: 4.1vh;
+        padding: 0 20px;
+        box-sizing: border-box;
+      }
     }
   }
 }
