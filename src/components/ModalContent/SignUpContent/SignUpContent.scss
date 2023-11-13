@@ -13,6 +13,7 @@
 
     .sign-up-content__text-field {
       width: 70%;
+      font-size: 1.5vh;
     }
   }
   .sign-up-content__body {
@@ -29,7 +30,7 @@
     align-items: center;
     gap: 10px;
     label {
-      font-size: 12px;
+      font-size: 1.4vh;
       font-family: Noto Sans, sans-serif;
       font-style: normal;
       line-height: normal;
@@ -39,14 +40,21 @@
   .sign-up-content__checkboxes {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 5vh;
 
     .checkbox_label {
-      font-size: 12px;
+      font-size: 1.5vh;
       font-family: Noto Sans, sans-serif;
       font-style: normal;
       line-height: normal;
       color: grey;
+    }
+
+    span {
+      font-size: 1.8vh;
+      font-family: Noto Sans, sans-serif;
+      font-style: normal;
+      line-height: normal;
     }
   }
 
@@ -56,12 +64,17 @@
     flex-direction: column;
     width: 100%;
     gap: 10px;
+
     label {
-      font-size: 12px;
+      font-size: 1.4vh;
       font-family: Noto Sans, sans-serif;
       font-style: normal;
       line-height: normal;
       color: grey;
+    }
+
+    input {
+      font-size: 1.5vh;
     }
   }
 
@@ -72,7 +85,7 @@
 
     h4 {
       margin: 10px 0;
-      font-size: 16px;
+      font-size: 1.8vh;
       font-family: Noto Sans, sans-serif;
       font-style: normal;
       line-height: normal;
@@ -81,7 +94,7 @@
     span {
       color: #827a7a;
       font-family: Noto Sans, sans-serif;
-      font-size: 14px;
+      font-size: 1.4vh;
       font-style: normal;
       font-weight: 400;
       line-height: normal;

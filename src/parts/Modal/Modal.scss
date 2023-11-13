@@ -5,9 +5,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  min-height: 500px;
-  min-width: 480px;
-  max-width: 500px;
+  min-height: 50vh;
+  min-width: 25vw;
+  max-width: 34vw;
   background-color: white;
   border-radius: 20px;
 
@@ -23,7 +23,7 @@
     justify-content: space-between;
 
     p {
-      font-size: 16px;
+      font-size: 2vh;
       font-weight: 600;
       color: #29a354;
       font-family: Noto Sans, sans-serif;
@@ -38,12 +38,16 @@
     }
 
     .modal__btn-close {
-      height: 30px;
-      width: 30px;
+      height: 2vh;
+      width: 2vw;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-right: 20px;
+
+      svg {
+        font-size: 1.5vh;
+      }
 
       svg:hover {
         background-color: rgb(227, 224, 224);
