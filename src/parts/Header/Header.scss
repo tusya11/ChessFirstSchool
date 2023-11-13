@@ -2,25 +2,46 @@
   position: sticky;
   width: 100%;
   top: 0;
-  height: 95px;
+  height: 12.2vh;
   display: grid;
   grid-template-columns: 1fr 2fr 1.2fr;
   background: white;
   align-items: center;
   z-index: 100;
+
+  @media screen and (max-width: 700px) {
+    height: 8vh;
+    // display: flex;
+    display: grid;
+    grid-template-columns: 55px 1fr;
+    padding: 0 20px;
+    box-sizing: border-box;
+    justify-content: space-between;
+  }
 }
 
 .header__image-container {
   display: flex;
   justify-content: center;
+
+  @media screen and (max-width: 700px) {
+    height: 100%;
+    width: fit-content;
+    align-items: center;
+  }
 }
 
 .header__image {
-  height: 95px;
-  width: 95px;
+  height: 9vh;
+  width: 9vw;
   cursor: pointer;
   border-radius: 5px;
   transform: scale(1.8);
+
+  @media screen and (max-width: 700px) {
+    width: 12vw;
+    height: auto;
+  }
 }
 
 .header__image:hover {
@@ -35,19 +56,17 @@
 .header__navigate-block {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 2vw;
   justify-content: flex-start;
-  font-size: 14px;
   height: 100%;
   transition: all 0.5s ease-in-out;
 
   .header__navigate-item {
     color: #827a7a;
-    font-size: 1.1rem;
+    font-size: 1.3vw;
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
-
     font-family: Lexend, sans-serif;
     text-decoration: none;
     transition: all 0.5s ease-in-out;
@@ -72,13 +91,23 @@
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding-right: 30px;
+  gap: 2vw;
+
+  @media screen and (max-width: 700px) {
+    height: 100%;
+    justify-content: flex-end;
+    gap: 3vh;
+  }
 
   .header__number-phone a {
     text-decoration: none;
     color: #827a7a;
     transition: all 0.5s ease-in-out;
+    font-size: 1.2vw;
+
+    @media screen and (max-width: 700px) {
+      font-size: 1.5vh;
+    }
   }
 
   .header__number-phone a:hover {

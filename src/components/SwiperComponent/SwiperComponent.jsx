@@ -9,8 +9,11 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import "./SwiperComponent.scss";
+import { useMediaQuery } from "@mui/material";
 
 const SwiperComponent = ({ data }) => {
+  const isXS = useMediaQuery("(max-width:700px)");
+
   return (
     <div className="swiper-component__container">
       <div className="swiper__container">
@@ -18,7 +21,7 @@ const SwiperComponent = ({ data }) => {
           effect="coverflow"
           grabCursor={true}
           loop={true}
-          slidesPerView={3}
+          slidesPerView={isXS ? 1 : 3}
           coverflowEffect={{
             rotate: 0,
             stretch: 0,

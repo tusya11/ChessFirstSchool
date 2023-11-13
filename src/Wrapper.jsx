@@ -24,7 +24,7 @@ const Wrapper = observer(() => {
   }, [alertMsg.visible, setAlertMsg]);
 
   return (
-    <div style={{ position: "relative" }}>
+    <div style={{ position: "relative", boxSizing: "border-box" }}>
       <Header />
       <Content />
       <Footer />
