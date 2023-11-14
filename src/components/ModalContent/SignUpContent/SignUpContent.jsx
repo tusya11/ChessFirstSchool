@@ -6,6 +6,7 @@ import {
   FormGroup,
   Input,
   TextField,
+  useMediaQuery,
 } from "@mui/material";
 import { IMaskInput } from "react-imask";
 import LoadingButton from "@mui/lab/LoadingButton";
@@ -34,6 +35,7 @@ const TextMaskCustom = forwardRef((props, ref) => {
 });
 
 const SignUpContent = observer(() => {
+  const isXS = useMediaQuery("(max-width:700px)");
   const { setAlertMsg, setIsOpenModal } = modal;
   const [values, setValues] = useState({});
   const [city, setCity] = useState("");
@@ -57,10 +59,10 @@ const SignUpContent = observer(() => {
 
   useEffect(() => {
     const input = document.getElementById("mask-input");
-    if (input) {
+    if (input && !isXS) {
       input.focus();
     }
-  }, []);
+  }, [isXS]);
 
   useEffect(() => {
     if (values.Telephone && city && Object.values(link).some((v) => v)) {
