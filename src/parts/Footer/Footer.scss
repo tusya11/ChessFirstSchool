@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: center;
   padding: 10vh 0;
+  height: 30vh;
 
   .footer__docs {
     display: flex;
@@ -34,6 +35,11 @@
     gap: 4vh;
     align-items: center;
     justify-content: center;
+    height: 100%;
+
+    img {
+      height: 100%;
+    }
   }
 
   .footer__icons {
