@@ -2,6 +2,8 @@ import { makeAutoObservable } from "mobx";
 
 class Modal {
   isOpenModal = false;
+  isOpenModalTransaction = false;
+  modalInfo = {};
 
   alertMsg = {
     visible: false,
@@ -15,6 +17,14 @@ class Modal {
 
   setIsOpenModal = (isOpen) => {
     this.isOpenModal = isOpen;
+  };
+
+  setIsOpenModalTransaction = (isOpen) => {
+    this.isOpenModalTransaction = isOpen;
+  };
+
+  setModalInfo = (info) => {
+    this.modalInfo = info;
   };
 
   setAlertMsg = (info) => {

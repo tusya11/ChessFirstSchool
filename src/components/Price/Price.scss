@@ -35,7 +35,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 30px;
+    gap: 50px;
 
     @media screen and (max-width: 700px) {
       flex-wrap: wrap;
@@ -43,9 +43,11 @@
     }
 
     .price__card {
+      box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
       min-width: 22vw;
       display: flex;
       flex-direction: column;
+      border-radius: 20px;
 
       @media screen and (max-width: 700px) {
         min-width: 65vw;
@@ -87,7 +89,6 @@
     }
 
     .price__content-price {
-      border: 2px solid #29a354;
       display: flex;
       flex-direction: column;
       padding: 1vw;
@@ -159,6 +160,7 @@
     }
 
     .price__block:hover {
+      transition: 0.5s;
       background: #29a354;
       border-radius: 10px;
       cursor: pointer;

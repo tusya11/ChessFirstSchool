@@ -3,7 +3,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import Modal from "@mui/material/Modal";
 import "./Modal.scss";
 
-const ModalContent = ({ isOpen, onClose, children }) => (
+const ModalContent = ({ isOpen, titleHeader, onClose, children }) => (
   <Modal
     open={isOpen}
     onClose={onClose}
@@ -14,7 +14,7 @@ const ModalContent = ({ isOpen, onClose, children }) => (
       <div className="modal__header">
         <div className="modal__empty"></div>
         <div>
-          <p>Записаться</p>
+          <p>{titleHeader}</p>
         </div>
         <div className="modal__btn-close" onClick={onClose}>
           <AiOutlineClose />

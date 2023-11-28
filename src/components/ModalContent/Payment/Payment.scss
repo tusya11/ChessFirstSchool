@@ -1,0 +1,185 @@
+.payment__container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 40px;
+  min-width: 500px;
+  justify-content: space-around;
+  margin: 20px 0;
+  gap: 10px;
+
+  .payment__content {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid grey;
+    gap: 12px;
+    padding: 15px 0;
+    border-bottom: 1px solid grey;
+
+    .payment__service_name {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      .payment__service_name_title {
+        span {
+          color: #827a7a;
+          font-family: Noto Sans, sans-serif;
+          font-size: 1.8vh;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+        color: #827a7a;
+        font-family: Noto Sans, sans-serif;
+        font-size: 1.8vh;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+
+      .payment__input {
+        input {
+          max-width: 165px;
+          outline: none;
+        }
+        input[type="text"] {
+          border: none;
+          display: flex;
+          align-items: center;
+          justify-self: end;
+          color: #269a26;
+          font-family: Noto Sans, sans-serif;
+          font-size: 1.8vh;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+      }
+    }
+
+    .payment__text {
+      color: #827a7a;
+      font-family: Noto Sans, sans-serif;
+      font-size: 1.8vh;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    .payment__text_price {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .payment__title {
+        display: flex;
+        color: #2c2727;
+        font-family: Noto Sans, sans-serif;
+        font-size: 1.8vh;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+
+      .payment__title_cost {
+        display: flex;
+        color: #2c2727;
+        font-family: Noto Sans, sans-serif;
+        font-size: 1.8vh;
+        font-style: normal;
+        font-weight: bold;
+        line-height: normal;
+
+        input {
+          max-width: 62px;
+          outline: none;
+        }
+        input[type="text"] {
+          border: none;
+          display: flex;
+          align-items: center;
+          justify-self: end;
+          color: #269a26;
+          font-family: Noto Sans, sans-serif;
+          font-size: 1.8vh;
+          font-style: normal;
+          font-weight: bold;
+          line-height: normal;
+        }
+
+        span {
+          color: #2c2727;
+          font-family: Noto Sans, sans-serif;
+          font-size: 1.8vh;
+          font-style: normal;
+          font-weight: bold;
+          line-height: normal;
+        }
+      }
+    }
+  }
+
+  .payment__textfields {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    gap: 20px;
+
+    .payment__tel {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      label {
+        color: #827a7a;
+        font-family: Noto Sans, sans-serif;
+        font-size: 1.4vh;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+    }
+
+    .payment__fio {
+      display: flex;
+      gap: 20px;
+      flex-direction: column;
+      box-sizing: border-box;
+
+      .payment__text-field {
+        width: 100%;
+        margin: 0;
+        font-size: 20px;
+      }
+    }
+
+    .payment_email {
+      display: flex;
+      gap: 20px;
+      flex-direction: column;
+      box-sizing: border-box;
+
+      .payment__text-field {
+        width: 100%;
+        margin: 0;
+        font-size: 20px;
+      }
+    }
+
+    .payment__policy {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .payment__policy__title {
+        font-size: 1.5vh;
+      }
+    }
+  }
+
+  .payment__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

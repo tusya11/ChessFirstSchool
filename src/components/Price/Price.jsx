@@ -2,11 +2,16 @@ import React from "react";
 import { prices } from "./consts";
 import { declOfNum } from "../../utils/declOfNum";
 import { TEXT_FORMS } from "../../utils/globalConstants";
+import modal from "../../store/modal";
 import "./Price.scss";
 
 const Price = () => {
-  const handleClickPrice = (item) => {
-    console.log("---item", item);
+  const { setIsOpenModalTransaction, setModalInfo } = modal;
+
+  const handleClickPrice = (v, item) => {
+    const { time, title } = v;
+    setIsOpenModalTransaction(true);
+    setModalInfo({ ...item, time, title });
   };
 
   return (
@@ -26,7 +31,7 @@ const Price = () => {
                 <div
                   key={item.id}
                   className="price__block"
-                  onClick={() => handleClickPrice(item)}
+                  onClick={() => handleClickPrice(v, item)}
                 >
                   <div className="price__quantity">
                     <p>{item.quantity}</p>
