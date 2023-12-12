@@ -5,9 +5,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  min-height: 50vh;
+  // min-height: 50vh;
   // min-width: 25vw;
-  // max-width: 34vw;
+  max-width: 35vw;
   background-color: white;
   border-radius: 20px;
 
@@ -23,7 +23,7 @@
     justify-content: space-between;
 
     p {
-      font-size: 2vh;
+      font-size: 2.5vh;
       font-weight: 600;
       color: #29a354;
       font-family: Noto Sans, sans-serif;
