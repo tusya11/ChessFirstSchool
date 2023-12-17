@@ -9,6 +9,7 @@ import Benefit from "../../pages/Benefit/Benefit";
 import Classes from "../../pages/Classes/Classes";
 import Price from "../../components/Price/Price";
 import Bonuses from "../../pages/Bonuses/Bonuses";
+import AdditionalBlock from "../../pages/AdditionalBlock/AdditionalBlock";
 
 const Content = () => {
   const [search] = useSearchParams();
@@ -37,6 +38,7 @@ const Content = () => {
       <Classes />
       <Price />
       <Bonuses />
+      <AdditionalBlock />
     </div>
   );
 };

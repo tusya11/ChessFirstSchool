@@ -1,0 +1,128 @@
+.additional-block__container {
+  height: 100vh;
+
+  .additional-block__text {
+    color: #0c0531;
+    text-align: center;
+    font-family: Lexend, sans-serif;
+    font-size: 7vh;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 125%;
+    z-index: 1;
+
+    @media screen and (max-width: 700px) {
+      width: 100%;
+      font-size: 3.5vh;
+      line-height: 150%;
+    }
+
+    h2 {
+      margin: 10vh 0 5vh;
+
+      @media screen and (max-width: 700px) {
+        margin: 6vh 0 2vh;
+      }
+    }
+  }
+
+  .additional-block__secondary {
+    p {
+      margin: 0;
+      color: #827a7a;
+      font-family: Noto Sans, sans-serif;
+      font-size: 1.9vh;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+
+  .additional-block__content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+
+    .additional-block__block {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      width: 60%;
+
+      @media screen and (max-width: 700px) {
+        width: 100%;
+        padding: 0 20px;
+      }
+    }
+  }
+
+  .additional-block__card {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+
+    .additional-block__image {
+      font-size: 50px;
+      display: flex;
+    }
+
+    .additional-block__description {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      p {
+        margin: 0;
+        color: #0c0531;
+        font-family: Lexend, sans-serif;
+        font-size: 1.5vw;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 125%;
+
+        @media screen and (max-width: 700px) {
+          font-size: 2.3vh;
+        }
+      }
+
+      span {
+        margin: 0;
+        padding: 0;
+        color: #827a7a;
+        font-family: Poppins, sans-serif;
+        font-size: 1.2vw;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+
+        @media screen and (max-width: 700px) {
+          font-size: 1.9vh;
+        }
+      }
+
+      .additional-block__links {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        .additional-block__link {
+          margin: 0;
+          padding: 0;
+          color: #827a7a;
+          font-family: Poppins, sans-serif;
+          font-size: 1.2vw;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 150%;
+          a {
+            text-decoration: none;
+            color: green;
+          }
+        }
+      }
+    }
+  }
+}

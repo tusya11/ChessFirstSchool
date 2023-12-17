@@ -28,6 +28,7 @@ const RecomendedItems = () => {
               <div className="recomended-items__text">
                 <h2>{v.id}</h2>
                 <p>{v.title}</p>
+                <span>{v.description}</span>
               </div>
             </div>
           </div>
