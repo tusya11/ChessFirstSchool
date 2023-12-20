@@ -1,9 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.dc4b3054.css",
-    "main.js": "/static/js/main.9a479b69.js",
+    "main.css": "/static/css/main.9025e078.css",
+    "main.js": "/static/js/main.7a17df06.js",
     "static/media/main_boy.png": "/static/media/main_boy.bfd2da864afbb607e527.png",
     "static/media/chess-image.svg": "/static/media/chess-image.d40edb69c6293f65e963a7db28404324.svg",
+    "static/media/people4.jpeg": "/static/media/people4.27d93fc44c823870a536.jpeg",
+    "static/media/people3.jpeg": "/static/media/people3.4f558967eb944ed4e20a.jpeg",
+    "static/media/people1.jpeg": "/static/media/people1.6f133af078992f4481cd.jpeg",
+    "static/media/people2.jpeg": "/static/media/people2.9e35c1b91760b4e7124c.jpeg",
     "static/media/offer.pdf": "/static/media/offer.026b9b35cae731b14b57.pdf",
     "static/media/plays.jpeg": "/static/media/plays.21467c24cab6160af280.jpeg",
     "static/media/privacy_policy.pdf": "/static/media/privacy_policy.abd2450bfae1382df5bb.pdf",
@@ -19,11 +23,11 @@
     "static/media/kid.svg": "/static/media/kid.819c89662a379cdc327e9e5c7df10472.svg",
     "static/media/hourglass.svg": "/static/media/hourglass.ef62cf8d09edb6faf8b001cd4d148c30.svg",
     "index.html": "/index.html",
-    "main.dc4b3054.css.map": "/static/css/main.dc4b3054.css.map",
-    "main.9a479b69.js.map": "/static/js/main.9a479b69.js.map"
+    "main.9025e078.css.map": "/static/css/main.9025e078.css.map",
+    "main.7a17df06.js.map": "/static/js/main.7a17df06.js.map"
   },
   "entrypoints": [
-    "static/css/main.dc4b3054.css",
-    "static/js/main.9a479b69.js"
+    "static/css/main.9025e078.css",
+    "static/js/main.7a17df06.js"
   ]
 }
