@@ -4,11 +4,16 @@
   align-items: center;
   flex-wrap: wrap;
   padding: 50px 0px 100px;
-  background: white;
+  // background: white;
+  //FIXME: тестовый бэкграунд
+  background: #f9f7ff;
   height: 100%;
   position: relative;
   gap: 50px;
   box-sizing: border-box;
+  //FIXME: test params
+  gap: 30px;
+  flex-wrap: wrap;
 
   .recomended-items__champion-image {
     width: 100%;

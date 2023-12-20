@@ -4,6 +4,7 @@ import { SlSocialVkontakte } from "react-icons/sl";
 import offer from "../../docs/offer.pdf";
 import privacyPolicy from "../../docs/privacy_policy.pdf";
 import "./Footer.scss";
+import { LINK_VK, LINK_WHATS_UP } from "./consts";
 
 const Footer = () => (
   <footer className="footer__container">
@@ -21,8 +22,8 @@ const Footer = () => (
         </a>
       </div>
       <div className="footer__icons">
-        <SocialLink icon={<SlSocialVkontakte />} />
-        <SocialLink icon={<FaWhatsapp />} />
+        <SocialLink icon={<SlSocialVkontakte />} url={LINK_VK} />
+        <SocialLink icon={<FaWhatsapp />} url={LINK_WHATS_UP} />
       </div>
     </div>
   </footer>

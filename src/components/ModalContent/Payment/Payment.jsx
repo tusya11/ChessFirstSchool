@@ -108,6 +108,7 @@ const Payment = ({ data }) => {
             color="success"
             name="clientid"
             required
+            autoFocus
             type="text"
           >
             <InputLabel htmlFor="outlined-adornment">ФИО</InputLabel>
@@ -152,7 +153,6 @@ const Payment = ({ data }) => {
             className="payment__text-field"
             id="mask-input"
             inputComponent={TextMaskCustom}
-            autoFocus
             fullWidth
             type="text"
             color="success"
