@@ -29,12 +29,18 @@
     width: 100%;
     align-items: center;
     gap: 10px;
+
     label {
-      font-size: 1.4vh;
-      font-family: Noto Sans, sans-serif;
+      font-size: 1.7vh;
+      font-family: "PoppinsRegular", sans-serif;
       font-style: normal;
       line-height: normal;
       color: grey;
+    }
+
+    input {
+      font-size: 1.7vh;
+      font-family: "PoppinsRegular", sans-serif;
     }
   }
   .sign-up-content__checkboxes {
@@ -43,16 +49,16 @@
     gap: 5vh;
 
     .checkbox_label {
-      font-size: 1.5vh;
-      font-family: Noto Sans, sans-serif;
+      font-size: 1.7vh;
+      font-family: "PoppinsRegular", sans-serif;
       font-style: normal;
       line-height: normal;
       color: grey;
     }
 
     span {
-      font-size: 1.8vh;
-      font-family: Noto Sans, sans-serif;
+      font-size: 1.7vh;
+      font-family: "PoppinsRegular", sans-serif;
       font-style: normal;
       line-height: normal;
     }
@@ -66,15 +72,65 @@
     gap: 10px;
 
     label {
-      font-size: 1.4vh;
-      font-family: Noto Sans, sans-serif;
+      font-size: 1.7vh;
+      font-family: "PoppinsRegular", sans-serif;
       font-style: normal;
       line-height: normal;
       color: grey;
     }
 
     input {
-      font-size: 1.5vh;
+      font-size: 1.7vh;
+      font-family: "PoppinsRegular", sans-serif;
+    }
+  }
+
+  .sign-up-content__name__age {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+
+    .sign-up-content__info {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    label {
+      font-size: 1.7vh;
+      font-family: "PoppinsRegular", sans-serif;
+      font-style: normal;
+      line-height: normal;
+      color: grey;
+    }
+
+    input {
+      font-size: 1.7vh;
+      font-family: "PoppinsRegular", sans-serif;
+    }
+  }
+
+  .sign-up-content__promocode {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+
+    label {
+      font-size: 1.7vh;
+      font-family: "PoppinsRegular", sans-serif;
+      font-style: normal;
+      line-height: normal;
+      color: grey;
+    }
+
+    input {
+      font-size: 1.7vh;
+      font-family: "PoppinsRegular", sans-serif;
     }
   }
 
@@ -85,16 +141,16 @@
 
     h4 {
       margin: 10px 0;
-      font-size: 1.8vh;
-      font-family: Noto Sans, sans-serif;
+      font-size: 2vh;
+      font-family: "RobotoRegular";
       font-style: normal;
       line-height: normal;
     }
 
     span {
       color: #827a7a;
-      font-family: Noto Sans, sans-serif;
-      font-size: 1.4vh;
+      font-family: "PoppinsRegular", sans-serif;
+      font-size: 1.7vh;
       font-style: normal;
       font-weight: 400;
       line-height: normal;
@@ -119,8 +175,8 @@
       background-color: #2e7d32;
       color: white;
       border: none;
-      font-size: 14px;
-      font-family: Noto Sans, sans-serif;
+      font-family: "PoppinsRegular", sans-serif;
+      font-size: 1.7vh;
       font-style: normal;
       line-height: normal;
     }

@@ -22,14 +22,14 @@ const TextMaskCustom = forwardRef((props, ref) => {
   return (
     <IMaskInput
       {...other}
-      mask="+7 (000) 000-00-00"
+      mask="0 (000) 000-00-00"
       definitions={{
         "#": /[1-9]/,
       }}
       inputRef={ref}
       onAccept={(value) => onChange({ target: { name: props.name, value } })}
       overwrite
-      placeholder="+7 (900) 000-00-00"
+      placeholder="0 (000) 000-00-00"
     />
   );
 });
@@ -43,6 +43,10 @@ const SignUpContent = observer(() => {
     Telegram: false,
     Whatsapp: false,
   });
+  const [name, setName] = useState("");
+  const [age, setAge] = useState("");
+  const [promoCode, setPromoCode] = useState("");
+
   const [disabled, setDisabled] = useState(true);
   const [loading, setLoading] = useState(false);
 
@@ -87,6 +91,9 @@ const SignUpContent = observer(() => {
     formData.append("Telephone", telephone);
     formData.append("City", city);
     formData.append("Date", dayjs().format("DD-MM-YYYY HH:mm:ss"));
+    formData.append("Name", name);
+    formData.append("Age", age);
+    formData.append("PromoCode", promoCode);
 
     fetch(scriptURL, { method: "POST", body: formData })
       .then((response) => {
@@ -149,7 +156,51 @@ const SignUpContent = observer(() => {
               variant="standard"
               value={city}
               name="City"
+              autoComplete="off"
               onChange={handleChangeCity}
+              className="sign-up-content__text-field"
+              autoFocus
+            />
+          </div>
+
+          <div className="sign-up-content__name__age">
+            <label htmlFor="text_field">Имя и возраст ребенка</label>
+            <div className="sign-up-content__info">
+              <TextField
+                id="standard-basic-text-field-name"
+                variant="standard"
+                value={name}
+                name="Name"
+                autoComplete="off"
+                placeholder="Имя"
+                onChange={(e) => setName(e.target.value)}
+                className="sign-up-content__text-field"
+                autoFocus
+              />
+              <TextField
+                id="standard-basic-text-field-age"
+                variant="standard"
+                value={age}
+                name="Age"
+                type="number"
+                autoComplete="off"
+                placeholder="Возраст"
+                onChange={(e) => setAge(e.target.value)}
+                className="sign-up-content__text-field"
+                autoFocus
+              />
+            </div>
+          </div>
+
+          <div className="sign-up-content__promocode">
+            <label htmlFor="text_field">Укажите промокод</label>
+            <TextField
+              id="standard-basic-text-field-promocode"
+              variant="standard"
+              value={promoCode}
+              name="Promocode"
+              autoComplete="off"
+              onChange={(e) => setPromoCode(e.target.value)}
               className="sign-up-content__text-field"
               autoFocus
             />

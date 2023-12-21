@@ -19,14 +19,14 @@ const TextMaskCustom = forwardRef((props, ref) => {
   return (
     <IMaskInput
       {...other}
-      mask="+7 (000) 000-00-00"
+      mask="0 (000) 000-00-00"
       definitions={{
         "#": /[1-9]/,
       }}
       inputRef={ref}
       onAccept={(value) => onChange({ target: { name: props.name, value } })}
       overwrite
-      placeholder="+7 (900) 000-00-00"
+      placeholder="0 (000) 000-00-00"
     />
   );
 });
@@ -55,12 +55,12 @@ const Payment = ({ data }) => {
   };
 
   useEffect(() => {
-    if (fio && isCheckedPolicy && values.client_phone) {
+    if (fio && isCheckedPolicy && values.client_phone && email) {
       setDisabled(false);
     } else {
       setDisabled(true);
     }
-  }, [fio, isCheckedPolicy, values]);
+  }, [fio, isCheckedPolicy, values, email]);
 
   return (
     <form
@@ -82,7 +82,7 @@ const Payment = ({ data }) => {
         <div className="payment__text">Цена</div>
         <div className="payment__text_price">
           <div className="payment__title">
-            {quantity} по {title}
+            {quantity} записей по {title}
           </div>
           <div className="payment__title_cost">
             <input
@@ -109,6 +109,7 @@ const Payment = ({ data }) => {
             name="clientid"
             required
             autoFocus
+            autoComplete="off"
             type="text"
           >
             <InputLabel htmlFor="outlined-adornment">ФИО</InputLabel>
@@ -127,8 +128,9 @@ const Payment = ({ data }) => {
             sx={{ m: 1, width: "25ch" }}
             variant="outlined"
             className="payment__text-field"
-            onChange={setEmail}
+            onChange={(e) => setEmail(e.target.value)}
             value={email}
+            autoComplete="off"
             color="success"
             name="client_email"
             required
@@ -152,6 +154,7 @@ const Payment = ({ data }) => {
             name="client_phone"
             className="payment__text-field"
             id="mask-input"
+            autoComplete="off"
             inputComponent={TextMaskCustom}
             fullWidth
             type="text"

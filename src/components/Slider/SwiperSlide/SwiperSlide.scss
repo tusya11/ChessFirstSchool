@@ -10,6 +10,7 @@
     border-radius: 15px;
     cursor: pointer;
     font-size: 1.3vw;
+    font-family: "RobotoLight";
 
     @media screen and (max-width: 700px) {
       font-size: 2vh;
@@ -53,10 +54,12 @@
 
   h3 {
     font-size: 2.2vh;
+    font-family: "RobotoBlack";
   }
 
   p {
     font-size: 1.8vh;
+    font-family: "RobotoRegular";
 
     @media screen and (max-width: 700px) {
       font-size: 2vh;
@@ -79,7 +82,8 @@
   .card__description {
     text-align: justify;
     color: #686363;
-    font-family: Noto Sans, sans-serif;
+    // font-family: Noto Sans, sans-serif;
+    font-family: "PoppinsLight", sans-serif;
     font-size: 1.3vw;
     font-style: normal;
     font-weight: 400;

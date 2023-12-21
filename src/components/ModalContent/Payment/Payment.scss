@@ -27,14 +27,14 @@
       .payment__service_name_title {
         span {
           color: #827a7a;
-          font-family: Noto Sans, sans-serif;
+          font-family: "PoppinsLight", sans-serif;
           font-size: 1.8vh;
           font-style: normal;
           font-weight: 400;
           line-height: normal;
         }
         color: #827a7a;
-        font-family: Noto Sans, sans-serif;
+        font-family: "PoppinsLight", sans-serif;
         font-size: 1.8vh;
         font-style: normal;
         font-weight: 400;
@@ -52,7 +52,7 @@
           align-items: center;
           justify-self: end;
           color: #269a26;
-          font-family: Noto Sans, sans-serif;
+          font-family: "PoppinsLight", sans-serif;
           font-size: 1.8vh;
           font-style: normal;
           font-weight: 400;
@@ -63,7 +63,7 @@
 
     .payment__text {
       color: #827a7a;
-      font-family: Noto Sans, sans-serif;
+      font-family: "PoppinsLight", sans-serif;
       font-size: 1.8vh;
       font-style: normal;
       font-weight: 400;
@@ -74,11 +74,12 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-direction: column;
 
       .payment__title {
         display: flex;
         color: #2c2727;
-        font-family: Noto Sans, sans-serif;
+        font-family: "PoppinsLight", sans-serif;
         font-size: 1.8vh;
         font-style: normal;
         font-weight: 400;
@@ -88,7 +89,7 @@
       .payment__title_cost {
         display: flex;
         color: #2c2727;
-        font-family: Noto Sans, sans-serif;
+        font-family: "PoppinsLight", sans-serif;
         font-size: 1.8vh;
         font-style: normal;
         font-weight: bold;
@@ -104,7 +105,7 @@
           align-items: center;
           justify-self: end;
           color: #269a26;
-          font-family: Noto Sans, sans-serif;
+          font-family: "PoppinsBold", sans-serif;
           font-size: 1.8vh;
           font-style: normal;
           font-weight: bold;
@@ -113,7 +114,7 @@
 
         span {
           color: #2c2727;
-          font-family: Noto Sans, sans-serif;
+          font-family: "PoppinsLight", sans-serif;
           font-size: 1.8vh;
           font-style: normal;
           font-weight: bold;
@@ -136,7 +137,7 @@
 
       label {
         color: #827a7a;
-        font-family: Noto Sans, sans-serif;
+        font-family: "PoppinsLight", sans-serif;
         font-size: 1.7vh;
         font-style: normal;
         font-weight: 400;
@@ -181,6 +182,10 @@
 
       .payment__policy__title {
         font-size: 1.5vh;
+
+        span {
+          font-family: "RobotoLight";
+        }
       }
     }
   }

@@ -16,7 +16,7 @@
     position: absolute;
     z-index: 3;
     color: #0c0531;
-    font-family: Lexend, sans-serif;
+    font-family: "RobotoBold";
     font-size: 9vh;
     font-style: normal;
     font-weight: 600;
@@ -32,7 +32,7 @@
 
     .preview__text-color {
       color: #29a354;
-      font-family: "Lexend", sans-serif;
+      font-family: "RobotoBold";
       font-size: 9vh;
       font-style: normal;
       font-weight: 600;
@@ -69,7 +69,7 @@
     position: absolute;
     z-index: 2;
     color: #827a7a;
-    font-family: Lexend, sans-serif;
+    font-family: "RobotoMedium";
     font-size: 2.5vh;
     font-style: normal;
     font-weight: 500;
@@ -89,7 +89,7 @@
       justify-content: center;
       padding: 0 20px;
       box-sizing: border-box;
-      font-size: 1.8vh;
+      font-size: 2vh;
     }
   }
 }

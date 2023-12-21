@@ -1,8 +1,76 @@
 body {
   margin: 0;
-  font-family: "Lexend", sans-serif;
+  /* font-family: "Lexend", sans-serif; */
+  font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Обычный */
+@font-face {
+  font-family: "RobotoThin";
+  src: url(./fonts/Roboto-Thin.ttf);
+}
+
+/* Жирный */
+@font-face {
+  font-family: "RobotoLight";
+  src: url(./fonts/Roboto-Light.ttf);
+}
+
+@font-face {
+  font-family: "RobotoBlack";
+  src: url(./fonts/Roboto-Black.ttf);
+}
+
+@font-face {
+  font-family: "RobotoBold";
+  src: url(./fonts/Roboto-Bold.ttf);
+}
+
+@font-face {
+  font-family: "RobotoMedium";
+  src: url(./fonts/Roboto-Medium.ttf);
+}
+
+@font-face {
+  font-family: "RobotoRegular";
+  src: url(./fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: "PoppinsThin";
+  src: url(./fonts/Poppins-Thin.ttf);
+}
+
+@font-face {
+  font-family: "PoppinsExtraLight";
+  src: url(./fonts/Poppins-ExtraLight.ttf);
+}
+
+@font-face {
+  font-family: "PoppinsLight";
+  src: url(./fonts/Poppins-Light.ttf);
+}
+
+@font-face {
+  font-family: "PoppinsRegular";
+  src: url(./fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+  font-family: "PoppinsMedium";
+  src: url(./fonts/Poppins-Medium.ttf);
+}
+
+@font-face {
+  font-family: "PoppinsSemiBold";
+  src: url(./fonts/Poppins-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: "PoppinsBold";
+  src: url(./fonts/Poppins-Bold.ttf);
 }
 
 code {
