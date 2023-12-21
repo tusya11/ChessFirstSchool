@@ -79,7 +79,6 @@ const SignUpContent = observer(() => {
     setLoading(true);
 
     let formData = new FormData();
-    const telephone = values.Telephone.split("+")?.[1];
     let links = [];
 
     for (let key in link) {
@@ -88,7 +87,7 @@ const SignUpContent = observer(() => {
       }
     }
     formData.append("Messenger", links.join(","));
-    formData.append("Telephone", telephone);
+    formData.append("Telephone", values.Telephone);
     formData.append("City", city);
     formData.append("Date", dayjs().format("DD-MM-YYYY HH:mm:ss"));
     formData.append("Name", name);
