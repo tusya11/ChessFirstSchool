@@ -18,18 +18,33 @@ import { observer } from "mobx-react-lite";
 import "./SignUpContent.scss";
 
 const TextMaskCustom = forwardRef((props, ref) => {
+  const masks = [
+    {
+      mask: "+0 (000) 000-00-00",
+    },
+    {
+      mask: "+000 000 000 000",
+    },
+    {
+      mask: "+0 000 000 000 000",
+    },
+    {
+      mask: "+000000000000000",
+    },
+  ];
   const { onChange, ...other } = props;
   return (
     <IMaskInput
       {...other}
-      mask="0 (000) 000-00-00"
+      // mask="0 (000) 000-00-00"
+      mask={masks}
       definitions={{
         "#": /[1-9]/,
       }}
       inputRef={ref}
       onAccept={(value) => onChange({ target: { name: props.name, value } })}
       overwrite
-      placeholder="0 (000) 000-00-00"
+      placeholder="+0 (000) 000-00-00"
     />
   );
 });

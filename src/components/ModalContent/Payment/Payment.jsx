@@ -13,20 +13,38 @@ import privacyPolicy from "../../../docs/privacy_policy.pdf";
 import SendIcon from "@mui/icons-material/Send";
 import { URL } from "./consts";
 import "./Payment.scss";
+import { TEXT_FORMS } from "../../../utils/globalConstants";
+import { declOfNum } from "../../../utils/declOfNum";
 
 const TextMaskCustom = forwardRef((props, ref) => {
+  const masks = [
+    {
+      mask: "+0 (000) 000-00-00",
+    },
+    {
+      mask: "+000 000 000 000",
+    },
+    {
+      mask: "+0 000 000 000 000",
+    },
+    {
+      mask: "+000000000000000",
+    },
+  ];
+
   const { onChange, ...other } = props;
   return (
     <IMaskInput
       {...other}
-      mask="0 (000) 000-00-00"
+      // mask="+0 (000) 000-00-00"
+      mask={masks}
       definitions={{
         "#": /[1-9]/,
       }}
       inputRef={ref}
       onAccept={(value) => onChange({ target: { name: props.name, value } })}
       overwrite
-      placeholder="0 (000) 000-00-00"
+      placeholder="+0 (000) 000-00-00"
     />
   );
 });
@@ -82,7 +100,7 @@ const Payment = ({ data }) => {
         <div className="payment__text">Цена</div>
         <div className="payment__text_price">
           <div className="payment__title">
-            {quantity} записей по {title}
+            {quantity} {declOfNum(quantity, TEXT_FORMS["LESSONS"])} по {title}
           </div>
           <div className="payment__title_cost">
             <input
