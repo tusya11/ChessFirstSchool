@@ -17,7 +17,7 @@ const Price = () => {
   return (
     <div id="price" className="price__container">
       <div className="price__main-text">
-        <h2>Стоимость занятий</h2>
+        <h2>Стоимость</h2>
       </div>
       <div className="price__content">
         {prices.map((v) => (
