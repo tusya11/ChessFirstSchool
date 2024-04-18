@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.1e1dfab5.css",
+    "main.css": "/static/css/main.3adb7b24.css",
     "main.js": "/static/js/main.89655828.js",
     "static/media/main_boy.png": "/static/media/main_boy.bfd2da864afbb607e527.png",
     "static/media/chess-image.svg": "/static/media/chess-image.d40edb69c6293f65e963a7db28404324.svg",
@@ -39,11 +39,11 @@
     "static/media/hourglass.svg": "/static/media/hourglass.ef62cf8d09edb6faf8b001cd4d148c30.svg",
     "static/media/fail.svg": "/static/media/fail.83964e19c971e3fa02b053468bbed401.svg",
     "static/media/success.svg": "/static/media/success.2822d5c741dcf24e136036beb70c2cee.svg",
-    "main.1e1dfab5.css.map": "/static/css/main.1e1dfab5.css.map",
+    "main.3adb7b24.css.map": "/static/css/main.3adb7b24.css.map",
     "main.89655828.js.map": "/static/js/main.89655828.js.map"
   },
   "entrypoints": [
-    "static/css/main.1e1dfab5.css",
+    "static/css/main.3adb7b24.css",
     "static/js/main.89655828.js"
   ]
 }
