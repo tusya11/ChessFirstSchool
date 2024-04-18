@@ -23,6 +23,7 @@ import { URL } from "./consts";
 import "./Payment.scss";
 
 const domain = process.env.REACT_APP_API_URL;
+const urlRequest = process.env.REACT_APP_NEST_URL;
 
 const TextMaskCustom = forwardRef((props, ref) => {
   const masks = [
@@ -121,13 +122,10 @@ const Payment = observer(({ data }) => {
       fail_url: `${domain}/fail`,
     };
 
-    console.log("---requestBody", requestBody);
-
-    const urlDolyame = "https://perfect-capris-slug.cyclic.app/dolyami/create";
+    const urlDolyame = `${urlRequest}/dolyami/create`;
 
     try {
       const response = await axios.post(urlDolyame, requestBody);
-      console.log("---response", response);
 
       const orderDetails = {
         orderId: response.data.orderId,

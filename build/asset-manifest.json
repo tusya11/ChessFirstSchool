@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.7e6aa71f.css",
-    "main.js": "/static/js/main.5ce5dabc.js",
+    "main.js": "/static/js/main.afb4f223.js",
     "static/media/main_boy.png": "/static/media/main_boy.bfd2da864afbb607e527.png",
     "static/media/chess-image.svg": "/static/media/chess-image.d40edb69c6293f65e963a7db28404324.svg",
     "static/media/people4.jpeg": "/static/media/people4.27d93fc44c823870a536.jpeg",
@@ -41,10 +41,10 @@
     "static/media/fail.svg": "/static/media/fail.83964e19c971e3fa02b053468bbed401.svg",
     "static/media/success.svg": "/static/media/success.2822d5c741dcf24e136036beb70c2cee.svg",
     "main.7e6aa71f.css.map": "/static/css/main.7e6aa71f.css.map",
-    "main.5ce5dabc.js.map": "/static/js/main.5ce5dabc.js.map"
+    "main.afb4f223.js.map": "/static/js/main.afb4f223.js.map"
   },
   "entrypoints": [
     "static/css/main.7e6aa71f.css",
-    "static/js/main.5ce5dabc.js"
+    "static/js/main.afb4f223.js"
   ]
 }

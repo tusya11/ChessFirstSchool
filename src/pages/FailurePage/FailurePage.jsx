@@ -9,6 +9,8 @@ import axios from "axios";
 import modal from "../../store/modal";
 import "./FailurePage.scss";
 
+const urlRequest = process.env.REACT_APP_NEST_URL;
+
 const FailurePage = observer(() => {
   const { setAlertMsg } = modal;
   const navigate = useNavigate();
@@ -20,40 +22,10 @@ const FailurePage = observer(() => {
   };
 
   const getInfoAboutOrder = async () => {
-    const url = `https://perfect-capris-slug.cyclic.app/dolyami/orders/${orderItems.orderId}/info`;
+    const url = `${urlRequest}/dolyami/orders/${orderItems.orderId}/info`;
     try {
-      const response = await axios.get(url);
-      console.log("---response", response);
-      //response.data
-      const result = {
-        status: "rejected",
-        amount: 15000,
-        residual_amount: 0,
-        link: "https://dolyame.ru/form/5126299c-0883-4a08-bf7a-eeab30795722",
-        payment_schedule: [
-          {
-            amount: 3750,
-            payment_date: "2024-04-17",
-            status: "scheduled",
-          },
-          {
-            amount: 3750,
-            payment_date: "2024-05-01",
-            status: "scheduled",
-          },
-          {
-            amount: 3750,
-            payment_date: "2024-05-15",
-            status: "scheduled",
-          },
-          {
-            amount: 3750,
-            payment_date: "2024-05-29",
-            status: "scheduled",
-          },
-        ],
-        uuid: "db176da0-185f-494a-bca5-fb4975ef742d",
-      };
+      await axios.get(url);
+
       // window.open(response.data.link, "_blank");
       // window.location.href = response.data.link;
     } catch (e) {

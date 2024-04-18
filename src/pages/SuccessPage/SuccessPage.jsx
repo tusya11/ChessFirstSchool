@@ -11,6 +11,8 @@ import axios from "axios";
 import modal from "../../store/modal";
 import dayjs from "dayjs";
 
+const urlRequest = process.env.REACT_APP_NEST_URL;
+
 const SuccessPage = observer(() => {
   const { setAlertMsg } = modal;
   const navigate = useNavigate();
@@ -23,41 +25,11 @@ const SuccessPage = observer(() => {
   };
 
   const getInfoAboutOrder = async () => {
-    const url = `https://perfect-capris-slug.cyclic.app/dolyami/orders/${orderItems.orderId}/info`;
+    const url = `${urlRequest}/dolyami/orders/${orderItems.orderId}/info`;
     try {
       const response = await axios.get(url);
-      console.log("---response", response);
       setSchedule(response.data.payment_schedule || []);
-      //response.data
-      const result = {
-        status: "committed",
-        amount: 12000,
-        residual_amount: 12000,
-        link: "https://dolyame.ru/form/3d2b3220-df9a-488b-aa8c-b89c2f9f865e",
-        payment_schedule: [
-          {
-            amount: 3000,
-            payment_date: "2024-04-17",
-            status: "scheduled",
-          },
-          {
-            amount: 3000,
-            payment_date: "2024-05-01",
-            status: "scheduled",
-          },
-          {
-            amount: 3000,
-            payment_date: "2024-05-15",
-            status: "scheduled",
-          },
-          {
-            amount: 3000,
-            payment_date: "2024-05-29",
-            status: "scheduled",
-          },
-        ],
-        uuid: "d6c9b370-0395-4213-a0cf-ebaef1d99566",
-      };
+
       // window.open(response.data.link, "_blank");
       // window.location.href = response.data.link;
     } catch (e) {
