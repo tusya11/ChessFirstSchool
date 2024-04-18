@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.54162f90.css",
-    "main.js": "/static/js/main.2134fd98.js",
+    "main.css": "/static/css/main.7e6aa71f.css",
+    "main.js": "/static/js/main.5ce5dabc.js",
     "static/media/main_boy.png": "/static/media/main_boy.bfd2da864afbb607e527.png",
     "static/media/chess-image.svg": "/static/media/chess-image.d40edb69c6293f65e963a7db28404324.svg",
     "static/media/people4.jpeg": "/static/media/people4.27d93fc44c823870a536.jpeg",
@@ -25,6 +25,7 @@
     "static/media/Poppins-SemiBold.ttf": "/static/media/Poppins-SemiBold.ac8d04b620e54be9b0f0.ttf",
     "static/media/Poppins-Bold.ttf": "/static/media/Poppins-Bold.cdb29a5d7ccf57ff05a3.ttf",
     "static/media/champions.png": "/static/media/champions.2676e0b93bfdb97c32d0.png",
+    "static/media/paykep.png": "/static/media/paykep.caf3e4729779baaa9720.png",
     "static/media/logoCoolChess.jpg": "/static/media/logoCoolChess.c70ed3b76743671d8814.jpg",
     "static/media/preview_back.png": "/static/media/preview_back.fa32d4885c2dd51f7928.png",
     "static/media/replays.png": "/static/media/replays.369a47feb2728869e79d.png",
@@ -33,14 +34,17 @@
     "static/media/man_people.svg": "/static/media/man_people.59a881fa5472100850f7db1939ee2922.svg",
     "index.html": "/index.html",
     "static/media/cap.svg": "/static/media/cap.de9d5e99bde167da5f8d7c2d32c49f80.svg",
+    "static/media/dolyami.svg": "/static/media/dolyami.c635d925c05d46ab3b49d192483cd654.svg",
     "static/media/computer.svg": "/static/media/computer.f3ed0b5616e2fcf3785e8fdbc77e1037.svg",
     "static/media/kid.svg": "/static/media/kid.819c89662a379cdc327e9e5c7df10472.svg",
     "static/media/hourglass.svg": "/static/media/hourglass.ef62cf8d09edb6faf8b001cd4d148c30.svg",
-    "main.54162f90.css.map": "/static/css/main.54162f90.css.map",
-    "main.2134fd98.js.map": "/static/js/main.2134fd98.js.map"
+    "static/media/fail.svg": "/static/media/fail.83964e19c971e3fa02b053468bbed401.svg",
+    "static/media/success.svg": "/static/media/success.2822d5c741dcf24e136036beb70c2cee.svg",
+    "main.7e6aa71f.css.map": "/static/css/main.7e6aa71f.css.map",
+    "main.5ce5dabc.js.map": "/static/js/main.5ce5dabc.js.map"
   },
   "entrypoints": [
-    "static/css/main.54162f90.css",
-    "static/js/main.2134fd98.js"
+    "static/css/main.7e6aa71f.css",
+    "static/js/main.5ce5dabc.js"
   ]
 }

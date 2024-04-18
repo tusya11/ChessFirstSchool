@@ -8,13 +8,21 @@ import {
   InputLabel,
   OutlinedInput,
 } from "@mui/material";
+import { observer } from "mobx-react-lite";
 import { IMaskInput } from "react-imask";
 import privacyPolicy from "../../../docs/privacy_policy.pdf";
 import SendIcon from "@mui/icons-material/Send";
-import { URL } from "./consts";
-import "./Payment.scss";
+import axios from "axios";
+
 import { TEXT_FORMS } from "../../../utils/globalConstants";
 import { declOfNum } from "../../../utils/declOfNum";
+import payKeeperImage from "../../../assets/paykep.png";
+import partPayment from "../../../assets/dolyami.svg";
+import modal from "../../../store/modal";
+import { URL } from "./consts";
+import "./Payment.scss";
+
+const domain = process.env.REACT_APP_API_URL;
 
 const TextMaskCustom = forwardRef((props, ref) => {
   const masks = [
@@ -49,7 +57,8 @@ const TextMaskCustom = forwardRef((props, ref) => {
   );
 });
 
-const Payment = ({ data }) => {
+const Payment = observer(({ data }) => {
+  const { setAlertMsg } = modal;
   const [values, setValues] = useState({});
   const [fio, setFio] = useState("");
   const [email, setEmail] = useState("");
@@ -79,6 +88,64 @@ const Payment = ({ data }) => {
       setDisabled(true);
     }
   }, [fio, isCheckedPolicy, values, email]);
+
+  //создание заявки - create
+  const handleClickSplittingPay = async () => {
+    let compress = (s) => s.replace(/[^0-9]/g, "");
+    const transformedPhone = "+" + compress(values.client_phone);
+
+    const getViaPerson = () => fio && fio.split(" ");
+    const personDetails = getViaPerson();
+
+    const requestBody = {
+      order: {
+        id: "cool-chess-" + new Date().getTime(),
+        status: "approved",
+        amount: price_rub,
+        items: [
+          {
+            name: "Оплата услуги по шахматам",
+            quantity: quantity,
+            price: price_rub / quantity,
+          },
+        ],
+      },
+      client_info: {
+        email: email,
+        phone: transformedPhone,
+        first_name: personDetails?.[1] || undefined,
+        last_name: personDetails?.[0] || undefined,
+        middle_name: personDetails?.[2] || undefined,
+      },
+      success_url: `${domain}/success`,
+      fail_url: `${domain}/fail`,
+    };
+
+    console.log("---requestBody", requestBody);
+
+    const urlDolyame = "https://perfect-capris-slug.cyclic.app/dolyami/create";
+
+    try {
+      const response = await axios.post(urlDolyame, requestBody);
+      console.log("---response", response);
+
+      const orderDetails = {
+        orderId: response.data.orderId,
+        uuid: response.data.uuid,
+      };
+
+      localStorage.setItem("order", JSON.stringify(orderDetails));
+      // window.open(response.data.link, "_blank");
+      window.location.href = response.data.link;
+    } catch (e) {
+      console.log("---e", e);
+      setAlertMsg({
+        status: "error",
+        message: e.response.data.message,
+        visible: true,
+      });
+    }
+  };
 
   return (
     <form
@@ -211,11 +278,35 @@ const Payment = ({ data }) => {
           disabled={disabled}
           color="success"
         >
-          Оплатить картой
+          <div className="button_pay-keeper">
+            <img
+              src={payKeeperImage}
+              alt="pay_keeper_image"
+              className="sign-up-content_pay-keeper"
+            />
+          </div>
+        </Button>
+        <Button
+          variant="contained"
+          endIcon={<SendIcon />}
+          // type="submit"
+          onClick={handleClickSplittingPay}
+          className="sign-up-content__button"
+          disabled={disabled}
+          color="success"
+        >
+          {/* Оплатить долями */}
+          <div className="button_pay-keeper">
+            <img
+              src={partPayment}
+              alt="pay_dolyami_image"
+              className="sign-up-content_pay-keeper"
+            />
+          </div>
         </Button>
       </div>
     </form>
   );
-};
+});
 
 export default Payment;

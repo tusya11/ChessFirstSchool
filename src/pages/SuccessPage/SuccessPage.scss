@@ -1,0 +1,89 @@
+.success-page__wrapper {
+  position: relative;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 121, 102, 1) 35%,
+    rgba(0, 255, 147, 1) 100%
+  );
+
+  .success-page__content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .success-page__card {
+      width: 500px;
+      height: 600px;
+      position: relative;
+      background: rgba(255, 255, 255, 0.192);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 50px;
+      padding: 50px 20px;
+      box-sizing: border-box;
+      justify-content: center;
+    }
+
+    .success-page__text {
+      display: flex;
+      flex-direction: column;
+      color: aliceblue;
+
+      .success-page__title {
+        font-size: 20px;
+        font-weight: 600;
+      }
+    }
+
+    button {
+      background: linear-gradient(
+        90deg,
+        rgb(9, 121, 102) 35%,
+        rgb(0, 255, 147) 100%
+      );
+    }
+
+    .success-page__icon {
+      height: 110px;
+      width: 110px;
+      box-shadow: inset 0 0 0 3000px rgba(150, 150, 150, 0.192);
+    }
+
+    .success-page__card:before {
+      position: absolute;
+      content: "";
+      background: inherit;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      filter: blur(10px);
+      border-radius: 15px;
+    }
+  }
+
+  .success-page__schedule {
+    display: flex;
+    flex-direction: column;
+    align-items: normal;
+    gap: 10px;
+
+    .success-page__row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .succes-page__next-pay {
+      color: white;
+    }
+  }
+}

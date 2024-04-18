@@ -23,7 +23,7 @@ const AdditionalBlock = () => {
                 {v?.fields ? (
                   <div className="additional-block__links">
                     {v?.fields.map((item) => (
-                      <div className="additional-block__link">
+                      <div className="additional-block__link" key={item.id}>
                         <span>
                           {item.title}{" "}
                           <a target="_blank" href={item.link} rel="noreferrer">

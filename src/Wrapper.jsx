@@ -25,7 +25,7 @@ const Wrapper = observer(() => {
   };
 
   useEffect(() => {
-    const timer = setTimeout(() => setAlertMsg({}), 2000);
+    const timer = setTimeout(() => setAlertMsg({}), 4000);
 
     return () => {
       clearTimeout(timer);
