@@ -16,7 +16,6 @@ import axios from "axios";
 
 import { TEXT_FORMS } from "../../../utils/globalConstants";
 import { declOfNum } from "../../../utils/declOfNum";
-import payKeeperImage from "../../../assets/paykep.png";
 import partPayment from "../../../assets/dolyami.svg";
 import modal from "../../../store/modal";
 import { URL } from "./consts";
@@ -276,13 +275,14 @@ const Payment = observer(({ data }) => {
           disabled={disabled}
           color="success"
         >
-          <div className="button_pay-keeper">
+          {/* <div className="button_pay-keeper">
             <img
               src={payKeeperImage}
               alt="pay_keeper_image"
               className="sign-up-content_pay-keeper"
             />
-          </div>
+          </div> */}
+          <div className="button_pay-keeper">Банковской картой</div>
         </Button>
         <Button
           variant="contained"

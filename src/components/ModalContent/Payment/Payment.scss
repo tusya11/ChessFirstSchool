@@ -191,18 +191,12 @@
   }
 
   .payment__button {
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 
     .button_pay-keeper {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      max-width: 200px;
+      font-size: 12px;
     }
 
     .sign-up-content_pay-keeper {
