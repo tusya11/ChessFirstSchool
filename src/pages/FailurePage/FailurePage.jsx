@@ -22,7 +22,7 @@ const FailurePage = observer(() => {
   };
 
   const getInfoAboutOrder = async () => {
-    const url = `${urlRequest}/dolyami/orders/${orderItems.orderId}/info`;
+    const url = `${urlRequest}dolyami/orders/${orderItems.orderId}/info`;
     try {
       await axios.get(url);
 

@@ -25,7 +25,7 @@ const SuccessPage = observer(() => {
   };
 
   const getInfoAboutOrder = async () => {
-    const url = `${urlRequest}/dolyami/orders/${orderItems.orderId}/info`;
+    const url = `${urlRequest}dolyami/orders/${orderItems.orderId}/info`;
     try {
       const response = await axios.get(url);
       setSchedule(response.data.payment_schedule || []);

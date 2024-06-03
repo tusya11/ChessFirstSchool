@@ -121,7 +121,7 @@ const Payment = observer(({ data }) => {
       fail_url: `${domain}/fail`,
     };
 
-    const urlDolyame = `${urlRequest}/dolyami/create`;
+    const urlDolyame = `${urlRequest}dolyami/create`;
 
     try {
       const response = await axios.post(urlDolyame, requestBody);
