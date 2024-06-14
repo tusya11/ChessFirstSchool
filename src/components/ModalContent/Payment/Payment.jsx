@@ -119,6 +119,7 @@ const Payment = observer(({ data }) => {
       },
       success_url: `${domain}/success`,
       fail_url: `${domain}/fail`,
+      notification_url: "https://cool-chess.ru/dolyami/email",
     };
 
     const urlDolyame = `${urlRequest}dolyami/create`;
