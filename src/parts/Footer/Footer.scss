@@ -4,41 +4,69 @@
   color: white;
   align-items: center;
   justify-content: center;
-  padding: 10vh 0;
-  height: 40vh;
+  padding: 9vh 0;
+  border-radius: 60px 60px 0px 0px;
+
+  @media screen and (max-width: 700px) {
+    padding: 9vh 40px;
+  }
+
+  .footer__links {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+
+    .footer__logo {
+      width: 100%;
+      img {
+        width: 260px;
+        height: 40px;
+
+        @media screen and (max-width: 700px) {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+
+    @media screen and (max-width: 700px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
 
   .footer__docs {
     display: flex;
     flex-direction: column;
     gap: 2vw;
+    align-items: flex-end;
+
+    @media screen and (max-width: 700px) {
+      align-items: flex-start;
+      gap: 5vw;
+    }
 
     a {
       text-decoration: none;
       color: white;
-      font-size: 1.4vw;
+      font-size: 1.2vw;
+      font-family: "MontserratLight";
 
       @media screen and (max-width: 700px) {
         font-size: 1.9vh;
       }
     }
-
-    :hover {
-      color: green;
-      transition: 0.7s;
-      cursor: pointer;
-    }
   }
 
   .footer__block {
     display: flex;
-    flex-direction: column;
     gap: 4vh;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     height: 100%;
+    width: 100%;
 
     @media screen and (max-width: 700px) {
-      height: auto;
+      flex-direction: column;
     }
 
     img {
@@ -48,6 +76,7 @@
 
   .footer__icons {
     display: flex;
-    gap: 20px;
+    gap: 40px;
+    height: 40px;
   }
 }
