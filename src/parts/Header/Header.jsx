@@ -1,26 +1,29 @@
 import { useState } from "react";
-import { BsWhatsapp } from "react-icons/bs";
+import { Button, ConfigProvider, Drawer } from "antd";
 import { useSearchParams } from "react-router-dom";
 import { observer } from "mobx-react-lite";
+import clsx from "classnames";
 import { useMediaQuery } from "@mui/material";
-import SocialLink from "../../components/SocialLink/SocialLink";
-import RecordButton from "../../components/RecordButton/RecordButton";
+import whatsupLogo from "../../assets/whatsup.svg";
+import whatsupActive from "../../assets/whatsupActive.svg";
+import menuButton from "../../assets/burgerMenuBtn.svg";
 import { contactNumber, urlToWhatsApp } from "../../utils/globalConstants";
+import NavigationItemsMobile from "./NavigationItemsMobile/NavigationItemsMobile";
+
 import { navigatePanel } from "./consts";
-// import logo from "../../assets/logo.svg";
-import logo from "../../assets/logoCoolChess.jpg";
+import logo from "../../assets/logo.svg";
 import modal from "../../store/modal";
-import MenuBurger from "../../components/MenuBurger/MenuBurger";
 import "./Header.scss";
 
-const Header = observer(() => {
-  const [anchorEl, setAnchorEl] = useState(null);
-  const open = Boolean(anchorEl);
-
+const Header = observer(({ className }) => {
   const isXS = useMediaQuery("(max-width:700px)");
+  const [isOpenDrawer, setIsOpenDrawer] = useState(false);
   const { setIsOpenModal } = modal;
   // eslint-disable-next-line no-unused-vars
   const [_, setSearchParams] = useSearchParams({ block: "" });
+  const [search] = useSearchParams();
+  const blockTitle = search.get("block");
+  const [isActiveLink, setIsActiveLink] = useState(false);
 
   const handleClickLink = (link) => {
     setSearchParams({ block: link });
@@ -29,62 +32,102 @@ const Header = observer(() => {
   const handleClickButton = () => {
     setIsOpenModal(true);
   };
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
 
   const handleClose = () => {
-    setAnchorEl(null);
+    console.log("---1");
+    setIsOpenDrawer(false);
   };
 
   return (
-    <header className="header">
-      {!isXS && (
-        <div className="header__image-container">
-          <a href="/">
-            <img className="header__image" src={logo} alt="" />
-          </a>
-        </div>
-      )}
+    <header className={clsx("header", className)}>
+      <div className="header__image-container">
+        <a href="/">
+          <img className="header__image" src={logo} alt="" />
+        </a>
+      </div>
       {isXS ? (
-        <MenuBurger
-          items={navigatePanel}
-          onClickItem={handleClickLink}
-          open={open}
-          onClose={handleClose}
-          onOpen={handleClick}
-          anchor={anchorEl}
-        />
+        <>
+          <div
+            className="header_menu_burger_button"
+            onClick={() => setIsOpenDrawer(true)}
+          >
+            <img src={menuButton} alt="burger-menu-button" />
+          </div>
+          <Drawer
+            placement={"left"}
+            width={"100%"}
+            onClose={handleClose}
+            open={isOpenDrawer}
+            styles={{
+              header: {
+                display: "flex",
+                marginLeft: "auto",
+                border: "none",
+              },
+            }}
+          >
+            <NavigationItemsMobile onChoose={handleClose} />
+          </Drawer>
+        </>
       ) : (
         <div className="header__navigate-block">
           {navigatePanel.map((v) => (
-            <span
+            <div
+              className={clsx(
+                "header__navigate-block-item",
+                blockTitle === v.link && "active-item"
+              )}
               key={v.id}
-              className="header__navigate-item"
               onClick={() => handleClickLink(v.link)}
             >
-              {v.title} <span></span>
-            </span>
+              <span className="header__navigate-item">{v.title}</span>
+            </div>
           ))}
+          <div className="header__number-phone">
+            <a href={`tel:${contactNumber}`}>{contactNumber}</a>
+          </div>
         </div>
       )}
-      <div className="header__info-block">
-        <div className="header__number-phone">
-          <a href={`tel:${contactNumber}`}>{contactNumber}</a>
-        </div>
-        <SocialLink
-          icon={<BsWhatsapp color={"#827a7a"} />}
-          url={urlToWhatsApp}
-        />
-        {!isXS && <RecordButton onClick={handleClickButton} />}
-        {isXS && (
-          <div className="header__image-container">
-            <a href="/">
-              <img className="header__image" src={logo} alt="" />
+      {!isXS && (
+        <div className="header__info-block">
+          <div
+            className="header__social-link"
+            onMouseEnter={() => setIsActiveLink(true)}
+            onMouseLeave={() => setIsActiveLink(false)}
+          >
+            <a href={urlToWhatsApp} target="_black" alt="url" rel="noreferrer">
+              <img
+                src={isActiveLink ? whatsupActive : whatsupLogo}
+                alt="social-link-whatsup"
+              />
             </a>
           </div>
-        )}
-      </div>
+          <ConfigProvider
+            theme={{
+              components: {
+                Button: {
+                  colorPrimary: ` #464BFF`,
+                  colorPrimaryHover: `black`,
+                  colorPrimaryActive: `black`,
+                  lineWidth: 0,
+                  fontWeight: "600",
+                  paddingBlock: 18,
+                  paddingInline: 20,
+                },
+              },
+            }}
+          >
+            <Button
+              type="primary"
+              onClick={handleClickButton}
+              size="large"
+              className="header__button"
+            >
+              Записаться
+            </Button>
+          </ConfigProvider>
+        </div>
+      )}
     </header>
   );
 });

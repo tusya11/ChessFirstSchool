@@ -1,6 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { observer } from "mobx-react-lite";
-import { Alert } from "@mui/material";
+import { Alert, debounce, useMediaQuery } from "@mui/material";
 import Content from "./parts/Content/Content";
 import Header from "./parts/Header/Header";
 import Footer from "./parts/Footer/Footer";
@@ -20,6 +20,28 @@ const Wrapper = observer(() => {
     modalInfo,
   } = modal;
 
+  const isXS = useMediaQuery("(max-width:700px)");
+  const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
+  const [visible, setVisible] = useState(true);
+
+  const handleScroll = debounce(() => {
+    const currentScrollPos = window.pageYOffset ?? document?.body?.scrollTop;
+    const visible = prevScrollPos > currentScrollPos;
+
+    setPrevScrollPos(currentScrollPos);
+    setVisible(visible);
+  }, 0);
+
+  useEffect(() => {
+    if (isXS) {
+      window.addEventListener("scroll", handleScroll);
+
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }
+  }, [prevScrollPos, visible, handleScroll, isXS]);
+
   const handleCloseModal = () => {
     setIsOpenModal(false);
   };
@@ -36,7 +58,7 @@ const Wrapper = observer(() => {
 
   return (
     <div style={{ position: "relative", boxSizing: "border-box" }}>
-      <Header />
+      <Header className={visible ? "active" : "hidden"} />
       <Content />
       <Footer />
       {isOpenModal && (
