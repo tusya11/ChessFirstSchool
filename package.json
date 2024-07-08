@@ -3,8 +3,6 @@
   "version": "1.0.5",
   "private": true,
   "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.15",
     "@mui/lab": "^5.0.0-alpha.150",
     "@mui/material": "^5.14.15",
@@ -15,8 +13,6 @@
     "axios": "^1.6.8",
     "classnames": "^2.3.2",
     "dayjs": "^1.11.10",
-    "embla-carousel-react": "^7.1.0",
-    "fs": "^0.0.1-security",
     "https": "^1.0.0",
     "mobx": "^6.10.2",
     "mobx-react-lite": "^4.0.5",

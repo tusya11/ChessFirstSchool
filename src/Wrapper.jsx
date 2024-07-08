@@ -8,6 +8,8 @@ import modal from "../src/store/modal";
 import ModalContent from "./parts/Modal/Modal";
 import SignUpContent from "./components/ModalContent/SignUpContent/SignUpContent";
 import Payment from "./components/ModalContent/Payment/Payment";
+import FixedBtnRecord from "./new_components/FixedBtnRecord/FixedBtnRecord";
+import DraggingModal from "./new_components/DraggingModal/DraggingModal";
 
 const Wrapper = observer(() => {
   const {
@@ -61,6 +63,8 @@ const Wrapper = observer(() => {
       <Header className={visible ? "active" : "hidden"} />
       <Content />
       <Footer />
+      <DraggingModal />
+      {isXS && <FixedBtnRecord />}
       {isOpenModal && (
         <ModalContent
           titleHeader="Записаться"

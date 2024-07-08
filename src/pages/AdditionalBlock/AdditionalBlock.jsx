@@ -1,49 +1,66 @@
 import React from "react";
-import { items } from "./consts";
+import { additionalItems, links } from "./consts";
+import MainTitleWithContent from "../../new_components/MainTitleWithContent/MainTitleWithContent";
+import arrow from "./assets/arrow.svg";
 import "./AdditionalBlock.scss";
 
 const AdditionalBlock = () => {
+  const handleClickLink = (url) => {
+    window.open(url, "_blank");
+  };
+
   return (
     <div className="additional-block__container">
-      <div className="additional-block__text">
-        <h2>Пробный урок</h2>
-      </div>
-      <div className="additional-block__secondary">
-        <p>
-          На пробном занятии вам помогут настроить техническое оборудование для
-          обучения
-        </p>
-      </div>
-      <div className="additional-block__content">
-        <div className="additional-block__block">
-          {items.map((v) => (
-            <div className="additional-block__card" key={v.id}>
-              <div className="additional-block__image">{v.icon}</div>
-              <div className="additional-block__description">
-                {v?.fields ? (
-                  <div className="additional-block__links">
-                    {v?.fields.map((item) => (
-                      <div className="additional-block__link" key={item.id}>
-                        <span>
-                          {item.title}{" "}
-                          <a target="_blank" href={item.link} rel="noreferrer">
-                            {item.type}
-                          </a>
-                        </span>
-                      </div>
-                    ))}
+      <MainTitleWithContent
+        title="Как проходит пробный урок"
+        paddingUnderTitle="10px"
+      >
+        <div className="additional-block__content">
+          <div className="additional-block__main-text">
+            <p className="additional-block__title">
+              На пробном занятии вам помогут настроить техническое оборудование
+              для обучения
+            </p>
+          </div>
+          <div className="additional-block__block-content">
+            {additionalItems.map((item) => (
+              <div key={item.id} className="additional-block__item-content">
+                <div className="additional-block__image-container">
+                  <img src={item.image} alt="block-with-img" />
+                </div>
+                <div className="additional-block__with-main-content">
+                  <p className="additional-block__primary">{item.title}</p>
+                  <p className="additional-block__secondary">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="additional-block__links-container">
+            <div className="additional-block__links-content">
+              <div className="additional-block__download-zoom">
+                <p>Скачать Zoom</p>
+              </div>
+              <div className="additional-block__links">
+                {links.map((v) => (
+                  <div key={v.id} className="additional-block__link-block">
+                    <a target="_blank" href={v.link} rel="noreferrer">
+                      {v.title}
+                    </a>
+                    <div
+                      className="additional-block__arrow-down"
+                      onClick={() => handleClickLink(v.link)}
+                    >
+                      <img src={arrow} alt="" />
+                    </div>
                   </div>
-                ) : (
-                  <>
-                    <p>{v.title}</p>
-                    <span>{v.description}</span>
-                  </>
-                )}
+                ))}
               </div>
             </div>
-          ))}
+          </div>
         </div>
-      </div>
+      </MainTitleWithContent>
     </div>
   );
 };

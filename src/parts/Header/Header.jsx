@@ -4,8 +4,7 @@ import { useSearchParams } from "react-router-dom";
 import { observer } from "mobx-react-lite";
 import clsx from "classnames";
 import { useMediaQuery } from "@mui/material";
-import whatsupLogo from "../../assets/whatsup.svg";
-import whatsupActive from "../../assets/whatsupActive.svg";
+import whatsupLogo from "../../assets/whatsup_new.svg";
 import menuButton from "../../assets/burgerMenuBtn.svg";
 import { contactNumber, urlToWhatsApp } from "../../utils/globalConstants";
 import NavigationItemsMobile from "./NavigationItemsMobile/NavigationItemsMobile";
@@ -23,7 +22,6 @@ const Header = observer(({ className }) => {
   const [_, setSearchParams] = useSearchParams({ block: "" });
   const [search] = useSearchParams();
   const blockTitle = search.get("block");
-  const [isActiveLink, setIsActiveLink] = useState(false);
 
   const handleClickLink = (link) => {
     setSearchParams({ block: link });
@@ -90,16 +88,15 @@ const Header = observer(({ className }) => {
       )}
       {!isXS && (
         <div className="header__info-block">
-          <div
-            className="header__social-link"
-            onMouseEnter={() => setIsActiveLink(true)}
-            onMouseLeave={() => setIsActiveLink(false)}
-          >
-            <a href={urlToWhatsApp} target="_black" alt="url" rel="noreferrer">
-              <img
-                src={isActiveLink ? whatsupActive : whatsupLogo}
-                alt="social-link-whatsup"
-              />
+          <div className="header__social-link">
+            <a
+              href={urlToWhatsApp}
+              target="_black"
+              alt="url"
+              rel="noreferrer"
+              className="header__social-link__icon"
+            >
+              <img src={whatsupLogo} alt="social-link-whatsup" />
             </a>
           </div>
           <ConfigProvider

@@ -90,6 +90,25 @@
     align-items: center;
     justify-content: center;
 
+    .header__social-link {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      background-color: #45c179;
+      transition: 0.3s;
+
+      .header__social-link__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .header__social-link:hover {
+      background-color: black;
+      transition: 0.3s;
+    }
+
     .header__button {
       font-size: 14px !important;
       border-radius: 12px !important;
