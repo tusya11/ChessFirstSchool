@@ -1,0 +1,15 @@
+{
+  "short_name": "Cool Chess School",
+  "name": "Create React App Sample",
+  "icons": [
+    {
+      "src": "school.png",
+      "type": "image/png",
+      "sizes": "280x221"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
