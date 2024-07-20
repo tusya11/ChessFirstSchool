@@ -1,26 +1,18 @@
 import React from "react";
+import { useMediaQuery } from "@mui/material";
 import { bonuses } from "./consts";
+import MainTitleWithContent from "../../new_components/MainTitleWithContent/MainTitleWithContent";
+import RecomendedItems from "../RecomendedItems/RecomendedItems";
 import "./Bonuses.scss";
 
 const Bonuses = () => {
+  const isXS = useMediaQuery("(max-width:700px)");
+
   return (
     <div id="bonuses" className="bonuses__container">
-      <div className="bonuses__main-text">
-        <h2>Бонусы</h2>
-      </div>
-      <div className="bonuses__content">
-        {bonuses.map((v) => (
-          <div className="bonuses__card" key={v.id}>
-            <div className="bonuses__content-card">
-              <div className="bonuses__image-card">{v.image}</div>
-              <div className="bonuses__text">
-                <p>{v.title}</p>
-                <span>{v.description}</span>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+      <MainTitleWithContent title="Бонусы" padding={isXS ? "0 15px 60px" : ""}>
+        <RecomendedItems items={bonuses} padding={"0px"} />
+      </MainTitleWithContent>
     </div>
   );
 };

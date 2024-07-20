@@ -36,7 +36,6 @@ const TextMaskCustom = forwardRef((props, ref) => {
   return (
     <IMaskInput
       {...other}
-      // mask="0 (000) 000-00-00"
       mask={masks}
       definitions={{
         "#": /[1-9]/,

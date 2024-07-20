@@ -1,43 +1,36 @@
-import { RiComputerLine } from "react-icons/ri";
-import { RiPhoneCameraLine } from "react-icons/ri";
-import { IoApps } from "react-icons/io5";
+import childImage from "./assets/child.png";
+import programForZoom from "./assets/programForZoom.png";
 
-export const items = [
+export const additionalItems = [
   {
     id: 1,
     title: "Удаленное подключение",
     description:
-      "Ребенку требуется любое электронное устройство (компьютер, ноутбук, планшет) с веб-камерой и микрофоном",
-    icon: <RiComputerLine />,
+      "Ребенку требуется любое электронное устройство (компьютер, ноутбук, планшет) с\u00A0веб-камерой и\u00A0микрофоном",
+    image: childImage,
   },
   {
     id: 2,
-    title: "Удобная программа",
-    description: "Программа интерактивна и реализуется в Zoom или Skype",
-    icon: <RiPhoneCameraLine />,
+    title: "Удобная программа обучения",
+    description: "Программа интерактивна и реализуется в\u00A0Zoom или Skype",
+    image: programForZoom,
+  },
+];
+
+export const links = [
+  {
+    id: 1,
+    title: "для ПК",
+    link: "https://zoom.us/support/down4j",
+  },
+  {
+    id: 2,
+    title: "с AppStore",
+    link: "https://apps.apple.com/ru/app/zoom-one-platform-to-connect/id546505307",
   },
   {
     id: 3,
-    icon: <IoApps />,
-    fields: [
-      {
-        id: 11,
-        title: "Скачать программу для",
-        type: "ПК",
-        link: "https://zoom.us/support/down4j",
-      },
-      {
-        id: 12,
-        title: "Скачать программу с",
-        type: "AppStore",
-        link: "https://apps.apple.com/ru/app/zoom-one-platform-to-connect/id546505307",
-      },
-      {
-        id: 13,
-        title: "Скачать программу с",
-        type: "Google Play",
-        link: "https://play.google.com/store/apps/details?id=us.zoom.videomeetings&hl=ru",
-      },
-    ],
+    title: "с Google Play",
+    link: "https://play.google.com/store/apps/details?id=us.zoom.videomeetings&hl=ru",
   },
 ];

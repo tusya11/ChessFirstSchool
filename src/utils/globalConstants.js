@@ -4,7 +4,7 @@ export const urlToSignUp =
 export const urlToWhatsApp =
   "https://api.whatsapp.com/send/?phone=79185445984&text&type=phone_number&app_absent=0";
 
-export const contactNumber = "+79185445984";
+export const contactNumber = "+7(918)544-59-84";
 
 //текстовые формы - 1, 3, 7
 export const TEXT_FORMS = {

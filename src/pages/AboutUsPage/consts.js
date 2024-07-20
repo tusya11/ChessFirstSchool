@@ -1,25 +1,26 @@
-import cap from "../../assets/cap.svg";
-import book_about from "../../assets/book_about.svg";
-import man_people from "../../assets/man_people.svg";
+import metodicsImage from "../../assets/metodics.png";
+import expertImage from "../../assets/expert.png";
+import tournamentsImage from "../../assets/tournaments.png";
 
-export const aboutUsItems = [
+export const approachToLearning = [
   {
     id: 1,
-    title: "Турниры",
+    title: "Методика",
+    image: metodicsImage,
     description:
-      "Проведение мастер-классов от Международных Гроссмейстеров, тематических турниров",
-    image: cap,
+      "Четко выстроенная программа обучения подойдет детям и взрослым с\u00A0любыми навыками",
   },
   {
     id: 2,
-    title: "Курс",
-    description: "Четко выстроенная программа обучения",
-    image: book_about,
+    title: "Работа с экспертом",
+    image: expertImage,
+    description: "Мониторинг прогресса обучения. Обратная связь",
   },
   {
     id: 3,
-    title: "Работа с экспертом",
-    description: "Мониторинг прогресса обучения. Обратная связь",
-    image: man_people,
+    title: "Турниры",
+    image: tournamentsImage,
+    description:
+      "Проведение мастер-классов от\u00A0Международных Гроссмейстеров тематических турниров",
   },
 ];

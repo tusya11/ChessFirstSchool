@@ -1,18 +1,25 @@
 import SocialLink from "../../components/SocialLink/SocialLink";
-import { FaWhatsapp } from "react-icons/fa";
-import { SlSocialVkontakte } from "react-icons/sl";
 import offer from "../../docs/offer.pdf";
 import privacyPolicy from "../../docs/privacy_policy.pdf";
-import "./Footer.scss";
 import { LINK_VK, LINK_WHATS_UP } from "./consts";
+import whatsup from "../../assets/whatsup_white.svg";
+import vk_mobile from "../../assets/vk_white.svg";
+import logoWhite from "../../assets/logoWhite.svg";
+import "./Footer.scss";
 
 const Footer = () => (
   <footer className="footer__container">
     <div className="footer__block">
-      <img
-        src="https://thumb.tildacdn.com/tild3139-3438-4465-b834-656330343861/-/resize/240x/-/format/webp/1.png"
-        alt="logo"
-      />
+      <div className="footer__links">
+        <div className="footer__logo">
+          <img src={logoWhite} alt="logo" />
+        </div>
+        <div className="footer__icons">
+          <SocialLink icon={vk_mobile} url={LINK_VK} />
+          <SocialLink icon={whatsup} url={LINK_WHATS_UP} />
+        </div>
+      </div>
+
       <div className="footer__docs">
         <a href={offer} target="_blank" rel="noreferrer">
           Договор оферты
@@ -20,10 +27,6 @@ const Footer = () => (
         <a href={privacyPolicy} target="_blank" rel="noreferrer">
           Политика конфиденциальности
         </a>
-      </div>
-      <div className="footer__icons">
-        <SocialLink icon={<SlSocialVkontakte />} url={LINK_VK} />
-        <SocialLink icon={<FaWhatsapp />} url={LINK_WHATS_UP} />
       </div>
     </div>
   </footer>

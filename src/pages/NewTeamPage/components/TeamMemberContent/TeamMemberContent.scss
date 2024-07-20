@@ -1,0 +1,34 @@
+.team-member-content__container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  p {
+    margin: 0;
+  }
+
+  .team-member-content__content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .team-member-content__fio {
+      font-family: "MontserratBold";
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    .team-member-content__dignity {
+      font-family: "MontserratRegular";
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  .team-member-content__description {
+    font-family: "MontserratRegular";
+    font-size: 16px;
+    line-height: 24px;
+    text-align: left;
+  }
+}

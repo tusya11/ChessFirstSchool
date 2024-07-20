@@ -1,0 +1,38 @@
+.section-item__container {
+  display: flex;
+  width: 100%;
+  gap: 16px;
+  align-items: center;
+
+  .ant-space-item {
+    width: auto !important;
+  }
+
+  .section-item__number {
+    width: 40px;
+    height: 40px;
+    background-color: #dce204;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "MontserratBold";
+    font-size: 1.5vw;
+    line-height: 20px;
+
+    @media screen and (max-width: 700px) {
+      font-size: 5vw;
+    }
+  }
+
+  .section-item__title {
+    font-family: "MontserratBold";
+    font-size: 1.5vw;
+    line-height: 20px;
+    margin: 0;
+
+    @media screen and (max-width: 700px) {
+      font-size: 5vw;
+    }
+  }
+}

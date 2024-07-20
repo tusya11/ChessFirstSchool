@@ -1,0 +1,27 @@
+.main-title-with-content__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 40px 100px;
+
+  @media screen and (max-width: 700px) {
+    padding: 0 15px 40px;
+  }
+
+  .main-title-with-content__title {
+    padding-bottom: 30px;
+
+    .main-title-with-content__main-text {
+      font-family: "MontserratBold";
+      font-size: 47px;
+      line-height: 57px;
+      margin: 0;
+
+      @media screen and (max-width: 700px) {
+        font-size: 32px;
+        line-height: 38px;
+        text-align: left;
+      }
+    }
+  }
+}

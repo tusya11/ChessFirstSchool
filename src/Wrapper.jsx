@@ -1,13 +1,17 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { observer } from "mobx-react-lite";
-import { Alert } from "@mui/material";
+import { Alert, debounce, useMediaQuery } from "@mui/material";
 import Content from "./parts/Content/Content";
 import Header from "./parts/Header/Header";
 import Footer from "./parts/Footer/Footer";
 import modal from "../src/store/modal";
 import ModalContent from "./parts/Modal/Modal";
-import SignUpContent from "./components/ModalContent/SignUpContent/SignUpContent";
+// import SignUpContent from "./components/ModalContent/SignUpContent/SignUpContent";
 import Payment from "./components/ModalContent/Payment/Payment";
+import FixedBtnRecord from "./new_components/FixedBtnRecord/FixedBtnRecord";
+// import DraggingModal from "./new_components/DraggingModal/DraggingModal";
+import NewSignUpContentModal from "./components/ModalContent/NewSignUpContentModal/NewSignUpContentModal";
+import useIntersectionObserver from "./hooks/useIntersectionObserver";
 
 const Wrapper = observer(() => {
   const {
@@ -19,6 +23,39 @@ const Wrapper = observer(() => {
     setAlertMsg,
     modalInfo,
   } = modal;
+
+  const isXS = useMediaQuery("(max-width:700px)");
+
+  // на блоках "Стоимость" и "Главный экран"
+  const shouldRemoveBtnForPreview =
+    useIntersectionObserver("preview__container");
+  const shouldRemoveBtnForNewPrice = useIntersectionObserver(
+    "new-price-page__container"
+  );
+
+  const shouldRemoveBtn =
+    shouldRemoveBtnForPreview || shouldRemoveBtnForNewPrice;
+
+  const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
+  const [visible, setVisible] = useState(true);
+
+  const handleScroll = debounce(() => {
+    const currentScrollPos = window.pageYOffset ?? document?.body?.scrollTop;
+    const visible = prevScrollPos > currentScrollPos;
+
+    setPrevScrollPos(currentScrollPos);
+    setVisible(visible);
+  }, 0);
+
+  useEffect(() => {
+    if (isXS) {
+      window.addEventListener("scroll", handleScroll);
+
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }
+  }, [prevScrollPos, visible, handleScroll, isXS]);
 
   const handleCloseModal = () => {
     setIsOpenModal(false);
@@ -36,10 +73,12 @@ const Wrapper = observer(() => {
 
   return (
     <div style={{ position: "relative", boxSizing: "border-box" }}>
-      <Header />
+      <Header className={visible ? "active" : "hidden"} />
       <Content />
       <Footer />
-      {isOpenModal && (
+      {isXS && !shouldRemoveBtn && <FixedBtnRecord />}
+      {/* TODO: удалить ненужный контент и проверить нужен ли он */}
+      {/* {isOpenModal && (
         <ModalContent
           titleHeader="Записаться"
           onClose={handleCloseModal}
@@ -47,7 +86,8 @@ const Wrapper = observer(() => {
         >
           <SignUpContent />
         </ModalContent>
-      )}
+      )} */}
+      <NewSignUpContentModal isOpen={isOpenModal} onClose={handleCloseModal} />
       {isOpenModalTransaction && (
         <ModalContent
           titleHeader="Оплата занятий"
