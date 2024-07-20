@@ -2,7 +2,9 @@ import React from "react";
 import { Button, ConfigProvider } from "antd";
 import { useMediaQuery } from "@mui/material";
 import modal from "../../store/modal";
-import ImagesContent from "./ImagesContent/ImagesContent";
+import deskImage from "./images/desk_image.png";
+import mobileImage from "./images/mobile_image.png";
+// import ImagesContent from "./ImagesContent/ImagesContent";
 import "./Preview.scss";
 
 const Preview = () => {
@@ -15,7 +17,7 @@ const Preview = () => {
   };
 
   return (
-    <section className="preview__container">
+    <section className="preview__container" id="preview__container">
       <div className="preview__content">
         <div className="preview__right-content-container">
           <div className="preview__right-content__block">
@@ -67,8 +69,11 @@ const Preview = () => {
         </div>
         <div className="preview__left-content">
           <div className="preview__left-block">
-            <ImagesContent />
+            <img src={isXS ? mobileImage : deskImage} alt="preview__icon" />
           </div>
+          {/* <div className="preview__left-block">
+            <ImagesContent />
+          </div> */}
         </div>
       </div>
     </section>

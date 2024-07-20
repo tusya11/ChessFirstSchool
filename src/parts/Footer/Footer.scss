@@ -4,11 +4,11 @@
   color: white;
   align-items: center;
   justify-content: center;
-  padding: 9vh 0;
+  padding: 9vh 80px;
   border-radius: 60px 60px 0px 0px;
 
   @media screen and (max-width: 700px) {
-    padding: 9vh 40px;
+    padding: 9vh 40px 13vh;
   }
 
   .footer__links {
@@ -49,19 +49,25 @@
     a {
       text-decoration: none;
       color: white;
-      font-size: 1.2vw;
+      font-size: 1.3vw;
       font-family: "MontserratLight";
+      transition: 0.3s;
 
       @media screen and (max-width: 700px) {
         font-size: 1.9vh;
       }
+    }
+
+    a:hover {
+      transition: 0.3s;
+      color: #464bff;
     }
   }
 
   .footer__block {
     display: flex;
     gap: 4vh;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 100%;
     width: 100%;
 

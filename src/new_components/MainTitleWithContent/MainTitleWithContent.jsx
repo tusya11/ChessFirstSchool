@@ -7,6 +7,7 @@ const MainTitleWithContent = ({
   children,
   padding,
   paddingUnderTitle = "30px",
+  paddingLeftTitle,
 }) => {
   return (
     <div
@@ -18,12 +19,14 @@ const MainTitleWithContent = ({
     >
       <div
         className="main-title-with-content__title"
-        style={{ paddingBottom: paddingUnderTitle }}
+        style={{
+          paddingBottom: paddingUnderTitle,
+          paddingLeft: paddingLeftTitle,
+        }}
       >
         <h3 className="main-title-with-content__main-text">{title}</h3>
       </div>
       {children}
-      {/* <div className="main-title-with-content__content">{children}</div> */}
     </div>
   );
 };

@@ -18,8 +18,8 @@ const AdditionalBlock = () => {
         <div className="additional-block__content">
           <div className="additional-block__main-text">
             <p className="additional-block__title">
-              На пробном занятии вам помогут настроить техническое оборудование
-              для обучения
+              На пробном занятии вам&nbsp;помогут настроить техническое
+              оборудование для&nbsp;обучения
             </p>
           </div>
           <div className="additional-block__block-content">

@@ -1,3 +1,7 @@
 .content__container {
   display: grid;
+
+  .PrivateSwipeArea-root {
+    height: 10px !important;
+  }
 }

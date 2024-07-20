@@ -6,9 +6,11 @@ import "./FixedBtnRecord.scss";
 const FixedBtnRecord = () => {
   const { setIsOpenModal } = modal;
 
-  const handleClickButton = () => {
+  const handleClickButton = (e) => {
+    e.stopPropagation();
     setIsOpenModal(true);
   };
+
   return (
     <div className="fixed-btn-record">
       <ConfigProvider

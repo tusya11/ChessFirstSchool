@@ -15,17 +15,18 @@ export const possibilities = [
   {
     id: 2,
     icon: chartIcon,
-    description: "Подготовиться к школе, повысить успеваемость",
+    description: "Подготовиться к\u00A0школе, повысить успеваемость",
   },
   {
     id: 3,
     icon: computerIcon,
-    description: "Проводить время за компьютером с пользой",
+    description: "Проводить время за\u00A0компьютером с\u00A0пользой",
   },
   {
     id: 4,
     icon: handIcon,
-    description: "Найти друзей по интересам из разных стран мира!",
+    description:
+      "Найти друзей по\u00A0интересам из\u00A0разных стран\u00A0мира!",
   },
   {
     id: 5,
@@ -35,6 +36,6 @@ export const possibilities = [
   {
     id: 6,
     icon: networkingIcon,
-    description: "Развить коммуникативные навыки и речь",
+    description: "Развить коммуникативные навыки и\u00A0речь",
   },
 ];

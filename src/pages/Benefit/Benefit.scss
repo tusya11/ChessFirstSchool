@@ -2,11 +2,9 @@
   width: 100%;
   padding: 0 40px;
   box-sizing: border-box;
-  margin-top: 100px;
 
   @media screen and (max-width: 700px) {
     padding: 0;
-    margin-top: 20px;
   }
 
   .benefit__all-content {
@@ -136,7 +134,7 @@
           }
 
           p {
-            color: #0c0531;
+            color: black;
             font-family: "MontserratBold";
             font-size: 1.7vw;
             font-style: normal;

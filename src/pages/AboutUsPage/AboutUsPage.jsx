@@ -10,8 +10,8 @@ const AboutUsPage = () => {
   return (
     <div className="about-us-page__container" id="about">
       <MainTitleWithContent
-        title="Наш подход к обучению"
-        padding={isXS ? "0 0 40px 15px" : ""}
+        title="Наш подход к&nbsp;обучению"
+        padding={isXS ? "0 0 60px 15px" : ""}
       >
         <div
           className="about-us-page__block-scroll"

@@ -7,14 +7,20 @@ import { contactNumber } from "../../../utils/globalConstants";
 import whatsup from "../../../assets/whatsupMobile.svg";
 import vk_mobile from "../../../assets/VK_Mobile.svg";
 
-import "./NavigationItemsMobile.scss";
 import SocialLink from "../../../components/SocialLink/SocialLink";
 import { LINK_VK, LINK_WHATS_UP } from "../../Footer/consts";
+import modal from "../../../store/modal";
+
+import "./NavigationItemsMobile.scss";
 
 const NavigationItemsMobile = ({ onChoose }) => {
+  const { setIsOpenModal } = modal;
   // eslint-disable-next-line no-unused-vars
   const [_, setSearchParams] = useSearchParams({ block: "" });
-  const handleClickButton = () => {};
+
+  const handleClickButton = () => {
+    setIsOpenModal(true);
+  };
 
   const handleClickLink = (link) => {
     setSearchParams({ block: link });

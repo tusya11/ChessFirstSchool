@@ -9,7 +9,7 @@
   box-sizing: border-box;
   background-color: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
-  padding: 1rem;
+  padding: 1rem 40px;
   z-index: 1000;
 
   @media screen and (max-width: 700px) {
@@ -25,7 +25,19 @@
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+
+    a {
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+
+      @media screen and (max-width: 700px) {
+        display: flex;
+        align-items: center;
+        width: 70%;
+      }
+    }
 
     @media screen and (max-width: 700px) {
       justify-content: flex-start;
@@ -38,13 +50,12 @@
 
   .header__navigate-block {
     display: flex;
-    gap: 2vw;
+    gap: 1.5vw;
     font-family: "MontserratSemiBold", sans-serif;
     color: black;
     cursor: pointer;
     height: 100%;
     align-items: flex-end;
-    padding-bottom: 10px;
     box-sizing: border-box;
 
     .header__navigate-block-item {
@@ -53,6 +64,7 @@
 
     .header__navigate-item {
       transition: color 0.3s ease;
+      font-size: 1.2vw;
     }
 
     .header__navigate-item::before {
@@ -79,20 +91,21 @@
       a {
         text-decoration: none;
         color: black;
+        font-size: 1.2vw;
       }
     }
   }
 
   .header__info-block {
     display: flex;
-    gap: 2em;
+    gap: 20px;
     height: 100%;
     align-items: center;
     justify-content: center;
 
     .header__social-link {
-      height: 50px;
-      width: 50px;
+      height: 45px;
+      width: 45px;
       border-radius: 50%;
       background-color: #45c179;
       transition: 0.3s;
@@ -110,11 +123,14 @@
     }
 
     .header__button {
-      font-size: 14px !important;
+      font-family: "GeologicaSemiBold";
+      font-size: 15px;
+      letter-spacing: 1px;
+      line-height: 20px;
       border-radius: 12px !important;
       text-transform: uppercase;
-      height: 3rem;
-      width: 13rem;
+      height: 6vh;
+      width: 15vw;
     }
   }
 }

@@ -4,7 +4,7 @@ import CardRecommend from "./CardRecommend/CardRecommend";
 
 import "./RecomendedItems.scss";
 
-const RecomendedItems = ({ items = [], padding }) => {
+const RecomendedItems = ({ items = [], padding, isSwiperScroll = false }) => {
   const isXS = useMediaQuery("(max-width:700px)");
 
   const getContent = (item) => {
@@ -15,11 +15,22 @@ const RecomendedItems = ({ items = [], padding }) => {
 
       return <div className="recomended-items__bordered" key={item.id}></div>;
     }
-    return <CardRecommend item={item} key={item.id} />;
+    return (
+      <CardRecommend item={item} key={item.id} isHorizontal={isSwiperScroll} />
+    );
   };
   return (
-    <div className="recomended-items__container">
-      <div className="recomended-items__content" style={{ padding: padding }}>
+    <div
+      className={`recomended-items__container ${
+        isSwiperScroll ? "scroll" : ""
+      }`}
+    >
+      <div
+        className={`recomended-items__content ${
+          isSwiperScroll ? "scroll" : ""
+        }`}
+        style={{ padding: padding }}
+      >
         {items.map((v) => getContent(v))}
       </div>
     </div>

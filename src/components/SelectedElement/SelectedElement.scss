@@ -1,0 +1,13 @@
+.selected-element__container {
+  background-color: #faf5f1;
+  border-radius: 12px;
+  padding: 13px;
+  box-sizing: border-box;
+  width: 100%;
+  cursor: pointer;
+}
+
+.selected-element__container.active {
+  background-color: white;
+  border: 2px #000000 solid;
+}

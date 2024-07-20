@@ -1,0 +1,201 @@
+.new-payment__container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 24px;
+
+  .new-payment__title {
+    font-family: "MontserratBold";
+    font-size: 3.5vw;
+    line-height: 50px;
+    margin: 0;
+
+    @media screen and (max-width: 700px) {
+      font-size: 10vw;
+    }
+  }
+
+  .new-payment__main-content {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+    .ant-space-item {
+      width: 100%;
+    }
+
+    .new-payment__form {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      gap: 30px;
+
+      .new-payment__section-item-1,
+      .new-payment__section-item-2 {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .new-payment__selected-elements {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .ant-space-item {
+          height: 50px;
+
+          @media screen and (max-width: 700px) {
+            height: auto;
+          }
+        }
+
+        .new-payment__tarif {
+          display: flex;
+          width: 100%;
+          align-items: center;
+          justify-content: space-between;
+          height: 100%;
+
+          @media screen and (max-width: 700px) {
+            flex-direction: column;
+          }
+
+          .new-payment__description {
+            font-family: "MontserratRegular";
+            font-size: 1.4vw;
+            line-height: 24px;
+
+            @media screen and (max-width: 700px) {
+              width: 100%;
+              font-size: 4vw;
+            }
+          }
+
+          .new-payment__price {
+            font-family: "MontserratBold";
+            font-size: 1.6vw;
+            line-height: 22px;
+
+            @media screen and (max-width: 700px) {
+              width: 100%;
+              font-size: 5vw;
+            }
+          }
+        }
+      }
+
+      .new-payment__user-data {
+        display: flex;
+        flex-direction: column;
+
+        .new-payment__two-inputs {
+          @media screen and (max-width: 700px) {
+            display: flex;
+            flex-direction: column;
+          }
+        }
+
+        .ant-space-item:nth-child(1) {
+          .input__container {
+            width: 100%;
+
+            .input__textfield {
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      .new-payment__privacy-policy {
+        display: flex;
+        flex-direction: column;
+
+        .new-payment__policy__checkbox {
+          .ant-checkbox:not(.ant-checkbox-disabled):hover .ant-checkbox-inner {
+            border-color: black;
+          }
+          .ant-checkbox-checked:not(.ant-checkbox-disabled)
+            .ant-checkbox-inner {
+            background-color: black;
+          }
+        }
+
+        .new-payment__policy__checkbox.error {
+          .ant-checkbox:not(.ant-checkbox-disabled):hover .ant-checkbox-inner {
+            border-color: #da0000;
+          }
+
+          .ant-checkbox-inner {
+            border-color: #da0000;
+          }
+        }
+
+        .new-payment__policy__title {
+          font-size: 1.4vw;
+          font-family: "MontserratRegular";
+
+          @media screen and (max-width: 700px) {
+            font-size: 3.3vw;
+          }
+
+          a {
+            text-decoration: underline;
+            color: black;
+          }
+        }
+      }
+    }
+  }
+
+  .new-payment__buttons {
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+
+    @media screen and (max-width: 700px) {
+      flex-direction: column;
+    }
+
+    .new-payment__button {
+      border-radius: 12px !important;
+      text-transform: uppercase;
+      height: 3rem;
+      width: 100%;
+      font-size: 1.2vw;
+      line-height: 30px;
+      letter-spacing: 2px;
+      font-family: "MontserratBold";
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @media screen and (max-width: 700px) {
+        font-size: 3.5vw;
+      }
+    }
+
+    .new-payment__button:nth-child(1) {
+      gap: 10px;
+
+      .new-payment__dolyame-logo {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          height: 110%;
+        }
+      }
+    }
+  }
+}
+
+.new-payment__error-text {
+  .ant-space-item {
+    height: auto !important;
+  }
+}
+
+.new-payment__display-none {
+  display: none;
+}

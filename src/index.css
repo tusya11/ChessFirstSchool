@@ -73,6 +73,21 @@ body {
   src: url(./fonts/Montserrat-ExtraBold.ttf);
 }
 
+@font-face {
+  font-family: "GeologicaExtraLight";
+  src: url(./fonts/Geologica_Auto-ExtraLight.ttf);
+}
+
+@font-face {
+  font-family: "GeologicaMedium";
+  src: url(./fonts/Geologica_Auto-Medium.ttf);
+}
+
+@font-face {
+  font-family: "GeologicaSemiBold";
+  src: url(./fonts/Geologica-SemiBold.ttf);
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

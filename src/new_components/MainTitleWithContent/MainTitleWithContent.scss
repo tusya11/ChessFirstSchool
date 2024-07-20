@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0 40px 40px;
+  padding: 0 40px 100px;
 
   @media screen and (max-width: 700px) {
     padding: 0 15px 40px;
@@ -24,9 +24,4 @@
       }
     }
   }
-
-  // .main-title-with-content__content {
-  //   width: 100%;
-  //   display: flex;
-  // }
 }

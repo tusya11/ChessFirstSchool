@@ -21,7 +21,7 @@
     @media screen and (max-width: 700px) {
       // padding: 40px 15px;
       padding: 20px;
-      flex-direction: column;
+      // flex-direction: column;
       box-sizing: border-box;
     }
 
@@ -30,4 +30,14 @@
       border: 2px solid #dce204;
     }
   }
+
+  .recomended-items__content.scroll {
+    overflow-x: scroll;
+    flex-wrap: initial;
+    justify-content: flex-start;
+  }
+}
+
+.recomended-items__container.scroll {
+  width: calc(100vw - 30px);
 }

@@ -1,0 +1,57 @@
+.finally-content__container {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  gap: 40px;
+
+  .ant-space-item {
+    width: 100%;
+  }
+
+  .finally-content__image {
+    width: 100%;
+    box-sizing: border-box;
+
+    img {
+      width: 100%;
+      border-radius: 40px;
+    }
+  }
+
+  .finally-content__title-container {
+    width: 100%;
+    display: flex;
+    gap: 16px;
+
+    .finally-content__title {
+      font-family: "MontserratBold";
+      font-size: 3vw;
+      margin: 0;
+      line-height: 55px;
+    }
+
+    .finally-content__text {
+      font-family: "MontserratLight";
+      font-size: 1.4vw;
+      line-height: 22px;
+    }
+  }
+
+  .finally-button {
+    display: flex;
+
+    .button {
+      margin-top: 12px;
+      width: 50%;
+      border-radius: 12px !important;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-family: "MontserratBold";
+      padding: 10px 0px;
+      font-size: 14px;
+      padding: 10px;
+    }
+  }
+}

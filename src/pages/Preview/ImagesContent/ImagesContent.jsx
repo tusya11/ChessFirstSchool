@@ -2,19 +2,10 @@ import React from "react";
 import { useMediaQuery } from "@mui/material";
 import framePurple from "../images/frame_purple.png";
 import frameBoy from "../images/frame_boy.png";
-// import frameBoyMobile from "../images/frame_boy-mobile.svg";
-
 import framePink from "../images/frame_pink.png";
-// import framePinkMobile from "../images/frame_pink-mobile.svg";
-
 import frameHorse from "../images/frame_horse.png";
-// import frameHorseMobile from "../images/frame_horse-mobile.svg";
-
 import frameGirl from "../images/frame_girl.png";
-import frameGirlMobile from "../images/frame_girl-mobile.svg";
-
 import framePawn from "../images/frame_pawn.png";
-// import framePawnMobile from "../images/frame_pawn-mobile.svg";
 
 import "./ImagesContent.scss";
 

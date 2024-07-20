@@ -1,0 +1,171 @@
+.new-sign-up-content-modal__container {
+  .ant-drawer-body {
+    padding: 0px 80px 80px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+
+    @media screen and (max-width: 700px) {
+      padding: 0px 16px 40px;
+      align-items: baseline;
+    }
+  }
+
+  .new-sign-up-content-modal__spinner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .new-sign-up-content-modal__title {
+    font-family: "MontserratBold";
+    font-size: 3.5vw;
+    line-height: 50px;
+    margin: 0;
+
+    @media screen and (max-width: 700px) {
+      font-size: 10vw;
+    }
+  }
+  .new-sign-up-content-modal__additional-text-1 {
+    font-family: "MontserratBold";
+    font-size: 1.5vw;
+    line-height: 22px;
+
+    @media screen and (max-width: 700px) {
+      font-size: 4.6vw;
+    }
+  }
+  .new-sign-up-content-modal__additional-text-2 {
+    font-family: "MontserratRegular";
+    font-size: 1.3vw;
+    line-height: 24px;
+
+    @media screen and (max-width: 700px) {
+      font-size: 4.3vw;
+    }
+  }
+
+  .input__textfield {
+    width: 100%;
+  }
+
+  .new-sign-up-content-modal__paper-form {
+    width: 100%;
+    gap: 30px;
+
+    .ant-space-item {
+      width: 100%;
+    }
+
+    .new-sign-up-content-modal__paper-form-space {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      @media screen and (max-width: 700px) {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+    }
+  }
+
+  .new-sign-up-content-modal__additional-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .new-sign-up-content-modal__checkboxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    height: 55px;
+
+    .new-sign-up-content-modal__messanger {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+
+      .new-sign-up-content-modal__text {
+        font-family: "MontserratRegular";
+        font-size: 1.4vw;
+        line-height: 24px;
+
+        @media screen and (max-width: 700px) {
+          font-size: 4vw;
+        }
+      }
+    }
+  }
+
+  .new-sign-up-content-modal__button {
+    margin-top: 30px;
+    display: flex;
+
+    .button {
+      width: 100%;
+      border-radius: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      line-height: 20px;
+      font-family: "GeologicaSemiBold";
+      padding: 10px 0px;
+      font-size: 14px;
+      padding: 10px;
+
+      @media screen and (max-width: 700px) {
+        height: 50px;
+      }
+    }
+  }
+}
+
+.new-sign-up-content-modal__container.finallyStep {
+  .ant-drawer-body {
+    padding: 0px 80px 80px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.new-sign-up-content-modal__privacy-policy {
+  display: flex;
+  flex-direction: column;
+
+  .new-sign-up-content-modal__policy__checkbox {
+    .ant-checkbox:not(.ant-checkbox-disabled):hover .ant-checkbox-inner {
+      border-color: black;
+    }
+    .ant-checkbox-checked:not(.ant-checkbox-disabled) .ant-checkbox-inner {
+      background-color: black;
+    }
+  }
+
+  .new-sign-up-content-modal__policy__checkbox.error {
+    .ant-checkbox:not(.ant-checkbox-disabled):hover .ant-checkbox-inner {
+      border-color: #da0000;
+    }
+
+    .ant-checkbox-inner {
+      border-color: #da0000;
+    }
+  }
+
+  .new-sign-up-content-modal__policy__title {
+    font-size: 1.4vw;
+    font-family: "MontserratRegular";
+
+    @media screen and (max-width: 700px) {
+      font-size: 3.3vw;
+    }
+
+    a {
+      text-decoration: underline;
+      color: black;
+    }
+  }
+}

@@ -67,8 +67,21 @@
   }
 }
 
+.card-recommend__content.scroll {
+  @media screen and (max-width: 700px) {
+    min-width: 330px !important;
+    padding: 0;
+  }
+}
+
 @media screen and (max-width: 700px) {
   .card-recommend__content:not(:last-child) {
     border-bottom: 2px solid #dce204;
+  }
+
+  .card-recommend__content.scroll {
+    border-bottom: none;
+    border-right: 2px solid #dce204;
+    padding-right: 40px;
   }
 }

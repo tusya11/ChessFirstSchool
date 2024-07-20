@@ -1,15 +1,20 @@
 import React, { useState } from "react";
 import { useMediaQuery } from "@mui/material";
+import { Drawer } from "antd";
+
 import { teamData } from "./consts";
 import line from "./assets/line_white.png";
 import lineArrow from "../AdditionalBlock/assets/arrow.svg";
+import DraggingModal from "../../new_components/DraggingModal/DraggingModal";
+import TeamMemberContent from "./components/TeamMemberContent/TeamMemberContent";
+
 import "./NewTeamPage.scss";
-import { Drawer } from "antd";
 
 const NewTeamPage = () => {
   const isXS = useMediaQuery("(max-width:700px)");
   const [isShowMore, setIsShowMore] = useState(false);
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
+  const [chosenMember, setChosenMember] = useState({});
 
   const firstBlock = [
     {
@@ -23,7 +28,8 @@ const NewTeamPage = () => {
     setIsShowMore((prev) => !prev);
   };
 
-  const handleClickOnMember = () => {
+  const handleClickOnMember = (member) => {
+    setChosenMember(member);
     setIsOpenDrawer(true);
   };
 
@@ -37,7 +43,7 @@ const NewTeamPage = () => {
     }
 
     return (
-      <div key={v.id} className="new-team-page__content">
+      <div key={v.id} className="new-team-page__content" id="team">
         {v.id === "first_item" ? (
           <div className="new-team-page__first-block">
             <p className="new-team-page__title">{v.title}</p>
@@ -45,7 +51,7 @@ const NewTeamPage = () => {
         ) : (
           <div
             className="new-team-page__team-member"
-            onClick={handleClickOnMember}
+            onClick={() => handleClickOnMember(v)}
           >
             <div className="new-team-page__image">
               <img src={v.image} alt="" />
@@ -60,6 +66,10 @@ const NewTeamPage = () => {
     );
   };
 
+  const toogleDrawer = (newOpen) => {
+    setIsOpenDrawer(newOpen);
+  };
+
   const handleClose = () => {
     setIsOpenDrawer((prev) => !prev);
   };
@@ -70,7 +80,7 @@ const NewTeamPage = () => {
         <div className="new-team-page__container">
           <div className="new-team-page__blocks-container">
             {data.map((v, index) => (
-              <>{showCards(v, index)}</>
+              <React.Fragment key={v.id}>{showCards(v, index)}</React.Fragment>
             ))}
           </div>
           <div className="new-team-page__last-item-container">
@@ -92,7 +102,7 @@ const NewTeamPage = () => {
       ) : (
         <div className="new-team-page__container">
           {data.map((v, index) => (
-            <>{showCards(v, index)}</>
+            <React.Fragment key={v.id}>{showCards(v, index)}</React.Fragment>
           ))}
           <div className="new-team-page__last-block">
             <div className="new-team-page__last-block-text">
@@ -107,21 +117,31 @@ const NewTeamPage = () => {
           </div>
         </div>
       )}
-      <Drawer
-        placement={"right"}
-        width={"50%"}
-        onClose={handleClose}
-        open={isOpenDrawer}
-        styles={{
-          header: {
-            display: "flex",
-            marginLeft: "auto",
-            border: "none",
-          },
-        }}
-      >
-        <div>Hello My Friends</div>
-      </Drawer>
+      {isXS ? (
+        <DraggingModal
+          isOpen={isOpenDrawer}
+          onOpen={toogleDrawer}
+          onClose={toogleDrawer}
+        >
+          <TeamMemberContent member={chosenMember} />
+        </DraggingModal>
+      ) : (
+        <Drawer
+          placement={"right"}
+          width={"50%"}
+          onClose={handleClose}
+          open={isOpenDrawer}
+          styles={{
+            header: {
+              display: "flex",
+              marginLeft: "auto",
+              border: "none",
+            },
+          }}
+        >
+          <TeamMemberContent member={chosenMember} />
+        </Drawer>
+      )}
     </>
   );
 };
