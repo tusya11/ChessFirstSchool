@@ -4,11 +4,13 @@
   padding: 0 40px 100px;
   box-sizing: border-box;
   transition: 0.3s;
+  gap: 20px;
 
   @media screen and (max-width: 700px) {
     display: flex;
     flex-direction: column;
     padding: 0 15px 60px;
+    gap: 0px;
   }
 
   .new-team-page__blocks-container {
@@ -178,6 +180,12 @@
     .new-team-page__image-line:hover {
       background-color: #fece62;
       transition: 0.3s;
+    }
+  }
+
+  .new-team-page__last-item-container {
+    @media screen and (max-width: 700px) {
+      margin-top: 12px;
     }
   }
 }

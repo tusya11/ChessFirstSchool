@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useMediaQuery } from "@mui/material";
 import Preview from "../../pages/Preview/Preview";
@@ -18,12 +18,25 @@ import NewPricePage from "../../pages/NewPricePage/NewPricePage";
 
 const Content = () => {
   const isXS = useMediaQuery("(max-width:700px)");
+  const [isDomLoaded, setIsDomLoaded] = useState(false);
 
   const [search] = useSearchParams();
   const blockTitle = search.get("block");
 
   useEffect(() => {
-    if (blockTitle) {
+    const handleLoad = () => {
+      setIsDomLoaded(true);
+    };
+
+    window.addEventListener("load", handleLoad);
+
+    return () => {
+      window.removeEventListener("load", handleLoad);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (blockTitle && isDomLoaded) {
       const foundElement = document.querySelector(`#${blockTitle}`);
 
       const yOffset = -100;
@@ -32,7 +45,9 @@ const Content = () => {
       const y =
         foundElement.getBoundingClientRect().top + currentScrollPos + yOffset;
 
-      window.scrollTo({ top: y, behavior: "smooth" });
+      if (foundElement) {
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }
 
       // if (foundElement) {
       //   foundElement.scrollIntoView({
@@ -42,7 +57,7 @@ const Content = () => {
       //   });
       // }
     }
-  }, [blockTitle]);
+  }, [blockTitle, isDomLoaded]);
 
   return (
     <div className="content__container">
