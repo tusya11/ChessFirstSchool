@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Button, Checkbox, ConfigProvider, Space, Typography } from "antd";
 import { useMediaQuery } from "@mui/material";
@@ -18,13 +18,17 @@ const { Title, Text } = Typography;
 const domain = process.env.REACT_APP_API_URL;
 const urlRequest = process.env.REACT_APP_NEST_URL;
 
-const NewPayment = ({ payment = {} }) => {
+const NewPayment = ({ payment = {}, tarif = {} }) => {
   const isXS = useMediaQuery("(max-width:700px)");
 
   const { setAlertMsg } = modal;
-  const [stateRate, setStateRate] = useState(
-    payment?.itemPrices?.map((v) => ({ ...v, selected: false })) ?? []
-  );
+  const [stateRate, setStateRate] = useState([]);
+
+  useEffect(() => {
+    setStateRate(
+      payment.itemPrices.map((v) => ({ ...v, selected: v.id === tarif?.id }))
+    );
+  }, [payment, tarif]);
 
   const [objValue, setObjValue] = useState({
     fio: "",

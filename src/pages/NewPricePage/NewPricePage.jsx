@@ -21,6 +21,7 @@ import "./NewPricePage.scss";
 const NewPricePage = () => {
   const isXS = useMediaQuery("(max-width:700px)");
   const [priceData, setPriceData] = useState(prices[0]);
+  const [tarif, setTarif] = useState({});
   const [valueOption, setValueOption] = useState(prices[0].flag);
   const options = [prices[0].flag, prices[1].flag, prices[2].flag];
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
@@ -36,6 +37,12 @@ const NewPricePage = () => {
 
   const handleClickButton = () => {
     setIsOpenDrawer(true);
+  };
+
+  const handleClickPriceData = (id) => {
+    const foundTarif = priceData?.itemPrices?.find((v) => v.id === id);
+    setTarif(foundTarif);
+    handleClickButton();
   };
 
   return (
@@ -76,7 +83,11 @@ const NewPricePage = () => {
               </div>
               <div className="new-price-page__paper-price-items">
                 {priceData.itemPrices.map((v) => (
-                  <div className="new-price-page__items" key={v.id}>
+                  <div
+                    className="new-price-page__items"
+                    key={v.id}
+                    onClick={() => handleClickPriceData(v.id)}
+                  >
                     <p className="new-price-page__description">
                       {v.description}
                     </p>
@@ -145,7 +156,7 @@ const NewPricePage = () => {
         }}
         className="new-price-page__drawer"
       >
-        <NewPayment payment={priceData} />
+        <NewPayment payment={priceData} tarif={tarif} />
       </Drawer>
     </>
   );

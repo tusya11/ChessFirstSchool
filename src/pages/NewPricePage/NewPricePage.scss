@@ -141,6 +141,12 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 10px;
+        //нужен чтобы при border блоки не увеличивались
+        height: 156px;
+
+        @media screen and (max-width: 700px) {
+          height: auto;
+        }
 
         .new-price-page__items {
           background-color: white;
@@ -148,10 +154,17 @@
           border-radius: 12px;
           display: flex;
           justify-content: space-between;
+          cursor: pointer;
+          transition: 0.3s;
+          max-height: 70px;
+          height: 70px;
+          box-sizing: border-box;
 
           @media screen and (max-width: 700px) {
             flex-direction: column;
             align-items: baseline;
+            max-height: 92px;
+            height: 92px;
           }
 
           .new-price-page__description {
@@ -167,6 +180,11 @@
             line-height: 29px;
             margin: 0;
           }
+        }
+
+        .new-price-page__items:hover {
+          border: 2px solid black;
+          transition: 0.3s;
         }
       }
 
