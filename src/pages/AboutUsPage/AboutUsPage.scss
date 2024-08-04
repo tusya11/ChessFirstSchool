@@ -26,7 +26,7 @@
     flex: 0 0 auto;
 
     @media screen and (max-width: 700px) {
-      min-width: 350px; /* Устанавливаем минимальную ширину каждого дочернего блока */
+      min-width: 280px; /* Устанавливаем минимальную ширину каждого дочернего блока */
     }
 
     .about-us-page__content-image {
@@ -53,12 +53,20 @@
         font-family: "MontserratBold";
         font-size: 24px;
         line-height: 29px;
+
+        @media screen and (max-width: 700px) {
+          font-size: 20px;
+        }
       }
 
       span {
         font-family: "MontserratLight";
         font-size: 18px;
         line-height: 27px;
+
+        @media screen and (max-width: 700px) {
+          font-size: 16px;
+        }
       }
     }
   }

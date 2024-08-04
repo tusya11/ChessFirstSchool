@@ -56,6 +56,10 @@
             font-size: 14px;
             line-height: 18px;
             letter-spacing: 4%;
+
+            @media screen and (max-width: 700px) {
+              font-size: 12px;
+            }
           }
         }
 
@@ -116,6 +120,7 @@
             font-size: 16px;
             line-height: 20px;
             padding: 18px 45px !important;
+            box-shadow: none;
 
             @media screen and (max-width: 700px) {
               width: 100%;

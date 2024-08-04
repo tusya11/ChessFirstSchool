@@ -22,30 +22,30 @@
 
   .new-sign-up-content-modal__title {
     font-family: "MontserratBold";
-    font-size: 3.5vw;
+    font-size: 48px;
     line-height: 50px;
     margin: 0;
 
     @media screen and (max-width: 700px) {
-      font-size: 10vw;
+      font-size: 32px;
     }
   }
   .new-sign-up-content-modal__additional-text-1 {
     font-family: "MontserratBold";
-    font-size: 1.5vw;
+    font-size: 18px;
     line-height: 22px;
 
     @media screen and (max-width: 700px) {
-      font-size: 4.6vw;
+      font-size: 16px;
     }
   }
   .new-sign-up-content-modal__additional-text-2 {
     font-family: "MontserratRegular";
-    font-size: 1.3vw;
+    font-size: 16px;
     line-height: 24px;
 
     @media screen and (max-width: 700px) {
-      font-size: 4.3vw;
+      font-size: 14px;
     }
   }
 
@@ -91,12 +91,8 @@
 
       .new-sign-up-content-modal__text {
         font-family: "MontserratRegular";
-        font-size: 1.4vw;
+        font-size: 16px;
         line-height: 24px;
-
-        @media screen and (max-width: 700px) {
-          font-size: 4vw;
-        }
       }
     }
   }
@@ -105,15 +101,20 @@
     margin-top: 30px;
     display: flex;
 
+    @media screen and (max-width: 700px) {
+      margin-top: 10px;
+    }
+
     .button {
+      height: 50px;
       width: 100%;
-      border-radius: 16px;
+      border-radius: 12px;
       text-transform: uppercase;
       letter-spacing: 1px;
       line-height: 20px;
       font-family: "GeologicaSemiBold";
       padding: 10px 0px;
-      font-size: 14px;
+      font-size: 16px;
       padding: 10px;
 
       @media screen and (max-width: 700px) {
@@ -156,12 +157,8 @@
   }
 
   .new-sign-up-content-modal__policy__title {
-    font-size: 1.4vw;
+    font-size: 16px;
     font-family: "MontserratRegular";
-
-    @media screen and (max-width: 700px) {
-      font-size: 3.3vw;
-    }
 
     a {
       text-decoration: underline;

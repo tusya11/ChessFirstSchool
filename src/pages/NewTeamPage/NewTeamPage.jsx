@@ -138,6 +138,7 @@ const NewTeamPage = () => {
               border: "none",
             },
           }}
+          className="new-team-page__drawer"
         >
           <TeamMemberContent member={chosenMember} />
         </Drawer>

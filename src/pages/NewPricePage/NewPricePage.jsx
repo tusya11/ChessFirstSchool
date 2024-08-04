@@ -1,13 +1,5 @@
 import React, { useState } from "react";
-import {
-  Button,
-  Col,
-  ConfigProvider,
-  Drawer,
-  Image,
-  Row,
-  Segmented,
-} from "antd";
+import { Button, Col, ConfigProvider, Drawer, Row, Segmented } from "antd";
 import { useMediaQuery } from "@mui/material";
 import NewPayment from "../../components/NewPayment/NewPayment";
 import MainTitleWithContent from "../../new_components/MainTitleWithContent/MainTitleWithContent";
@@ -55,10 +47,9 @@ const NewPricePage = () => {
         >
           <Row className="new-price-page__content" id="price">
             <Col flex={1} className="new-price-page__image-container">
-              <Image
-                width={"100%"}
-                height={"100%"}
+              <img
                 src={priceData.image}
+                alt="new-price-page-icon"
                 className="new-price-page__image"
               />
               {valueOption === prices[2]?.flag && (

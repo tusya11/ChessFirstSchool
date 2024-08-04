@@ -241,7 +241,7 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
               )}
               <Space
                 className="new-payment__two-inputs"
-                style={{ marginBottom: 16 }}
+                style={{ marginBottom: 16, width: "100%" }}
               >
                 <Space
                   direction="vertical"

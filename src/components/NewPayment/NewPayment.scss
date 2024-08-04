@@ -62,23 +62,21 @@
 
           .new-payment__description {
             font-family: "MontserratRegular";
-            font-size: 1.4vw;
+            font-size: 16px;
             line-height: 24px;
 
             @media screen and (max-width: 700px) {
               width: 100%;
-              font-size: 4vw;
             }
           }
 
           .new-payment__price {
             font-family: "MontserratBold";
-            font-size: 1.6vw;
+            font-size: 18px;
             line-height: 22px;
 
             @media screen and (max-width: 700px) {
               width: 100%;
-              font-size: 5vw;
             }
           }
         }
@@ -92,6 +90,12 @@
           @media screen and (max-width: 700px) {
             display: flex;
             flex-direction: column;
+          }
+
+          .ant-space-item {
+            .ant-space-gap-col-small {
+              width: 100%;
+            }
           }
         }
 
@@ -131,12 +135,8 @@
         }
 
         .new-payment__policy__title {
-          font-size: 1.4vw;
+          font-size: 16px;
           font-family: "MontserratRegular";
-
-          @media screen and (max-width: 700px) {
-            font-size: 3.3vw;
-          }
 
           a {
             text-decoration: underline;
@@ -161,17 +161,13 @@
       text-transform: uppercase;
       height: 3rem;
       width: 100%;
-      font-size: 1.2vw;
+      font-size: 16px;
       line-height: 30px;
       letter-spacing: 2px;
       font-family: "MontserratBold";
       display: flex;
       align-items: center;
       justify-content: center;
-
-      @media screen and (max-width: 700px) {
-        font-size: 3.5vw;
-      }
     }
 
     .new-payment__button:nth-child(1) {

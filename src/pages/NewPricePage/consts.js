@@ -8,7 +8,7 @@ export const prices = [
     image: image1,
     flag: "25 минут",
     title: `Идеально для\u00A0самых маленьких`,
-    subtitle: "детям от 3 до 6 лет",
+    subtitle: "детям с 4-х до 7 лет",
     itemPrices: [
       {
         id: 1,
