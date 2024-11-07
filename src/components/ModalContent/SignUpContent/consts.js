@@ -1,2 +1,2 @@
 export const scriptURL =
-  "https://script.google.com/macros/s/AKfycbw7JckR2Ovh4g-oSKkI5DCNTbDSxhN_cJJ-GTMnmXKI8Uo-GUtcJcxcIXavIZS8MR8/exec";
+  "https://script.google.com/macros/s/AKfycbwm6UOwMqvArzOfpjQ4rwy8buMzwOPC2VHcZDSDaXbdSTz2uOlMBHFJcp6zdLXXtc7s/exec";
