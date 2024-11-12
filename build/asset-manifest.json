@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.a5f5e6bc.css",
-    "main.js": "/static/js/main.5eee86ae.js",
+    "main.js": "/static/js/main.8f1bcc7d.js",
     "static/media/alina_gena.jpg": "/static/media/alina_gena.e4c53d7ca61c0b643aa9.jpg",
     "static/media/img_25min.png": "/static/media/img_25min.28b5b81d4df0c71bb122.png",
     "static/media/calendar.svg": "/static/media/calendar.5a0b27aabb81093976441b02cfc8cbd2.svg",
@@ -74,10 +74,10 @@
     "static/media/burgerMenuBtn.svg": "/static/media/burgerMenuBtn.150e0ab1cb20389d4b4188127de3c367.svg",
     "static/media/arrow.svg": "/static/media/arrow.3e7917d71cc4df22795d6e956cf48fd9.svg",
     "main.a5f5e6bc.css.map": "/static/css/main.a5f5e6bc.css.map",
-    "main.5eee86ae.js.map": "/static/js/main.5eee86ae.js.map"
+    "main.8f1bcc7d.js.map": "/static/js/main.8f1bcc7d.js.map"
   },
   "entrypoints": [
     "static/css/main.a5f5e6bc.css",
-    "static/js/main.5eee86ae.js"
+    "static/js/main.8f1bcc7d.js"
   ]
 }
