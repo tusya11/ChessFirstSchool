@@ -2,7 +2,6 @@ import TiltComponent from "../TiltComponent/TiltComponent";
 import "./CardPerson.scss";
 
 const CardPerson = ({ card }) => {
-  console.log("---card", card);
   return (
     <div className="card-person__container">
       <div className="card-person__element bg"></div>

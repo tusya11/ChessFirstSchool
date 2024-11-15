@@ -32,7 +32,6 @@ const Header = observer(({ className }) => {
   };
 
   const handleClose = () => {
-    console.log("---1");
     setIsOpenDrawer(false);
   };
 

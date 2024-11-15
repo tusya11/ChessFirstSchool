@@ -136,7 +136,7 @@ const Payment = observer(({ data }) => {
       // window.open(response.data.link, "_blank");
       window.location.href = response.data.link;
     } catch (e) {
-      console.log("---e", e);
+      console.error("---e", e);
       setAlertMsg({
         status: "error",
         message: e.response.data.message,

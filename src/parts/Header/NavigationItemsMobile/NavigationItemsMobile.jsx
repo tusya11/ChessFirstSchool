@@ -20,6 +20,7 @@ const NavigationItemsMobile = ({ onChoose }) => {
 
   const handleClickButton = () => {
     setIsOpenModal(true);
+    onChoose();
   };
 
   const handleClickLink = (link) => {
