@@ -160,6 +160,16 @@
           height: 70px;
           box-sizing: border-box;
 
+          .new-price-page__block-description {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+
+            @media screen and (max-width: 700px) {
+              flex-direction: column;
+            }
+          }
+
           @media screen and (max-width: 700px) {
             flex-direction: column;
             align-items: baseline;
@@ -185,6 +195,56 @@
         .new-price-page__items:hover {
           border: 2px solid black;
           transition: 0.3s;
+        }
+
+        .new-price-page__items-2 {
+          background-color: white;
+          border-radius: 12px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          cursor: pointer;
+          transition: 0.3s;
+          box-sizing: border-box;
+          gap: 2px;
+
+          @media screen and (max-width: 700px) {
+            flex-direction: column;
+            align-items: baseline;
+          }
+
+          .new-price-page__block-description {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+            @media screen and (max-width: 700px) {
+              flex-direction: column;
+              align-items: baseline;
+              width: 100%;
+              align-items: center;
+            }
+          }
+
+          .new-price-page__additional-text {
+            font-family: "MontserratLight";
+            font-size: 14px;
+            line-height: 28px;
+          }
+
+          .new-price-page__description {
+            font-family: "MontserratLight";
+            font-size: 18px;
+            line-height: 28px;
+            margin: 0;
+          }
+
+          .new-price-page__price {
+            font-family: "MontserratBold";
+            font-size: 20px;
+            line-height: 29px;
+            margin: 0;
+          }
         }
       }
 

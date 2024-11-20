@@ -13,6 +13,7 @@ import Benefit from "../../pages/Benefit/Benefit";
 // import Price from "../../components/Price/Price";
 import Bonuses from "../../pages/Bonuses/Bonuses";
 import AdditionalBlock from "../../pages/AdditionalBlock/AdditionalBlock";
+import { prices } from "../../pages/NewPricePage/consts";
 import "./Content.scss";
 // import NewTeamPage from "../../pages/NewTeamPage/NewTeamPage";
 // import NewPricePage from "../../pages/NewPricePage/NewPricePage";
@@ -85,7 +86,7 @@ const Content = () => {
       {/* <Classes /> */}
       {/* <Price /> */}
       <Suspense fallback={<Spin />}>
-        <NewPricePageLazy />
+        <NewPricePageLazy prices={prices} />
       </Suspense>
 
       {/* <Price /> */}
