@@ -230,6 +230,11 @@
             font-family: "MontserratLight";
             font-size: 14px;
             line-height: 28px;
+
+            @media screen and (max-width: 700px) {
+              width: 100%;
+              line-break: auto;
+            }
           }
 
           .new-price-page__description {

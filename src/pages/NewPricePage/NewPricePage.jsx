@@ -96,7 +96,7 @@ const NewPricePage = ({ prices, hideElements = false, titlePt = "0px" }) => {
                     </div>
                     {hideElements && (
                       <div className="new-price-page__additional-text">
-                        {v.additional_content}
+                        <span>{v.additional_content}</span>
                       </div>
                     )}
                   </div>
