@@ -300,6 +300,7 @@ const Payment = observer(({ data }) => {
               src={partPayment}
               alt="pay_dolyami_image"
               className="sign-up-content_pay-keeper"
+              loading="lazy"
             />
           </div>
         </Button>

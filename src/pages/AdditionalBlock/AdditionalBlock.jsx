@@ -26,7 +26,7 @@ const AdditionalBlock = () => {
             {additionalItems.map((item) => (
               <div key={item.id} className="additional-block__item-content">
                 <div className="additional-block__image-container">
-                  <img src={item.image} alt="block-with-img" />
+                  <img src={item.image} alt="block-with-img" loading="lazy" />
                 </div>
                 <div className="additional-block__with-main-content">
                   <p className="additional-block__primary">{item.title}</p>
@@ -52,7 +52,7 @@ const AdditionalBlock = () => {
                       className="additional-block__arrow-down"
                       onClick={() => handleClickLink(v.link)}
                     >
-                      <img src={arrow} alt="" />
+                      <img src={arrow} alt="" loading="lazy" />
                     </div>
                   </div>
                 ))}

@@ -16,7 +16,7 @@ const CardRecommend = ({ item, className, isHorizontal = false }) => {
     >
       <div className="card-recommend__main">
         <div className="card-recommend__image">
-          <img src={item.icon} alt="recommend-card-icon" />
+          <img src={item.icon} alt="recommend-card-icon" loading="lazy" />
         </div>
         {isXS && (
           <div className="card-recommend__title">

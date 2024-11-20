@@ -138,6 +138,12 @@
 
 .header.active {
   top: 0;
+
+  .header_menu_burger_button {
+    img {
+      aspect-ratio: 1/1;
+    }
+  }
 }
 
 .header.hidden {

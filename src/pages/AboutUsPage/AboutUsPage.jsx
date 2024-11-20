@@ -20,7 +20,11 @@ const AboutUsPage = () => {
           {approachToLearning.map((item) => (
             <div key={item.id} className="about-us-page__block">
               <div className="about-us-page__content-image">
-                <img src={item.image} alt="content-about-us-page" />
+                <img
+                  src={item.image}
+                  alt="content-about-us-page"
+                  loading="lazy"
+                />
               </div>
               <div className="about-us-page__content-block">
                 <p>{item.title}</p>

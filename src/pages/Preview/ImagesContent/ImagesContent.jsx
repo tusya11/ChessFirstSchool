@@ -16,27 +16,27 @@ const ImagesContent = () => {
       <div className="images-content__container">
         {!isXS && (
           <div className="images-content__frame-purple">
-            <img src={framePurple} alt="frame-purple" />
+            <img src={framePurple} alt="frame-purple" loading="lazy" />
           </div>
         )}
         <div className="images-content__frame-boy">
-          <img src={frameBoy} alt="frame-boy" />
+          <img src={frameBoy} alt="frame-boy" loading="lazy" />
         </div>
       </div>
       <div className="images-content__container">
         <div className="images-content__frame-horse">
-          <img src={frameHorse} alt="frame-horse" />
+          <img src={frameHorse} alt="frame-horse" loading="lazy" />
         </div>
         <div className="images-content__frame-pink">
-          <img src={framePink} alt="frame-pink" />
+          <img src={framePink} alt="frame-pink" loading="lazy" />
         </div>
       </div>
       <div className="images-content__container">
         <div className="images-content__frame-girl">
-          <img src={frameGirl} alt="frame-girl" />
+          <img src={frameGirl} alt="frame-girl" loading="lazy" />
         </div>
         <div className="images-content__frame-pawn">
-          <img src={framePawn} alt="frame-pawn" />
+          <img src={framePawn} alt="frame-pawn" loading="lazy" />
         </div>
       </div>
     </>

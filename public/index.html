@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru" xml:lang="ru">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/school.png" />
@@ -10,10 +10,6 @@
       rel="stylesheet"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1"
-    />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
@@ -25,7 +21,7 @@
     <a
       href="https://metrika.yandex.ru/stat/?id=96915259&amp;from=informer"
       target="_blank"
-      rel="nofollow"
+      rel="nofollow noopener"
       ><img
         src="https://metrika-informer.com/informer/96915259/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"
         style="width: 88px; height: 31px; border: 0; display: none"
@@ -38,36 +34,38 @@
     <!-- /Yandex.Metrika informer -->
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
-      (function (m, e, t, r, i, k, a) {
-        m[i] =
-          m[i] ||
-          function () {
-            (m[i].a = m[i].a || []).push(arguments);
-          };
-        m[i].l = 1 * new Date();
-        for (var j = 0; j < document.scripts.length; j++) {
-          if (document.scripts[j].src === r) {
-            return;
+      window.addEventListener("DOMContentLoaded", function () {
+        (function (m, e, t, r, i, k, a) {
+          m[i] =
+            m[i] ||
+            function () {
+              (m[i].a = m[i].a || []).push(arguments);
+            };
+          m[i].l = 1 * new Date();
+          for (var j = 0; j < document.scripts.length; j++) {
+            if (document.scripts[j].src === r) {
+              return;
+            }
           }
-        }
-        (k = e.createElement(t)),
-          (a = e.getElementsByTagName(t)[0]),
-          (k.async = 1),
-          (k.src = r),
-          a.parentNode.insertBefore(k, a);
-      })(
-        window,
-        document,
-        "script",
-        "https://cdn.jsdelivr.net/npm/yandex-metrica-watch/tag.js",
-        "ym"
-      );
-      ym(96915259, "init", {
-        clickmap: true,
-        trackLinks: true,
-        accurateTrackBounce: true,
-        webvisor: true,
-        trackHash: true,
+          (k = e.createElement(t)),
+            (a = e.getElementsByTagName(t)[0]),
+            (k.async = 1),
+            (k.src = r),
+            a.parentNode.insertBefore(k, a);
+        })(
+          window,
+          document,
+          "script",
+          "https://cdn.jsdelivr.net/npm/yandex-metrica-watch/tag.js",
+          "ym"
+        );
+        ym(96915259, "init", {
+          clickmap: true,
+          trackLinks: true,
+          accurateTrackBounce: true,
+          webvisor: false, // Отключить вебвизор, если он не нужен
+          trackHash: true,
+        });
       });
     </script>
     <noscript

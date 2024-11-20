@@ -24,6 +24,12 @@
       align-items: flex-end;
     }
 
+    .card-recommend__image {
+      img {
+        aspect-ratio: 1/1;
+      }
+    }
+
     .card-recommend__title {
       padding-bottom: 20px;
     }

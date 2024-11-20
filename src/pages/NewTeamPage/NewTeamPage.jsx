@@ -54,7 +54,7 @@ const NewTeamPage = () => {
             onClick={() => handleClickOnMember(v)}
           >
             <div className="new-team-page__image">
-              <img src={v.image} alt="" />
+              <img src={v.image} alt="team_image" loading="lazy" />
             </div>
             <div className="new-team-page__member-description">
               <p>{v.name}</p>
@@ -94,7 +94,7 @@ const NewTeamPage = () => {
                 }`}
                 onClick={handleClickArrow}
               >
-                <img src={lineArrow} alt="" />
+                <img src={lineArrow} alt="" loading="lazy" />
               </div>
             </div>
           </div>
@@ -112,7 +112,7 @@ const NewTeamPage = () => {
               className={`new-team-page__image-line ${isShowMore && "active"}`}
               onClick={handleClickArrow}
             >
-              <img src={line} alt="line-white" />
+              <img src={line} alt="line-white" loading="lazy" />
             </div>
           </div>
         </div>

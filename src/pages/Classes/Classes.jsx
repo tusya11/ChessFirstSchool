@@ -6,7 +6,7 @@ import "./Classes.scss";
 const Classes = () => (
   <div className="classes__container">
     <div className="classes__image">
-      <img src={imageReplays} alt="replays classes" />
+      <img src={imageReplays} alt="replays classes" loading="lazy" />
     </div>
     <div className="classes__main-text">
       <h2>Как проходят занятия?</h2>

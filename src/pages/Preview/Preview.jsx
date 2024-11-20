@@ -69,7 +69,11 @@ const Preview = () => {
         </div>
         <div className="preview__left-content">
           <div className="preview__left-block">
-            <img src={isXS ? mobileImage : deskImage} alt="preview__icon" />
+            <img
+              src={isXS ? mobileImage : deskImage}
+              alt="preview__icon"
+              loading="eager"
+            />
           </div>
           {/* <div className="preview__left-block">
             <ImagesContent />

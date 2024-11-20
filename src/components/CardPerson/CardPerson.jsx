@@ -9,7 +9,7 @@ const CardPerson = ({ card }) => {
 
       <TiltComponent>
         <div className="card-person__element imgBox">
-          <img src={card.image} alt="person" />
+          <img src={card.image} alt="person" loading="lazy" />
         </div>
       </TiltComponent>
 

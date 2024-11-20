@@ -212,7 +212,7 @@ const NewSignUpContentModal = ({ isOpen, onClose }) => {
                   {messengers.map((v) => {
                     const Component = (
                       <div className="new-sign-up-content-modal__messanger">
-                        <img src={v.icon} alt="messanger-icon" />
+                        <img src={v.icon} alt="messanger-icon" loading="lazy" />
                         <Text className="new-sign-up-content-modal__text">
                           {v.title}
                         </Text>

@@ -39,7 +39,7 @@ const Header = observer(({ className }) => {
     <header className={clsx("header", className)}>
       <div className="header__image-container">
         <a href="/">
-          <img className="header__image" src={logo} alt="" />
+          <img className="header__image" src={logo} alt="" loading="lazy" />
         </a>
       </div>
       {isXS ? (
@@ -48,7 +48,7 @@ const Header = observer(({ className }) => {
             className="header_menu_burger_button"
             onClick={() => setIsOpenDrawer(true)}
           >
-            <img src={menuButton} alt="burger-menu-button" />
+            <img src={menuButton} alt="burger-menu-button" loading="lazy" />
           </div>
           <Drawer
             placement={"left"}
@@ -95,7 +95,7 @@ const Header = observer(({ className }) => {
               rel="noreferrer"
               className="header__social-link__icon"
             >
-              <img src={whatsupLogo} alt="social-link-whatsup" />
+              <img src={whatsupLogo} alt="social-link-whatsup" loading="lazy" />
             </a>
           </div>
           <ConfigProvider

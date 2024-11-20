@@ -20,7 +20,7 @@ const Benefit = () => {
                 <div key={v.id} className="benefit__content-card">
                   <div className="benefit__text">
                     <div className="benefit__block-with-icon">
-                      <img src={horseIcon} alt="icon-horse" />
+                      <img src={horseIcon} alt="icon-horse" loading="lazy" />
                       <p>{v.title}</p>
                     </div>
                     <span>{v.description}</span>
@@ -35,7 +35,7 @@ const Benefit = () => {
                 <div key={v.id} className="benefit__content-card">
                   <div className="benefit__text">
                     <div className="benefit__block-with-icon">
-                      <img src={horseIcon} alt="icon-horse" />
+                      <img src={horseIcon} alt="icon-horse" loading="lazy" />
                       <p>{v.title}</p>
                     </div>
                     <span>{v.description}</span>
@@ -50,7 +50,7 @@ const Benefit = () => {
                 <div key={v.id} className="benefit__content-card">
                   <div className="benefit__text">
                     <div className="benefit__block-with-icon">
-                      <img src={horseIcon} alt="icon-horse" />
+                      <img src={horseIcon} alt="icon-horse" loading="lazy" />
                       <p>{v.title}</p>
                     </div>
                     <span>{v.description}</span>

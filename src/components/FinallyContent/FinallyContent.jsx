@@ -9,7 +9,7 @@ const { Title, Text } = Typography;
 const FinallyContent = ({ onClose }) => (
   <Space className="finally-content__container">
     <Space className="finally-content__image">
-      <img src={finallyImage} alt="finally-img" />
+      <img src={finallyImage} alt="finally-img" loading="lazy" />
     </Space>
     <Space className="finally-content__title-container" direction="vertical">
       <Title level={2} className="finally-content__title">

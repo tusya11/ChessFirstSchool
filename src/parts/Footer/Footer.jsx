@@ -12,7 +12,7 @@ const Footer = () => (
     <div className="footer__block">
       <div className="footer__links">
         <div className="footer__logo">
-          <img src={logoWhite} alt="logo" />
+          <img src={logoWhite} alt="logo" loading="lazy" />
         </div>
         <div className="footer__icons">
           <SocialLink icon={vk_mobile} url={LINK_VK} />

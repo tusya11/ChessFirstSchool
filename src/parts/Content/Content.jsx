@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useMediaQuery } from "@mui/material";
+import { Spin } from "antd";
 import Preview from "../../pages/Preview/Preview";
 import RecomendedItems from "../../pages/RecomendedItems/RecomendedItems";
 import AboutUsPage from "../../pages/AboutUsPage/AboutUsPage";
@@ -13,8 +14,16 @@ import Benefit from "../../pages/Benefit/Benefit";
 import Bonuses from "../../pages/Bonuses/Bonuses";
 import AdditionalBlock from "../../pages/AdditionalBlock/AdditionalBlock";
 import "./Content.scss";
-import NewTeamPage from "../../pages/NewTeamPage/NewTeamPage";
-import NewPricePage from "../../pages/NewPricePage/NewPricePage";
+// import NewTeamPage from "../../pages/NewTeamPage/NewTeamPage";
+// import NewPricePage from "../../pages/NewPricePage/NewPricePage";
+
+const NewPricePageLazy = React.lazy(() =>
+  import("../../pages/NewPricePage/NewPricePage")
+);
+
+const NewTeamPageLazy = React.lazy(() =>
+  import("../../pages/NewTeamPage/NewTeamPage")
+);
 
 const Content = () => {
   const isXS = useMediaQuery("(max-width:700px)");
@@ -70,10 +79,15 @@ const Content = () => {
       <BlockOfPossibilities />
       <Benefit />
       <FacilitateCourses />
-      <NewTeamPage />
+      <Suspense fallback={<Spin />}>
+        <NewTeamPageLazy />
+      </Suspense>
       {/* <Classes /> */}
       {/* <Price /> */}
-      <NewPricePage />
+      <Suspense fallback={<Spin />}>
+        <NewPricePageLazy />
+      </Suspense>
+
       {/* <Price /> */}
       <Bonuses />
       <AdditionalBlock />

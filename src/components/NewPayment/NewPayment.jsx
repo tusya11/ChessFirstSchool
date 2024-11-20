@@ -340,7 +340,7 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
               >
                 Оплатить{" "}
                 <div className="new-payment__dolyame-logo">
-                  <img src={dolyameLogo} alt="dolyame-logo" />
+                  <img src={dolyameLogo} alt="dolyame-logo" loading="lazy" />
                 </div>
               </Button>
             </ConfigProvider>

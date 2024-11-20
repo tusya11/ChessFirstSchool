@@ -48,7 +48,7 @@ const FailurePage = observer(() => {
       <div className="failure-page__content">
         <div className="failure-page__card">
           <div className="failure-page__icon">
-            <img src={failIcon} alt="failure-icon" />
+            <img src={failIcon} alt="failure-icon" loading="lazy" />
           </div>
           <div className="failure-page__text">
             <p className="failure-page__title">Возникли проблемы при оплате</p>

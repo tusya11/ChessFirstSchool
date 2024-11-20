@@ -37,7 +37,7 @@ const SwiperSlideComponent = ({ item }) => {
         ) : (
           <>
             <div className="image" style={{ border: `3px solid ${color}` }}>
-              <img src={item.image} alt="card slider" />
+              <img src={item.image} alt="card slider" loading="lazy" />
             </div>
             <h3>{item.name.toUpperCase()}</h3>
             <p style={{ color: color }}>{item.dignity}</p>

@@ -16,7 +16,7 @@ const BlockOfPossibilities = () => {
         {possibilities.map((v) => (
           <div key={v.id} className="block-of-possibilities__content">
             <div className="block-of-possibilities__image">
-              <img src={v.icon} alt="" />
+              <img src={v.icon} alt="" loading="lazy" />
             </div>
             <div className="block-of-possibilities__main-text">
               <p className="block-of-possibilities__description">

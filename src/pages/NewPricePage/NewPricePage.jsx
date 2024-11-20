@@ -51,10 +51,11 @@ const NewPricePage = () => {
                 src={priceData.image}
                 alt="new-price-page-icon"
                 className="new-price-page__image"
+                loading="lazy"
               />
               {valueOption === prices[2]?.flag && (
                 <div className="new-price-page__icon">
-                  <img src={trophyImage} alt="icon-price-page" />
+                  <img src={trophyImage} alt="icon-price-page" loading="lazy" />
                 </div>
               )}
             </Col>
@@ -69,7 +70,7 @@ const NewPricePage = () => {
                 />
               </div>
               <div className="new-price-page__paper-text">
-                <h6 className="new-price-page__main-text">{priceData.title}</h6>
+                <h3 className="new-price-page__main-text">{priceData.title}</h3>
                 <p className="new-price-page__subtitle">{priceData.subtitle}</p>
               </div>
               <div className="new-price-page__paper-price-items">
@@ -119,7 +120,7 @@ const NewPricePage = () => {
       </div>
       <div className="new-price-page__dolyami">
         <div className="new-price-page__icon">
-          <img src={dolyamiImage} alt="dolyami-icon" />
+          <img src={dolyamiImage} alt="dolyami-icon" loading="lazy" />
         </div>
         <div className="new-price-page__quote">
           <div className="new-price-page__text">
@@ -129,7 +130,7 @@ const NewPricePage = () => {
             </p>
           </div>
           <div className="new-price-page__logo">
-            <img src={dolyamiLogo} alt="dolyami_logo" />
+            <img src={dolyamiLogo} alt="dolyami_logo" loading="lazy" />
           </div>
         </div>
       </div>
