@@ -1,5 +1,5 @@
 import image1 from "./assets/kirill_alex.png";
-import image2 from "./assets/uliana_serg.png";
+import image2 from "./assets/maria_gena.jpg";
 import image3 from "./assets/karen_vlad.png";
 import image4 from "./assets/alex_alex.png";
 import image5 from "./assets/angelic_akop.png";
@@ -10,6 +10,7 @@ import image9 from "./assets/danil_sergeevich.png";
 import image10 from "./assets/dmitriy_ura.png";
 import image11 from "./assets/elmar_valera.png";
 import image12 from "./assets/dmitriy_vadim.png";
+import image13 from "./assets/daria_yaroslav.jpg";
 
 export const teamData = [
   {
@@ -22,10 +23,10 @@ export const teamData = [
   },
   {
     id: 2,
-    name: "Ульяна Сергеевна",
-    dignity: "Кандидат в мастера спорта",
+    name: "Мария Геннадиевна",
+    dignity: "1 разряд",
     description:
-      "Многократный призер и чемпионка Северо-Кавказского Федерального округа по классическим, быстрым шахматам и блицу. Дважды участница Финала Высшей лиги России среди женщин. Серебряный призер Спартакиады в Белгороде, чемпионка и призер областных межвузовских соревнований ",
+      "Многократный призер областных соревнований по быстрым шахматам и классике, победитель Гран-при Ростовской области в своей категории, участница Всероссийских соревнований. Член сборной Южного федерального университета по шахматам",
     image: image2,
   },
   {
@@ -85,6 +86,14 @@ export const teamData = [
   },
   {
     id: 10,
+    name: "Дарья Ярославна",
+    dignity: "1 разряд",
+    description:
+      "Участница Всероссийских турниров. С легкостью находит общий язык с детьми.",
+    image: image13,
+  },
+  {
+    id: 11,
     name: "Дмитрий Юрьевич",
     dignity: "Кандидат в мастера спорта",
     description:
@@ -92,7 +101,7 @@ export const teamData = [
     image: image10,
   },
   {
-    id: 11,
+    id: 12,
     name: "Эльмар Валерьевич",
     dignity: "Кандидат технических наук, кандидат в мастера спорта",
     description:
@@ -100,7 +109,7 @@ export const teamData = [
     image: image11,
   },
   {
-    id: 12,
+    id: 13,
     name: "Дмитрий Вадимович",
     dignity: "Международный Гроссмейстер",
     description: `Победитель опен-турниров в Дели и Нови-Саде (2010 год), Берлине (2017), Дитцине (2018). 
