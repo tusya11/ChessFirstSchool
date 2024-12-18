@@ -10,7 +10,12 @@ import dolyamiLogo from "./assets/dolyami_logo.png";
 
 import "./NewPricePage.scss";
 
-const NewPricePage = ({ prices, hideElements = false, titlePt = "0px" }) => {
+const NewPricePage = ({
+  prices,
+  hasAdditional = false,
+  hideElements = false,
+  titlePt = "0px",
+}) => {
   const isXS = useMediaQuery("(max-width:700px)");
   const [priceData, setPriceData] = useState(prices[0]);
   const [tarif, setTarif] = useState({});
@@ -32,9 +37,6 @@ const NewPricePage = ({ prices, hideElements = false, titlePt = "0px" }) => {
   };
 
   const handleClickPriceData = (id) => {
-    if (hideElements) {
-      return;
-    }
     const foundTarif = priceData?.itemPrices?.find((v) => v.id === id);
     setTarif(foundTarif);
     handleClickButton();
@@ -81,7 +83,7 @@ const NewPricePage = ({ prices, hideElements = false, titlePt = "0px" }) => {
                   <div
                     //TODO: убрать clsx и оставить один класс
                     className={clsx(
-                      hideElements
+                      hasAdditional
                         ? "new-price-page__items-2"
                         : "new-price-page__items"
                     )}
@@ -94,7 +96,7 @@ const NewPricePage = ({ prices, hideElements = false, titlePt = "0px" }) => {
                       </p>
                       <p className="new-price-page__price">{v.price} ₽</p>
                     </div>
-                    {hideElements && (
+                    {hasAdditional && (
                       <div className="new-price-page__additional-text">
                         <span>{v.additional_content}</span>
                       </div>

@@ -9,14 +9,10 @@ import BlockOfPossibilities from "../../pages/BlockOfPossibilities/BlockOfPossib
 import FacilitateCourses from "../../pages/FacilitateCourses/FacilitateCourses";
 import { recomendedItems } from "../../pages/RecomendedItems/consts";
 import Benefit from "../../pages/Benefit/Benefit";
-// import Classes from "../../pages/Classes/Classes";
-// import Price from "../../components/Price/Price";
 import Bonuses from "../../pages/Bonuses/Bonuses";
 import AdditionalBlock from "../../pages/AdditionalBlock/AdditionalBlock";
-import { prices } from "../../pages/NewPricePage/consts";
+import { new_prices } from "../../pages/NewPricePage/consts";
 import "./Content.scss";
-// import NewTeamPage from "../../pages/NewTeamPage/NewTeamPage";
-// import NewPricePage from "../../pages/NewPricePage/NewPricePage";
 
 const NewPricePageLazy = React.lazy(() =>
   import("../../pages/NewPricePage/NewPricePage")
@@ -83,13 +79,9 @@ const Content = () => {
       <Suspense fallback={<Spin />}>
         <NewTeamPageLazy />
       </Suspense>
-      {/* <Classes /> */}
-      {/* <Price /> */}
       <Suspense fallback={<Spin />}>
-        <NewPricePageLazy prices={prices} />
+        <NewPricePageLazy prices={new_prices} hasAdditional={true} />
       </Suspense>
-
-      {/* <Price /> */}
       <Bonuses />
       <AdditionalBlock />
     </div>

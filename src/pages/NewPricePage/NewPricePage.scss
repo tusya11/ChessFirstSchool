@@ -207,6 +207,7 @@
           transition: 0.3s;
           box-sizing: border-box;
           gap: 2px;
+          padding: 0 20px;
 
           @media screen and (max-width: 700px) {
             flex-direction: column;
@@ -216,7 +217,8 @@
           .new-price-page__block-description {
             display: flex;
             align-items: center;
-            justify-content: space-around;
+            justify-content: space-between;
+            width: 100%;
 
             @media screen and (max-width: 700px) {
               flex-direction: column;
@@ -230,6 +232,9 @@
             font-family: "MontserratLight";
             font-size: 14px;
             line-height: 28px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
 
             @media screen and (max-width: 700px) {
               width: 100%;
@@ -250,6 +255,11 @@
             line-height: 29px;
             margin: 0;
           }
+        }
+
+        .new-price-page__items-2:hover {
+          border: 2px solid black;
+          transition: 0.3s;
         }
       }
 
