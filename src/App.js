@@ -10,7 +10,7 @@ const App = () => (
     <BrowserRouter>
       <Routes>
         <Route path="/main/*" element={<Wrapper />} />
-        <Route path="/new-prices/*" element={<NewPrices />} />
+        <Route path="/old-prices/*" element={<NewPrices />} />
         <Route path="/success/*" element={<SuccessPage />} />
         <Route path="/fail/*" element={<FailurePage />} />
         <Route path="/" element={<Navigate to="/main" replace />} />
