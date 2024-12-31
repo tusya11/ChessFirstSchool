@@ -97,8 +97,8 @@ export const prices = [
         id: 2,
         description: "5 занятий",
         descriptionNumber: 5,
-        price: "7 550",
-        price_rub: 7550,
+        price: "7 750",
+        price_rub: 7750,
       },
       {
         id: 3,
