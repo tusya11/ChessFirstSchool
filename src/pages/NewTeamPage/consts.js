@@ -2,7 +2,7 @@ import image1 from "./assets/kirill_alex.png";
 import image2 from "./assets/maria_gena.jpg";
 import image3 from "./assets/karen_vlad.png";
 import image4 from "./assets/alex_alex.png";
-import image5 from "./assets/angelic_akop.png";
+import image5 from "./assets/alexandr_evgen.jpg";
 import image6 from "./assets/anastasia_alex.jpeg";
 import image7 from "./assets/karina_yakov.png";
 import image8 from "./assets/alina_gena.jpg";
@@ -46,10 +46,10 @@ export const teamData = [
   },
   {
     id: 5,
-    name: "Анжелика Акоповна",
+    name: "Александр Евгеньевич",
     dignity: "Кандидат в мастера спорта",
     description:
-      "Многократный призер и чемпионка ЮФО по классическим шахматам, быстрым шахматам. Победительница Всероссийского турнира по быстрым шахматам среди женщин в 2016г. Бронзовый призер открытого Всероссийского турнира в Сочи в 2016г. Участника и призер областных межвузовских соревнований.",
+      "Чемпион Ростовской области по решению шахматных композиций (2022). Вице-чемпион Ростовской области по классическим шахматам (2021). Бронзовый призер IV международного кубка вузов среди студентов (2024).",
     image: image5,
   },
   {
