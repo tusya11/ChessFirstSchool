@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/static/css/main.28a7c73f.css",
-    "main.js": "/static/js/main.6577d311.js",
+    "main.js": "/static/js/main.61b8aabc.js",
     "static/css/41.9eec6230.chunk.css": "/static/css/41.9eec6230.chunk.css",
     "static/js/41.0ff4e25a.chunk.js": "/static/js/41.0ff4e25a.chunk.js",
-    "static/css/294.ec8116c2.chunk.css": "/static/css/294.ec8116c2.chunk.css",
-    "static/js/294.2ddf2df2.chunk.js": "/static/js/294.2ddf2df2.chunk.js",
+    "static/css/193.4864b8fd.chunk.css": "/static/css/193.4864b8fd.chunk.css",
+    "static/js/193.48f21409.chunk.js": "/static/js/193.48f21409.chunk.js",
     "static/js/748.00631a56.chunk.js": "/static/js/748.00631a56.chunk.js",
     "static/media/calendar.svg": "/static/media/calendar.5a0b27aabb81093976441b02cfc8cbd2.svg",
     "static/media/gift.svg": "/static/media/gift.b13f78ef160cbdb65b158141fcfd0a37.svg",
@@ -32,7 +32,6 @@
     "static/media/done_finally.png": "/static/media/done_finally.38104679337cea73e30c.png",
     "static/media/karina_yakov.png": "/static/media/karina_yakov.f2023ab8f5a3276fefe3.png",
     "static/media/daria_yaroslav.jpg": "/static/media/daria_yaroslav.b14793c46ea32421a5e6.jpg",
-    "static/media/angelic_akop.png": "/static/media/angelic_akop.20ef8fff5b209523048c.png",
     "static/media/Montserrat-Italic.ttf": "/static/media/Montserrat-Italic.ffb8374a74a57a2056b5.ttf",
     "static/media/Montserrat-SemiBold.ttf": "/static/media/Montserrat-SemiBold.04af9a9e62bb4c47bd55.ttf",
     "static/media/Montserrat-ExtraBold.ttf": "/static/media/Montserrat-ExtraBold.5daafc620ecc802516f9.ttf",
@@ -43,6 +42,7 @@
     "static/media/Montserrat-Black.ttf": "/static/media/Montserrat-Black.1b9fba4a75b89b0dd96a.ttf",
     "static/media/Montserrat-ExtraLight.ttf": "/static/media/Montserrat-ExtraLight.b70ef3d0e89b27907868.ttf",
     "static/media/Montserrat-Thin.ttf": "/static/media/Montserrat-Thin.e8ecb9f79ef9cbd2d9a8.ttf",
+    "static/media/alexandr_evgen.jpg": "/static/media/alexandr_evgen.31145ba0c9b9a5249c1a.jpg",
     "static/media/programForZoom.png": "/static/media/programForZoom.4cbe77711a4f41f9866c.png",
     "static/media/anastasia_alex.jpeg": "/static/media/anastasia_alex.89a4d1177d239c434928.jpeg",
     "static/media/alina_gena.jpg": "/static/media/alina_gena.cfc3a9347bbec8fdca78.jpg",
@@ -78,15 +78,15 @@
     "static/media/burgerMenuBtn.svg": "/static/media/burgerMenuBtn.150e0ab1cb20389d4b4188127de3c367.svg",
     "static/media/arrow.svg": "/static/media/arrow.3e7917d71cc4df22795d6e956cf48fd9.svg",
     "main.28a7c73f.css.map": "/static/css/main.28a7c73f.css.map",
-    "main.6577d311.js.map": "/static/js/main.6577d311.js.map",
+    "main.61b8aabc.js.map": "/static/js/main.61b8aabc.js.map",
     "41.9eec6230.chunk.css.map": "/static/css/41.9eec6230.chunk.css.map",
     "41.0ff4e25a.chunk.js.map": "/static/js/41.0ff4e25a.chunk.js.map",
-    "294.ec8116c2.chunk.css.map": "/static/css/294.ec8116c2.chunk.css.map",
-    "294.2ddf2df2.chunk.js.map": "/static/js/294.2ddf2df2.chunk.js.map",
+    "193.4864b8fd.chunk.css.map": "/static/css/193.4864b8fd.chunk.css.map",
+    "193.48f21409.chunk.js.map": "/static/js/193.48f21409.chunk.js.map",
     "748.00631a56.chunk.js.map": "/static/js/748.00631a56.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.28a7c73f.css",
-    "static/js/main.6577d311.js"
+    "static/js/main.61b8aabc.js"
   ]
 }
