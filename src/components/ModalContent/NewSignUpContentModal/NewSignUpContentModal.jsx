@@ -96,6 +96,11 @@ const NewSignUpContentModal = ({ isOpen, onClose }) => {
       .finally(() => {
         setIsLoading(false);
       });
+
+    //отправка статистики Facebook Pixel при отправке формы
+    if (window.fbq) {
+      window.fbq("track", "Lead");
+    }
   };
 
   useEffect(() => {
