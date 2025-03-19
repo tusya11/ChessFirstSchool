@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/static/css/main.28a7c73f.css",
-    "main.js": "/static/js/main.c38b4a2d.js",
+    "main.js": "/static/js/main.4000b450.js",
     "static/css/41.9eec6230.chunk.css": "/static/css/41.9eec6230.chunk.css",
-    "static/js/41.0ff4e25a.chunk.js": "/static/js/41.0ff4e25a.chunk.js",
-    "static/css/193.4864b8fd.chunk.css": "/static/css/193.4864b8fd.chunk.css",
-    "static/js/193.48f21409.chunk.js": "/static/js/193.48f21409.chunk.js",
+    "static/js/41.35f180a6.chunk.js": "/static/js/41.35f180a6.chunk.js",
+    "static/css/683.b88a8bd2.chunk.css": "/static/css/683.b88a8bd2.chunk.css",
+    "static/js/683.1d414a0a.chunk.js": "/static/js/683.1d414a0a.chunk.js",
     "static/js/748.00631a56.chunk.js": "/static/js/748.00631a56.chunk.js",
     "static/media/calendar.svg": "/static/media/calendar.5a0b27aabb81093976441b02cfc8cbd2.svg",
     "static/media/gift.svg": "/static/media/gift.b13f78ef160cbdb65b158141fcfd0a37.svg",
@@ -29,6 +29,7 @@
     "static/media/dmitriy_vadim.png": "/static/media/dmitriy_vadim.ad32c64a134f71d8ea2e.png",
     "static/media/elmar_valera.png": "/static/media/elmar_valera.6b05511482ac9311e3e2.png",
     "static/media/dmitriy_ura.png": "/static/media/dmitriy_ura.d976594712bef2b1d45b.png",
+    "static/media/lubov_alex.jpg": "/static/media/lubov_alex.39396d96f797e118ba48.jpg",
     "static/media/done_finally.png": "/static/media/done_finally.38104679337cea73e30c.png",
     "static/media/karina_yakov.png": "/static/media/karina_yakov.f2023ab8f5a3276fefe3.png",
     "static/media/daria_yaroslav.jpg": "/static/media/daria_yaroslav.b14793c46ea32421a5e6.jpg",
@@ -59,6 +60,7 @@
     "static/media/metodics.png": "/static/media/metodics.835ce52acca1107e1f14.png",
     "static/media/maria_gena.jpg": "/static/media/maria_gena.49ccdac2f41442d242cd.jpg",
     "static/media/karen_vlad.png": "/static/media/karen_vlad.d7a68e5afa81b159e630.png",
+    "static/media/alisa_igor.jpg": "/static/media/alisa_igor.336cfd07b3988944cbba.jpg",
     "static/media/mobile_image.png": "/static/media/mobile_image.57c121554df962952dd8.png",
     "static/media/kirill_alex.png": "/static/media/kirill_alex.4bc9f870255d35078ff3.png",
     "static/media/trophy.png": "/static/media/trophy.2ca74b80db8ac4b8b33e.png",
@@ -78,15 +80,15 @@
     "static/media/burgerMenuBtn.svg": "/static/media/burgerMenuBtn.150e0ab1cb20389d4b4188127de3c367.svg",
     "static/media/arrow.svg": "/static/media/arrow.3e7917d71cc4df22795d6e956cf48fd9.svg",
     "main.28a7c73f.css.map": "/static/css/main.28a7c73f.css.map",
-    "main.c38b4a2d.js.map": "/static/js/main.c38b4a2d.js.map",
+    "main.4000b450.js.map": "/static/js/main.4000b450.js.map",
     "41.9eec6230.chunk.css.map": "/static/css/41.9eec6230.chunk.css.map",
-    "41.0ff4e25a.chunk.js.map": "/static/js/41.0ff4e25a.chunk.js.map",
-    "193.4864b8fd.chunk.css.map": "/static/css/193.4864b8fd.chunk.css.map",
-    "193.48f21409.chunk.js.map": "/static/js/193.48f21409.chunk.js.map",
+    "41.35f180a6.chunk.js.map": "/static/js/41.35f180a6.chunk.js.map",
+    "683.b88a8bd2.chunk.css.map": "/static/css/683.b88a8bd2.chunk.css.map",
+    "683.1d414a0a.chunk.js.map": "/static/js/683.1d414a0a.chunk.js.map",
     "748.00631a56.chunk.js.map": "/static/js/748.00631a56.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.28a7c73f.css",
-    "static/js/main.c38b4a2d.js"
+    "static/js/main.4000b450.js"
   ]
 }
