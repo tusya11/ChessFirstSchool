@@ -101,6 +101,11 @@ const NewSignUpContentModal = ({ isOpen, onClose }) => {
     if (window.fbq) {
       window.fbq("track", "Lead");
     }
+
+    //отправка статистики в Яндекс Метрику
+    if (window.ym) {
+      window.ym(96915259, "reachGoal", "BUTTON_CLICK");
+    }
   };
 
   useEffect(() => {

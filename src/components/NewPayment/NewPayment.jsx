@@ -88,6 +88,10 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
       setErrors(newErrors);
       return;
     } else {
+      //отправка статистики в Яндекс Метрику
+      if (window.ym) {
+        window.ym(96915259, "reachGoal", "BUTTON_CLICK");
+      }
       // Если нет ошибок, отправляем форму вручную
       event.target.submit();
     }
@@ -137,6 +141,11 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
       };
 
       localStorage.setItem("order", JSON.stringify(orderDetails));
+      //отправка статистики в Яндекс Метрику
+      if (window.ym) {
+        window.ym(96915259, "reachGoal", "BUTTON_CLICK");
+      }
+
       // window.open(response.data.link, "_blank");
       window.location.href = response.data.link;
     } catch (e) {
