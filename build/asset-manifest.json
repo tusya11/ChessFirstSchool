@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.28a7c73f.css",
-    "main.js": "/static/js/main.4000b450.js",
+    "main.css": "/static/css/main.61ab00cd.css",
+    "main.js": "/static/js/main.b9835232.js",
     "static/css/41.9eec6230.chunk.css": "/static/css/41.9eec6230.chunk.css",
     "static/js/41.35f180a6.chunk.js": "/static/js/41.35f180a6.chunk.js",
     "static/css/683.b88a8bd2.chunk.css": "/static/css/683.b88a8bd2.chunk.css",
@@ -63,7 +63,11 @@
     "static/media/alisa_igor.jpg": "/static/media/alisa_igor.336cfd07b3988944cbba.jpg",
     "static/media/mobile_image.png": "/static/media/mobile_image.57c121554df962952dd8.png",
     "static/media/kirill_alex.png": "/static/media/kirill_alex.4bc9f870255d35078ff3.png",
+    "static/media/5-7.png": "/static/media/5-7.f9e8a8fe65fa0082fc2e.png",
+    "static/media/8-10.png": "/static/media/8-10.f372886c8f07a8ddc482.png",
+    "static/media/11-14.png": "/static/media/11-14.4d7d6cb5e65ffb4e0f71.png",
     "static/media/trophy.png": "/static/media/trophy.2ca74b80db8ac4b8b33e.png",
+    "static/media/hero.png": "/static/media/hero.e6a815ba6f4c70e5d6f3.png",
     "static/media/logoWhite.svg": "/static/media/logoWhite.ff101fb9cf7f7502a503582541974438.svg",
     "static/media/logo.svg": "/static/media/logo.f2c34d81086348da0083d0303c3d48a4.svg",
     "index.html": "/index.html",
@@ -79,8 +83,8 @@
     "static/media/success.svg": "/static/media/success.2822d5c741dcf24e136036beb70c2cee.svg",
     "static/media/burgerMenuBtn.svg": "/static/media/burgerMenuBtn.150e0ab1cb20389d4b4188127de3c367.svg",
     "static/media/arrow.svg": "/static/media/arrow.3e7917d71cc4df22795d6e956cf48fd9.svg",
-    "main.28a7c73f.css.map": "/static/css/main.28a7c73f.css.map",
-    "main.4000b450.js.map": "/static/js/main.4000b450.js.map",
+    "main.61ab00cd.css.map": "/static/css/main.61ab00cd.css.map",
+    "main.b9835232.js.map": "/static/js/main.b9835232.js.map",
     "41.9eec6230.chunk.css.map": "/static/css/41.9eec6230.chunk.css.map",
     "41.35f180a6.chunk.js.map": "/static/js/41.35f180a6.chunk.js.map",
     "683.b88a8bd2.chunk.css.map": "/static/css/683.b88a8bd2.chunk.css.map",
@@ -88,7 +92,7 @@
     "748.00631a56.chunk.js.map": "/static/js/748.00631a56.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.28a7c73f.css",
-    "static/js/main.4000b450.js"
+    "static/css/main.61ab00cd.css",
+    "static/js/main.b9835232.js"
   ]
 }
