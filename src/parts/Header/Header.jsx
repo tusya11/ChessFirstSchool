@@ -36,7 +36,7 @@ const Header = observer(({ className }) => {
   };
 
   return (
-    <header className={clsx("header", className)}>
+    <header className={clsx("header_main", className)}>
       <div className="header__image-container">
         <a href="/">
           <img className="header__image" src={logo} alt="" loading="lazy" />
