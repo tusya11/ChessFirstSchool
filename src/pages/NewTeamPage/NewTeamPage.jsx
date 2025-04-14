@@ -7,6 +7,7 @@ import line from "./assets/line_white.png";
 import lineArrow from "../AdditionalBlock/assets/arrow.svg";
 import DraggingModal from "../../new_components/DraggingModal/DraggingModal";
 import TeamMemberContent from "./components/TeamMemberContent/TeamMemberContent";
+import BlurredPhoto from "../../new_components/BlurredPhoto/BlurredPhoto";
 
 import "./NewTeamPage.scss";
 
@@ -53,9 +54,10 @@ const NewTeamPage = () => {
             className="new-team-page__team-member"
             onClick={() => handleClickOnMember(v)}
           >
-            <div className="new-team-page__image">
+            <BlurredPhoto v={v} />
+            {/* <div className="new-team-page__image">
               <img src={v.image} alt="team_image" loading="lazy" />
-            </div>
+            </div> */}
             <div className="new-team-page__member-description">
               <p>{v.name}</p>
               <span>{v.dignity}</span>
