@@ -1,0 +1,72 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: $border-radius-base;
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
+  white-space: nowrap;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $box-shadow-hover;
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+
+  &--primary {
+    background-color: $primary-color;
+    color: $text-color-inverse;
+    &:hover {
+      background-color: $primary-color-dark;
+    }
+  }
+
+  &--secondary {
+    background-color: $secondary-color;
+    color: $text-color;
+    &:hover {
+      background-color: $secondary-color-dark;
+    }
+  }
+
+  &--whatsapp {
+    background-color: $whatsapp-color;
+    color: $text-color-inverse;
+    .whatsapp-icon {
+      display: inline-flex;
+      margin-right: 10px;
+      svg {
+        width: 20px;
+        height: 20px;
+        fill: $text-color-inverse;
+      }
+    }
+    &:hover {
+      background-color: $whatsapp-color-dark;
+    }
+  }
+
+  &--block {
+    width: 100%;
+    display: flex;
+  }
+
+  &--disabled,
+  &:disabled {
+    background-color: $disabled-bg-color;
+    color: $text-color-disabled;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+}

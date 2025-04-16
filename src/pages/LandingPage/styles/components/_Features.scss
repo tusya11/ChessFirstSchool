@@ -1,0 +1,112 @@
+.features-section {
+  background-color: $background-color-base;
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+
+    @media (min-width: $breakpoint-md) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+    @media (min-width: $breakpoint-lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .feature-card {
+    background-color: $background-color-base;
+    border-radius: $border-radius-lg;
+    padding: 24px;
+    box-shadow: $box-shadow-base;
+    border: 1px solid $border-color-base;
+    transition: transform $transition-duration ease-out,
+      box-shadow $transition-duration ease-out;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    @media (min-width: $breakpoint-md) {
+      flex-direction: row;
+      text-align: left;
+      align-items: flex-start;
+      padding: 28px;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: $box-shadow-hover;
+    }
+  }
+
+  .feature-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: $border-radius-circle;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    flex-shrink: 0;
+
+    @media (min-width: $breakpoint-md) {
+      margin: 0 20px 0 0;
+    }
+
+    &--purple {
+      background-color: $feature-purple;
+      color: darken($feature-purple, 40%);
+    }
+    &--yellow {
+      background-color: $feature-yellow;
+      color: darken($feature-yellow, 50%);
+    }
+    &--green {
+      background-color: $feature-green;
+      color: darken($feature-green, 40%);
+    }
+    &--pink {
+      background-color: $feature-pink;
+      color: darken($feature-pink, 35%);
+    }
+    &--orange {
+      background-color: $feature-orange;
+      color: darken($feature-orange, 45%);
+    }
+    &--blue {
+      background-color: $feature-blue;
+      color: darken($feature-blue, 35%);
+    }
+
+    svg {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  .feature-content {
+    flex-grow: 1;
+  }
+
+  .feature-title {
+    font-size: 19px;
+    font-weight: $font-weight-bold;
+    margin-bottom: 10px;
+    color: $text-color-headings;
+
+    @media (max-width: #{ $breakpoint-md - 1px }) {
+      font-size: 18px;
+    }
+  }
+
+  .feature-description {
+    font-size: 15px;
+    color: $text-color-medium;
+    line-height: 1.6;
+
+    @media (max-width: #{ $breakpoint-md - 1px }) {
+      font-size: 14px;
+    }
+  }
+}
