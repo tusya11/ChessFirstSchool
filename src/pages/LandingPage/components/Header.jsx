@@ -1,11 +1,12 @@
-import React, { useState } from "react"; // useState для мобильного меню
+import React from "react"; // useState для мобильного меню
 
 const WhatsAppIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
     width="24"
-    height="24">
+    height="24"
+  >
     <path
       d="M17.6 6.32C16.8 5.5 15.8 4.85 14.7 4.4C13.6 3.95 12.3 3.7 11 3.7C9.7 3.7 8.5 3.95 7.3 4.4C6.2 4.85 5.2 5.5 4.3 6.32C3.5 7.14 2.9 8.1 2.4 9.2C2 10.3 1.7 11.5 1.7 12.8C1.7 14.4 2.1 15.9 2.8 17.3L1.7 22.2L6.7 21.1C8.1 21.8 9.5 22.2 11.1 22.2C12.4 22.2 13.6 21.9 14.7 21.5C15.8 21 16.8 20.4 17.6 19.6C18.4 18.8 19.1 17.8 19.5 16.7C20 15.6 20.2 14.3 20.2 13C20.2 11.7 19.9 10.5 19.5 9.4C19 8.1 18.4 7.14 17.6 6.32Z"
       fill="#25D366"
@@ -34,7 +35,8 @@ const Header = ({ handleClick_Phone, handleClick_WA }) => {
           <a
             href="https://coolchess.ru"
             className="logo__link"
-            aria-label="CoolChess Home">
+            aria-label="CoolChess Home"
+          >
             <div className="logo__icon">
               <div className="chess-piece"></div>
             </div>
@@ -57,7 +59,8 @@ const Header = ({ handleClick_Phone, handleClick_WA }) => {
             onClick={() => {
               handleNavLinkClick();
               handleClick_Phone();
-            }}>
+            }}
+          >
             {PHONE_NUMBER_FORMATTED}
           </a>
         </nav>
@@ -69,7 +72,8 @@ const Header = ({ handleClick_Phone, handleClick_WA }) => {
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleClick_WA}
-            aria-label="Написать в WhatsApp">
+            aria-label="Написать в WhatsApp"
+          >
             <span className="whatsapp-icon">
               <WhatsAppIcon />
             </span>
