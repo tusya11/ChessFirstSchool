@@ -1,0 +1,193 @@
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: $background-color-base;
+  border-bottom: 1px solid $border-color-base;
+  padding: 12px 0;
+
+  @media (min-width: 768px) {
+    padding: 16px 0;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo,
+  .logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+
+    .logo__link {
+      display: flex;
+      align-items: center;
+      color: $text-color-headings;
+      text-decoration: none;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    .logo__icon {
+      position: relative;
+      height: 36px;
+      width: 36px;
+      margin-right: 8px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+      }
+
+      .chess-piece {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &::after {
+          content: "";
+          width: 28px;
+          height: 28px;
+          background-color: $white-color;
+          background-image: url("https://coolchess.ru/school.png");
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    .logo__text {
+      font-size: 22px;
+      font-weight: $font-weight-normal;
+      color: $text-color-headings;
+      strong {
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+
+  // --- Навигация ---
+  &__nav {
+    .nav-link {
+      font-size: 15px;
+      font-weight: $font-weight-medium;
+      color: $text-color;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: $border-radius-sm;
+      transition: color 0.2s ease, background-color 0.2s ease;
+
+      &:hover {
+        color: $primary-color;
+        background-color: $background-color-accent;
+      }
+    }
+
+    // Стили для десктопной навигации
+    &--desktop {
+      display: none;
+
+      @media (min-width: 992px) {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      @media (min-width: 768px) and (max-width: 991px) {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        .nav-link {
+          padding: 6px 8px;
+          font-size: 14px;
+        }
+      }
+    }
+
+    // Стили для мобильной навигации (выезжающее меню)
+    &--mobile {
+      display: flex;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      max-width: 300px;
+      background-color: $background-color-base;
+      box-shadow: $box-shadow-base;
+      padding: 60px 20px 20px;
+      flex-direction: column;
+      align-items: flex-start;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+      z-index: 1100;
+
+      .header__mobile-nav-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .nav-link {
+        font-size: 18px;
+        width: 100%;
+        text-align: left;
+        padding: 12px 15px;
+        &:hover {
+          background-color: rgba(93, 78, 245, 0.1);
+        }
+      }
+      .nav-link--phone {
+        font-size: 18px;
+        font-weight: 600;
+      }
+    }
+
+    .header__nav--mobile {
+      transform: translateX(0);
+    }
+  }
+
+  // --- Кнопки действий ---
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    &--desktop {
+      display: flex;
+
+      @media (min-width: 768px) {
+        display: flex;
+      }
+      .header__wa-button {
+        padding: 8px 16px;
+        font-size: 14px;
+        span:not(.whatsapp-icon) {
+          display: none;
+        }
+        @media (min-width: 300px) {
+          span:not(.whatsapp-icon) {
+            display: inline;
+          }
+        }
+        .whatsapp-icon svg {
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+  }
+}

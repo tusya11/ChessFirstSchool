@@ -1,0 +1,252 @@
+.signup-cta-section {
+  background-color: $background-color-light;
+}
+
+.signup-form-wrapper {
+  max-width: 550px;
+  margin: 0 auto;
+  background-color: $white-color;
+  border-radius: $border-radius-lg;
+  padding: 32px;
+  box-shadow: $box-shadow-base;
+  border: 1px solid $border-color-base;
+
+  @media (max-width: $breakpoint-md) {
+    padding: 24px;
+  }
+}
+
+// --- Стили для сообщения об успехе ---
+.form-success {
+  text-align: center;
+  padding: 32px 16px;
+
+  .success-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: lighten($success-color, 45%);
+    color: $success-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+
+    svg {
+      width: 32px;
+      height: 32px;
+      stroke: $success-color;
+      stroke-width: 2.5;
+    }
+  }
+
+  .success-title {
+    font-size: 22px;
+    font-weight: $font-weight-bold;
+    margin-bottom: 12px;
+    color: $text-color-headings;
+  }
+
+  .success-message {
+    font-size: $font-size-base;
+    color: $text-color-light;
+    line-height: $line-height-base;
+  }
+}
+
+// --- Стили для самой формы ---
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 12px;
+
+  .form-title {
+    font-size: 24px;
+    font-weight: $font-weight-bold;
+    margin-bottom: 8px;
+    color: $text-color-headings;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: 28px;
+    }
+  }
+
+  .form-subtitle,
+  .form-description {
+    font-size: 15px;
+    color: $text-color-light;
+    line-height: $line-height-base;
+    margin-bottom: 4px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (min-width: $breakpoint-md) {
+      font-size: $font-size-base;
+    }
+  }
+
+  .form-subtitle {
+    font-weight: $font-weight-medium;
+    color: $text-color-medium;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: $font-weight-medium;
+  color: $text-color;
+  text-align: left;
+}
+
+.form-input {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid $border-color-input;
+  border-radius: $border-radius-base;
+  background-color: $input-bg-color;
+  font-size: $font-size-base;
+  color: $text-color;
+  transition: border-color $transition-duration $transition-timing-function,
+    box-shadow $transition-duration $transition-timing-function,
+    background-color $transition-duration $transition-timing-function;
+
+  &::placeholder {
+    color: $text-color-disabled;
+    opacity: 1;
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+    border-color: $primary-color;
+    background-color: $white-color;
+    box-shadow: $box-shadow-focus;
+  }
+}
+
+// --- Стили для выбора мессенджера ---
+.messenger-section {
+  margin-top: 4px;
+}
+
+.messenger-label {
+  margin-bottom: 6px;
+}
+
+.messenger-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+
+  @media (max-width: 400px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.messenger-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: $border-radius-base;
+  border: 2px solid $border-color-base;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: $white-color;
+
+  &:hover {
+    border-color: darken($border-color-base, 15%);
+    background-color: $background-color-base;
+  }
+
+  &.selected {
+    border-color: $primary-color;
+    background-color: $background-color-accent;
+    box-shadow: 0 0 0 1px $primary-color;
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+    border-color: $primary-color;
+    box-shadow: $box-shadow-focus;
+  }
+}
+
+.messenger-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}
+
+.messenger-name {
+  font-size: 14px;
+  font-weight: $font-weight-medium;
+  color: $text-color-medium;
+}
+
+// --- Стили для политики конфиденциальности ---
+.privacy-policy {
+  margin-top: 4px;
+}
+
+.privacy-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  text-align: left;
+  user-select: none;
+
+  input[type="checkbox"] {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    cursor: pointer;
+  }
+}
+
+.privacy-text {
+  font-size: 13px;
+  color: $text-color-light;
+  line-height: $line-height-base;
+
+  a {
+    color: $primary-color;
+    text-decoration: underline;
+
+    &:hover {
+      color: $primary-color-dark;
+    }
+  }
+}
+
+// --- Стили для кнопки отправки ---
+.form-submit {
+  margin-top: 12px;
+  height: 52px;
+  font-size: 17px;
+  font-weight: $font-weight-semibold;
+  width: 100%;
+}

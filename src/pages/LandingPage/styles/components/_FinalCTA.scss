@@ -1,0 +1,76 @@
+$breakpoint-md: 768px;
+
+.final-cta-section {
+  &.section--dark-bg {
+    background-color: $background-color-dark;
+    color: $text-color-inverse;
+  }
+
+  .final-cta-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 48px 20px;
+
+    @media (min-width: $breakpoint-md) {
+      padding: 56px 20px;
+    }
+  }
+  .final-cta-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: $white-color;
+  }
+
+  .final-cta-content {
+    margin-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    @media (min-width: $breakpoint-md) {
+      gap: 16px;
+    }
+  }
+
+  .final-cta-trial,
+  .final-cta-limited {
+    font-size: 18px;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-base;
+    color: rgba($text-color-inverse, 0.95);
+
+    strong {
+      font-weight: $font-weight-bold;
+      color: $text-color-inverse;
+    }
+
+    span[role="img"] {
+      margin-right: 8px;
+      display: inline-block;
+    }
+
+    @media (min-width: $breakpoint-md) {
+      font-size: 20px;
+    }
+  }
+
+  .final-cta-limited {
+    color: $secondary-color;
+    strong {
+      color: $secondary-color;
+    }
+  }
+
+  .final-cta-button {
+    font-size: 18px;
+    padding: 15px 40px;
+    font-weight: $font-weight-semibold;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: 20px;
+    }
+  }
+}

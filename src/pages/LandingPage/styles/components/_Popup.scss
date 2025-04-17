@@ -1,0 +1,112 @@
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: $popup-overlay-bg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity $transition-duration $transition-timing-function,
+    visibility $transition-duration $transition-timing-function;
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+
+    .popup-container {
+      animation: popup-appear 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    }
+  }
+}
+
+.popup-container {
+  position: relative;
+  background-color: $popup-bg-color;
+  border-radius: $border-radius-base;
+  box-shadow: $box-shadow-base;
+  padding: 35px 30px;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  color: $popup-text-color;
+  border: 2px solid $popup-border-color;
+  transform: scale(0.9);
+  opacity: 0;
+  transition: transform $transition-duration $transition-timing-function,
+    opacity $transition-duration $transition-timing-function;
+
+  .popup-overlay.show & {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes popup-appear {
+  0% {
+    transform: scale(0.8) translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 1;
+  cursor: pointer;
+  color: $popup-close-color;
+  transition: color 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    color: $popup-close-hover-color;
+    transform: scale(1.1);
+  }
+}
+
+.popup-title {
+  font-size: 22px;
+  font-weight: $font-weight-bold;
+  margin-bottom: 15px;
+  color: $popup-title-color;
+
+  @media (min-width: 576px) {
+    font-size: 24px;
+  }
+}
+
+.popup-text {
+  font-size: 17px;
+  margin-bottom: 25px;
+  line-height: 1.5;
+  color: $popup-text-color;
+
+  @media (min-width: 576px) {
+    font-size: 18px;
+  }
+}
+
+.popup-container .button.button--whatsapp.wa-button {
+  margin: 0 auto;
+  display: inline-flex;
+  width: auto;
+  padding: 12px 28px;
+
+  .whatsapp-icon {
+    margin-right: 8px;
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+  span:not(.whatsapp-icon) {
+    font-size: $font-size-base;
+  }
+}
