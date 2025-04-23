@@ -1,4 +1,4 @@
-import React, { useState } from "react"; // useState для мобильного меню
+import React from "react"; // useState для мобильного меню
 
 const WhatsAppIcon = () => (
   <svg
