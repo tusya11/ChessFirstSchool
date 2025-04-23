@@ -152,7 +152,12 @@ const LandingPage = () => {
   const handleClick_WA = () => {
     sendToYandexMetrika("leadWA", { source: "LandingPage_WA_Button" });
   };
-
+  const handleClick_Tg = () => {
+    sendToYandexMetrika("leadTg", { source: "LandingPage_Tg_Button" });
+  };
+  const handleClick_Inst = () => {
+    sendToYandexMetrika("leadInst", { source: "LandingPage_Inst_Button" });
+  };
   const handleClick_Phone = () => {
     sendToYandexMetrika("leadPhone", { source: "LandingPage_Phone_Link" });
   };
@@ -186,7 +191,11 @@ const LandingPage = () => {
         <FAQ />
         <FinalCTA />
       </main>
-      <ExitIntentPopup handleClick_WA={handleClick_WA} />
+      <ExitIntentPopup
+        handleClick_WA={handleClick_WA}
+        handleClick_Tg={handleClick_Tg}
+        handleClick_Inst={handleClick_Inst}
+      />
     </div>
   );
 };

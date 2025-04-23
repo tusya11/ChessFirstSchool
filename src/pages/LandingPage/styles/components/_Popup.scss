@@ -93,20 +93,20 @@
   }
 }
 
-.popup-container .button.button--whatsapp.wa-button {
+.popup-container .button.button--sn.sn-button {
   margin: 0 auto;
   display: inline-flex;
   width: auto;
   padding: 12px 28px;
 
-  .whatsapp-icon {
+  .sn-icon {
     margin-right: 8px;
     svg {
-      width: 18px;
-      height: 18px;
+      width: 64px;
+      height: 64px;
     }
   }
-  span:not(.whatsapp-icon) {
+  span:not(.sn-icon) {
     font-size: $font-size-base;
   }
 }
