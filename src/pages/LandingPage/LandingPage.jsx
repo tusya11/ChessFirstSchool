@@ -164,7 +164,7 @@ const LandingPage = () => {
 
   // --- Рендер страницы ---
   return (
-    <div className="landing-page landing-page-v2">
+    <div className="landing-page landing-page-base">
       <Header
         handleClick_Phone={handleClick_Phone}
         handleClick_WA={handleClick_WA}
