@@ -4,7 +4,7 @@ const Promo = () => {
   const TELEGRAM_URL = "https://t.me/Coolchess_online/637";
 
   return (
-    <div className="promo-page">
+    <div className="promo-landing-page landing-page-base">
       <section className="promo-section promo-hero-section section">
         <div className="container promo-container">
           <div className="promo-hero-content">

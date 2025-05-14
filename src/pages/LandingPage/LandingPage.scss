@@ -5,105 +5,82 @@
 @import "styles/base/variables";
 @import "styles/base/base";
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth; // Плавный скролл по якорям
-}
-
-body {
+.landing-page {
   font-family: $font-family-base;
   line-height: $line-height-base;
   color: $text-color;
   background-color: $background-color-base;
-  -webkit-font-smoothing: antialiased; // Улучшение рендеринга шрифтов
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+  min-height: 100vh;
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-a {
-  text-decoration: none;
-  color: $primary-color;
-  transition: color $transition-duration $transition-timing-function;
-
-  &:hover {
-    color: $primary-color-dark;
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
   }
-}
 
-ul {
-  list-style: none;
-}
-
-//--------------------------------------------------
-// Общие классы и утилиты
-//--------------------------------------------------
-
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-
-  @media (max-width: 768px) {
-    padding: 0 15px;
-  }
-}
-
-// Общий стиль для секций
-.section {
-  padding: 64px 0;
-
-  @media (max-width: 992px) {
-    padding: 56px 0;
-  }
-  @media (max-width: 768px) {
-    padding: 48px 0;
-  }
-}
-
-// Общий стиль для заголовков секций
-.section-header {
-  text-align: center;
-  margin-bottom: 48px;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-
-  h2,
-  .section-title {
-    // Используем оба варианта селектора для гибкости
-    font-size: 32px;
-    font-weight: $font-weight-bold;
-    line-height: 1.3;
-    margin-bottom: 16px;
-    color: $text-color-headings;
-
-    @media (min-width: 768px) {
-      font-size: 36px;
-    }
-    @media (max-width: 576px) {
-      font-size: 28px;
+  a {
+    text-decoration: none;
+    color: $primary-color;
+    transition: color $transition-duration $transition-timing-function;
+    &:hover {
+      color: $primary-color-dark;
     }
   }
 
-  p,
-  .section-subtitle {
-    font-size: 18px;
-    color: $text-color-medium;
-    line-height: 1.6;
+  ul {
+    list-style: none;
+  }
 
-    @media (max-width: 576px) {
-      font-size: 17px;
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    @media (max-width: 768px) {
+      padding: 0 15px;
+    }
+  }
+
+  .section {
+    padding: 64px 0;
+    @media (max-width: 992px) {
+      padding: 56px 0;
+    }
+    @media (max-width: 768px) {
+      padding: 48px 0;
+    }
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 48px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    h2,
+    .section-title {
+      font-size: 32px;
+      font-weight: $font-weight-bold;
+      line-height: 1.3;
+      margin-bottom: 16px;
+      color: $text-color-headings;
+      @media (min-width: 768px) {
+        font-size: 36px;
+      }
+      @media (max-width: 576px) {
+        font-size: 28px;
+      }
+    }
+    p,
+    .section-subtitle {
+      font-size: 18px;
+      color: $text-color-medium;
+      line-height: 1.6;
+      @media (max-width: 576px) {
+        font-size: 17px;
+      }
     }
   }
 }
