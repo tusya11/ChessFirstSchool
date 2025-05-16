@@ -1,0 +1,252 @@
+$primary: #464BFF;
+$accent: #DCE204;
+$background: #FFFFFF;
+$text-dark: #2C2C2C;
+$text-light: #FFFFFF;
+
+.learning-process-section {
+  padding: 80px 0;
+  background-color: #FAF5F1;
+  position: relative;
+  overflow: hidden;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    color: $primary;
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+
+    &.animate {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: $accent;
+      margin: 15px auto 0;
+      border-radius: 2px;
+    }
+  }
+
+  .timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto 50px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50px;
+      height: 100%;
+      width: 3px;
+      background: $primary;
+      opacity: 0.2;
+    }
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-left: 100px;
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(30px);
+
+    &.animate {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .timeline-icon {
+    position: absolute;
+    left: 30px;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: $primary;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    box-shadow: 0 5px 15px rgba($primary, 0.3);
+  }
+
+  .timeline-content {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: $primary;
+    }
+
+    p {
+      color: $text-dark;
+      line-height: 1.6;
+      margin: 0;
+    }
+  }
+
+  .cta-box {
+    max-width: 600px;
+    margin: 60px auto 0;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(30px);
+
+    &.animate {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: $accent;
+    }
+
+    .cta-icon {
+      font-size: 40px;
+      color: $primary;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+      color: $text-dark;
+    }
+  }
+
+  .cta-button {
+    background: $primary;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba($primary, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+      background: darken($primary, 8%);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba($primary, 0.4);
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(255,255,255,0.2), rgba(255,255,255,0));
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .learning-process-section {
+    padding: 50px 0;
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+
+    .timeline {
+      &::before {
+        left: 25px;
+      }
+    }
+
+    .timeline-item {
+      padding-left: 80px;
+      margin-bottom: 30px;
+    }
+
+    .timeline-icon {
+      left: 10px;
+      width: 40px;
+      height: 40px;
+      font-size: 16px;
+    }
+
+    .timeline-content {
+      padding: 20px;
+    }
+
+    .cta-box {
+      padding: 30px 20px;
+      margin-top: 40px;
+
+      p {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
