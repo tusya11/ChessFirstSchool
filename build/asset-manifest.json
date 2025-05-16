@@ -1,12 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.ba22c095.css",
-    "main.js": "/static/js/main.92df4b6f.js",
+    "main.css": "/static/css/main.7eea8ff4.css",
+    "main.js": "/static/js/main.6fece5d6.js",
     "static/css/41.9eec6230.chunk.css": "/static/css/41.9eec6230.chunk.css",
     "static/js/41.293fc458.chunk.js": "/static/js/41.293fc458.chunk.js",
-    "static/css/832.9e51d9ac.chunk.css": "/static/css/832.9e51d9ac.chunk.css",
-    "static/js/832.54fb960e.chunk.js": "/static/js/832.54fb960e.chunk.js",
+    "static/css/224.c98326aa.chunk.css": "/static/css/224.c98326aa.chunk.css",
+    "static/js/224.9771266f.chunk.js": "/static/js/224.9771266f.chunk.js",
     "static/js/748.00631a56.chunk.js": "/static/js/748.00631a56.chunk.js",
+    "static/media/chess-pawn.png": "/static/media/chess-pawn.98ddaf573a4a5b918217.png",
+    "static/media/woman_1.jpg": "/static/media/woman_1.d8afe4085a283c1f10f4.jpg",
     "static/media/calendar.svg": "/static/media/calendar.5a0b27aabb81093976441b02cfc8cbd2.svg",
     "static/media/gift.svg": "/static/media/gift.b13f78ef160cbdb65b158141fcfd0a37.svg",
     "static/media/wrapperBenefit.png": "/static/media/wrapperBenefit.aae047256b468c96adef.png",
@@ -14,6 +16,8 @@
     "static/media/trophy.svg": "/static/media/trophy.6d9b37640fb919e5cf9ae48d94e79572.svg",
     "static/media/connect.svg": "/static/media/connect.df8a86fe483470a13f5fc0f4c2805763.svg",
     "static/media/setting.svg": "/static/media/setting.9fe023a6dfde3115166610ca51a283e8.svg",
+    "static/media/man.jpg": "/static/media/man.9e4076ee8a56f2603d3a.jpg",
+    "static/media/woman_3.jpg": "/static/media/woman_3.cad688c5d3d99368d73d.jpg",
     "static/media/zoom.svg": "/static/media/zoom.0131c858a9ea2d693968969dc67352e4.svg",
     "static/media/location.svg": "/static/media/location.fc65a73bfcf51c5b9b00c52028d49d45.svg",
     "static/media/fire.svg": "/static/media/fire.66f248592d9780b835aca96ce6a681b6.svg",
@@ -83,16 +87,16 @@
     "static/media/success.svg": "/static/media/success.2822d5c741dcf24e136036beb70c2cee.svg",
     "static/media/burgerMenuBtn.svg": "/static/media/burgerMenuBtn.150e0ab1cb20389d4b4188127de3c367.svg",
     "static/media/arrow.svg": "/static/media/arrow.3e7917d71cc4df22795d6e956cf48fd9.svg",
-    "main.ba22c095.css.map": "/static/css/main.ba22c095.css.map",
-    "main.92df4b6f.js.map": "/static/js/main.92df4b6f.js.map",
+    "main.7eea8ff4.css.map": "/static/css/main.7eea8ff4.css.map",
+    "main.6fece5d6.js.map": "/static/js/main.6fece5d6.js.map",
     "41.9eec6230.chunk.css.map": "/static/css/41.9eec6230.chunk.css.map",
     "41.293fc458.chunk.js.map": "/static/js/41.293fc458.chunk.js.map",
-    "832.9e51d9ac.chunk.css.map": "/static/css/832.9e51d9ac.chunk.css.map",
-    "832.54fb960e.chunk.js.map": "/static/js/832.54fb960e.chunk.js.map",
+    "224.c98326aa.chunk.css.map": "/static/css/224.c98326aa.chunk.css.map",
+    "224.9771266f.chunk.js.map": "/static/js/224.9771266f.chunk.js.map",
     "748.00631a56.chunk.js.map": "/static/js/748.00631a56.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ba22c095.css",
-    "static/js/main.92df4b6f.js"
+    "static/css/main.7eea8ff4.css",
+    "static/js/main.6fece5d6.js"
   ]
 }
