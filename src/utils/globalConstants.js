@@ -6,7 +6,8 @@ export const urlToWhatsApp =
 
 export const contactNumber = "+7 (918) 544-59-84";
 
-export const urlToSummerIntensiveRegisterForm = 'https://forms.gle/V7CtTUccM4Vh4fSk7'
+// export const urlToSummerIntensiveRegisterForm = 'https://forms.gle/V7CtTUccM4Vh4fSk7'
+export const urlToSummerIntensiveRegisterForm = 'https://forms.yandex.ru/cloud/6829a3eb068ff00584c40f1a';
 
 //текстовые формы - 1, 3, 7
 export const TEXT_FORMS = {
