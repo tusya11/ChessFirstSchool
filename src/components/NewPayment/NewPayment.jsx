@@ -1,27 +1,28 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import  { useEffect, useState } from "react";
+// import axios from "axios";
 import { Button, Checkbox, ConfigProvider, Space, Typography } from "antd";
 import { useMediaQuery } from "@mui/material";
 import SectionItem from "./components/SectionItem/SectionItem";
 import SelectedElement from "../SelectedElement/SelectedElement";
 import InputCustom from "../InputCustom/InputCustom";
 import { URL } from "./consts";
-import { formatPhoneNumber } from "./utils";
+// import { formatPhoneNumber } from "./utils";
 import privacyPolicy from "../../docs/privacy_policy.pdf";
-import dolyameLogo from "./assets/dolyame_logo.png";
-import modal from "../../store/modal";
+import videoPrivacyPolicy from "../../docs/videoPrivacyPolicy.pdf";
+// import dolyameLogo from "./assets/dolyame_logo.png";
+// import modal from "../../store/modal";
 
 import "./NewPayment.scss";
 
 const { Title, Text } = Typography;
 
-const domain = process.env.REACT_APP_API_URL;
-const urlRequest = process.env.REACT_APP_NEST_URL;
+// const domain = process.env.REACT_APP_API_URL;
+// const urlRequest = process.env.REACT_APP_NEST_URL;
 
 const NewPayment = ({ payment = {}, tarif = {} }) => {
   const isXS = useMediaQuery("(max-width:700px)");
 
-  const { setAlertMsg } = modal;
+  // const { setAlertMsg } = modal;
   const [stateRate, setStateRate] = useState([]);
 
   useEffect(() => {
@@ -42,8 +43,11 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
     telephone: false,
     rate: false,
     privacyPolicy: false,
+    videoPrivacyPolicy: false,
   });
   const [isCheckedPrivacy, setIsCheckedPrivacy] = useState(false);
+  const [isCheckedVideoPolicy, setIsCheckedVideoPolicy] = useState(false);
+
 
   const handleClickSelectedElement = (id, type) => {
     const changedStateRate = stateRate.map((v) => {
@@ -68,12 +72,16 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
     setIsCheckedPrivacy((prev) => !prev);
   };
 
+  const onChangeCheckBoxVideoPolicy = () => {
+    setIsCheckedVideoPolicy((prev) => !prev)
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
     const hasErrors =
       Object.values(objValue).some((v) => v.trim() === "") ||
-      !stateRate.some((v) => v.selected);
+      !stateRate.some((v) => v.selected) || !isCheckedPrivacy || !isCheckedVideoPolicy;
 
     if (hasErrors) {
       const newErrors = {
@@ -82,6 +90,7 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
         telephone: !objValue.telephone,
         rate: !stateRate.some((v) => v.selected),
         privacyPolicy: !isCheckedPrivacy,
+        videoPrivacyPolicy: !isCheckedVideoPolicy
       };
 
       // Если есть ошибки, обновляем состояние с ошибками и предотвращаем отправку формы
@@ -97,66 +106,66 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
     }
   };
 
-  const handleClickSplittingPay = async () => {
-    const { fio, telephone, email } = objValue;
-    const transformedPhone = formatPhoneNumber(telephone);
+  // const handleClickSplittingPay = async () => {
+  //   const { fio, telephone, email } = objValue;
+  //   const transformedPhone = formatPhoneNumber(telephone);
 
-    const getViaPerson = () => fio && fio.split(" ");
-    const personDetails = getViaPerson();
-    const selectedTarif = stateRate.find((v) => v.selected);
+  //   const getViaPerson = () => fio && fio.split(" ");
+  //   const personDetails = getViaPerson();
+  //   const selectedTarif = stateRate.find((v) => v.selected);
 
-    const requestBody = {
-      order: {
-        id: "cool-chess-" + new Date().getTime(),
-        status: "approved",
-        amount: selectedTarif.price_rub,
-        items: [
-          {
-            name: "Оплата услуги по шахматам",
-            quantity: selectedTarif.descriptionNumber,
-            price: selectedTarif.price_rub / selectedTarif.descriptionNumber,
-          },
-        ],
-      },
-      client_info: {
-        email: email,
-        phone: transformedPhone,
-        first_name: personDetails?.[1] || undefined,
-        last_name: personDetails?.[0] || undefined,
-        middle_name: personDetails?.[2] || undefined,
-      },
-      success_url: `${domain}/success`,
-      fail_url: `${domain}/fail`,
-      notification_url: "https://cool-chess.ru/dolyami/email",
-    };
+  //   const requestBody = {
+  //     order: {
+  //       id: "cool-chess-" + new Date().getTime(),
+  //       status: "approved",
+  //       amount: selectedTarif.price_rub,
+  //       items: [
+  //         {
+  //           name: "Оплата услуги по шахматам",
+  //           quantity: selectedTarif.descriptionNumber,
+  //           price: selectedTarif.price_rub / selectedTarif.descriptionNumber,
+  //         },
+  //       ],
+  //     },
+  //     client_info: {
+  //       email: email,
+  //       phone: transformedPhone,
+  //       first_name: personDetails?.[1] || undefined,
+  //       last_name: personDetails?.[0] || undefined,
+  //       middle_name: personDetails?.[2] || undefined,
+  //     },
+  //     success_url: `${domain}/success`,
+  //     fail_url: `${domain}/fail`,
+  //     notification_url: "https://cool-chess.ru/dolyami/email",
+  //   };
 
-    const urlDolyame = `${urlRequest}dolyami/create`;
+  //   const urlDolyame = `${urlRequest}dolyami/create`;
 
-    try {
-      const response = await axios.post(urlDolyame, requestBody);
+  //   try {
+  //     const response = await axios.post(urlDolyame, requestBody);
 
-      const orderDetails = {
-        orderId: response.data.orderId,
-        uuid: response.data.uuid,
-      };
+  //     const orderDetails = {
+  //       orderId: response.data.orderId,
+  //       uuid: response.data.uuid,
+  //     };
 
-      localStorage.setItem("order", JSON.stringify(orderDetails));
-      //отправка статистики в Яндекс Метрику
-      if (window.ym) {
-        window.ym(96915259, "reachGoal", "BUTTON_CLICK");
-      }
+  //     localStorage.setItem("order", JSON.stringify(orderDetails));
+  //     //отправка статистики в Яндекс Метрику
+  //     if (window.ym) {
+  //       window.ym(96915259, "reachGoal", "BUTTON_CLICK");
+  //     }
 
-      // window.open(response.data.link, "_blank");
-      window.location.href = response.data.link;
-    } catch (e) {
-      console.error("---e", e);
-      setAlertMsg({
-        status: "error",
-        message: e.response.data.message,
-        visible: true,
-      });
-    }
-  };
+  //     // window.open(response.data.link, "_blank");
+  //     window.location.href = response.data.link;
+  //   } catch (e) {
+  //     console.error("---e", e);
+  //     setAlertMsg({
+  //       status: "error",
+  //       message: e.response.data.message,
+  //       visible: true,
+  //     });
+  //   }
+  // };
 
   return (
     <Space
@@ -324,10 +333,32 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
                   </Space>
                 )}
               </Space>
+              <Space className="new-payment__privacy-policy">
+                <Checkbox
+                  onChange={onChangeCheckBoxVideoPolicy}
+                  className={`new-payment__policy__checkbox ${
+                    errors.videoPrivacyPolicy && "error"
+                  }`}
+                  checked={isCheckedVideoPolicy}
+                >
+                  <span className="new-payment__policy__title">
+                    Я согласен с{" "}
+                    <a href={videoPrivacyPolicy} target="_blank" rel="noreferrer">
+                      политикой использования видеоматериалов
+                    </a>
+                  </span>
+                </Checkbox>
+                {errors.videoPrivacyPolicy && (
+                  <Space className="new-payment__error-text">
+                    <Text type="danger">Обязательно для заполнения</Text>
+                  </Space>
+                )}
+              </Space>
             </Space>
           </Space>
           <Space className="new-payment__buttons">
-            <ConfigProvider
+          {/* /TODO: закомментировано, так как истекли сертификаты и на данный момент не используется сервис */}
+            {/* <ConfigProvider
               theme={{
                 components: {
                   Button: {
@@ -352,7 +383,7 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
                   <img src={dolyameLogo} alt="dolyame-logo" loading="lazy" />
                 </div>
               </Button>
-            </ConfigProvider>
+            </ConfigProvider> */}
             <ConfigProvider
               theme={{
                 components: {

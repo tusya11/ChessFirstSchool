@@ -1,4 +1,9 @@
 import { LINK_VK, LINK_WHATS_UP, LINK_TELEGRAMM } from '../../../../parts/Footer/consts';
+import offer from '../../../../docs/offer.pdf';
+import privacyPolicy from '../../../../docs/privacy_policy.pdf';
+import consentPersonalData from '../../../../docs/consentPersonalData.pdf';
+import videoPrivacyPolicy from '../../../../docs/videoPrivacyPolicy.pdf';
+import consentMailingList from '../../../../docs/consentMailingList.pdf';
 import { contactNumber } from '../../../../utils/globalConstants';
 import './Footer.scss';
 
@@ -7,18 +12,16 @@ const Footer = () => {
     <footer className="main-footer">
       <div className="container">
         <div className="footer-grid">
-        {/* TODO: подключить документы, когда будут готовы */}
-          {/* <div className="legal-links">
+          <div className="legal-links">
             <h3>Документы</h3>
             <ul>
-              <li><a href="#privacy-policy">Политика обработки персональных данных</a></li>
-              <li><a href="#personal-data-consent">Согласие на обработку персональных данных</a></li>
-              <li><a href="#marketing-consent">Согласие на рассылку</a></li>
-              <li><a href="#user-agreement">Пользовательское соглашение</a></li>
-              <li><a href="#public-offer">Публичная оферта</a></li>
+              <li><a href={privacyPolicy} target="_blank" rel="noreferrer">Политика обработки персональных данных</a></li>
+              <li><a href={consentPersonalData} target="_blank" rel="noreferrer">Согласие на обработку персональных данных</a></li>
+              <li><a href={videoPrivacyPolicy} target="_blank" rel="noreferrer">Согласие на использование видеоматериалов</a></li>
+              <li><a href={consentMailingList} target="_blank" rel="noreferrer">Согласие на рассылку</a></li>
+              <li><a href={offer} target="_blank" rel="noreferrer">Публичная оферта</a></li>
             </ul>
-          </div> */}
-          
+          </div>
           <div className="contact-info">
             <h3>Контакты</h3>
             <ul>

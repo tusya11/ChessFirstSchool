@@ -11,7 +11,7 @@ const FacilitateCourses = () => {
     <MainTitleWithContent
       title="Как проходят занятия?"
       pt={"50px"}
-      padding={isXS ? "0px 15px 60px" : "0px 15px 100px"}
+      padding={isXS ? "0px 15px 60px" : "0px 40px 100px"}
     >
       <RecomendedItems
         items={facilitateItems}

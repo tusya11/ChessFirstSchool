@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Шахматная онлайн-школа CoolChess ♟️
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Пробный урок](https://img.shields.io/badge/Бесплатный_урок-Записаться-FFD700)](https://coolchess.ru/main)
 
-## Available Scripts
+**Развиваем логику, стратегическое мышление и уверенность в себе через шахматы!**  
+Для детей от 4 лет и взрослых. Первый урок — бесплатно!
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🏆 Почему выбирают CoolChess?
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 🌟 Наши преимущества:
+- **Персональный подход** — занятия с тренерами FIDE  
+- **Гибкий график** — уроки в любое удобное время  
+- **Интерактивная платформа** — задачи, турниры, анализ партий  
+- **Прогресс учеников** — ежемесячные отчеты для родителей  
+- **Поддержка 24/7** — ответим на все вопросы  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🚀 Как начать?
+1. **Запишись на пробный урок** → [Начать](https://coolchess.ru/main)  
+2. **Выбери тренера** по видеопрезентациям  
+3. **Оплати пакет** и получи материалы  
+4. **Играй и развивайся!** 🏆
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📞 Контакты
+- **Телефон:** [+7 (918) 544-59-84](tel:+79185445984)  
+- **Telegram:** [@coolchess_school](https://t.me/coolchess_school)  
+- **Email:** [info@coolchess.ru](mailto:info@coolchess.ru)  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<div align="center">
+  ▶️ **Не откладывай развитие! Первый шаг к гроссмейстеру — здесь.** ◀️
+</div>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Технические аспекты 
+Проект был развернут с помощью Create React App.
 
-### `npm run eject`
+Проект можно запустить с помощью команды `npm start`. Локальная разработка будет доступна по ссылке: [http://localhost:3000](http://localhost:3000)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Команда `npm run build` собирает приложение для production в папку `build`.  
+Корректно упаковывает React в production-режиме и оптимизирует сборку для наилучшей производительности.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Собранные файлы минифицированы, а имена файлов содержат хеши.  
+Ваше приложение готово к развёртыванию!
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Команда `npm run eject`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+**Примечание: это необратимая операция. После выполнения `eject` вы не сможете вернуться назад!**
 
-## Learn More
+Если вас не устраивают настройки инструментов сборки и конфигурации, вы можете выполнить `eject` в любой момент. Эта команда удалит единственную зависимость сборки из вашего проекта.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Вместо этого она скопирует:
+- Все конфигурационные файлы
+- Транзитивные зависимости (webpack, Babel, ESLint и т.д.) 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+...прямо в ваш проект, чтобы вы получили **полный контроль** над ними. 
 
-### Code Splitting
+#### Что изменится после eject:
+✅ Все команды (кроме `eject`) останутся работоспособными, но будут использовать скопированные скрипты.  
+⚠️ Вы сможете редактировать конфиги, но **техподдержка Create React App прекращается**.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### Рекомендации:
+- 🔄 Не используйте `eject` для небольших/средних проектов — стандартных настроек достаточно.  
+- 🛠️ Выполняйте только если готовы самостоятельно управлять конфигурацией.  
+- 💡 Этот функционал создан для кастомных сценариев, когда вы "переросли" базовые возможности.

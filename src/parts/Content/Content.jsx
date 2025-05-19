@@ -70,7 +70,7 @@ const Content = () => {
       <Preview />
       <RecomendedItems
         items={recomendedItems}
-        padding={isXS ? "30px 20px" : "40px 20px 60px"}
+        padding={isXS ? "30px 20px" : "40px 40px 60px"}
       />
       <AboutUsPage />
       <BlockOfPossibilities />

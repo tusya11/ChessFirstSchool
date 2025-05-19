@@ -1,6 +1,7 @@
 import SocialLink from "../../components/SocialLink/SocialLink";
 import offer from "../../docs/offer.pdf";
 import privacyPolicy from "../../docs/privacy_policy.pdf";
+import consentPersonalData from "../../docs/consentPersonalData.pdf";
 import { LINK_VK, LINK_WHATS_UP } from "./consts";
 import vk_mobile from "../../assets/whatsup_white.svg";
 import whatsup from "../../assets/vk_white.svg";
@@ -27,7 +28,15 @@ const Footer = () => (
         <a href={privacyPolicy} target="_blank" rel="noreferrer">
           Политика конфиденциальности
         </a>
+        <a href={consentPersonalData} target="_blank" rel="noreferrer">
+          Согласие на обработку персональных данных
+        </a>
       </div>
+    </div>
+    <div className="footer__additional">
+      <p>
+        Используемые программные компоненты разработаны сообществом открытого ПО и не связаны с запрещенными в РФ организациями
+      </p>
     </div>
   </footer>
 );
