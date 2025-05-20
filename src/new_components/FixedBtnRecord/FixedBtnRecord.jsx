@@ -1,14 +1,15 @@
-import React from "react";
 import { Button, ConfigProvider } from "antd";
-import modal from "../../store/modal";
+// import modal from "../../store/modal";
+import { urlToSignUpForClass } from '../../utils/globalConstants'
 import "./FixedBtnRecord.scss";
 
 const FixedBtnRecord = () => {
-  const { setIsOpenModal } = modal;
+  // const { setIsOpenModal } = modal;
 
   const handleClickButton = (e) => {
     e.stopPropagation();
-    setIsOpenModal(true);
+    window.open(urlToSignUpForClass, '_blank', 'noopener,noreferrer');
+    // setIsOpenModal(true);
   };
 
   return (

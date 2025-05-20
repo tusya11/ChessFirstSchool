@@ -1,19 +1,21 @@
-import React from "react";
 import { Button, ConfigProvider } from "antd";
 import { useMediaQuery } from "@mui/material";
-import modal from "../../store/modal";
+// import modal from "../../store/modal";
 import deskImage from "./images/desk_image.png";
 import mobileImage from "./images/mobile_image.png";
 // import ImagesContent from "./ImagesContent/ImagesContent";
+import { urlToSignUpForClass } from '../../utils/globalConstants'
 import "./Preview.scss";
 
 const Preview = () => {
   const isXS = useMediaQuery("(max-width:700px)");
 
-  const { setIsOpenModal } = modal;
+  // const { setIsOpenModal } = modal;
 
+  //TODO: временно сделан переход на форму записи по ссылке
   const handleClickButton = () => {
-    setIsOpenModal(true);
+    window.open(urlToSignUpForClass, '_blank', 'noopener,noreferrer');
+    // setIsOpenModal(true);
   };
 
   return (

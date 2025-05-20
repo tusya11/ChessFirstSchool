@@ -1,14 +1,31 @@
 .footer__container {
   display: flex;
   background-color: black;
+  flex-direction: column;
   color: white;
   align-items: center;
   justify-content: center;
-  padding: 9vh 80px;
+  padding: 9vh 80px 16px;
   border-radius: 60px 60px 0px 0px;
+  gap: 60px;
 
   @media screen and (max-width: 700px) {
-    padding: 9vh 40px 13vh;
+    padding: 9vh 40px 10vh;
+  }
+
+  .footer__additional {
+    p{
+      font-size: 0.7rem;
+      color: #666;
+      margin: 5px 0;
+      line-height: 1.4;
+      width: 100%;
+
+      @media screen and (max-width: 700px) {
+        text-align: center;
+        font-size: 0.8rem;
+      }
+    }
   }
 
   .footer__links {
@@ -49,13 +66,9 @@
     a {
       text-decoration: none;
       color: white;
-      font-size: 1.3vw;
+      font-size: 16px;
       font-family: "MontserratLight";
       transition: 0.3s;
-
-      @media screen and (max-width: 700px) {
-        font-size: 1.9vh;
-      }
     }
 
     a:hover {

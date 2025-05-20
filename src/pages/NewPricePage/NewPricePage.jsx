@@ -158,7 +158,7 @@ const NewPricePage = ({
       {!hideElements && (
         <Drawer
           placement={"right"}
-          width={isXS ? "100%" : "60%"}
+          width={isXS ? "100%" : "50%"}
           onClose={() => setIsOpenDrawer((prev) => !prev)}
           open={isOpenDrawer}
           styles={{

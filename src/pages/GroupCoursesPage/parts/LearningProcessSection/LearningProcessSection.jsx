@@ -36,6 +36,11 @@ const LearningProcessSection = () => {
 
   const handlerClickOnBtn = () => {
     window.open(urlToSummerIntensiveRegisterForm, '_blank', 'noopener,noreferrer');
+
+    // Отправка статистики в Яндекс Метрику
+    if (window.ym) {
+      window.ym(96915259, "reachGoal",'lead_form')
+    }
   }
 
   return (
