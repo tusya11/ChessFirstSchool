@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 
 // Константы для localStorage и времени
 const POPUP_TIMESTAMP_KEY = "coolChessPopupLastShownTimestamp";
@@ -20,40 +20,8 @@ const TelegramIcon = () => (
   </svg>
 );
 
-const InstIcon = () => (
-  <svg
-    width="24"
-    height="24"
-    viewBox="0 0 448 448"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg">
-    <rect width="448" height="448" rx="100" fill="url(#ig-gradient)" />
-    <defs>
-      <linearGradient
-        id="ig-gradient"
-        x1="224"
-        y1="0"
-        x2="224"
-        y2="448"
-        gradientUnits="userSpaceOnUse">
-        <stop stopColor="#feda75" />
-        <stop offset="0.5" stopColor="#fa7e1e" />
-        <stop offset="1" stopColor="#d62976" />
-      </linearGradient>
-    </defs>
-    <circle
-      cx="224"
-      cy="224"
-      r="80"
-      stroke="white"
-      strokeWidth="40"
-      fill="none"
-    />
-    <circle cx="340" cy="108" r="20" fill="white" />
-  </svg>
-);
 
-const ExitIntentPopup = ({ handleClick_Tg, handleClick_Inst }) => {
+const ExitIntentPopup = ({ handleClick_Tg }) => {
   const [showPopup, setShowPopup] = useState(false);
   // Используем ref для хранения ID таймера и функции очистки слушателя
   const timerIdRef = useRef(null);
@@ -146,7 +114,6 @@ const ExitIntentPopup = ({ handleClick_Tg, handleClick_Inst }) => {
   }
 
   const telegramUrl = "tg://resolve?domain=Coolchess_online";
-  const instUrl = "https://www.instagram.com/cool_chess_?igsh=aTdwY3B3dWNvZXVn";
 
   return (
     <div className={`popup-overlay ${showPopup ? "show" : ""}`}>
@@ -169,20 +136,6 @@ const ExitIntentPopup = ({ handleClick_Tg, handleClick_Inst }) => {
           }}>
           <span className="sn-icon">
             <TelegramIcon />
-          </span>
-          <span></span>
-        </a>
-        <a
-          href={instUrl}
-          className="button button--sn sn-button"
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() => {
-            handleClick_Inst();
-            closePopup();
-          }}>
-          <span className="sn-icon">
-            <InstIcon />
           </span>
           <span></span>
         </a>
