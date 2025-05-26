@@ -19,8 +19,8 @@ useEffect(() => {
     const updateTimer = () => {
       const now = new Date();
       const currentYear = now.getFullYear();
-      // Устанавливаем дату окончания акции - 26 мая 00:00
-      const targetDate = new Date(currentYear, 4, 26, 0, 0, 0); 
+      // Устанавливаем дату окончания акции - 6 июня 00:00
+      const targetDate = new Date(currentYear, 5, 6, 0, 0, 0); 
 
       // Проверяем, прошла ли дата окончания акции
       if (now >= targetDate) {
@@ -76,8 +76,8 @@ useEffect(() => {
             <>
             <div className="discount-badge">
             <div className="badge-content">
-              <span className="badge-text">ДО 25 МАЯ</span>
-              <span className="badge-discount">СКИДКА 50%</span>
+              <span className="badge-text">ДО 5 ИЮНЯ</span>
+              <span className="badge-discount">СКИДКА 25%</span>
             </div>
           </div>
           

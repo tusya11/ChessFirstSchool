@@ -11,7 +11,7 @@ import dolyamiLogo from "./assets/dolyami_logo.png";
 import "./NewPricePage.scss";
 
 const NewPricePage = ({
-  prices,
+  prices = [],
   hasAdditional = false,
   hideElements = false,
   titlePt = "0px",
@@ -19,8 +19,8 @@ const NewPricePage = ({
   const isXS = useMediaQuery("(max-width:700px)");
   const [priceData, setPriceData] = useState(prices[0]);
   const [tarif, setTarif] = useState({});
-  const [valueOption, setValueOption] = useState(prices[0].flag);
-  const options = [prices[0].flag, prices[1].flag, prices[2].flag];
+  const [valueOption, setValueOption] = useState(prices[0]?.flag);
+  const options = [prices[0]?.flag, prices[1]?.flag, prices[2]?.flag];
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
 
   const handleChangeSegmented = (event) => {
