@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/static/css/main.f168f8ab.css",
-    "main.js": "/static/js/main.f2f4fb7b.js",
-    "static/css/455.4488e021.chunk.css": "/static/css/455.4488e021.chunk.css",
-    "static/js/455.a64262f2.chunk.js": "/static/js/455.a64262f2.chunk.js",
+    "main.css": "/static/css/main.2bd1b3ec.css",
+    "main.js": "/static/js/main.f8ce05b5.js",
+    "static/css/552.4488e021.chunk.css": "/static/css/552.4488e021.chunk.css",
+    "static/js/552.946b6ad6.chunk.js": "/static/js/552.946b6ad6.chunk.js",
     "static/css/694.ee99913f.chunk.css": "/static/css/694.ee99913f.chunk.css",
     "static/js/694.6e78e2a6.chunk.js": "/static/js/694.6e78e2a6.chunk.js",
-    "static/js/552.cc704dd5.chunk.js": "/static/js/552.cc704dd5.chunk.js",
+    "static/js/132.11e9cf55.chunk.js": "/static/js/132.11e9cf55.chunk.js",
     "static/media/chess-pawn.png": "/static/media/chess-pawn.98ddaf573a4a5b918217.png",
     "static/media/woman_1.jpg": "/static/media/woman_1.d8afe4085a283c1f10f4.jpg",
     "static/media/calendar.svg": "/static/media/calendar.5a0b27aabb81093976441b02cfc8cbd2.svg",
@@ -92,7 +92,7 @@
     "static/media/arrow.svg": "/static/media/arrow.3e7917d71cc4df22795d6e956cf48fd9.svg"
   },
   "entrypoints": [
-    "static/css/main.f168f8ab.css",
-    "static/js/main.f2f4fb7b.js"
+    "static/css/main.2bd1b3ec.css",
+    "static/js/main.f8ce05b5.js"
   ]
 }
