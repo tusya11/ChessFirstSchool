@@ -7,6 +7,7 @@ import ReviewsSection from './parts/ReviewsSection/ReviewsSection'
 import PricingSection from './parts/PricingSection/PricingSection'
 // import CTAFormSection from './parts/CTAFormSection/CTAFormSection'
 import Footer from './parts/Footer/Footer'
+import { newPrice } from './consts/consts';
 
 const GroupCoursesPage = () => {
     return <>
@@ -17,7 +18,7 @@ const GroupCoursesPage = () => {
         <LearningProcessSection/>
         <TrainersSlider/>
         <ReviewsSection/>
-        <PricingSection/>
+        <PricingSection price={newPrice}/>
         {/* <CTAFormSection/> */}
         <Footer/>
     </>

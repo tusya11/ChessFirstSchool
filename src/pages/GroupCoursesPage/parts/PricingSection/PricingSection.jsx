@@ -1,17 +1,24 @@
 // import useScrollTo from '../../hooks/useScrollTo';
-import { urlToSummerIntensiveRegisterForm } from '../../../../utils/globalConstants';
+import { useState } from 'react';
+import RegistrationDrawer from '../RegistrationDrawer/RegistrationDrawer'
 import './PricingSection.scss';
 
-const PricingSection = () => {
+const PricingSection = ({ price }) => {
   // const scrollTo = useScrollTo();
+  const { total, discountedTotal, discount, oneLessonTotal, discountedTotalNumber } = price;
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const handlerClickOnBtn = () => {
-    window.open(urlToSummerIntensiveRegisterForm, '_blank', 'noopener,noreferrer');
+    setIsDrawerOpen(true);
 
     // Отправка статистики в Яндекс Метрику
     if (window.ym) {
       window.ym(96915259, "reachGoal",'lead_form')
     }
+  }
+
+  const handleClose = () => {
+    setIsDrawerOpen(prev => !prev)
   }
 
   return (
@@ -22,14 +29,14 @@ const PricingSection = () => {
         
         <div className="pricing-card">
           <div className="price-tag">
-            <div className="current-price">8 400 ₽</div>
-            <div className="old-price">16 800 ₽</div>
-            <div className="discount-badge">-50%</div>
+            <div className="current-price">{discountedTotal} ₽</div>
+            <div className="old-price">{total} ₽</div>
+            <div className="discount-badge">-{discount}%</div>
           </div>
           
           <div className="price-per-lesson">
             <span>1 урок = </span>
-            <span className="lesson-price">350 ₽</span>
+            <span className="lesson-price">{oneLessonTotal} ₽</span>
           </div>
           
           <ul className="features-list">
@@ -78,10 +85,11 @@ const PricingSection = () => {
           </ul>
           {/* TODO: 2 этап - после реализации формы записи, переделать onClick={() => scrollTo('signup-form', 0)} */}
           <button className="cta-button" onClick={handlerClickOnBtn}>
-            Записаться на летний курс
+            Купить абонемент
           </button>
         </div>
       </div>
+      <RegistrationDrawer isOpen={isDrawerOpen} onClose={handleClose} totalSum={discountedTotalNumber}/>
     </section>
   );
 };

@@ -5,7 +5,7 @@ const BenefitsSection = () => {
   const benefits = [
     {
       icon: <FaChess className="icon" />,
-      title: "Цена – 350₽ за 60 минут!",
+      title: "Цена – 525₽ за 60 минут!",
       description: "Это самая выгодная цена!"
     },
     {
@@ -59,7 +59,7 @@ const BenefitsSection = () => {
         </div>
 
         <div className="bonuses-section">
-          <h3 className="bonus-title animate">Запишись до 25 мая и получи БОНУСЫ:</h3>
+          <h3 className="bonus-title animate">БОНУСЫ:</h3>
           
           <div className="bonuses-grid">
             {bonuses.map((item, index) => (
