@@ -1,8 +1,6 @@
 import { Button, ConfigProvider } from "antd";
 import { useMediaQuery } from "@mui/material";
 // import modal from "../../store/modal";
-import deskImage from "./images/desk_image.png";
-import mobileImage from "./images/mobile_image.png";
 import { urlToSignUpForClass } from '../../utils/globalConstants'
 import "./Preview.scss";
 
@@ -71,7 +69,7 @@ const Preview = () => {
         <div className="preview__left-content">
           <div className="preview__left-block">
             <img
-              src={isXS ? mobileImage : deskImage}
+              src={isXS ? `${process.env.PUBLIC_URL}/images/mobile_image.png`: `${process.env.PUBLIC_URL}/images/desk_image.png`}
               alt="preview__icon"
               loading="eager"
             />
