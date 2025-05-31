@@ -16,7 +16,7 @@ const App = () => (
         <Route path="/landing-page/promo/*" element={<Promo />} />
         <Route path="/main/*" element={<Wrapper />} />
         <Route path="/chess-groups/*" element={<GroupCoursesPage/>}/>
-        <Route path="/chess-groups/legacy*" element={<ChessGroupsPaymentLegacy/>}/>
+        <Route path="/chess-groups/legacy/*" element={<ChessGroupsPaymentLegacy/>}/>
         <Route path="/success/*" element={<SuccessPage />} />
         <Route path="/fail/*" element={<FailurePage />} />
         <Route path="/*" element={<Navigate to="/main" replace />} />

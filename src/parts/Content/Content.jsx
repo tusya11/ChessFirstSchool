@@ -11,6 +11,7 @@ import { recomendedItems } from "../../pages/RecomendedItems/consts";
 import Benefit from "../../pages/Benefit/Benefit";
 import Bonuses from "../../pages/Bonuses/Bonuses";
 import AdditionalBlock from "../../pages/AdditionalBlock/AdditionalBlock";
+import ReviewsSection from '../../pages/GroupCoursesPage/parts/ReviewsSection/ReviewsSection'
 import { new_prices } from "../../pages/NewPricePage/consts";
 import "./Content.scss";
 
@@ -79,8 +80,9 @@ const Content = () => {
       <Suspense fallback={<Spin />}>
         <NewTeamPageLazy />
       </Suspense>
+      <ReviewsSection/>
       <Suspense fallback={<Spin />}>
-        <NewPricePageLazy prices={new_prices} hasAdditional={true} />
+        <NewPricePageLazy prices={new_prices} hasAdditional={true} titlePt={isXS ? "40px" : "80px"}/>
       </Suspense>
       <Bonuses />
       <AdditionalBlock />

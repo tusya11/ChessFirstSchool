@@ -3,7 +3,6 @@ import { useMediaQuery } from "@mui/material";
 // import modal from "../../store/modal";
 import deskImage from "./images/desk_image.png";
 import mobileImage from "./images/mobile_image.png";
-// import ImagesContent from "./ImagesContent/ImagesContent";
 import { urlToSignUpForClass } from '../../utils/globalConstants'
 import "./Preview.scss";
 
@@ -77,9 +76,6 @@ const Preview = () => {
               loading="eager"
             />
           </div>
-          {/* <div className="preview__left-block">
-            <ImagesContent />
-          </div> */}
         </div>
       </div>
     </section>
