@@ -1,22 +1,22 @@
-import React, { useState } from "react";
-import { Button, Col, ConfigProvider, Drawer, Row, Segmented } from "antd";
-import { useMediaQuery } from "@mui/material";
-import clsx from "classnames";
-import NewPayment from "../../components/NewPayment/NewPayment";
-import MainTitleWithContent from "../../new_components/MainTitleWithContent/MainTitleWithContent";
-import trophyImage from "./assets/trophy.png";
-import dolyamiImage from "./assets/dolyami_image.png";
-import dolyamiLogo from "./assets/dolyami_logo.png";
+import { useState } from 'react';
+import { Button, Col, ConfigProvider, Drawer, Row, Segmented } from 'antd';
+import { useMediaQuery } from '@mui/material';
+import clsx from 'classnames';
+import NewPayment from '../../components/NewPayment/NewPayment';
+import MainTitleWithContent from '../../new_components/MainTitleWithContent/MainTitleWithContent';
+import trophyImage from './assets/trophy.png';
+import dolyamiImage from './assets/dolyami_image.png';
+import dolyamiLogo from './assets/dolyami_logo.png';
 
-import "./NewPricePage.scss";
+import './NewPricePage.scss';
 
 const NewPricePage = ({
   prices = [],
   hasAdditional = false,
   hideElements = false,
-  titlePt = "0px",
+  titlePt = '0px',
 }) => {
-  const isXS = useMediaQuery("(max-width:700px)");
+  const isXS = useMediaQuery('(max-width:700px)');
   const [priceData, setPriceData] = useState(prices[0]);
   const [tarif, setTarif] = useState({});
   const [valueOption, setValueOption] = useState(prices[0]?.flag);
@@ -48,7 +48,7 @@ const NewPricePage = ({
         <MainTitleWithContent
           title="Стоимость"
           padding={isXS ? `${titlePt} 0px` : `${titlePt} 40px 40px`}
-          paddingLeftTitle={isXS && "15px"}
+          paddingLeftTitle={isXS && '15px'}
         >
           <Row className="new-price-page__content" id="price">
             <Col flex={1} className="new-price-page__image-container">
@@ -83,17 +83,13 @@ const NewPricePage = ({
                   <div
                     //TODO: убрать clsx и оставить один класс
                     className={clsx(
-                      hasAdditional
-                        ? "new-price-page__items-2"
-                        : "new-price-page__items"
+                      hasAdditional ? 'new-price-page__items-2' : 'new-price-page__items',
                     )}
                     key={v.id}
                     onClick={() => handleClickPriceData(v.id)}
                   >
                     <div className="new-price-page__block-description">
-                      <p className="new-price-page__description">
-                        {v.description}
-                      </p>
+                      <p className="new-price-page__description">{v.description}</p>
                       <p className="new-price-page__price">{v.price} ₽</p>
                     </div>
                     {hasAdditional && (
@@ -115,7 +111,7 @@ const NewPricePage = ({
                           colorPrimaryHover: `black`,
                           colorPrimaryActive: `black`,
                           lineWidth: 0,
-                          fontWeight: "600",
+                          fontWeight: '600',
                           paddingBlock: 18,
                           paddingInline: 20,
                         },
@@ -157,15 +153,15 @@ const NewPricePage = ({
       )}
       {!hideElements && (
         <Drawer
-          placement={"right"}
-          width={isXS ? "100%" : "50%"}
+          placement={'right'}
+          width={isXS ? '100%' : '50%'}
           onClose={() => setIsOpenDrawer((prev) => !prev)}
           open={isOpenDrawer}
           styles={{
             header: {
-              display: "flex",
-              marginLeft: "auto",
-              border: "none",
+              display: 'flex',
+              marginLeft: 'auto',
+              border: 'none',
             },
           }}
           className="new-price-page__drawer"

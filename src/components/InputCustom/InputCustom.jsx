@@ -1,7 +1,6 @@
-import React from "react";
-import { TextField } from "@mui/material";
-import { TextMaskCustom } from "../TextMaskCustom/TextMaskCustom";
-import "./InputCustom.scss";
+import { TextField } from '@mui/material';
+import { TextMaskCustom } from '../TextMaskCustom/TextMaskCustom';
+import './InputCustom.scss';
 
 const InputCustom = (props) => {
   const { value, onChange, label, type, error } = props;
@@ -16,10 +15,10 @@ const InputCustom = (props) => {
         variant="filled"
         size="medium"
         color="primary"
-        className={`input__textfield ${error && "error"}`}
+        className={`input__textfield ${error && 'error'}`}
         error={error}
         InputProps={
-          type === "telephone"
+          type === 'telephone'
             ? {
                 inputComponent: TextMaskCustom,
               }

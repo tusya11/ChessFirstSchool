@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import useScrollTo from './../../hooks/useScrollTo'
+import { useState, useEffect } from 'react';
+import useScrollTo from './../../hooks/useScrollTo';
 import './HeroSection.scss';
 
 const HeroSection = () => {
@@ -8,7 +8,7 @@ const HeroSection = () => {
     days: 0,
     hours: 0,
     minutes: 0,
-    seconds: 0
+    seconds: 0,
   });
 
   useEffect(() => {
@@ -41,52 +41,53 @@ const HeroSection = () => {
     return () => clearInterval(timer);
   }, []);
 
-   const hasDiscount = timeLeft.days + timeLeft.hours + timeLeft.minutes + timeLeft.seconds > 0;
+  const hasDiscount = timeLeft.days + timeLeft.hours + timeLeft.minutes + timeLeft.seconds > 0;
 
   return (
     <section className="hero-section">
       <div className="chess-animation">
-        <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <svg
+          viewBox="0 0 800 600"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="xMidYMid slice"
+        >
           {/* Шахматная доска */}
           <rect width="100%" height="100%" fill="#FAF5F1" />
-          
+
           {/* Клетки доски */}
-          {[...Array(8)].map((_, i) => (
-            [...Array(8)].map((_, j) => (
-              (i + j) % 2 === 1 && (
-                <rect 
-                  key={`${i}-${j}`} 
-                  x={`${i * 12.5}%`} 
-                  y={`${j * 12.5}%`} 
-                  width="12.5%" 
-                  height="12.5%" 
-                  fill="#464BFF"
-                />
-              )
-            ))
-          ))}
-          
+          {[...Array(8)].map((_, i) =>
+            [...Array(8)].map(
+              (_, j) =>
+                (i + j) % 2 === 1 && (
+                  <rect
+                    key={`${i}-${j}`}
+                    x={`${i * 12.5}%`}
+                    y={`${j * 12.5}%`}
+                    width="12.5%"
+                    height="12.5%"
+                    fill="#464BFF"
+                  />
+                ),
+            ),
+          )}
+
           {/* Анимированные фигуры */}
           <g className="animated-pieces">
-            <path 
-              d="M150 250 Q 175 200 200 250 Q 225 200 250 250 L 225 275 L 200 250 L 175 275 Z" 
+            <path
+              d="M150 250 Q 175 200 200 250 Q 225 200 250 250 L 225 275 L 200 250 L 175 275 Z"
               fill="#2C2C2C"
               className="knight"
             />
-            <circle 
-              cx="600" 
-              cy="400" 
-              r="30" 
-              fill="#FFFFFF" 
-              stroke="#2C2C2C" 
+            <circle
+              cx="600"
+              cy="400"
+              r="30"
+              fill="#FFFFFF"
+              stroke="#2C2C2C"
               strokeWidth="3"
               className="queen"
             />
-            <path 
-              d="M500 300 L 520 350 L 500 350 L 480 350 Z" 
-              fill="#DCE204"
-              className="pawn"
-            />
+            <path d="M500 300 L 520 350 L 500 350 L 480 350 Z" fill="#DCE204" className="pawn" />
           </g>
         </svg>
         <div className="overlay"></div>
@@ -94,12 +95,14 @@ const HeroSection = () => {
 
       <div className="hero-content">
         <h1 className="fade-in">Курсы по шахматам</h1>
-        <p className="subtitle fade-in">Развивайте стратегическое мышление и интеллект с нашими профессиональными тренерами</p>
-        
+        <p className="subtitle fade-in">
+          Развивайте стратегическое мышление и интеллект с нашими профессиональными тренерами
+        </p>
+
         {hasDiscount ? (
           <>
             <div className="discount-banner fade-in">ДО 20 МАЯ СКИДКА 50%!</div>
-            
+
             <div className="timer fade-in">
               <div className="timer-item">
                 <span>{timeLeft.days.toString().padStart(2, '0')}</span>
@@ -123,7 +126,9 @@ const HeroSection = () => {
           <div className="discount-banner fade-in">СКИДКИ ЗАКОНЧИЛИСЬ</div>
         )}
 
-        <button className="cta-button fade-in" onClick={() => scrollTo('signup-form', 0)}>ЗАПИСАТЬСЯ СЕЙЧАС!</button>
+        <button className="cta-button fade-in" onClick={() => scrollTo('signup-form', 0)}>
+          ЗАПИСАТЬСЯ СЕЙЧАС!
+        </button>
       </div>
     </section>
   );

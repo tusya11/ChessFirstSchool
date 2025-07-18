@@ -1,5 +1,4 @@
-import React from "react";
-import "./TeamMemberContent.scss";
+import './TeamMemberContent.scss';
 
 const TeamMemberContent = ({ member = {} }) => (
   <div className="team-member-content__container">
@@ -8,9 +7,7 @@ const TeamMemberContent = ({ member = {} }) => (
       <p className="team-member-content__dignity">{member.dignity}</p>
     </div>
     <div className="team-member-content__description">
-      <p className="team-member-content__description-text">
-        {member.description}
-      </p>
+      <p className="team-member-content__description-text">{member.description}</p>
     </div>
   </div>
 );

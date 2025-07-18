@@ -1,8 +1,8 @@
-$primary: #464BFF;
-$accent: #DCE204;
-$background: #FAF5F1;
-$text-dark: #2C2C2C;
-$text-light: #FFFFFF;
+$primary: #464bff;
+$accent: #dce204;
+$background: #faf5f1;
+$text-dark: #2c2c2c;
+$text-light: #ffffff;
 
 .hero-section {
   position: relative;
@@ -147,7 +147,9 @@ $text-light: #FFFFFF;
     animation: float 6s ease-in-out infinite;
   }
   .queen {
-    animation: pulse 4s ease infinite, float 5s ease-in-out infinite 1s;
+    animation:
+      pulse 4s ease infinite,
+      float 5s ease-in-out infinite 1s;
   }
   .pawn {
     animation: move 8s linear infinite;
@@ -158,30 +160,62 @@ $text-light: #FFFFFF;
   animation: fadeIn 1s ease-out forwards;
   opacity: 0;
 
-  &:nth-child(1) { animation-delay: 0.2s; }
-  &:nth-child(2) { animation-delay: 0.4s; }
-  &:nth-child(3) { animation-delay: 0.6s; }
-  &:nth-child(4) { animation-delay: 0.8s; }
-  &:nth-child(5) { animation-delay: 1s; }
+  &:nth-child(1) {
+    animation-delay: 0.2s;
+  }
+  &:nth-child(2) {
+    animation-delay: 0.4s;
+  }
+  &:nth-child(3) {
+    animation-delay: 0.6s;
+  }
+  &:nth-child(4) {
+    animation-delay: 0.8s;
+  }
+  &:nth-child(5) {
+    animation-delay: 1s;
+  }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
 }
 
 @keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
 }
 
 @keyframes move {
-  0% { transform: translateX(0); }
-  50% { transform: translateX(30px); }
-  100% { transform: translateX(0); }
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(30px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

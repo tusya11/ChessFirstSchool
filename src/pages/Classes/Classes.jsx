@@ -1,7 +1,6 @@
-import React from "react";
-import imageReplays from "../../assets/replays.png";
-import { lessons } from "./consts";
-import "./Classes.scss";
+import imageReplays from '../../assets/replays.png';
+import { lessons } from './consts';
+import './Classes.scss';
 
 const Classes = () => (
   <div className="classes__container">

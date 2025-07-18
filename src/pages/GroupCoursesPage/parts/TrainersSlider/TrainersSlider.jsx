@@ -1,15 +1,17 @@
 import { useState, useEffect } from 'react';
-import { teamData } from '../../../../pages/NewTeamPage/consts'
+import { teamData } from '../../../../pages/NewTeamPage/consts';
 import './TrainersSlider.scss';
 
 const TrainersSlider = () => {
-  const trainers = teamData.filter(item => item.id === 1 || item.id === 12 || item.id === 7).map(person => ({
-    id: person.id,
-    name: person.name,
-    position: person.dignity,
-    qualification: person.description,
-    image: person.image
-  }))
+  const trainers = teamData
+    .filter((item) => item.id === 1 || item.id === 12 || item.id === 7)
+    .map((person) => ({
+      id: person.id,
+      name: person.name,
+      position: person.dignity,
+      qualification: person.description,
+      image: person.image,
+    }));
   // const trainers = [
   //   {
   //     id: 1,
@@ -50,10 +52,10 @@ const TrainersSlider = () => {
   return (
     <section className="trainers-section">
       <h2 className="section-title">Наши тренеры</h2>
-      
+
       <div className="trainers-slider">
         {trainers.map((trainer, index) => (
-          <div 
+          <div
             key={trainer.id}
             className={`trainer-slide ${index === currentSlide ? 'active' : ''}`}
             style={{ transform: `translateX(${100 * (index - currentSlide)}%)` }}
@@ -69,7 +71,7 @@ const TrainersSlider = () => {
             </div>
           </div>
         ))}
-        
+
         <div className="slider-dots">
           {trainers.map((_, index) => (
             <button
