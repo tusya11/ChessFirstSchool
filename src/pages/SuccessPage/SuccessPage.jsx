@@ -1,15 +1,15 @@
-import React from "react";
-import { useState } from "react";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import succesIcon from "../../assets/success.svg";
-import "./SuccessPage.scss";
-import { Button } from "@mui/material";
-import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
-import { observer } from "mobx-react-lite";
-import axios from "axios";
-import modal from "../../store/modal";
-import dayjs from "dayjs";
+import React from 'react';
+import { useState } from 'react';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import succesIcon from '../../assets/success.svg';
+import './SuccessPage.scss';
+import { Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import { observer } from 'mobx-react-lite';
+import axios from 'axios';
+import modal from '../../store/modal';
+import dayjs from 'dayjs';
 
 const urlRequest = process.env.REACT_APP_NEST_URL;
 
@@ -18,10 +18,10 @@ const SuccessPage = observer(() => {
   const navigate = useNavigate();
   const [schedule, setSchedule] = useState([]);
 
-  const orderItems = JSON.parse(localStorage.getItem("order") || "{}");
+  const orderItems = JSON.parse(localStorage.getItem('order') || '{}');
 
   const handleClickBack = () => {
-    navigate("/main");
+    navigate('/main');
   };
 
   const getInfoAboutOrder = async () => {
@@ -33,9 +33,9 @@ const SuccessPage = observer(() => {
       // window.open(response.data.link, "_blank");
       // window.location.href = response.data.link;
     } catch (e) {
-      console.error("---e", e);
+      console.error('---e', e);
       setAlertMsg({
-        status: "error",
+        status: 'error',
         message: e.response.data.message,
         visible: true,
       });
@@ -63,16 +63,14 @@ const SuccessPage = observer(() => {
               {schedule.map((v, index) => (
                 <div className="success-page__row" key={index}>
                   {index === 0 || index === 1 ? (
-                    <div className={index === 1 && "succes-page__next-pay"}>
-                      {index === 0 ? "Текущая оплата" : "Следующая оплата"}
+                    <div className={index === 1 && 'succes-page__next-pay'}>
+                      {index === 0 ? 'Текущая оплата' : 'Следующая оплата'}
                     </div>
                   ) : (
                     <div></div>
                   )}
                   <div>{v.amount}&nbsp;₽</div>
-                  <div>
-                    {dayjs(v.payment_date).locale("ru").format("DD MMMM YYYY")}
-                  </div>
+                  <div>{dayjs(v.payment_date).locale('ru').format('DD MMMM YYYY')}</div>
                 </div>
               ))}
             </div>

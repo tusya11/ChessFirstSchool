@@ -1,6 +1,6 @@
 // import useScrollTo from '../../hooks/useScrollTo';
 import { useState } from 'react';
-import RegistrationDrawer from '../RegistrationDrawer/RegistrationDrawer'
+import RegistrationDrawer from '../RegistrationDrawer/RegistrationDrawer';
 import './PricingSection.scss';
 
 const PricingSection = ({ price }) => {
@@ -13,66 +13,66 @@ const PricingSection = ({ price }) => {
 
     // Отправка статистики в Яндекс Метрику
     if (window.ym) {
-      window.ym(96915259, "reachGoal",'lead_form')
+      window.ym(96915259, 'reachGoal', 'lead_form');
     }
-  }
+  };
 
   const handleClose = () => {
-    setIsDrawerOpen(prev => !prev)
-  }
+    setIsDrawerOpen((prev) => !prev);
+  };
 
   return (
     <section className="pricing-section" id="pricing">
       <div className="container">
         <h2 className="section-title">Летний абонемент</h2>
         <p className="section-subtitle">С 7 июня по 31 августа</p>
-        
+
         <div className="pricing-card">
           <div className="price-tag">
             <div className="current-price">{discountedTotal} ₽</div>
             <div className="old-price">{total} ₽</div>
             <div className="discount-badge">-{discount}%</div>
           </div>
-          
+
           <div className="price-per-lesson">
             <span>1 урок = </span>
             <span className="lesson-price">{oneLessonTotal} ₽</span>
           </div>
-          
+
           <ul className="features-list">
             <li className="feature-item">
               <svg className="feature-icon" viewBox="0 0 24 24">
-                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
               </svg>
               Составление индивидуальной программы
             </li>
             <li className="feature-item">
               <svg className="feature-icon" viewBox="0 0 24 24">
-                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
               </svg>
               Индивидуальный курс занятий в записи
             </li>
             <li className="feature-item">
               <svg className="feature-icon" viewBox="0 0 24 24">
-                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
               </svg>
               Личный тьютор
             </li>
             <li className="feature-item">
               <svg className="feature-icon" viewBox="0 0 24 24">
-                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
               </svg>
               Проверка домашних заданий
             </li>
             <li className="feature-item">
               <svg className="feature-icon" viewBox="0 0 24 24">
-                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
               </svg>
               Участие в турнирах
             </li>
             <li className="feature-item">
               <svg className="feature-icon" viewBox="0 0 24 24">
-                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
               </svg>
               Сеанс с опытными мастерами
             </li>
@@ -83,7 +83,11 @@ const PricingSection = ({ price }) => {
           </button>
         </div>
       </div>
-      <RegistrationDrawer isOpen={isDrawerOpen} onClose={handleClose} totalSum={discountedTotalNumber}/>
+      <RegistrationDrawer
+        isOpen={isDrawerOpen}
+        onClose={handleClose}
+        totalSum={discountedTotalNumber}
+      />
     </section>
   );
 };

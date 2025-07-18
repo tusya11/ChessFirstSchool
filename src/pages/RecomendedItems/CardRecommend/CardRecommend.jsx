@@ -1,18 +1,13 @@
-import React from "react";
-import clsx from "classnames";
-import { useMediaQuery } from "@mui/material";
-import "./CardRecommend.scss";
+import clsx from 'classnames';
+import { useMediaQuery } from '@mui/material';
+import './CardRecommend.scss';
 
 const CardRecommend = ({ item, className, isHorizontal = false }) => {
-  const isXS = useMediaQuery("(max-width:700px)");
+  const isXS = useMediaQuery('(max-width:700px)');
 
   return (
     <div
-      className={clsx(
-        "card-recommend__content",
-        className && className,
-        isHorizontal && "scroll"
-      )}
+      className={clsx('card-recommend__content', className && className, isHorizontal && 'scroll')}
     >
       <div className="card-recommend__main">
         <div className="card-recommend__image">
@@ -30,9 +25,7 @@ const CardRecommend = ({ item, className, isHorizontal = false }) => {
             <p className="card-recommend__title-text">{item.title}</p>
           </div>
         )}
-        <span className="card-recommend__description-text">
-          {item.description}
-        </span>
+        <span className="card-recommend__description-text">{item.description}</span>
       </div>
     </div>
   );

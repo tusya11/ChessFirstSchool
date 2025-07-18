@@ -32,14 +32,12 @@ describe('Базовые тесты отрисовки сайта', () => {
   it('3. Должен закрываться Drawer при клике на крестик', () => {
     // 1. Открываем Drawer
     cy.contains('button', 'Записаться на обучение').click();
-    
+
     // 2. Закрываем через иконку закрытия
     cy.get('.ant-drawer-close') // стандартный селектор для кнопки закрытия в Ant Design
       .click();
-    
-    // 3. Проверяем, что Drawer закрылся
-    cy.get('.ant-drawer')
-      .should('not.be.visible');
-  });
 
+    // 3. Проверяем, что Drawer закрылся
+    cy.get('.ant-drawer').should('not.be.visible');
+  });
 });

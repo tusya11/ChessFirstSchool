@@ -1,12 +1,11 @@
-import React from "react";
-import "./MainTitleWithContent.scss";
+import './MainTitleWithContent.scss';
 
 const MainTitleWithContent = ({
   title,
   pt,
   children,
   padding,
-  paddingUnderTitle = "30px",
+  paddingUnderTitle = '30px',
   paddingLeftTitle,
 }) => {
   return (

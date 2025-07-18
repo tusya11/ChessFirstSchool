@@ -1,7 +1,6 @@
-import React from "react";
-import { team } from "./utils";
-import SwiperComponent from "../../components/SwiperComponent/SwiperComponent";
-import "./Team.scss";
+import { team } from './utils';
+import SwiperComponent from '../../components/SwiperComponent/SwiperComponent';
+import './Team.scss';
 
 const Team = () => {
   return (

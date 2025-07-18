@@ -1,5 +1,5 @@
-import TiltComponent from "../TiltComponent/TiltComponent";
-import "./CardPerson.scss";
+import TiltComponent from '../TiltComponent/TiltComponent';
+import './CardPerson.scss';
 
 const CardPerson = ({ card }) => {
   return (
