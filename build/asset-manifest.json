@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/static/css/main.6a90adfc.css",
-    "main.js": "/static/js/main.afe36659.js",
-    "static/css/552.4488e021.chunk.css": "/static/css/552.4488e021.chunk.css",
-    "static/js/552.946b6ad6.chunk.js": "/static/js/552.946b6ad6.chunk.js",
-    "static/css/694.ee99913f.chunk.css": "/static/css/694.ee99913f.chunk.css",
-    "static/js/694.6e78e2a6.chunk.js": "/static/js/694.6e78e2a6.chunk.js",
-    "static/js/132.11e9cf55.chunk.js": "/static/js/132.11e9cf55.chunk.js",
+    "main.css": "/static/css/main.f9be8e1d.css",
+    "main.js": "/static/js/main.edd7d543.js",
+    "static/css/661.73909892.chunk.css": "/static/css/661.73909892.chunk.css",
+    "static/js/661.d3767333.chunk.js": "/static/js/661.d3767333.chunk.js",
+    "static/css/297.ec41a4bd.chunk.css": "/static/css/297.ec41a4bd.chunk.css",
+    "static/js/297.ea64f573.chunk.js": "/static/js/297.ea64f573.chunk.js",
+    "static/js/596.45788d44.chunk.js": "/static/js/596.45788d44.chunk.js",
     "static/media/chess-pawn.png": "/static/media/chess-pawn.98ddaf573a4a5b918217.png",
     "static/media/woman_1.jpg": "/static/media/woman_1.d8afe4085a283c1f10f4.jpg",
     "static/media/calendar.svg": "/static/media/calendar.00e686a64a8c474ebd3854411d62411b.svg",
@@ -115,7 +115,7 @@
     "static/media/burgerMenuBtn.svg": "/static/media/burgerMenuBtn.46d2ac73c9d2c782792db592774044c7.svg"
   },
   "entrypoints": [
-    "static/css/main.6a90adfc.css",
-    "static/js/main.afe36659.js"
+    "static/css/main.f9be8e1d.css",
+    "static/js/main.edd7d543.js"
   ]
 }
