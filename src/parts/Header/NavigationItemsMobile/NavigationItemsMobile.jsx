@@ -1,5 +1,5 @@
 import { Button, ConfigProvider } from "antd";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 
 // import { urlToSignUpForClass } from "../../../utils/globalConstants";
 import { navigatePanel } from "../consts";
@@ -15,6 +15,7 @@ import "./NavigationItemsMobile.scss";
 
 const NavigationItemsMobile = ({ onChoose }) => {
   const { setIsOpenModal } = modal;
+  const navigate = useNavigate();
   // eslint-disable-next-line no-unused-vars
   const [_, setSearchParams] = useSearchParams({ block: "" });
 
@@ -25,6 +26,11 @@ const NavigationItemsMobile = ({ onChoose }) => {
   };
 
   const handleClickLink = (link) => {
+    if (link === "personal_account" || link === "schedule") {
+      navigate(link);
+      return;
+    }
+
     setSearchParams({ block: link });
     onChoose();
   };
