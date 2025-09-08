@@ -4,7 +4,7 @@
   top: 0;
   height: 82px;
   display: grid;
-  grid-template-columns: 1fr 2fr 0.8fr;
+  grid-template-columns: auto 2fr auto;
   align-items: center;
   box-sizing: border-box;
   background-color: rgba(255, 255, 255, 0.6);
@@ -56,10 +56,15 @@
     cursor: pointer;
     height: 100%;
     align-items: flex-end;
+    justify-content: center;
     box-sizing: border-box;
 
     .header__navigate-block-item {
       position: relative;
+      cursor: pointer;
+      &:nth-child(6) {
+        color: blue;
+      }
     }
 
     .header__navigate-item {
@@ -86,19 +91,11 @@
     .header__navigate-block-item.active-item .header__navigate-item::before {
       transform: scaleX(1);
     }
-
-    .header__number-phone {
-      a {
-        text-decoration: none;
-        color: black;
-        font-size: 1.2vw;
-      }
-    }
   }
 
   .header__info-block {
     display: flex;
-    gap: 20px;
+    gap: 12px;
     height: 100%;
     align-items: center;
     justify-content: center;
@@ -124,13 +121,13 @@
 
     .header__button {
       font-family: "GeologicaSemiBold";
-      font-size: 15px;
+      font-size: 13px;
       letter-spacing: 1px;
       line-height: 20px;
       border-radius: 12px !important;
       text-transform: uppercase;
       height: 6vh;
-      width: 15vw;
+      width: 12vw;
       box-shadow: none;
     }
   }

@@ -1,15 +1,29 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
 // Список всех URL сайта
 const pages = [
-  { url: '/', lastmod: new Date().toISOString(), priority: '1.0' },
-  { url: '/chess-groups/', lastmod: new Date().toISOString(), priority: '0.9' },
-  { url: '/chess-groups/legacy/', lastmod: new Date().toISOString(), priority: '0.8' },
-  { url: '/landing-page/', lastmod: new Date().toISOString(), priority: '0.8' },
-  { url: '/landing-page/promo/', lastmod: new Date().toISOString(), priority: '0.7' },
-  { url: '/success/', lastmod: new Date().toISOString(), priority: '0.5' },
-  { url: '/fail/', lastmod: new Date().toISOString(), priority: '0.5' },
+  { url: "/", lastmod: new Date().toISOString(), priority: "1.0" },
+  {
+    url: "/personal_account",
+    lastmod: new Date().toISOString(),
+    priority: "0.9",
+  },
+  { url: "/schedule", lastmod: new Date().toISOString(), priority: "0.9" },
+  { url: "/chess-groups/", lastmod: new Date().toISOString(), priority: "0.8" },
+  {
+    url: "/chess-groups/legacy/",
+    lastmod: new Date().toISOString(),
+    priority: "0.8",
+  },
+  { url: "/landing-page/", lastmod: new Date().toISOString(), priority: "0.8" },
+  {
+    url: "/landing-page/promo/",
+    lastmod: new Date().toISOString(),
+    priority: "0.7",
+  },
+  { url: "/success/", lastmod: new Date().toISOString(), priority: "0.5" },
+  { url: "/fail/", lastmod: new Date().toISOString(), priority: "0.5" },
 ];
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -22,11 +36,11 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
       <lastmod>${page.lastmod}</lastmod>
       <priority>${page.priority}</priority>
     </url>
-  `,
+  `
     )
-    .join('')}
+    .join("")}
 </urlset>
 `;
 
-fs.writeFileSync(path.join(__dirname, 'public', 'sitemap.xml'), sitemap);
-console.log('Sitemap generated!');
+fs.writeFileSync(path.join(__dirname, "public", "sitemap.xml"), sitemap);
+console.log("Sitemap generated!");

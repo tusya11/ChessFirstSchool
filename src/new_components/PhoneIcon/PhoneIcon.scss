@@ -1,0 +1,321 @@
+// PhoneIcon.scss
+
+// Переменные
+$phone-primary: #25d366;
+$phone-primary-dark: #20bd5c;
+$phone-secondary: #128c7e;
+$phone-secondary-dark: #0f7a68;
+$shadow-color: rgba(37, 211, 102, 0.3);
+$text-color: white;
+$transition-time: 0.3s;
+
+// Базовые стили
+.phone-icon {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, $phone-primary, $phone-secondary);
+  color: $text-color;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all $transition-time ease;
+  box-shadow: 0 4px 12px $shadow-color;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+  user-select: none;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba($phone-primary, 0.4);
+    background: linear-gradient(
+      135deg,
+      $phone-primary-dark,
+      $phone-secondary-dark
+    );
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px $shadow-color;
+  }
+
+  // Элементы иконки
+  .phone-icon-svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    flex-shrink: 0;
+  }
+
+  .phone-number {
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+  }
+}
+
+// Модификатор для плавающей иконки
+.phone-icon {
+  &.floating {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    padding: 16px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    justify-content: center;
+
+    .phone-number {
+      display: none;
+    }
+
+    .phone-icon-svg {
+      margin-right: 0;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  // Модификатор пульсации
+  &.pulse {
+    animation: pulse-animation 2s infinite;
+
+    @keyframes pulse-animation {
+      0% {
+        box-shadow: 0 0 0 0 rgba($phone-primary, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 10px rgba($phone-primary, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba($phone-primary, 0);
+      }
+    }
+  }
+}
+
+// Разные цветовые темы
+.phone-icon {
+  &.theme-blue {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+
+    &:hover {
+      background: linear-gradient(135deg, #0069d9, #004085);
+      box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+    }
+
+    &.pulse {
+      animation: pulse-blue 2s infinite;
+
+      @keyframes pulse-blue {
+        0% {
+          box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(0, 123, 255, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
+        }
+      }
+    }
+  }
+
+  &.theme-red {
+    background: linear-gradient(135deg, #dc3545, #c82333);
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+
+    &:hover {
+      background: linear-gradient(135deg, #c82333, #a71e2a);
+      box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
+    }
+
+    &.pulse {
+      animation: pulse-red 2s infinite;
+
+      @keyframes pulse-red {
+        0% {
+          box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(220, 53, 69, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(220, 53, 69, 0);
+        }
+      }
+    }
+  }
+}
+
+// Размеры
+.phone-icon {
+  &.size-small {
+    padding: 8px 12px;
+
+    .phone-icon-svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .phone-number {
+      font-size: 14px;
+    }
+
+    &.floating {
+      width: 20px;
+      height: 20px;
+      padding: 12px;
+
+      .phone-icon-svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  &.size-large {
+    padding: 16px 20px;
+
+    .phone-icon-svg {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+    }
+
+    .phone-number {
+      font-size: 18px;
+    }
+
+    &.floating {
+      width: 70px;
+      height: 70px;
+      padding: 20px;
+
+      .phone-icon-svg {
+        width: 28px;
+        height: 28px;
+      }
+    }
+  }
+}
+
+// Адаптивность
+@media (max-width: 768px) {
+  .phone-icon {
+    padding: 10px 14px;
+
+    .phone-icon-svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .phone-number {
+      font-size: 15px;
+    }
+
+    &.floating {
+      bottom: 80px;
+      right: 15px;
+      width: 55px;
+      height: 55px;
+      padding: 14px;
+
+      .phone-icon-svg {
+        width: 22px;
+        height: 22px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .phone-icon {
+    padding: 8px 12px;
+
+    .phone-icon-svg {
+      width: 16px;
+      height: 16px;
+      margin-right: 6px;
+    }
+
+    .phone-number {
+      font-size: 14px;
+    }
+
+    &.floating {
+      bottom: 80px;
+      right: 10px;
+      width: 50px;
+      height: 50px;
+      padding: 12px;
+
+      .phone-icon-svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+
+// Состояния
+.phone-icon {
+  &.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background: linear-gradient(135deg, #6c757d, #5a6268);
+    box-shadow: none;
+
+    &:hover {
+      transform: none;
+      box-shadow: none;
+      background: linear-gradient(135deg, #6c757d, #5a6268);
+    }
+  }
+
+  &.loading {
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+      );
+      animation: loading-shimmer 1.5s infinite;
+    }
+
+    @keyframes loading-shimmer {
+      0% {
+        left: -100%;
+      }
+      100% {
+        left: 100%;
+      }
+    }
+  }
+}
+
+// Темная тема
+@media (prefers-color-scheme: dark) {
+  .phone-icon:not(.theme-blue):not(.theme-red) {
+    background: linear-gradient(135deg, #20c997, #138a6d);
+    box-shadow: 0 4px 12px rgba(32, 201, 151, 0.3);
+
+    &:hover {
+      background: linear-gradient(135deg, #1aa179, #0f7059);
+      box-shadow: 0 6px 20px rgba(32, 201, 151, 0.4);
+    }
+  }
+}

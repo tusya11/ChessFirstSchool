@@ -12,6 +12,8 @@ import FixedBtnRecord from "./new_components/FixedBtnRecord/FixedBtnRecord";
 // import DraggingModal from "./new_components/DraggingModal/DraggingModal";
 import NewSignUpContentModal from "./components/ModalContent/NewSignUpContentModal/NewSignUpContentModal";
 import useIntersectionObserver from "./hooks/useIntersectionObserver";
+import PhoneIcon from "./new_components/PhoneIcon/PhoneIcon";
+import { contactNumber } from "./utils/globalConstants";
 
 const Wrapper = observer(() => {
   const {
@@ -73,6 +75,14 @@ const Wrapper = observer(() => {
 
   return (
     <div style={{ position: "relative", boxSizing: "border-box" }}>
+      <div className="header__number-phone">
+        <PhoneIcon
+          phoneNumber={contactNumber}
+          floating={true}
+          pulse={true}
+          size="small"
+        />
+      </div>
       <Header className={visible ? "active" : "hidden"} />
       <Content />
       <Footer />

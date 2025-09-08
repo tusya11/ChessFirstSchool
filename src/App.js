@@ -1,12 +1,14 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
-import SuccessPage from './pages/SuccessPage/SuccessPage';
-import FailurePage from './pages/FailurePage/FailurePage';
-import LandingPage from './pages/LandingPage/LandingPage';
-import Promo from './pages/LandingPage/Promo';
-import Wrapper from './Wrapper';
-import GroupCoursesPage from './pages/GroupCoursesPage/GroupCoursesPage';
-import ChessGroupsPaymentLegacy from './pages/ChessGroupsPaymentLegacy/ChessGroupsPaymentLegacy';
-import './App.css';
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import SuccessPage from "./pages/SuccessPage/SuccessPage";
+import FailurePage from "./pages/FailurePage/FailurePage";
+import LandingPage from "./pages/LandingPage/LandingPage";
+import Promo from "./pages/LandingPage/Promo";
+import Wrapper from "./Wrapper";
+import GroupCoursesPage from "./pages/GroupCoursesPage/GroupCoursesPage";
+import ChessGroupsPaymentLegacy from "./pages/ChessGroupsPaymentLegacy/ChessGroupsPaymentLegacy";
+import CRMFormPage from "./pages/CRMFormPage/CRMFormPage";
+import SchedulePage from "./pages/SchedulePage/SchedulePage";
+import "./App.css";
 
 const App = () => (
   <div className="App">
@@ -16,10 +18,15 @@ const App = () => (
         <Route path="/landing-page/promo/*" element={<Promo />} />
         <Route path="/" element={<Wrapper />} />
         <Route path="/chess-groups/*" element={<GroupCoursesPage />} />
-        <Route path="/chess-groups/legacy/*" element={<ChessGroupsPaymentLegacy />} />
+        <Route
+          path="/chess-groups/legacy/*"
+          element={<ChessGroupsPaymentLegacy />}
+        />
         <Route path="/success/*" element={<SuccessPage />} />
         <Route path="/fail/*" element={<FailurePage />} />
         <Route path="/*" element={<Navigate to="/" replace />} />
+        <Route path="/personal_account" element={<CRMFormPage />} />
+        <Route path="/schedule" element={<SchedulePage />} />
       </Routes>
     </BrowserRouter>
   </div>
