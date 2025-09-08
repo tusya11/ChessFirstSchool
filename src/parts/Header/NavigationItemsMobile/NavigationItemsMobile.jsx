@@ -1,7 +1,7 @@
 import { Button, ConfigProvider } from "antd";
 import { useSearchParams } from "react-router-dom";
 
-import { urlToSignUpForClass } from '../../../utils/globalConstants';
+// import { urlToSignUpForClass } from "../../../utils/globalConstants";
 import { navigatePanel } from "../consts";
 import { contactNumber } from "../../../utils/globalConstants";
 import whatsup from "../../../assets/whatsupMobile.svg";
@@ -9,18 +9,18 @@ import vk_mobile from "../../../assets/VK_Mobile.svg";
 
 import SocialLink from "../../../components/SocialLink/SocialLink";
 import { LINK_VK, LINK_WHATS_UP } from "../../Footer/consts";
-// import modal from "../../../store/modal";
+import modal from "../../../store/modal";
 
 import "./NavigationItemsMobile.scss";
 
 const NavigationItemsMobile = ({ onChoose }) => {
-  // const { setIsOpenModal } = modal;
+  const { setIsOpenModal } = modal;
   // eslint-disable-next-line no-unused-vars
   const [_, setSearchParams] = useSearchParams({ block: "" });
 
   const handleClickButton = () => {
-    window.open(urlToSignUpForClass, '_blank', 'noopener,noreferrer');
-    // setIsOpenModal(true);
+    // window.open(urlToSignUpForClass, '_blank', 'noopener,noreferrer');
+    setIsOpenModal(true);
     onChoose();
   };
 

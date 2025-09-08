@@ -1,18 +1,17 @@
 import { Button, ConfigProvider } from "antd";
 import { useMediaQuery } from "@mui/material";
-// import modal from "../../store/modal";
-import { urlToSignUpForClass } from '../../utils/globalConstants'
+import modal from "../../store/modal";
+// import { urlToSignUpForClass } from "../../utils/globalConstants";
 import "./Preview.scss";
 
 const Preview = () => {
   const isXS = useMediaQuery("(max-width:700px)");
+  const { setIsOpenModal } = modal;
 
-  // const { setIsOpenModal } = modal;
-
-  //TODO: временно сделан переход на форму записи по ссылке
   const handleClickButton = () => {
-    window.open(urlToSignUpForClass, '_blank', 'noopener,noreferrer');
-    // setIsOpenModal(true);
+    //TODO: задизейблен переход по ссылке на Яндекс Форму
+    // window.open(urlToSignUpForClass, '_blank', 'noopener,noreferrer');
+    setIsOpenModal(true);
   };
 
   return (
@@ -69,7 +68,11 @@ const Preview = () => {
         <div className="preview__left-content">
           <div className="preview__left-block">
             <img
-              src={isXS ? `${process.env.PUBLIC_URL}/images/mobile_image.png`: `${process.env.PUBLIC_URL}/images/desk_image.png`}
+              src={
+                isXS
+                  ? `${process.env.PUBLIC_URL}/images/mobile_image.png`
+                  : `${process.env.PUBLIC_URL}/images/desk_image.png`
+              }
               alt="preview__icon"
               loading="eager"
             />

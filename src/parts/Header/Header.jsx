@@ -1,36 +1,41 @@
 import { useState } from "react";
 import { Button, ConfigProvider, Drawer } from "antd";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { observer } from "mobx-react-lite";
 import clsx from "classnames";
 import { useMediaQuery } from "@mui/material";
-import { urlToSignUpForClass } from '../../utils/globalConstants'
+// import { urlToSignUpForClass } from '../../utils/globalConstants'
 import whatsupLogo from "../../assets/whatsup_new.svg";
 import menuButton from "../../assets/burgerMenuBtn.svg";
-import { contactNumber, urlToWhatsApp } from "../../utils/globalConstants";
+import { urlToWhatsApp } from "../../utils/globalConstants";
 import NavigationItemsMobile from "./NavigationItemsMobile/NavigationItemsMobile";
 
 import { navigatePanel } from "./consts";
 import logo from "../../assets/logo.svg";
-// import modal from "../../store/modal";
+import modal from "../../store/modal";
 import "./Header.scss";
 
 const Header = observer(({ className }) => {
+  const navigate = useNavigate();
   const isXS = useMediaQuery("(max-width:700px)");
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
-  // const { setIsOpenModal } = modal;
+  const { setIsOpenModal } = modal;
   // eslint-disable-next-line no-unused-vars
   const [_, setSearchParams] = useSearchParams({ block: "" });
   const [search] = useSearchParams();
   const blockTitle = search.get("block");
 
   const handleClickLink = (link) => {
+    if (link === "personal_account" || link === "schedule") {
+      navigate(link);
+      return;
+    }
     setSearchParams({ block: link });
   };
 
   const handleClickButton = () => {
-    window.open(urlToSignUpForClass, '_blank', 'noopener,noreferrer');
-    // setIsOpenModal(true);
+    // window.open(urlToSignUpForClass, '_blank', 'noopener,noreferrer');
+    setIsOpenModal(true);
   };
 
   const handleClose = () => {
@@ -82,9 +87,6 @@ const Header = observer(({ className }) => {
               <span className="header__navigate-item">{v.title}</span>
             </div>
           ))}
-          <div className="header__number-phone">
-            <a href={`tel:${contactNumber}`}>{contactNumber}</a>
-          </div>
         </div>
       )}
       {!isXS && (

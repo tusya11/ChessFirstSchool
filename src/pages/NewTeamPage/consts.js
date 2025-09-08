@@ -15,6 +15,7 @@ import image14 from "./assets/alisa_igor.jpg";
 import image15 from "./assets/lubov_alex.jpg";
 import image16 from "./assets/svet_andrey.jpg";
 import image17 from "./assets/ekat_dubrov.jpg";
+import image18 from "./assets/vlad_valer.jpg";
 
 export const teamData = [
   {
@@ -152,5 +153,15 @@ export const teamData = [
     description: `Чемпионка Краснодарского края по быстрым шахматам. Чемпионка краевых командных турниров. Многократный победитель муниципальных соревнований. Призер универсиады ЮФУ-2024.
  Участница сборной ЮФУ`,
     image: image17,
+  },
+  {
+    id: 18,
+    name: "Владислав Валерьевич",
+    description: `Мастер ФИДЕ по шахматам.
+Бронзовый призёр чемпионата мира среди школьников до 19 лет.
+Чемпион Ростова-на-Дону.
+Чемпион Ростовской области.
+Многократный победитель и призёр всероссийских студенческих соревнований`,
+    image: image18,
   },
 ];

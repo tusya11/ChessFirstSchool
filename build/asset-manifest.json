@@ -1,12 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.f9be8e1d.css",
-    "main.js": "/static/js/main.edd7d543.js",
-    "static/css/661.73909892.chunk.css": "/static/css/661.73909892.chunk.css",
-    "static/js/661.d3767333.chunk.js": "/static/js/661.d3767333.chunk.js",
+    "main.css": "/static/css/main.b34e7e95.css",
+    "main.js": "/static/js/main.22663f00.js",
+    "static/css/147.1c9bfe7c.chunk.css": "/static/css/147.1c9bfe7c.chunk.css",
+    "static/js/147.06e77bc0.chunk.js": "/static/js/147.06e77bc0.chunk.js",
     "static/css/297.ec41a4bd.chunk.css": "/static/css/297.ec41a4bd.chunk.css",
-    "static/js/297.ea64f573.chunk.js": "/static/js/297.ea64f573.chunk.js",
-    "static/js/596.45788d44.chunk.js": "/static/js/596.45788d44.chunk.js",
+    "static/js/297.d946f90e.chunk.js": "/static/js/297.d946f90e.chunk.js",
+    "static/js/60.d8b55f1e.chunk.js": "/static/js/60.d8b55f1e.chunk.js",
+    "static/js/596.aca62453.chunk.js": "/static/js/596.aca62453.chunk.js",
     "static/media/chess-pawn.png": "/static/media/chess-pawn.98ddaf573a4a5b918217.png",
     "static/media/woman_1.jpg": "/static/media/woman_1.d8afe4085a283c1f10f4.jpg",
     "static/media/calendar.svg": "/static/media/calendar.00e686a64a8c474ebd3854411d62411b.svg",
@@ -40,7 +41,6 @@
     "static/media/elmar_valera.png": "/static/media/elmar_valera.6b05511482ac9311e3e2.png",
     "static/media/dmitriy_ura.png": "/static/media/dmitriy_ura.d976594712bef2b1d45b.png",
     "static/media/lubov_alex.jpg": "/static/media/lubov_alex.39396d96f797e118ba48.jpg",
-    "static/media/done_finally.png": "/static/media/done_finally.38104679337cea73e30c.png",
     "static/media/image22.jpg": "/static/media/image22.aab3cc7c4d97e1b808d7.jpg",
     "static/media/karina_yakov.png": "/static/media/karina_yakov.f2023ab8f5a3276fefe3.png",
     "static/media/daria_yaroslav.jpg": "/static/media/daria_yaroslav.b14793c46ea32421a5e6.jpg",
@@ -73,6 +73,7 @@
     "static/media/image14.jpg": "/static/media/image14.36e7bcac1e562c1e8beb.jpg",
     "static/media/image7.jpg": "/static/media/image7.91cf304abd7f98a90c78.jpg",
     "static/media/image23.jpg": "/static/media/image23.03fe31b97accfee7142b.jpg",
+    "static/media/vlad_valer.jpg": "/static/media/vlad_valer.4b0fb5fb9454141fdbe9.jpg",
     "static/media/dolyami_image.png": "/static/media/dolyami_image.c39ff063b5b6d6f996c6.png",
     "static/media/alex_alex.png": "/static/media/alex_alex.12c5aa3a9bb9b8aed4fc.png",
     "static/media/Geologica-SemiBold.ttf": "/static/media/Geologica-SemiBold.c367c21f39a95abeddff.ttf",
@@ -115,7 +116,7 @@
     "static/media/burgerMenuBtn.svg": "/static/media/burgerMenuBtn.46d2ac73c9d2c782792db592774044c7.svg"
   },
   "entrypoints": [
-    "static/css/main.f9be8e1d.css",
-    "static/js/main.edd7d543.js"
+    "static/css/main.b34e7e95.css",
+    "static/js/main.22663f00.js"
   ]
 }
