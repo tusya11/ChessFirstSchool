@@ -9,6 +9,7 @@ import vk_mobile from "../../../assets/VK_Mobile.svg";
 
 import SocialLink from "../../../components/SocialLink/SocialLink";
 import { LINK_VK, LINK_WHATS_UP } from "../../Footer/consts";
+import { openPersonalAccountCRM } from "../../../utils/openPersonalAccountCRM";
 import modal from "../../../store/modal";
 
 import "./NavigationItemsMobile.scss";
@@ -26,7 +27,12 @@ const NavigationItemsMobile = ({ onChoose }) => {
   };
 
   const handleClickLink = (link) => {
-    if (link === "personal_account" || link === "schedule") {
+    if (link === "personal_account") {
+      openPersonalAccountCRM();
+      return;
+    }
+
+    if (link === "schedule") {
       navigate(link);
       return;
     }
