@@ -6,7 +6,6 @@ import Promo from "./pages/LandingPage/Promo";
 import Wrapper from "./Wrapper";
 import GroupCoursesPage from "./pages/GroupCoursesPage/GroupCoursesPage";
 import ChessGroupsPaymentLegacy from "./pages/ChessGroupsPaymentLegacy/ChessGroupsPaymentLegacy";
-import CRMFormPage from "./pages/CRMFormPage/CRMFormPage";
 import SchedulePage from "./pages/SchedulePage/SchedulePage";
 import "./App.css";
 
@@ -25,7 +24,6 @@ const App = () => (
         <Route path="/success/*" element={<SuccessPage />} />
         <Route path="/fail/*" element={<FailurePage />} />
         <Route path="/*" element={<Navigate to="/" replace />} />
-        <Route path="/personal_account" element={<CRMFormPage />} />
         <Route path="/schedule" element={<SchedulePage />} />
       </Routes>
     </BrowserRouter>

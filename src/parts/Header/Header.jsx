@@ -9,10 +9,10 @@ import whatsupLogo from "../../assets/whatsup_new.svg";
 import menuButton from "../../assets/burgerMenuBtn.svg";
 import { urlToWhatsApp } from "../../utils/globalConstants";
 import NavigationItemsMobile from "./NavigationItemsMobile/NavigationItemsMobile";
-
 import { navigatePanel } from "./consts";
 import logo from "../../assets/logo.svg";
 import modal from "../../store/modal";
+import { openPersonalAccountCRM } from "../../utils/openPersonalAccountCRM";
 import "./Header.scss";
 
 const Header = observer(({ className }) => {
@@ -26,7 +26,12 @@ const Header = observer(({ className }) => {
   const blockTitle = search.get("block");
 
   const handleClickLink = (link) => {
-    if (link === "personal_account" || link === "schedule") {
+    if (link === "personal_account") {
+      openPersonalAccountCRM();
+      return;
+    }
+
+    if (link === "schedule") {
       navigate(link);
       return;
     }
