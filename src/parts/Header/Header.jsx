@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button, ConfigProvider, Drawer } from "antd";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { observer } from "mobx-react-lite";
 import clsx from "classnames";
 import { useMediaQuery } from "@mui/material";
@@ -16,7 +16,6 @@ import { openPersonalAccountCRM } from "../../utils/openPersonalAccountCRM";
 import "./Header.scss";
 
 const Header = observer(({ className }) => {
-  const navigate = useNavigate();
   const isXS = useMediaQuery("(max-width:700px)");
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
   const { setIsOpenModal } = modal;
@@ -31,10 +30,6 @@ const Header = observer(({ className }) => {
       return;
     }
 
-    if (link === "schedule") {
-      navigate(link);
-      return;
-    }
     setSearchParams({ block: link });
   };
 
