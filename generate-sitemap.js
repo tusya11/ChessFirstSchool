@@ -4,8 +4,7 @@ const path = require("path");
 // Список всех URL сайта
 const pages = [
   { url: "/", lastmod: new Date().toISOString(), priority: "1.0" },
-  { url: "/schedule", lastmod: new Date().toISOString(), priority: "0.9" },
-  { url: "/chess-groups/", lastmod: new Date().toISOString(), priority: "0.8" },
+  { url: "/chess-groups/", lastmod: new Date().toISOString(), priority: "0.9" },
   {
     url: "/chess-groups/legacy/",
     lastmod: new Date().toISOString(),

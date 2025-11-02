@@ -6,7 +6,6 @@ import Promo from "./pages/LandingPage/Promo";
 import Wrapper from "./Wrapper";
 import GroupCoursesPage from "./pages/GroupCoursesPage/GroupCoursesPage";
 import ChessGroupsPaymentLegacy from "./pages/ChessGroupsPaymentLegacy/ChessGroupsPaymentLegacy";
-import SchedulePage from "./pages/SchedulePage/SchedulePage";
 import "./App.css";
 
 const App = () => (
@@ -24,7 +23,6 @@ const App = () => (
         <Route path="/success/*" element={<SuccessPage />} />
         <Route path="/fail/*" element={<FailurePage />} />
         <Route path="/*" element={<Navigate to="/" replace />} />
-        <Route path="/schedule" element={<SchedulePage />} />
       </Routes>
     </BrowserRouter>
   </div>
