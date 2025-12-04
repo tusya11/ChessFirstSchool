@@ -20,7 +20,7 @@ const NewTeamPage = () => {
   const firstBlock = [
     {
       id: "first_item",
-      title: "Наши тренера",
+      title: "Наша команда",
     },
   ];
   const data = [...firstBlock, ...teamData];
