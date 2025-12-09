@@ -9,6 +9,7 @@ import ModalContent from "./parts/Modal/Modal";
 // import SignUpContent from "./components/ModalContent/SignUpContent/SignUpContent";
 import Payment from "./components/ModalContent/Payment/Payment";
 import FixedBtnRecord from "./new_components/FixedBtnRecord/FixedBtnRecord";
+import NewsBanner from "./new_components/NewsBanner/NewsBanner";
 // import DraggingModal from "./new_components/DraggingModal/DraggingModal";
 import NewSignUpContentModal from "./components/ModalContent/NewSignUpContentModal/NewSignUpContentModal";
 import useIntersectionObserver from "./hooks/useIntersectionObserver";
@@ -86,6 +87,13 @@ const Wrapper = observer(() => {
       <Header className={visible ? "active" : "hidden"} />
       <Content />
       <Footer />
+      <NewsBanner
+        initialDelay={10}
+        repeatInterval={180} // 3 минуты
+        enableSound={true}
+        animationType="shake"
+        showRepeat={true}
+      />
       {isXS && !shouldRemoveBtn && <FixedBtnRecord />}
       {/* TODO: удалить ненужный контент и проверить нужен ли он */}
       {/* {isOpenModal && (

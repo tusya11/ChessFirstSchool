@@ -1,18 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 // import axios from "axios";
-import { Button, Checkbox, ConfigProvider, Space, Typography } from 'antd';
-import { useMediaQuery } from '@mui/material';
-import SectionItem from './components/SectionItem/SectionItem';
-import SelectedElement from '../SelectedElement/SelectedElement';
-import InputCustom from '../InputCustom/InputCustom';
-import { URL } from './consts';
+import { Button, Checkbox, ConfigProvider, Space, Typography } from "antd";
+import { useMediaQuery } from "@mui/material";
+import SectionItem from "./components/SectionItem/SectionItem";
+import SelectedElement from "../SelectedElement/SelectedElement";
+import InputCustom from "../InputCustom/InputCustom";
+import { URL } from "./consts";
 // import { formatPhoneNumber } from "./utils";
-import privacyPolicy from '../../docs/privacy_policy.pdf';
-import videoPrivacyPolicy from '../../docs/videoPrivacyPolicy.pdf';
+import privacyPolicy from "../../docs/privacy_policy.pdf";
+import videoPrivacyPolicy from "../../docs/videoPrivacyPolicy.pdf";
 // import dolyameLogo from "./assets/dolyame_logo.png";
 // import modal from "../../store/modal";
 
-import './NewPayment.scss';
+import "./NewPayment.scss";
 
 const { Title, Text } = Typography;
 
@@ -20,19 +20,21 @@ const { Title, Text } = Typography;
 // const urlRequest = process.env.REACT_APP_NEST_URL;
 
 const NewPayment = ({ payment = {}, tarif = {} }) => {
-  const isXS = useMediaQuery('(max-width:700px)');
+  const isXS = useMediaQuery("(max-width:700px)");
 
   // const { setAlertMsg } = modal;
   const [stateRate, setStateRate] = useState([]);
 
   useEffect(() => {
-    setStateRate(payment.itemPrices.map((v) => ({ ...v, selected: v.id === tarif?.id })));
+    setStateRate(
+      payment.itemPrices.map((v) => ({ ...v, selected: v.id === tarif?.id }))
+    );
   }, [payment, tarif]);
 
   const [objValue, setObjValue] = useState({
-    fio: '',
-    email: '',
-    telephone: '',
+    fio: "",
+    email: "",
+    telephone: "",
   });
 
   const [errors, setErrors] = useState({
@@ -77,7 +79,7 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
     event.preventDefault();
 
     const hasErrors =
-      Object.values(objValue).some((v) => v.trim() === '') ||
+      Object.values(objValue).some((v) => v.trim() === "") ||
       !stateRate.some((v) => v.selected) ||
       !isCheckedPrivacy ||
       !isCheckedVideoPolicy;
@@ -98,7 +100,7 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
     } else {
       //отправка статистики в Яндекс Метрику
       if (window.ym) {
-        window.ym(96915259, 'reachGoal', 'BUTTON_CLICK');
+        window.ym(96915259, "reachGoal", "BUTTON_CLICK");
       }
       // Если нет ошибок, отправляем форму вручную
       event.target.submit();
@@ -170,7 +172,7 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
     <Space
       direction="vertical"
       size="large"
-      style={{ display: 'flex' }}
+      style={{ display: "flex" }}
       className="new-payment__container"
     >
       <Title level={2} className="new-payment__title">
@@ -181,7 +183,7 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
         <form
           className="new-payment__form"
           method="POST"
-          action={URL + '/create/'}
+          action={URL + "/create/"}
           onSubmit={handleSubmit}
         >
           <input
@@ -191,13 +193,22 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
             value="Оплата занятий"
           />
           <Space className="new-payment__section-item-1">
-            <SectionItem title="Выберите количество занятий" number={1} mb={20} />
-            <Space className="new-payment__selected-elements" direction="vertical">
+            <SectionItem
+              title="Выберите количество занятий"
+              number={1}
+              mb={20}
+            />
+            <Space
+              className="new-payment__selected-elements"
+              direction="vertical"
+            >
               {stateRate &&
                 stateRate?.map((v) => {
                   const Component = (
                     <div className="new-payment__tarif">
-                      <div className="new-payment__description">{v.description}</div>
+                      <div className="new-payment__description">
+                        {v.description}
+                      </div>
                       <div className="new-payment__price">{v.price} ₽</div>
                     </div>
                   );
@@ -217,7 +228,7 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
               className="new-payment__display-none"
               type="text"
               name="sum"
-              value={stateRate?.find((v) => v.selected)?.price_rub || ''}
+              value={stateRate?.find((v) => v.selected)?.price_rub || ""}
             />
             {errors.rate && (
               <Space className="new-payment__error-text">
@@ -230,7 +241,7 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
             <Space className="new-payment__user-data" direction="vertical">
               <InputCustom
                 value={objValue.fio}
-                onChange={(event) => handleChange('fio', event)}
+                onChange={(event) => handleChange("fio", event)}
                 label="ФИО"
                 name="Telephone"
                 autoFocus
@@ -249,12 +260,15 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
               )}
               <Space
                 className="new-payment__two-inputs"
-                style={{ marginBottom: 16, width: '100%' }}
+                style={{ marginBottom: 16, width: "100%" }}
               >
-                <Space direction="vertical" style={isXS ? { width: '100%' } : {}}>
+                <Space
+                  direction="vertical"
+                  style={isXS ? { width: "100%" } : {}}
+                >
                   <InputCustom
                     value={objValue.email}
-                    onChange={(event) => handleChange('email', event)}
+                    onChange={(event) => handleChange("email", event)}
                     label="Email"
                     name="Telephone"
                     autoFocus
@@ -273,12 +287,15 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
                     </Space>
                   )}
                 </Space>
-                <Space direction="vertical" style={isXS ? { width: '100%' } : {}}>
+                <Space
+                  direction="vertical"
+                  style={isXS ? { width: "100%" } : {}}
+                >
                   <InputCustom
                     value={objValue.telephone}
-                    onChange={(event) => handleChange('telephone', event)}
+                    onChange={(event) => handleChange("telephone", event)}
                     label="Телефон"
-                    type={'telephone'}
+                    type={"telephone"}
                     name="Telephone"
                     autoFocus
                     error={errors.telephone}
@@ -299,11 +316,11 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
               <Space className="new-payment__privacy-policy">
                 <Checkbox
                   onChange={onChangeCheckBox}
-                  className={`new-payment__policy__checkbox ${errors.privacyPolicy && 'error'}`}
+                  className={`new-payment__policy__checkbox ${errors.privacyPolicy && "error"}`}
                   checked={isCheckedPrivacy}
                 >
                   <span className="new-payment__policy__title">
-                    Я согласен с{' '}
+                    Я согласен с{" "}
                     <a href={privacyPolicy} target="_blank" rel="noreferrer">
                       политикой конфиденциальности
                     </a>
@@ -319,13 +336,17 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
                 <Checkbox
                   onChange={onChangeCheckBoxVideoPolicy}
                   className={`new-payment__policy__checkbox ${
-                    errors.videoPrivacyPolicy && 'error'
+                    errors.videoPrivacyPolicy && "error"
                   }`}
                   checked={isCheckedVideoPolicy}
                 >
                   <span className="new-payment__policy__title">
-                    Я согласен с{' '}
-                    <a href={videoPrivacyPolicy} target="_blank" rel="noreferrer">
+                    Я согласен с{" "}
+                    <a
+                      href={videoPrivacyPolicy}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       политикой использования видеоматериалов
                     </a>
                   </span>
@@ -374,14 +395,18 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
                     colorPrimaryHover: `black`,
                     colorPrimaryActive: `black`,
                     lineWidth: 0,
-                    fontWeight: '600',
+                    fontWeight: "600",
                     paddingBlock: 18,
                     paddingInline: 20,
                   },
                 },
               }}
             >
-              <Button htmlType="submit" type="primary" className="new-payment__button">
+              <Button
+                htmlType="submit"
+                type="primary"
+                className="new-payment__button"
+              >
                 Банковской картой
               </Button>
             </ConfigProvider>
