@@ -245,3 +245,23 @@ export const new_prices = [
     ],
   },
 ];
+
+export const holiday_prices = {
+  id: 1,
+  itemPrices: [
+    {
+      id: 1,
+      description: "1 занятие",
+      descriptionNumber: 1,
+      price: "560",
+      price_rub: 560,
+    },
+    {
+      id: 2,
+      description: "3 занятия",
+      descriptionNumber: 3,
+      price: "1 200",
+      price_rub: 1200,
+    },
+  ],
+};

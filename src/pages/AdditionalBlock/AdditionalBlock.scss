@@ -50,6 +50,8 @@
           display: flex;
           width: 100%;
           border-radius: 20px;
+          flex: 1;
+          max-height: 200px;
 
           @media screen and (max-width: 700px) {
             height: 250px;
@@ -71,6 +73,7 @@
           display: flex;
           text-align: left;
           gap: 20px;
+          min-height: 130px;
 
           .additional-block__primary {
             font-family: "MontserratBold";
@@ -84,89 +87,6 @@
             font-size: 18px;
             line-height: 27px;
             margin: 0;
-          }
-        }
-      }
-    }
-
-    .additional-block__links-container {
-      .additional-block__links-content {
-        display: flex;
-        width: 100%;
-        align-items: center;
-        justify-content: space-between;
-        background-color: #faf5f1;
-        border-radius: 40px;
-        padding: 30px 40px;
-        box-sizing: border-box;
-
-        @media screen and (max-width: 700px) {
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 20px;
-        }
-
-        .additional-block__download-zoom {
-          p {
-            margin: 0;
-            font-family: "MontserratBold";
-            font-size: 24px;
-            line-height: 29px;
-          }
-        }
-
-        .additional-block__links {
-          display: flex;
-          gap: 40px;
-
-          @media screen and (max-width: 700px) {
-            flex-direction: column;
-            gap: 24px;
-            width: 100%;
-          }
-
-          .additional-block__link-block {
-            display: flex;
-            gap: 24px;
-            align-items: center;
-
-            @media screen and (max-width: 700px) {
-              justify-content: space-between;
-            }
-
-            a {
-              font-family: "MontserratBold";
-              font-size: 24px;
-              line-height: 29px;
-              color: #464bff;
-            }
-
-            .additional-block__arrow-down {
-              width: 80px;
-              height: 80px;
-              background-color: #dce204;
-              border-radius: 50%;
-              cursor: pointer;
-              display: flex;
-              align-items: flex-start;
-              justify-content: center;
-              transition: 0.3s;
-
-              @media screen and (max-width: 700px) {
-                width: 64px;
-                height: 64px;
-              }
-
-              img {
-                height: 80%;
-                aspect-ratio: 1/1;
-              }
-            }
-
-            .additional-block__arrow-down:hover {
-              background-color: #fece62;
-              transition: 0.3s;
-            }
           }
         }
       }

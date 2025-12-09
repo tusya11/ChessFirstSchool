@@ -1,8 +1,8 @@
-$primary: #464BFF;
-$accent: #DCE204;
-$background: #FAF5F1;
-$text-dark: #2C2C2C;
-$text-light: #FFFFFF;
+$primary: #464bff;
+$accent: #dce204;
+$background: #faf5f1;
+$text-dark: #2c2c2c;
+$text-light: #ffffff;
 
 .benefits-section {
   padding: 80px 0;
@@ -30,7 +30,7 @@ $text-light: #FFFFFF;
     }
 
     &::after {
-      content: '';
+      content: "";
       display: block;
       width: 80px;
       height: 4px;
@@ -52,7 +52,9 @@ $text-light: #FFFFFF;
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition:
+      transform 0.3s,
+      box-shadow 0.3s;
     opacity: 0;
     transform: translateY(30px);
 
