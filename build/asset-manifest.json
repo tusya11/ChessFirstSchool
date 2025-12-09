@@ -1,13 +1,12 @@
 {
   "files": {
-    "main.css": "/static/css/main.e4013ee9.css",
-    "main.js": "/static/js/main.c0224dcd.js",
-    "static/css/600.1c9bfe7c.chunk.css": "/static/css/600.1c9bfe7c.chunk.css",
-    "static/js/600.eadf609f.chunk.js": "/static/js/600.eadf609f.chunk.js",
-    "static/css/374.98ed6e1e.chunk.css": "/static/css/374.98ed6e1e.chunk.css",
-    "static/js/374.561cd208.chunk.js": "/static/js/374.561cd208.chunk.js",
-    "static/js/60.d8b55f1e.chunk.js": "/static/js/60.d8b55f1e.chunk.js",
-    "static/js/596.aca62453.chunk.js": "/static/js/596.aca62453.chunk.js",
+    "main.css": "/static/css/main.34a3a34b.css",
+    "main.js": "/static/js/main.f37dbfeb.js",
+    "static/css/226.87b4e491.chunk.css": "/static/css/226.87b4e491.chunk.css",
+    "static/js/226.9be95e66.chunk.js": "/static/js/226.9be95e66.chunk.js",
+    "static/css/685.98ed6e1e.chunk.css": "/static/css/685.98ed6e1e.chunk.css",
+    "static/js/685.bff9a1ec.chunk.js": "/static/js/685.bff9a1ec.chunk.js",
+    "static/js/596.45788d44.chunk.js": "/static/js/596.45788d44.chunk.js",
     "static/media/chess-pawn.png": "/static/media/chess-pawn.98ddaf573a4a5b918217.png",
     "static/media/woman_1.jpg": "/static/media/woman_1.d8afe4085a283c1f10f4.jpg",
     "static/media/calendar.svg": "/static/media/calendar.00e686a64a8c474ebd3854411d62411b.svg",
@@ -64,7 +63,6 @@
     "static/media/Montserrat-Thin.ttf": "/static/media/Montserrat-Thin.e8ecb9f79ef9cbd2d9a8.ttf",
     "static/media/alexandr_evgen.jpg": "/static/media/alexandr_evgen.31145ba0c9b9a5249c1a.jpg",
     "static/media/image17.jpg": "/static/media/image17.cde94d379cb9dba4341d.jpg",
-    "static/media/programForZoom.png": "/static/media/programForZoom.4cbe77711a4f41f9866c.png",
     "static/media/anastasia_alex.jpeg": "/static/media/anastasia_alex.89a4d1177d239c434928.jpeg",
     "static/media/image18.jpg": "/static/media/image18.5698b90c75e38245fb8b.jpg",
     "static/media/alina_gena.jpg": "/static/media/alina_gena.cfc3a9347bbec8fdca78.jpg",
@@ -87,16 +85,20 @@
     "static/media/tournaments.png": "/static/media/tournaments.fdc9400e87f318e9b4ee.png",
     "static/media/telegram_logo.svg": "/static/media/telegram_logo.6dc64cc1e2d63e1c4e9142b9ff1d1320.svg",
     "static/media/svet_andrey.jpg": "/static/media/svet_andrey.d0e576431a76ebfc5594.jpg",
+    "static/media/message.mp3": "/static/media/message.69f2cc1be018d0c16ee6.mp3",
     "static/media/metodics.png": "/static/media/metodics.835ce52acca1107e1f14.png",
     "static/media/image3.jpg": "/static/media/image3.db07abe5e3edda127cbb.jpg",
     "static/media/maria_gena.jpg": "/static/media/maria_gena.49ccdac2f41442d242cd.jpg",
     "static/media/karen_vlad.png": "/static/media/karen_vlad.d7a68e5afa81b159e630.png",
     "static/media/alisa_igor.jpg": "/static/media/alisa_igor.336cfd07b3988944cbba.jpg",
+    "static/media/artur.jpg": "/static/media/artur.68d65d2f97001a3afaf6.jpg",
     "static/media/image11.jpg": "/static/media/image11.220a8ccb2e3ec48adcc2.jpg",
     "static/media/image2.jpg": "/static/media/image2.f5fd3d7283e077dc28a4.jpg",
     "static/media/consentPersonalData.pdf": "/static/media/consentPersonalData.ba676a4e03be1891a270.pdf",
     "static/media/kirill_alex.png": "/static/media/kirill_alex.4bc9f870255d35078ff3.png",
     "static/media/hero-desk.png": "/static/media/hero-desk.4fe8a3c47cf296fa8d54.png",
+    "static/media/conference.jpg": "/static/media/conference.25e7e37a89b85ac8a19b.jpg",
+    "static/media/elena.jpg": "/static/media/elena.82bf316a08b45af780fc.jpg",
     "static/media/trophy.png": "/static/media/trophy.2ca74b80db8ac4b8b33e.png",
     "static/media/hero-mobile.png": "/static/media/hero-mobile.e705f7e6354d26accca9.png",
     "static/media/logo.svg": "/static/media/logo.bd389a78c2b3c059c5861ffd7c7009d1.svg",
@@ -116,7 +118,7 @@
     "static/media/burgerMenuBtn.svg": "/static/media/burgerMenuBtn.46d2ac73c9d2c782792db592774044c7.svg"
   },
   "entrypoints": [
-    "static/css/main.e4013ee9.css",
-    "static/js/main.c0224dcd.js"
+    "static/css/main.34a3a34b.css",
+    "static/js/main.f37dbfeb.js"
   ]
 }
