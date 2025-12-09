@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
 import SuccessPage from "./pages/SuccessPage/SuccessPage";
 import FailurePage from "./pages/FailurePage/FailurePage";
 import LandingPage from "./pages/LandingPage/LandingPage";
@@ -11,7 +11,7 @@ import "./App.css";
 
 const App = () => (
   <div className="App">
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/landing-page/*" element={<LandingPage />} />
         <Route path="/landing-page/promo/*" element={<Promo />} />
@@ -30,7 +30,7 @@ const App = () => (
         <Route path="/fail/*" element={<FailurePage />} />
         <Route path="/*" element={<Navigate to="/" replace />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   </div>
 );
 
