@@ -122,10 +122,9 @@ const NewsBanner = (props) => {
       {
         id: 1,
         title: "🔥 Успейте записаться!",
-        content:
-          "27-29 декабря: 3 лекции от гроссмейстеров. Скидка 20% до 10 декабря!",
+        content: "27-29 декабря: 3 лекции от гроссмейстеров.",
         date: "09.12.2023",
-        isUrgent: true,
+        isUrgent: false,
         link: "/holiday-with-grandmasters",
       },
     ],
@@ -166,13 +165,6 @@ const NewsBanner = (props) => {
         setTimeout(() => {
           setIsVisible(true);
           lastShowTimeRef.current = now;
-
-          // notification.info({
-          //   message: "Есть новые новости!",
-          //   description: "Посмотрите последние обновления в правом нижнем углу",
-          //   placement: "topRight",
-          //   duration: 3,
-          // });
         }, 300);
       }
     };
