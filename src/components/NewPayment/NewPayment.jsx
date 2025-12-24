@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 // import axios from "axios";
-import { Button, Checkbox, ConfigProvider, Space, Typography } from "antd";
+import { Checkbox, Space, Typography } from "antd";
 import { useMediaQuery } from "@mui/material";
 import SectionItem from "./components/SectionItem/SectionItem";
 import SelectedElement from "../SelectedElement/SelectedElement";
@@ -37,7 +37,8 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
     telephone: "",
   });
 
-  const [errors, setErrors] = useState({
+  // setErrors
+  const [errors] = useState({
     fio: false,
     email: false,
     telephone: false,
@@ -75,37 +76,37 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
     setIsCheckedVideoPolicy((prev) => !prev);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
 
-    const hasErrors =
-      Object.values(objValue).some((v) => v.trim() === "") ||
-      !stateRate.some((v) => v.selected) ||
-      !isCheckedPrivacy ||
-      !isCheckedVideoPolicy;
+  //   const hasErrors =
+  //     Object.values(objValue).some((v) => v.trim() === "") ||
+  //     !stateRate.some((v) => v.selected) ||
+  //     !isCheckedPrivacy ||
+  //     !isCheckedVideoPolicy;
 
-    if (hasErrors) {
-      const newErrors = {
-        fio: !objValue.fio,
-        email: !objValue.email,
-        telephone: !objValue.telephone,
-        rate: !stateRate.some((v) => v.selected),
-        privacyPolicy: !isCheckedPrivacy,
-        videoPrivacyPolicy: !isCheckedVideoPolicy,
-      };
+  //   if (hasErrors) {
+  //     const newErrors = {
+  //       fio: !objValue.fio,
+  //       email: !objValue.email,
+  //       telephone: !objValue.telephone,
+  //       rate: !stateRate.some((v) => v.selected),
+  //       privacyPolicy: !isCheckedPrivacy,
+  //       videoPrivacyPolicy: !isCheckedVideoPolicy,
+  //     };
 
-      // Если есть ошибки, обновляем состояние с ошибками и предотвращаем отправку формы
-      setErrors(newErrors);
-      return;
-    } else {
-      //отправка статистики в Яндекс Метрику
-      if (window.ym) {
-        window.ym(96915259, "reachGoal", "BUTTON_CLICK");
-      }
-      // Если нет ошибок, отправляем форму вручную
-      event.target.submit();
-    }
-  };
+  //     // Если есть ошибки, обновляем состояние с ошибками и предотвращаем отправку формы
+  //     setErrors(newErrors);
+  //     return;
+  //   } else {
+  //     //отправка статистики в Яндекс Метрику
+  //     if (window.ym) {
+  //       window.ym(96915259, "reachGoal", "BUTTON_CLICK");
+  //     }
+  //     // Если нет ошибок, отправляем форму вручную
+  //     event.target.submit();
+  //   }
+  // };
 
   // const handleClickSplittingPay = async () => {
   //   const { fio, telephone, email } = objValue;
@@ -178,13 +179,12 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
       <Title level={2} className="new-payment__title">
         Оплата занятий
       </Title>
-
       <Space className="new-payment__main-content">
         <form
           className="new-payment__form"
           method="POST"
           action={URL + "/create/"}
-          onSubmit={handleSubmit}
+          // onSubmit={handleSubmit}
         >
           <input
             className="new-payment__display-none"
@@ -387,7 +387,8 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
                 </div>
               </Button>
             </ConfigProvider> */}
-            <ConfigProvider
+            {/* TODO: временно закоментировано 24.12.25 */}
+            {/* <ConfigProvider
               theme={{
                 components: {
                   Button: {
@@ -409,7 +410,7 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
               >
                 Банковской картой
               </Button>
-            </ConfigProvider>
+            </ConfigProvider> */}
           </Space>
         </form>
       </Space>
