@@ -7,7 +7,7 @@ import Footer from "./parts/Footer/Footer";
 import modal from "../src/store/modal";
 import ModalContent from "./parts/Modal/Modal";
 // import SignUpContent from "./components/ModalContent/SignUpContent/SignUpContent";
-import Payment from "./components/ModalContent/Payment/Payment";
+// import Payment from "./components/ModalContent/Payment/Payment";
 import FixedBtnRecord from "./new_components/FixedBtnRecord/FixedBtnRecord";
 import NewsBanner from "./new_components/NewsBanner/NewsBanner";
 // import DraggingModal from "./new_components/DraggingModal/DraggingModal";
@@ -24,7 +24,7 @@ const Wrapper = observer(() => {
     setIsOpenModalTransaction,
     alertMsg,
     setAlertMsg,
-    modalInfo,
+    // modalInfo,
   } = modal;
 
   const isXS = useMediaQuery("(max-width:700px)");
@@ -112,7 +112,7 @@ const Wrapper = observer(() => {
           onClose={handleCloseModalTransaction}
           isOpen={isOpenModalTransaction}
         >
-          <Payment data={modalInfo} />
+          {/* <Payment data={modalInfo} /> */}
         </ModalContent>
       )}
       {alertMsg.visible && (
