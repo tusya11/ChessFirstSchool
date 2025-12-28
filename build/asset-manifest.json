@@ -1,12 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.91302daa.css",
-    "main.js": "/static/js/main.64498787.js",
-    "static/css/226.83509288.chunk.css": "/static/css/226.83509288.chunk.css",
-    "static/js/226.37e52c81.chunk.js": "/static/js/226.37e52c81.chunk.js",
+    "main.css": "/static/css/main.23d355f6.css",
+    "main.js": "/static/js/main.56c13a0d.js",
+    "static/css/409.4d73136b.chunk.css": "/static/css/409.4d73136b.chunk.css",
+    "static/js/409.42bf9035.chunk.js": "/static/js/409.42bf9035.chunk.js",
     "static/css/685.98ed6e1e.chunk.css": "/static/css/685.98ed6e1e.chunk.css",
     "static/js/685.bae3c3e4.chunk.js": "/static/js/685.bae3c3e4.chunk.js",
-    "static/js/596.45788d44.chunk.js": "/static/js/596.45788d44.chunk.js",
+    "static/js/910.7d03c52b.chunk.js": "/static/js/910.7d03c52b.chunk.js",
+    "static/js/596.aca62453.chunk.js": "/static/js/596.aca62453.chunk.js",
     "static/media/chess-pawn.png": "/static/media/chess-pawn.98ddaf573a4a5b918217.png",
     "static/media/woman_1.jpg": "/static/media/woman_1.d8afe4085a283c1f10f4.jpg",
     "static/media/calendar.svg": "/static/media/calendar.00e686a64a8c474ebd3854411d62411b.svg",
@@ -93,13 +94,11 @@
     "static/media/maria_gena.jpg": "/static/media/maria_gena.49ccdac2f41442d242cd.jpg",
     "static/media/karen_vlad.png": "/static/media/karen_vlad.d7a68e5afa81b159e630.png",
     "static/media/alisa_igor.jpg": "/static/media/alisa_igor.336cfd07b3988944cbba.jpg",
-    "static/media/artur.jpg": "/static/media/artur.68d65d2f97001a3afaf6.jpg",
     "static/media/image11.jpg": "/static/media/image11.220a8ccb2e3ec48adcc2.jpg",
     "static/media/image2.jpg": "/static/media/image2.f5fd3d7283e077dc28a4.jpg",
     "static/media/kirill_alex.png": "/static/media/kirill_alex.4bc9f870255d35078ff3.png",
     "static/media/hero-desk.png": "/static/media/hero-desk.4fe8a3c47cf296fa8d54.png",
     "static/media/conference.jpg": "/static/media/conference.25e7e37a89b85ac8a19b.jpg",
-    "static/media/elena.jpg": "/static/media/elena.82bf316a08b45af780fc.jpg",
     "static/media/trophy.png": "/static/media/trophy.2ca74b80db8ac4b8b33e.png",
     "static/media/hero-mobile.png": "/static/media/hero-mobile.e705f7e6354d26accca9.png",
     "static/media/masterCard.png": "/static/media/masterCard.8ab93d6d024df326004d.png",
@@ -119,7 +118,7 @@
     "static/media/burgerMenuBtn.svg": "/static/media/burgerMenuBtn.46d2ac73c9d2c782792db592774044c7.svg"
   },
   "entrypoints": [
-    "static/css/main.91302daa.css",
-    "static/js/main.64498787.js"
+    "static/css/main.23d355f6.css",
+    "static/js/main.56c13a0d.js"
   ]
 }
