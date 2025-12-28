@@ -8,7 +8,7 @@ import { useSoundNotification } from "./hooks/useSoundNotification";
 import messageSound from "../../sound/message.mp3";
 import styles from "./NewsBanner.module.scss";
 
-const { Title, Paragraph } = Typography;
+const { Title, Paragraph, Text } = Typography;
 
 const ANIMATION_TYPES = {
   SHAKE: "shake",
@@ -27,7 +27,42 @@ const DEFAULT_PROPS = {
   buttonPosition: { bottom: 85, right: 30 },
 };
 
-const NotificationButton = ({ isAnimating, animationStyle, onClick }) => (
+// Функция для проверки, является ли дата/период события завершенным
+const isEventCompleted = (newsItem) => {
+  if (newsItem.period) {
+    const [startDateStr, endDateStr] = newsItem.period.split(" - ");
+
+    if (startDateStr && endDateStr) {
+      const endDate = parseDate(endDateStr);
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      return endDate < today;
+    }
+  }
+
+  if (newsItem.date) {
+    const newsDate = parseDate(newsItem.date);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    return newsDate < today;
+  }
+
+  return false;
+};
+
+const parseDate = (dateStr) => {
+  const [day, month, year] = dateStr.split(".").map(Number);
+  return new Date(year, month - 1, day);
+};
+
+const NotificationButton = ({
+  isAnimating,
+  animationStyle,
+  onClick,
+  showBadge,
+}) => (
   <div className={styles.notificationButtonWrapper}>
     <Button
       type="primary"
@@ -39,12 +74,12 @@ const NotificationButton = ({ isAnimating, animationStyle, onClick }) => (
       className={styles.notificationButton}
       style={{ ...animationStyle, minWidth: 44 }}
     />
-    <div className={styles.notificationBadge}>!</div>
+    {showBadge && <div className={styles.notificationBadge}>!</div>}
   </div>
 );
 
 const NewsItem = ({ news, onNavigate }) => {
-  const { title, content, date, isUrgent, link } = news;
+  const { title, content, date, period, isUrgent, link } = news;
 
   return (
     <div className={`${styles.newsItem} ${isUrgent ? styles.urgent : ""}`}>
@@ -60,29 +95,37 @@ const NewsItem = ({ news, onNavigate }) => {
       <Paragraph className={styles.newsContent}>{content}</Paragraph>
       <div className={styles.newsFooter}>
         <Paragraph type="secondary" className={styles.newsDate}>
-          📅 {date}
+          📅 {period || date}
         </Paragraph>
-        <Button
-          type="link"
-          size="small"
-          className={styles.detailsButton}
-          onClick={() => onNavigate(link)}
-        >
-          Подробнее →
-        </Button>
+        {link && (
+          <Button
+            type="link"
+            size="small"
+            className={styles.detailsButton}
+            onClick={() => onNavigate(link)}
+          >
+            Подробнее →
+          </Button>
+        )}
       </div>
     </div>
   );
 };
 
-const BannerHeader = ({ urgentCount, enableSound, onClose }) => (
+const NoNewsMessage = () => (
+  <div className={styles.noNewsMessage}>
+    <Text type="secondary">Новостей пока нет</Text>
+  </div>
+);
+
+const BannerHeader = ({ urgentCount, onClose, hasNews }) => (
   <Space className={styles.bannerHeader}>
     <Space>
       <BellOutlined />
-      <span className={styles.bannerTitle}>Последние новости</span>
+      <span className={styles.bannerTitle}>Новости</span>
     </Space>
     <Space>
-      {urgentCount > 0 && (
+      {hasNews && urgentCount > 0 && (
         <div className={styles.urgentCounter}>{urgentCount} СРОЧНО</div>
       )}
       <Button
@@ -116,19 +159,29 @@ const NewsBanner = (props) => {
   const userActive = useUserActivity();
   const playSound = useSoundNotification(enableSound, messageSound);
 
-  // Данные новостей
-  const newsItems = useMemo(
+  const rawNewsItems = useMemo(
     () => [
       {
         id: 1,
         title: "🔥 Успейте записаться!",
         content: "27-29 декабря: 3 лекции от гроссмейстеров.",
-        date: "09.12.2023",
+        date: "09.12.2025",
+        period: "27.12.2025 - 29.12.2025",
         isUrgent: false,
         link: "/holiday-with-grandmasters",
       },
     ],
     []
+  );
+
+  const newsItems = useMemo(() => {
+    return rawNewsItems.filter((news) => !isEventCompleted(news));
+  }, [rawNewsItems]);
+
+  const hasNews = newsItems.length > 0;
+  const hasUrgentNews = useMemo(
+    () => newsItems.some((news) => news.isUrgent),
+    [newsItems]
   );
 
   const urgentCount = useMemo(
@@ -149,6 +202,15 @@ const NewsBanner = (props) => {
   }, [playSound, triggerAnimation]);
 
   useEffect(() => {
+    // Автоматически открываем баннер только если есть новости
+    if (!hasNews) {
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+        clearInterval(timerRef.current);
+      }
+      return;
+    }
+
     const showBanner = () => {
       if (!userActive || isVisible) return;
 
@@ -193,6 +255,7 @@ const NewsBanner = (props) => {
     showRepeat,
     playSound,
     triggerAnimation,
+    hasNews, // Зависимость добавлена для отключения таймеров при отсутствии новостей
   ]);
 
   const getButtonAnimationStyle = useCallback(() => {
@@ -226,6 +289,7 @@ const NewsBanner = (props) => {
           isAnimating={isAnimating}
           animationStyle={getButtonAnimationStyle()}
           onClick={handleOpen}
+          showBadge={hasUrgentNews} // Показываем бейдж только если есть срочные новости
         />
       </div>
     );
@@ -245,8 +309,8 @@ const NewsBanner = (props) => {
         title={
           <BannerHeader
             urgentCount={urgentCount}
-            enableSound={enableSound}
             onClose={handleClose}
+            hasNews={hasNews}
           />
         }
         className={styles.newsCard}
@@ -257,14 +321,18 @@ const NewsBanner = (props) => {
         }}
       >
         <div className={styles.newsList}>
-          {newsItems.map((news, index) => (
-            <NewsItem
-              key={news.id}
-              news={news}
-              onNavigate={navigate}
-              style={{ animationDelay: `${index * 0.1}s` }}
-            />
-          ))}
+          {hasNews ? (
+            newsItems.map((news, index) => (
+              <NewsItem
+                key={news.id}
+                news={news}
+                onNavigate={navigate}
+                style={{ animationDelay: `${index * 0.1}s` }}
+              />
+            ))
+          ) : (
+            <NoNewsMessage />
+          )}
         </div>
       </Card>
     </div>
