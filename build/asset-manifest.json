@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.a5614189.css",
-    "main.js": "/static/js/main.febd9f33.js",
-    "static/css/226.87b4e491.chunk.css": "/static/css/226.87b4e491.chunk.css",
-    "static/js/226.f560e6ec.chunk.js": "/static/js/226.f560e6ec.chunk.js",
+    "main.css": "/static/css/main.23d355f6.css",
+    "main.js": "/static/js/main.bc6fe0a6.js",
+    "static/css/600.1c9bfe7c.chunk.css": "/static/css/600.1c9bfe7c.chunk.css",
+    "static/js/600.aba67684.chunk.js": "/static/js/600.aba67684.chunk.js",
     "static/css/685.98ed6e1e.chunk.css": "/static/css/685.98ed6e1e.chunk.css",
     "static/js/685.bae3c3e4.chunk.js": "/static/js/685.bae3c3e4.chunk.js",
     "static/js/910.7d03c52b.chunk.js": "/static/js/910.7d03c52b.chunk.js",
@@ -115,5 +115,8 @@
     "static/media/arrow.svg": "/static/media/arrow.09826440030614c0ff68325d2cc703e3.svg",
     "static/media/burgerMenuBtn.svg": "/static/media/burgerMenuBtn.46d2ac73c9d2c782792db592774044c7.svg"
   },
-  "entrypoints": ["static/css/main.a5614189.css", "static/js/main.febd9f33.js"]
+  "entrypoints": [
+    "static/css/main.23d355f6.css",
+    "static/js/main.bc6fe0a6.js"
+  ]
 }
