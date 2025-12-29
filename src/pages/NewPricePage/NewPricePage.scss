@@ -6,7 +6,7 @@
     box-sizing: border-box;
     background-color: #faf5f1;
     border-radius: 40px;
-    padding: 40px;
+    padding: 80px;
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     gap: 40px;
@@ -289,7 +289,7 @@
 
 .new-price-page__drawer {
   .ant-drawer-body {
-    padding: 12px 32px;
+    padding: 12px 60px;
 
     @media screen and (max-width: 700px) {
       padding: 0 15px 30px;
