@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.23d355f6.css",
-    "main.js": "/static/js/main.56c13a0d.js",
-    "static/css/409.4d73136b.chunk.css": "/static/css/409.4d73136b.chunk.css",
-    "static/js/409.42bf9035.chunk.js": "/static/js/409.42bf9035.chunk.js",
+    "main.js": "/static/js/main.bc6fe0a6.js",
+    "static/css/600.1c9bfe7c.chunk.css": "/static/css/600.1c9bfe7c.chunk.css",
+    "static/js/600.aba67684.chunk.js": "/static/js/600.aba67684.chunk.js",
     "static/css/685.98ed6e1e.chunk.css": "/static/css/685.98ed6e1e.chunk.css",
     "static/js/685.bae3c3e4.chunk.js": "/static/js/685.bae3c3e4.chunk.js",
     "static/js/910.7d03c52b.chunk.js": "/static/js/910.7d03c52b.chunk.js",
@@ -84,7 +84,6 @@
     "static/media/ekat_dubrov.jpg": "/static/media/ekat_dubrov.d31df8b088d8a7148ac9.jpg",
     "static/media/tournaments.png": "/static/media/tournaments.fdc9400e87f318e9b4ee.png",
     "static/media/telegram_logo.svg": "/static/media/telegram_logo.6dc64cc1e2d63e1c4e9142b9ff1d1320.svg",
-    "static/media/paykeeperLogo.png": "/static/media/paykeeperLogo.16e2b4f92227010915d9.png",
     "static/media/svet_andrey.jpg": "/static/media/svet_andrey.d0e576431a76ebfc5594.jpg",
     "static/media/message.mp3": "/static/media/message.69f2cc1be018d0c16ee6.mp3",
     "static/media/metodics.png": "/static/media/metodics.835ce52acca1107e1f14.png",
@@ -101,7 +100,6 @@
     "static/media/conference.jpg": "/static/media/conference.25e7e37a89b85ac8a19b.jpg",
     "static/media/trophy.png": "/static/media/trophy.2ca74b80db8ac4b8b33e.png",
     "static/media/hero-mobile.png": "/static/media/hero-mobile.e705f7e6354d26accca9.png",
-    "static/media/masterCard.png": "/static/media/masterCard.8ab93d6d024df326004d.png",
     "static/media/logo.svg": "/static/media/logo.bd389a78c2b3c059c5861ffd7c7009d1.svg",
     "static/media/logoWhite.svg": "/static/media/logoWhite.0af8fe34f2b274a41b7fd70b0eb56d01.svg",
     "index.html": "/index.html",
@@ -119,6 +117,6 @@
   },
   "entrypoints": [
     "static/css/main.23d355f6.css",
-    "static/js/main.56c13a0d.js"
+    "static/js/main.bc6fe0a6.js"
   ]
 }
