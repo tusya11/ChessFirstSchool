@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 // import axios from "axios";
-import { Checkbox, Space, Typography } from "antd";
-import { useMediaQuery } from "@mui/material";
+import { Button, Checkbox, ConfigProvider, Space, Typography } from "antd";
 import SectionItem from "./components/SectionItem/SectionItem";
 import SelectedElement from "../SelectedElement/SelectedElement";
+import { PaymentLogos } from "./components/PaymentLogos/PaymentLogos";
 import InputCustom from "../InputCustom/InputCustom";
 import { URL } from "./consts";
 // import { formatPhoneNumber } from "./utils";
 import privacyPolicy from "../../docs/privacy_policy.pdf";
 import videoPrivacyPolicy from "../../docs/videoPrivacyPolicy.pdf";
+import { useResponsive } from "../../hooks/useResponsive";
 // import dolyameLogo from "./assets/dolyame_logo.png";
 // import modal from "../../store/modal";
 
@@ -19,15 +20,25 @@ const { Title, Text } = Typography;
 // const domain = process.env.REACT_APP_API_URL;
 // const urlRequest = process.env.REACT_APP_NEST_URL;
 
-const NewPayment = ({ payment = {}, tarif = {} }) => {
-  const isXS = useMediaQuery("(max-width:700px)");
+const initialErrors = {
+  fio: false,
+  email: false,
+  telephone: false,
+  rate: false,
+  privacyPolicy: false,
+  videoPrivacyPolicy: false,
+};
 
-  // const { setAlertMsg } = modal;
+const NewPayment = ({ payment = {}, tarif = {} }) => {
+  const { isXS } = useResponsive();
   const [stateRate, setStateRate] = useState([]);
 
   useEffect(() => {
     setStateRate(
-      payment.itemPrices.map((v) => ({ ...v, selected: v.id === tarif?.id }))
+      payment.itemPrices?.map((v) => ({
+        ...v,
+        selected: v.id === tarif?.id,
+      })) || []
     );
   }, [payment, tarif]);
 
@@ -37,76 +48,62 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
     telephone: "",
   });
 
-  // setErrors
-  const [errors] = useState({
-    fio: false,
-    email: false,
-    telephone: false,
-    rate: false,
-    privacyPolicy: false,
-    videoPrivacyPolicy: false,
-  });
+  const [errors, setErrors] = useState(initialErrors);
   const [isCheckedPrivacy, setIsCheckedPrivacy] = useState(false);
   const [isCheckedVideoPolicy, setIsCheckedVideoPolicy] = useState(false);
 
   const handleClickSelectedElement = (id, type) => {
-    const changedStateRate = stateRate.map((v) => {
-      if (v.id === id) {
-        return {
-          ...v,
-          selected: !type,
-        };
-      }
-
-      return { ...v, selected: false };
-    });
-
+    const changedStateRate = stateRate.map((v) => ({
+      ...v,
+      selected: v.id === id ? !type : false,
+    }));
     setStateRate(changedStateRate);
+    if (errors.rate) setErrors((prev) => ({ ...prev, rate: false }));
   };
 
-  const handleChange = (des, event) => {
-    setObjValue({ ...objValue, [des]: event.target.value });
+  const handleChange = (field, event) => {
+    setObjValue({ ...objValue, [field]: event.target.value });
+    if (errors[field]) setErrors((prev) => ({ ...prev, [field]: false }));
   };
 
-  const onChangeCheckBox = () => {
-    setIsCheckedPrivacy((prev) => !prev);
+  const handleCheckboxChange = (type) => {
+    if (type === "privacy") {
+      setIsCheckedPrivacy(!isCheckedPrivacy);
+      if (errors.privacyPolicy)
+        setErrors((prev) => ({ ...prev, privacyPolicy: false }));
+    } else {
+      setIsCheckedVideoPolicy(!isCheckedVideoPolicy);
+      if (errors.videoPrivacyPolicy)
+        setErrors((prev) => ({ ...prev, videoPrivacyPolicy: false }));
+    }
   };
 
-  const onChangeCheckBoxVideoPolicy = () => {
-    setIsCheckedVideoPolicy((prev) => !prev);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const hasErrors =
+      Object.values(objValue).some((v) => v.trim() === "") ||
+      !stateRate.some((v) => v.selected) ||
+      !isCheckedPrivacy ||
+      !isCheckedVideoPolicy;
+
+    if (hasErrors) {
+      setErrors({
+        fio: !objValue.fio,
+        email: !objValue.email,
+        telephone: !objValue.telephone,
+        rate: !stateRate.some((v) => v.selected),
+        privacyPolicy: !isCheckedPrivacy,
+        videoPrivacyPolicy: !isCheckedVideoPolicy,
+      });
+      return;
+    }
+
+    if (window.ym) {
+      window.ym(96915259, "reachGoal", "BUTTON_CLICK");
+    }
+    event.target.submit();
   };
-
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-
-  //   const hasErrors =
-  //     Object.values(objValue).some((v) => v.trim() === "") ||
-  //     !stateRate.some((v) => v.selected) ||
-  //     !isCheckedPrivacy ||
-  //     !isCheckedVideoPolicy;
-
-  //   if (hasErrors) {
-  //     const newErrors = {
-  //       fio: !objValue.fio,
-  //       email: !objValue.email,
-  //       telephone: !objValue.telephone,
-  //       rate: !stateRate.some((v) => v.selected),
-  //       privacyPolicy: !isCheckedPrivacy,
-  //       videoPrivacyPolicy: !isCheckedVideoPolicy,
-  //     };
-
-  //     // Если есть ошибки, обновляем состояние с ошибками и предотвращаем отправку формы
-  //     setErrors(newErrors);
-  //     return;
-  //   } else {
-  //     //отправка статистики в Яндекс Метрику
-  //     if (window.ym) {
-  //       window.ym(96915259, "reachGoal", "BUTTON_CLICK");
-  //     }
-  //     // Если нет ошибок, отправляем форму вручную
-  //     event.target.submit();
-  //   }
-  // };
 
   // const handleClickSplittingPay = async () => {
   //   const { fio, telephone, email } = objValue;
@@ -184,7 +181,7 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
           className="new-payment__form"
           method="POST"
           action={URL + "/create/"}
-          // onSubmit={handleSubmit}
+          onSubmit={handleSubmit}
         >
           <input
             className="new-payment__display-none"
@@ -202,27 +199,26 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
               className="new-payment__selected-elements"
               direction="vertical"
             >
-              {stateRate &&
-                stateRate?.map((v) => {
-                  const Component = (
-                    <div className="new-payment__tarif">
-                      <div className="new-payment__description">
-                        {v.description}
-                      </div>
-                      <div className="new-payment__price">{v.price} ₽</div>
+              {stateRate.map((v) => {
+                const Component = (
+                  <div className="new-payment__tarif">
+                    <div className="new-payment__description">
+                      {v.description}
                     </div>
-                  );
-                  return (
-                    <SelectedElement
-                      key={v.id}
-                      content={Component}
-                      id={v.id}
-                      selected={v.selected}
-                      onClick={handleClickSelectedElement}
-                      styles={isXS ? {} : { height: 50 }}
-                    />
-                  );
-                })}
+                    <div className="new-payment__price">{v.price} ₽</div>
+                  </div>
+                );
+                return (
+                  <SelectedElement
+                    key={v.id}
+                    content={Component}
+                    id={v.id}
+                    selected={v.selected}
+                    onClick={handleClickSelectedElement}
+                    styles={isXS ? {} : { height: 50 }}
+                  />
+                );
+              })}
             </Space>
             <input
               className="new-payment__display-none"
@@ -315,7 +311,7 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
               </Space>
               <Space className="new-payment__privacy-policy">
                 <Checkbox
-                  onChange={onChangeCheckBox}
+                  onChange={() => handleCheckboxChange("privacy")}
                   className={`new-payment__policy__checkbox ${errors.privacyPolicy && "error"}`}
                   checked={isCheckedPrivacy}
                 >
@@ -334,10 +330,8 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
               </Space>
               <Space className="new-payment__privacy-policy">
                 <Checkbox
-                  onChange={onChangeCheckBoxVideoPolicy}
-                  className={`new-payment__policy__checkbox ${
-                    errors.videoPrivacyPolicy && "error"
-                  }`}
+                  onChange={() => handleCheckboxChange("video")}
+                  className={`new-payment__policy__checkbox ${errors.videoPrivacyPolicy && "error"}`}
                   checked={isCheckedVideoPolicy}
                 >
                   <span className="new-payment__policy__title">
@@ -359,6 +353,9 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
               </Space>
             </Space>
           </Space>
+          <div className="new-payment__payment-methods">
+            <PaymentLogos />
+          </div>
           <Space className="new-payment__buttons">
             {/* /TODO: закомментировано, так как истекли сертификаты и на данный момент не используется сервис */}
             {/* <ConfigProvider
@@ -387,8 +384,7 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
                 </div>
               </Button>
             </ConfigProvider> */}
-            {/* TODO: временно закоментировано 24.12.25 */}
-            {/* <ConfigProvider
+            <ConfigProvider
               theme={{
                 components: {
                   Button: {
@@ -410,7 +406,7 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
               >
                 Банковской картой
               </Button>
-            </ConfigProvider> */}
+            </ConfigProvider>
           </Space>
         </form>
       </Space>
