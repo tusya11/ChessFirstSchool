@@ -404,7 +404,7 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
                 type="primary"
                 className="new-payment__button"
               >
-                Банковской картой
+                Перейти к оплате
               </Button>
             </ConfigProvider>
           </Space>
