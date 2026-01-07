@@ -283,7 +283,7 @@ const Payment = observer(({ data }) => {
               className="sign-up-content_pay-keeper"
             />
           </div> */}
-          <div className="button_pay-keeper">Банковской картой</div>
+          <div className="button_pay-keeper">Перейти к оплате</div>
         </Button>
         <Button
           variant="contained"
