@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.23d355f6.css",
-    "main.js": "/static/js/main.27e1927b.js",
+    "main.css": "/static/css/main.b61374eb.css",
+    "main.js": "/static/js/main.5b2c7a7c.js",
     "static/css/409.4d73136b.chunk.css": "/static/css/409.4d73136b.chunk.css",
-    "static/js/409.d07486b3.chunk.js": "/static/js/409.d07486b3.chunk.js",
+    "static/js/409.46456954.chunk.js": "/static/js/409.46456954.chunk.js",
     "static/css/685.98ed6e1e.chunk.css": "/static/css/685.98ed6e1e.chunk.css",
     "static/js/685.bae3c3e4.chunk.js": "/static/js/685.bae3c3e4.chunk.js",
     "static/js/910.7d03c52b.chunk.js": "/static/js/910.7d03c52b.chunk.js",
     "static/js/596.aca62453.chunk.js": "/static/js/596.aca62453.chunk.js",
     "static/media/chess-pawn.png": "/static/media/chess-pawn.98ddaf573a4a5b918217.png",
-    "static/media/woman_1.jpg": "/static/media/woman_1.d8afe4085a283c1f10f4.jpg",
+    "static/media/program.pdf": "/static/media/program.e2cf40fc93b9b7adbc3c.pdf",
     "static/media/calendar.svg": "/static/media/calendar.00e686a64a8c474ebd3854411d62411b.svg",
     "static/media/gift.svg": "/static/media/gift.b20a52859a4fd73e351f33620f66bb7e.svg",
     "static/media/wrapperBenefit.png": "/static/media/wrapperBenefit.aae047256b468c96adef.png",
@@ -17,8 +17,6 @@
     "static/media/trophy.svg": "/static/media/trophy.025009576d93a07d5a62390c6d0c769d.svg",
     "static/media/connect.svg": "/static/media/connect.75e06c4570bdb448b7c92da06837329e.svg",
     "static/media/setting.svg": "/static/media/setting.efb52d9353e82d03626eb67cd7683166.svg",
-    "static/media/man.jpg": "/static/media/man.9e4076ee8a56f2603d3a.jpg",
-    "static/media/woman_3.jpg": "/static/media/woman_3.cad688c5d3d99368d73d.jpg",
     "static/media/zoom.svg": "/static/media/zoom.4274bd2bea449dda888c02e4ba654ac3.svg",
     "static/media/location.svg": "/static/media/location.4fa35ad2286aa880458fab58dada75fd.svg",
     "static/media/fire.svg": "/static/media/fire.bf1bb75a6ed9669a5117beb51f2e8f35.svg",
@@ -118,7 +116,7 @@
     "static/media/burgerMenuBtn.svg": "/static/media/burgerMenuBtn.46d2ac73c9d2c782792db592774044c7.svg"
   },
   "entrypoints": [
-    "static/css/main.23d355f6.css",
-    "static/js/main.27e1927b.js"
+    "static/css/main.b61374eb.css",
+    "static/js/main.5b2c7a7c.js"
   ]
 }

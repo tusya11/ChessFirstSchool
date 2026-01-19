@@ -411,12 +411,12 @@ const HolidaysWithGrandmasters = () => {
             <div className="cta-content">
               <h3>Количество мест ограничено</h3>
               {/* <p>Успейте записаться до 10 декабря и получите скидку 20%</p> */}
-              <button
+              {/* <button
                 className="cta-button-modern"
                 onClick={() => setIsOpenDrawer(true)}
               >
                 Записаться на программу
-              </button>
+              </button> */}
             </div>
             <div className="cta-decoration">
               <ChessIcon />

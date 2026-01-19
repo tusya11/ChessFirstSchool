@@ -1,5 +1,5 @@
-import { Button, ConfigProvider } from "antd";
-import { useSearchParams } from "react-router-dom";
+// import { ConfigProvider, Button } from "antd";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 // import { urlToSignUpForClass } from "../../../utils/globalConstants";
 import { navigatePanel } from "../consts";
@@ -10,22 +10,28 @@ import vk_mobile from "../../../assets/VK_Mobile.svg";
 import SocialLink from "../../../components/SocialLink/SocialLink";
 import { LINK_VK, LINK_WHATS_UP } from "../../Footer/consts";
 import { openPersonalAccountCRM } from "../../../utils/openPersonalAccountCRM";
-import modal from "../../../store/modal";
+// import modal from "../../../store/modal";
 
 import "./NavigationItemsMobile.scss";
 
 const NavigationItemsMobile = ({ onChoose }) => {
-  const { setIsOpenModal } = modal;
+  // const { setIsOpenModal } = modal;
+  const navigate = useNavigate();
   // eslint-disable-next-line no-unused-vars
   const [_, setSearchParams] = useSearchParams({ block: "" });
 
-  const handleClickButton = () => {
-    // window.open(urlToSignUpForClass, '_blank', 'noopener,noreferrer');
-    setIsOpenModal(true);
-    onChoose();
-  };
+  // const handleClickButton = () => {
+  //   // window.open(urlToSignUpForClass, '_blank', 'noopener,noreferrer');
+  //   setIsOpenModal(true);
+  //   onChoose();
+  // };
 
   const handleClickLink = (link) => {
+    if (link === "contacts" || link === "additional-program") {
+      navigate(`/${link}`);
+      return;
+    }
+
     if (link === "personal_account") {
       openPersonalAccountCRM();
       return;
@@ -58,7 +64,7 @@ const NavigationItemsMobile = ({ onChoose }) => {
         </div>
       </div>
       <div className="navigation-block__button">
-        <ConfigProvider
+        {/* <ConfigProvider
           theme={{
             components: {
               Button: {
@@ -81,7 +87,7 @@ const NavigationItemsMobile = ({ onChoose }) => {
           >
             Записаться
           </Button>
-        </ConfigProvider>
+        </ConfigProvider> */}
       </div>
     </div>
   );
