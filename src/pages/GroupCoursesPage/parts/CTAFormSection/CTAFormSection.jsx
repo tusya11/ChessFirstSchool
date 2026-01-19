@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import privacyPolicy from '../../../../docs/privacy_policy.pdf';
-import './CTAFormSection.scss';
+import { useState } from "react";
+import privacyPolicy from "../../../../docs/privacy_policy.pdf";
+import "./CTAFormSection.scss";
 
 const CTAFormSection = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
+    name: "",
+    phone: "",
     consent: false,
   });
 
@@ -13,13 +13,13 @@ const CTAFormSection = () => {
     const { name, value, type, checked } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value,
+      [name]: type === "checkbox" ? checked : value,
     }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    console.log("Form submitted:", formData);
     // Здесь будет логика отправки формы
   };
 
@@ -27,7 +27,9 @@ const CTAFormSection = () => {
     <section className="cta-section" id="signup-form">
       <div className="container">
         <div className="cta-content">
-          <h2 className="cta-title">Не упусти свой шанс! Запишись прямо сейчас!</h2>
+          <h2 className="cta-title">
+            Не упусти свой шанс! Запишись прямо сейчас!
+          </h2>
 
           <div className="benefits-reminder">
             <p>При записи до 31 августа вы получаете:</p>
@@ -71,16 +73,16 @@ const CTAFormSection = () => {
                 required
               />
               <label htmlFor="consent">
-                Я соглашаюсь с{' '}
+                Я соглашаюсь с{" "}
                 <a href={privacyPolicy} target="_blank" rel="noreferrer">
                   политикой конфиденциальности
                 </a>
               </label>
             </div>
 
-            <button type="submit" className="submit-btn">
+            {/* <button type="submit" className="submit-btn">
               Записаться на курс
-            </button>
+            </button> */}
           </form>
         </div>
       </div>

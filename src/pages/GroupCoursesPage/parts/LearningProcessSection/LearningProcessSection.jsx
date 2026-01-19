@@ -1,7 +1,13 @@
-import { FaCalendarAlt, FaVideo, FaClock, FaUserGraduate, FaChessBoard } from 'react-icons/fa';
+import {
+  FaCalendarAlt,
+  FaVideo,
+  FaClock,
+  FaUserGraduate,
+  FaChessBoard,
+} from "react-icons/fa";
 // import useScrollTo from '../../hooks/useScrollTo';
-import { urlToSummerIntensiveRegisterForm } from '../../../../utils/globalConstants';
-import './LearningProcessSection.scss';
+// import { urlToSummerIntensiveRegisterForm } from "../../../../utils/globalConstants";
+import "./LearningProcessSection.scss";
 
 const LearningProcessSection = () => {
   // const scrollTo = useScrollTo();
@@ -9,40 +15,48 @@ const LearningProcessSection = () => {
   const features = [
     {
       icon: <FaCalendarAlt className="icon" />,
-      title: 'С 7 июня по 31 августа',
-      description: 'Четкие сроки обучения помогают сохранять мотивацию и дисциплину',
+      title: "С 7 июня по 31 августа",
+      description:
+        "Четкие сроки обучения помогают сохранять мотивацию и дисциплину",
     },
     {
       icon: <FaVideo className="icon" />,
-      title: '8 занятий онлайн в месяц',
-      description: 'Регулярные занятия с тренером в прямом эфире с возможностью задавать вопросы',
+      title: "8 занятий онлайн в месяц",
+      description:
+        "Регулярные занятия с тренером в прямом эфире с возможностью задавать вопросы",
     },
     {
       icon: <FaClock className="icon" />,
-      title: 'Уроки в записи – доступ в любое время',
-      description: 'Если пропустили занятие или хотите повторить материал - всегда доступны записи',
+      title: "Уроки в записи – доступ в любое время",
+      description:
+        "Если пропустили занятие или хотите повторить материал - всегда доступны записи",
     },
     {
       icon: <FaChessBoard className="icon" />,
-      title: 'Занятия в удобном для вас темпе',
-      description: 'Нет стресса и спешки - осваивайте материал так, как комфортно вам',
+      title: "Занятия в удобном для вас темпе",
+      description:
+        "Нет стресса и спешки - осваивайте материал так, как комфортно вам",
     },
     {
       icon: <FaUserGraduate className="icon" />,
-      title: 'Персональный тьютор',
+      title: "Персональный тьютор",
       description:
-        'Тьютор будет проверять задания к каждому уроку, давать обратную связь, разбирать ошибки и помогать их исправить',
+        "Тьютор будет проверять задания к каждому уроку, давать обратную связь, разбирать ошибки и помогать их исправить",
     },
   ];
 
-  const handlerClickOnBtn = () => {
-    window.open(urlToSummerIntensiveRegisterForm, '_blank', 'noopener,noreferrer');
+  // const handlerClickOnBtn = () => {
+  //   window.open(
+  //     urlToSummerIntensiveRegisterForm,
+  //     "_blank",
+  //     "noopener,noreferrer"
+  //   );
 
-    // Отправка статистики в Яндекс Метрику
-    if (window.ym) {
-      window.ym(96915259, 'reachGoal', 'lead_form');
-    }
-  };
+  //   // Отправка статистики в Яндекс Метрику
+  //   if (window.ym) {
+  //     window.ym(96915259, "reachGoal", "lead_form");
+  //   }
+  // };
 
   return (
     <section className="learning-process-section">
@@ -71,9 +85,9 @@ const LearningProcessSection = () => {
           <FaChessBoard className="cta-icon" />
           <p>Готовы начать свое шахматное путешествие?</p>
           {/* TODO: 2 этап - после реализации формы записи, переделать onClick={() => scrollTo('signup-form', 0)} */}
-          <button className="cta-button" onClick={handlerClickOnBtn}>
+          {/* <button className="cta-button" onClick={handlerClickOnBtn}>
             Записаться на курс
-          </button>
+          </button> */}
         </div>
       </div>
     </section>

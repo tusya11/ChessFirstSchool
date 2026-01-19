@@ -8,11 +8,11 @@ import modal from "../src/store/modal";
 import ModalContent from "./parts/Modal/Modal";
 // import SignUpContent from "./components/ModalContent/SignUpContent/SignUpContent";
 // import Payment from "./components/ModalContent/Payment/Payment";
-import FixedBtnRecord from "./new_components/FixedBtnRecord/FixedBtnRecord";
+// import FixedBtnRecord from "./new_components/FixedBtnRecord/FixedBtnRecord";
 import NewsBanner from "./new_components/NewsBanner/NewsBanner";
 // import DraggingModal from "./new_components/DraggingModal/DraggingModal";
 import NewSignUpContentModal from "./components/ModalContent/NewSignUpContentModal/NewSignUpContentModal";
-import useIntersectionObserver from "./hooks/useIntersectionObserver";
+// import useIntersectionObserver from "./hooks/useIntersectionObserver";
 import PhoneIcon from "./new_components/PhoneIcon/PhoneIcon";
 import { contactNumber } from "./utils/globalConstants";
 
@@ -30,14 +30,14 @@ const Wrapper = observer(() => {
   const isXS = useMediaQuery("(max-width:700px)");
 
   // на блоках "Стоимость" и "Главный экран"
-  const shouldRemoveBtnForPreview =
-    useIntersectionObserver("preview__container");
-  const shouldRemoveBtnForNewPrice = useIntersectionObserver(
-    "new-price-page__container"
-  );
+  // const shouldRemoveBtnForPreview =
+  //   useIntersectionObserver("preview__container");
+  // const shouldRemoveBtnForNewPrice = useIntersectionObserver(
+  //   "new-price-page__container"
+  // );
 
-  const shouldRemoveBtn =
-    shouldRemoveBtnForPreview || shouldRemoveBtnForNewPrice;
+  // const shouldRemoveBtn =
+  //   shouldRemoveBtnForPreview || shouldRemoveBtnForNewPrice;
 
   const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
   const [visible, setVisible] = useState(true);
@@ -94,7 +94,7 @@ const Wrapper = observer(() => {
         animationType="shake"
         showRepeat={true}
       />
-      {isXS && !shouldRemoveBtn && <FixedBtnRecord />}
+      {/* {isXS && !shouldRemoveBtn && <FixedBtnRecord />} */}
       {/* TODO: удалить ненужный контент и проверить нужен ли он */}
       {/* {isOpenModal && (
         <ModalContent
