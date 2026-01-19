@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button, ConfigProvider, Drawer } from "antd";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { observer } from "mobx-react-lite";
 import clsx from "classnames";
 import { useMediaQuery } from "@mui/material";
@@ -23,8 +23,14 @@ const Header = observer(({ className }) => {
   const [_, setSearchParams] = useSearchParams({ block: "" });
   const [search] = useSearchParams();
   const blockTitle = search.get("block");
+  const navigate = useNavigate();
 
   const handleClickLink = (link) => {
+    if (link === "contacts" || link === "additional-program") {
+      navigate(`/${link}`);
+      return;
+    }
+
     if (link === "personal_account") {
       openPersonalAccountCRM();
       return;
