@@ -29,7 +29,7 @@ export const navigatePanel = [
   //   title: "Личный кабинет",
   //   link: "personal_account",
   // },
-  { id: 7, title: "ДОП", link: "additional-program" },
+  { id: 7, title: "Программы", link: "additional-program" },
   {
     id: 8,
     title: "Контакты",
