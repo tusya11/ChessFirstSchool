@@ -33,8 +33,8 @@ const ChessProgramPage = () => {
     schedule: "2 раза в неделю по 45 минут",
     file: {
       name: "Программа_Шахматята.pdf",
-      size: "2.8 MB",
-      lastModified: "19.01.2026",
+      size: "2.9 MB",
+      lastModified: "26.01.2026",
       pages: 69,
     },
   };
