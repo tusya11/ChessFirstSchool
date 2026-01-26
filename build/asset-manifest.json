@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.b61374eb.css",
-    "main.js": "/static/js/main.111ff60b.js",
+    "main.js": "/static/js/main.f65c8574.js",
     "static/css/409.4d73136b.chunk.css": "/static/css/409.4d73136b.chunk.css",
     "static/js/409.46456954.chunk.js": "/static/js/409.46456954.chunk.js",
     "static/css/685.98ed6e1e.chunk.css": "/static/css/685.98ed6e1e.chunk.css",
@@ -9,7 +9,7 @@
     "static/js/910.7d03c52b.chunk.js": "/static/js/910.7d03c52b.chunk.js",
     "static/js/596.aca62453.chunk.js": "/static/js/596.aca62453.chunk.js",
     "static/media/chess-pawn.png": "/static/media/chess-pawn.98ddaf573a4a5b918217.png",
-    "static/media/program.pdf": "/static/media/program.e2cf40fc93b9b7adbc3c.pdf",
+    "static/media/program.pdf": "/static/media/program.de61d12dbae4ed848455.pdf",
     "static/media/calendar.svg": "/static/media/calendar.00e686a64a8c474ebd3854411d62411b.svg",
     "static/media/gift.svg": "/static/media/gift.b20a52859a4fd73e351f33620f66bb7e.svg",
     "static/media/wrapperBenefit.png": "/static/media/wrapperBenefit.aae047256b468c96adef.png",
@@ -117,6 +117,6 @@
   },
   "entrypoints": [
     "static/css/main.b61374eb.css",
-    "static/js/main.111ff60b.js"
+    "static/js/main.f65c8574.js"
   ]
 }
