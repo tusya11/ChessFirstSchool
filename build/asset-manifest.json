@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.b61374eb.css",
-    "main.js": "/static/js/main.f65c8574.js",
+    "main.css": "/static/css/main.3f4b7e88.css",
+    "main.js": "/static/js/main.473ff4b7.js",
     "static/css/409.4d73136b.chunk.css": "/static/css/409.4d73136b.chunk.css",
-    "static/js/409.46456954.chunk.js": "/static/js/409.46456954.chunk.js",
+    "static/js/409.a9f38a87.chunk.js": "/static/js/409.a9f38a87.chunk.js",
     "static/css/685.98ed6e1e.chunk.css": "/static/css/685.98ed6e1e.chunk.css",
     "static/js/685.bae3c3e4.chunk.js": "/static/js/685.bae3c3e4.chunk.js",
     "static/js/910.7d03c52b.chunk.js": "/static/js/910.7d03c52b.chunk.js",
@@ -34,6 +34,7 @@
     "static/media/img_60min.png": "/static/media/img_60min.4876759ade6a413bec7d.png",
     "static/media/image1.jpg": "/static/media/image1.24c9093d388944a5d6bb.jpg",
     "static/media/danil_sergeevich.png": "/static/media/danil_sergeevich.2d37e69580bfb8bcc5f4.png",
+    "static/media/license.pdf": "/static/media/license.85b5971bddc548702524.pdf",
     "static/media/dmitriy_vadim.png": "/static/media/dmitriy_vadim.ad32c64a134f71d8ea2e.png",
     "static/media/elmar_valera.png": "/static/media/elmar_valera.6b05511482ac9311e3e2.png",
     "static/media/dmitriy_ura.png": "/static/media/dmitriy_ura.d976594712bef2b1d45b.png",
@@ -116,7 +117,7 @@
     "static/media/burgerMenuBtn.svg": "/static/media/burgerMenuBtn.46d2ac73c9d2c782792db592774044c7.svg"
   },
   "entrypoints": [
-    "static/css/main.b61374eb.css",
-    "static/js/main.f65c8574.js"
+    "static/css/main.3f4b7e88.css",
+    "static/js/main.473ff4b7.js"
   ]
 }
