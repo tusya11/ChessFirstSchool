@@ -15,6 +15,8 @@ import NewSignUpContentModal from "./components/ModalContent/NewSignUpContentMod
 // import useIntersectionObserver from "./hooks/useIntersectionObserver";
 import PhoneIcon from "./new_components/PhoneIcon/PhoneIcon";
 import { contactNumber } from "./utils/globalConstants";
+// import CookieDisclaimer from "./components/CookieDisclaimer/CookieDisclaimer";
+import LicenseBlock from "./components/LicenseBlock/LicenseBlock";
 
 const Wrapper = observer(() => {
   const {
@@ -86,6 +88,7 @@ const Wrapper = observer(() => {
       </div>
       <Header className={visible ? "active" : "hidden"} />
       <Content />
+      <LicenseBlock />
       <Footer />
       <NewsBanner
         initialDelay={10}
@@ -94,6 +97,13 @@ const Wrapper = observer(() => {
         animationType="shake"
         showRepeat={true}
       />
+      {/* TODO: куки дисклеймер пока задизейблен - вернуть */}
+      {/* <CookieDisclaimer
+        privacyPolicyUrl="/privacy"
+        cookiePolicyUrl="/cookies"
+        companyName="Наша компания"
+        daysToExpire={30} // Хранить согласие 30 дней
+      /> */}
       {/* {isXS && !shouldRemoveBtn && <FixedBtnRecord />} */}
       {/* TODO: удалить ненужный контент и проверить нужен ли он */}
       {/* {isOpenModal && (

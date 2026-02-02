@@ -10,8 +10,6 @@ export const contactNumber = "+7 (918) 544-59-84";
 // export const urlToSummerIntensiveRegisterForm = 'https://forms.gle/V7CtTUccM4Vh4fSk7'
 export const urlToSummerIntensiveRegisterForm =
   "https://forms.yandex.ru/cloud/6829a3eb068ff00584c40f1a";
-export const urlToSignUpForClass =
-  "https://forms.yandex.ru/cloud/6829b37490fa7b33583656d6";
 
 //текстовые формы - 1, 3, 7
 export const TEXT_FORMS = {
