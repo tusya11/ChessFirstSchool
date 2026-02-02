@@ -1,6 +1,5 @@
 import { Button, ConfigProvider } from "antd";
 import modal from "../../store/modal";
-// import { urlToSignUpForClass } from '../../utils/globalConstants'
 import "./FixedBtnRecord.scss";
 
 const FixedBtnRecord = () => {
@@ -8,8 +7,6 @@ const FixedBtnRecord = () => {
 
   const handleClickButton = (e) => {
     e.stopPropagation();
-    //TODO: задизейблен переход по ссылке на Яндекс Форму
-    // window.open(urlToSignUpForClass, '_blank', 'noopener,noreferrer');
     setIsOpenModal(true);
   };
 

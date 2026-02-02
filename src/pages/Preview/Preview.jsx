@@ -1,7 +1,6 @@
 import { Button, ConfigProvider } from "antd";
 import { useMediaQuery } from "@mui/material";
 import modal from "../../store/modal";
-// import { urlToSignUpForClass } from "../../utils/globalConstants";
 import "./Preview.scss";
 
 const Preview = () => {
@@ -9,8 +8,6 @@ const Preview = () => {
   const { setIsOpenModal } = modal;
 
   const handleClickButton = () => {
-    //TODO: задизейблен переход по ссылке на Яндекс Форму
-    // window.open(urlToSignUpForClass, '_blank', 'noopener,noreferrer');
     setIsOpenModal(true);
   };
 

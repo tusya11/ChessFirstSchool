@@ -1,25 +1,23 @@
 import { useState } from "react";
-// import { Button, ConfigProvider, Drawer } from "antd";
-import { Drawer } from "antd";
+import { Button, ConfigProvider, Drawer } from "antd";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { observer } from "mobx-react-lite";
 import clsx from "classnames";
 import { useMediaQuery } from "@mui/material";
-// import { urlToSignUpForClass } from '../../utils/globalConstants'
 import whatsupLogo from "../../assets/whatsup_new.svg";
 import menuButton from "../../assets/burgerMenuBtn.svg";
 import { urlToWhatsApp } from "../../utils/globalConstants";
 import NavigationItemsMobile from "./NavigationItemsMobile/NavigationItemsMobile";
 import { navigatePanel } from "./consts";
 import logo from "../../assets/logo.svg";
-// import modal from "../../store/modal";
+import modal from "../../store/modal";
 import { openPersonalAccountCRM } from "../../utils/openPersonalAccountCRM";
 import "./Header.scss";
 
 const Header = observer(({ className }) => {
   const isXS = useMediaQuery("(max-width:700px)");
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
-  // const { setIsOpenModal } = modal;
+  const { setIsOpenModal } = modal;
   // eslint-disable-next-line no-unused-vars
   const [_, setSearchParams] = useSearchParams({ block: "" });
   const [search] = useSearchParams();
@@ -40,10 +38,9 @@ const Header = observer(({ className }) => {
     setSearchParams({ block: link });
   };
 
-  // const handleClickButton = () => {
-  //   // window.open(urlToSignUpForClass, '_blank', 'noopener,noreferrer');
-  //   setIsOpenModal(true);
-  // };
+  const handleClickButton = () => {
+    setIsOpenModal(true);
+  };
 
   const handleClose = () => {
     setIsOpenDrawer(false);
@@ -86,7 +83,7 @@ const Header = observer(({ className }) => {
             <div
               className={clsx(
                 "header__navigate-block-item",
-                blockTitle === v.link && "active-item"
+                blockTitle === v.link && "active-item",
               )}
               key={v.id}
               onClick={() => handleClickLink(v.link)}
@@ -109,7 +106,7 @@ const Header = observer(({ className }) => {
               <img src={whatsupLogo} alt="social-link-whatsup" loading="lazy" />
             </a>
           </div>
-          {/* <ConfigProvider
+          <ConfigProvider
             theme={{
               components: {
                 Button: {
@@ -132,7 +129,7 @@ const Header = observer(({ className }) => {
             >
               Записаться
             </Button>
-          </ConfigProvider> */}
+          </ConfigProvider>
         </div>
       )}
     </header>

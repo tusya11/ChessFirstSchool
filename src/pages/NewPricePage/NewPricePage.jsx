@@ -1,7 +1,6 @@
 import { useState } from "react";
-// import { Button, Col, ConfigProvider, Drawer, Row, Segmented } from "antd";
 import { useMediaQuery } from "@mui/material";
-import { Col, Drawer, Row, Segmented } from "antd";
+import { Col, Drawer, Row, Segmented, ConfigProvider, Button } from "antd";
 import clsx from "classnames";
 import NewPayment from "../../components/NewPayment/NewPayment";
 import MainTitleWithContent from "../../new_components/MainTitleWithContent/MainTitleWithContent";
@@ -33,14 +32,14 @@ const NewPricePage = ({
     }
   };
 
-  // const handleClickButton = () => {
-  //   setIsOpenDrawer(true);
-  // };
+  const handleClickButton = () => {
+    setIsOpenDrawer(true);
+  };
 
   const handleClickPriceData = (id) => {
     const foundTarif = priceData?.itemPrices?.find((v) => v.id === id);
     setTarif(foundTarif);
-    // handleClickButton();
+    handleClickButton();
   };
 
   return (
@@ -86,7 +85,7 @@ const NewPricePage = ({
                     className={clsx(
                       hasAdditional
                         ? "new-price-page__items-2"
-                        : "new-price-page__items"
+                        : "new-price-page__items",
                     )}
                     key={v.id}
                     onClick={() => handleClickPriceData(v.id)}
@@ -108,7 +107,7 @@ const NewPricePage = ({
 
               {!hideElements && (
                 <div className="new-price-page__button">
-                  {/* <ConfigProvider
+                  <ConfigProvider
                     theme={{
                       components: {
                         Button: {
@@ -116,7 +115,7 @@ const NewPricePage = ({
                           colorPrimaryHover: `black`,
                           colorPrimaryActive: `black`,
                           lineWidth: 0,
-                          fontWeight: '600',
+                          fontWeight: "600",
                           paddingBlock: 18,
                           paddingInline: 20,
                         },
@@ -131,7 +130,7 @@ const NewPricePage = ({
                     >
                       Записаться на обучение
                     </Button>
-                  </ConfigProvider> */}
+                  </ConfigProvider>
                 </div>
               )}
             </Col>
