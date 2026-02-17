@@ -24,11 +24,11 @@ export const navigatePanel = [
     title: "Бонусы",
     link: "bonuses",
   },
-  // {
-  //   id: 6,
-  //   title: "Личный кабинет",
-  //   link: "personal_account",
-  // },
+  {
+    id: 6,
+    title: "ЛК",
+    link: "personal_account",
+  },
   { id: 7, title: "Программы", link: "additional-program" },
   {
     id: 8,
