@@ -54,7 +54,7 @@ const IPSection = () => {
             <span className="info-value">{ipInfo.ogrnip}</span>
           </div>
           <div className="info-item">
-            <span className="info-label">Дата регистрации</span>
+            <span className="info-label">Адрес регистрации</span>
             <span className="info-value">{ipInfo.address}</span>
           </div>
         </div>
