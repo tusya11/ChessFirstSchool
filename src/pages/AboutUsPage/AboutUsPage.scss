@@ -1,71 +1,88 @@
 .about-us-page__container {
   width: 100%;
-  background-color: white;
+  background-color: #fff;
 
   .about-us-page__block-scroll {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    align-items: center;
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    align-items: stretch;
 
     @media screen and (max-width: 700px) {
-      width: calc(100vw - 20px);
-      box-sizing: border-box;
+      display: flex;
+      overflow-x: auto;
+      padding-bottom: 20px;
+      gap: 20px;
+      scroll-behavior: smooth;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
   }
 
   .about-us-page__block {
-    border-radius: 40px;
-    padding: 30px;
-    background-color: #faf5f1;
-    height: 100%;
-    box-sizing: border-box;
+    background: #faf5f1;
+    border-radius: 30px;
+    padding: 24px;
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 20px;
     flex: 0 0 auto;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
 
-    @media screen and (max-width: 700px) {
-      min-width: 280px; /* Устанавливаем минимальную ширину каждого дочернего блока */
+    &:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
     }
 
     .about-us-page__content-image {
-      height: 200px;
       width: 100%;
       border-radius: 20px;
+      overflow: hidden;
+      height: 200px;
 
       img {
-        height: 100%;
         width: 100%;
-        border-radius: 20px;
+        height: 100%;
         object-fit: cover;
+        border-radius: 20px;
+        transition: transform 0.3s ease;
+      }
+
+      &:hover img {
+        transform: scale(1.05);
       }
     }
 
     .about-us-page__content-block {
       display: flex;
       flex-direction: column;
-      text-align: left;
-      gap: 12px;
+      gap: 10px;
 
       p {
         margin: 0;
         font-family: "MontserratBold";
-        font-size: 24px;
-        line-height: 29px;
+        font-size: 22px;
+        line-height: 28px;
+        color: #333;
 
         @media screen and (max-width: 700px) {
-          font-size: 20px;
+          font-size: 18px;
+          line-height: 24px;
         }
       }
 
       span {
         font-family: "MontserratLight";
-        font-size: 18px;
-        line-height: 27px;
+        font-size: 16px;
+        line-height: 22px;
+        color: #666;
 
         @media screen and (max-width: 700px) {
-          font-size: 16px;
+          font-size: 14px;
         }
       }
     }

@@ -1,5 +1,5 @@
-import React from "react";
 import { useMediaQuery } from "@mui/material";
+import { motion } from "framer-motion";
 import { approachToLearning } from "./consts";
 import "./AboutUsPage.scss";
 import MainTitleWithContent from "../../new_components/MainTitleWithContent/MainTitleWithContent";
@@ -13,12 +13,16 @@ const AboutUsPage = () => {
         title="Наш подход к&nbsp;обучению"
         padding={isXS ? "0 0 60px 15px" : ""}
       >
-        <div
-          className="about-us-page__block-scroll"
-          style={{ overflow: "auto" }}
-        >
-          {approachToLearning.map((item) => (
-            <div key={item.id} className="about-us-page__block">
+        <div className="about-us-page__block-scroll">
+          {approachToLearning.map((item, index) => (
+            <motion.div
+              key={item.id}
+              className="about-us-page__block"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
               <div className="about-us-page__content-image">
                 <img
                   src={item.image}
@@ -30,7 +34,7 @@ const AboutUsPage = () => {
                 <p>{item.title}</p>
                 <span>{item.description}</span>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </MainTitleWithContent>
