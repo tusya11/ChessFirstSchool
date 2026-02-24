@@ -251,17 +251,24 @@ export const holiday_prices = {
   itemPrices: [
     {
       id: 1,
-      description: "1 занятие",
+      description: "Одна лекция",
       descriptionNumber: 1,
-      price: "700",
-      price_rub: 700,
+      price: "1 000",
+      price_rub: 1000,
     },
     {
       id: 2,
-      description: "3 занятия",
-      descriptionNumber: 3,
+      description: "Две лекции",
+      descriptionNumber: 2,
       price: "1 500",
       price_rub: 1500,
+    },
+    {
+      id: 3,
+      description: "Запись лекций",
+      descriptionNumber: 3,
+      price: "1 000",
+      price_rub: 1000,
     },
   ],
 };
