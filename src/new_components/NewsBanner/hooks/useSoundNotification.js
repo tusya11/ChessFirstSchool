@@ -62,7 +62,7 @@ export const useSoundNotification = (enableSound, soundFile) => {
       audioRef.current.play().catch((error) => {
         console.debug(
           "Audio play failed (user already interacted):",
-          error.name
+          error.name,
         );
       });
     } else {

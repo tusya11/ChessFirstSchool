@@ -4,8 +4,6 @@ import { useMediaQuery } from "@mui/material";
 import { Button, Card, Space, Typography } from "antd";
 import { CloseOutlined, BellOutlined } from "@ant-design/icons";
 import { useUserActivity } from "./hooks/useUserActivity";
-import { useSoundNotification } from "./hooks/useSoundNotification";
-import messageSound from "../../sound/message.mp3";
 import styles from "./NewsBanner.module.scss";
 
 const { Title, Paragraph, Text } = Typography;
@@ -144,7 +142,6 @@ const NewsBanner = (props) => {
     initialDelay,
     repeatInterval,
     showRepeat,
-    enableSound,
     animationType,
     bannerPosition,
     buttonPosition,
@@ -157,21 +154,21 @@ const NewsBanner = (props) => {
   const lastShowTimeRef = useRef(0);
 
   const userActive = useUserActivity();
-  const playSound = useSoundNotification(enableSound, messageSound);
 
   const rawNewsItems = useMemo(
     () => [
       {
         id: 1,
         title: "🔥 Успейте записаться!",
-        content: "27-29 декабря: 3 лекции от гроссмейстеров.",
-        date: "09.12.2025",
-        period: "27.12.2025 - 29.12.2025",
-        isUrgent: false,
+        content:
+          "28 февраля - 1 марта: Елена Томилова, поделится бесценным опытом и секретами, которые помогли ей вырастить чемпиона!",
+        date: "23.02.26",
+        period: "28.02.2026 - 01.03.2026",
+        isUrgent: true,
         link: "/holiday-with-grandmasters",
       },
     ],
-    []
+    [],
   );
 
   const newsItems = useMemo(() => {
@@ -181,12 +178,12 @@ const NewsBanner = (props) => {
   const hasNews = newsItems.length > 0;
   const hasUrgentNews = useMemo(
     () => newsItems.some((news) => news.isUrgent),
-    [newsItems]
+    [newsItems],
   );
 
   const urgentCount = useMemo(
     () => newsItems.filter((news) => news.isUrgent).length,
-    [newsItems]
+    [newsItems],
   );
 
   const triggerAnimation = useCallback(() => {
@@ -196,10 +193,9 @@ const NewsBanner = (props) => {
 
   const handleClose = useCallback(() => setIsVisible(false), []);
   const handleOpen = useCallback(() => {
-    playSound();
     triggerAnimation();
     setTimeout(() => setIsVisible(true), 300);
-  }, [playSound, triggerAnimation]);
+  }, [triggerAnimation]);
 
   useEffect(() => {
     // Автоматически открываем баннер только если есть новости
@@ -221,7 +217,6 @@ const NewsBanner = (props) => {
         timeSinceLastShow > repeatInterval * 1000 ||
         lastShowTimeRef.current === 0
       ) {
-        playSound();
         triggerAnimation();
 
         setTimeout(() => {
@@ -253,7 +248,6 @@ const NewsBanner = (props) => {
     initialDelay,
     repeatInterval,
     showRepeat,
-    playSound,
     triggerAnimation,
     hasNews, // Зависимость добавлена для отключения таймеров при отсутствии новостей
   ]);
