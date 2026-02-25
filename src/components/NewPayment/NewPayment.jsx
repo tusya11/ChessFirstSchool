@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 // import axios from "axios";
 import { Button, Checkbox, ConfigProvider, Space, Typography } from "antd";
 import SectionItem from "./components/SectionItem/SectionItem";
@@ -33,12 +33,23 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
   const { isXS } = useResponsive();
   const [stateRate, setStateRate] = useState([]);
 
+  const serviceName = useMemo(() => {
+    if (stateRate.length > 0) {
+      const selectedItem = stateRate.find((v) => v.selected);
+      if (selectedItem) {
+        return selectedItem.description;
+      } else {
+        return "Оплата занятий";
+      }
+    }
+  }, [stateRate]);
+
   useEffect(() => {
     setStateRate(
       payment.itemPrices?.map((v) => ({
         ...v,
         selected: v.id === tarif?.id,
-      })) || []
+      })) || [],
     );
   }, [payment, tarif]);
 
@@ -187,7 +198,7 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
             className="new-payment__display-none"
             type="text"
             name="service_name"
-            value="Оплата занятий"
+            value={serviceName ?? "Оплата занятий"}
           />
           <Space className="new-payment__section-item-1">
             <SectionItem
