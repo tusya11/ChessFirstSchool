@@ -258,15 +258,8 @@ export const holiday_prices = {
     },
     {
       id: 2,
-      description: "Две лекции",
+      description: "Видеозапись",
       descriptionNumber: 2,
-      price: "1 500",
-      price_rub: 1500,
-    },
-    {
-      id: 3,
-      description: "Запись лекций",
-      descriptionNumber: 3,
       price: "1 000",
       price_rub: 1000,
     },
