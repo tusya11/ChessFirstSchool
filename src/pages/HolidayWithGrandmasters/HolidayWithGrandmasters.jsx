@@ -130,7 +130,7 @@ const HolidaysWithGrandmasters = () => {
             <div className="hero-stats">
               <div className="stat-item">
                 <div className="stat-number">14.03</div>
-                <div className="stat-label">(пятница)</div>
+                <div className="stat-label">(суббота)</div>
               </div>
               <div className="stat-divider"></div>
               <div className="stat-item">
