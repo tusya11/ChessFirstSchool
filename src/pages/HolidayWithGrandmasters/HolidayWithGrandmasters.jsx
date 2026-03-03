@@ -3,7 +3,7 @@ import { Drawer } from "antd";
 import { useMediaQuery } from "@mui/material";
 import { holiday_prices } from "../NewPricePage/consts";
 import NewPayment from "../../components/NewPayment/NewPayment";
-import elenaPhoto from "./images/elena.jpg";
+import dmitryPhoto from "./images/dmitry.jpg";
 import "./HolidaysWithGrandmasters.scss";
 
 // Иконки
@@ -15,7 +15,7 @@ const RubleIcon = () => <span className="icon">₽</span>;
 const HolidaysWithGrandmasters = () => {
   const isXS = useMediaQuery("(max-width:700px)");
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
-  const [imageError, setImageError] = useState({ elena: false });
+  const [imageError, setImageError] = useState({ dmitry: false });
   const [tarif, setTarif] = useState({ id: 1 });
 
   const pricingOptions = useMemo(
@@ -23,20 +23,13 @@ const HolidaysWithGrandmasters = () => {
       {
         id: 1,
         title: "Одна лекция",
-        description: "Любая лекция на выбор",
+        description: "Лекция 'Как избавиться от зевков?'",
         originalPrice: 1000,
       },
       {
         id: 2,
-        title: "Две лекции",
-        description: "Полный курс из 2-х лекций",
-        originalPrice: 1500,
-        recommended: true,
-      },
-      {
-        id: 3,
         title: "Видеозапись",
-        description: "Запись двух лекций",
+        description: "Запись лекции в высоком качестве",
         originalPrice: 1000,
       },
     ],
@@ -44,7 +37,7 @@ const HolidaysWithGrandmasters = () => {
   );
 
   const handleImageError = () => {
-    setImageError((prev) => ({ ...prev, elena: true }));
+    setImageError((prev) => ({ ...prev, dmitry: true }));
   };
 
   useEffect(() => {
@@ -58,51 +51,47 @@ const HolidaysWithGrandmasters = () => {
   const grandmaster = useMemo(
     () => ({
       id: 1,
-      name: "Елена Томилова",
+      name: "Дмитрий Кряквин",
       title: "Международный гроссмейстер",
       flag: "⭐️",
-      rating: 2450,
-      age: 38,
+      rating: 2520,
+      age: 52,
       description:
-        "Призер командных чемпионатов страны по классике, блицу и рапиду в составе команд «Киммерия», «Дончанка» и «Боавишта». Победительница Международных турниров в Белграде (2017), Риеке (2018) и Алма-Ате (2019). В 2024 году выиграла женский зачет серии Гран-при Черного моря и завоевала главный приз - автомобиль 'Лада'. Сын Елены, Андрей Кряквин, в нынешнем году стал чемпионом Южного федерального округа по шахматам.",
-      teachingStyle: "Акцент на практические знания и подготовку к турнирам",
+        "Легенда Донских шахмат, международный гроссмейстер, шахматный литератор и журналист. Чемпион Южного, Уральского и Северо-Кавказского федеральных округов. Участник 18-го личного чемпионата Европы, чемпионатов мира по рапиду и блицу. Занял третье место в номинации «Лучший детский тренер России».",
+      teachingStyle:
+        "Практические методики повышения концентрации, системный подход к игре, анализ типичных ошибок",
       achievements: [
-        "Чемпионка Уральского федерального округа",
-        "Бронзовый призер чемпионата России по блицу (2016)",
-        "Финалистка Кубка России 2017 года",
-        "Победительница серии Гран-при Черного моря 2024",
-        "Мама чемпиона России до 15 лет Андрея Кряквина",
+        "Чемпион Южного, Уральского и Северо-Кавказского федеральных округов",
+        "Участник 18-го личного чемпионата Европы",
+        "Участник чемпионатов мира по рапиду и блицу",
+        "3-е место в номинации «Лучший детский тренер России»",
+        "Автор шахматных книг и статей",
       ],
-      scheduleCount: "2 лекции",
+      students: [
+        "Андрей Есипенко (чемпион олимпиады 2020, претендент на звание чемпиона мира 2026)",
+        "Даниил Юффа",
+        "Дмитрий Цой",
+        "Арсений Нестеров (чемпион России 2025)",
+      ],
+      scheduleCount: "1 лекция",
       schedule: [
         {
-          date: "28 февраля",
-          time: "11:00 (мск)",
-          title: "Искусство Дебюта: Секреты Выбора и Построения Репертуара!",
+          date: "14 марта",
+          time: "12:00 (мск)",
+          title: "Как избавиться от зевков? Практические методики",
           topics: [
-            "Как выбрать дебют под свой стиль игры",
-            "Принципы построения дебютного репертуара",
-            "Типичные ошибки при разыгрывании дебюта",
-            "Практические рекомендации от гроссмейстера",
-          ],
-        },
-        {
-          date: "1 марта",
-          time: "11:00 (мск)",
-          title: "Особенности Эндшпилей с Разноцветными Слонами",
-          topics: [
-            "Ключевые принципы игры в разноцветных слонах",
-            "Атакующие возможности и защитные ресурсы",
-            "Типичные позиции и планы игры",
-            "Практические примеры из партий гроссмейстеров",
+            "Повышение концентрации и надежности в каждой партии",
+            "Как мыслить как гроссмейстер, предугадывая и избегая ловушек",
+            "Анализ типичных зевков и паттернов ошибок",
+            "Упражнения для тренировки внимания",
           ],
         },
       ],
-      lessonPrice: 250,
-      color: "#7C3AED",
-      photo: elenaPhoto,
-      accentColor: "#8B5CF6",
-      tags: ["Дебют", "Эндшпиль", "Практика"],
+      lessonPrice: 1000,
+      color: "#1E3A8A",
+      photo: dmitryPhoto,
+      accentColor: "#2563EB",
+      tags: ["Зевки", "Концентрация", "Практика"],
     }),
     [],
   );
@@ -127,31 +116,26 @@ const HolidaysWithGrandmasters = () => {
                 <span className="title-highlight"> Гроссмейстером</span>
               </h1>
               <p className="hero-subtitle">
-                По горячим следам, для всех, кто жаждет побед и стремится к
-                новым высотам в шахматах, мы проводим МАКСИМАЛЬНО ПОЛЕЗНЫЙ
-                МАСТЕР-КЛАСС от ЖМГ Елены Томиловой – мамы юного чемпиона России
-                до 15 лет Андрея Кряквина!
+                Эксклюзивный мастер-класс от легенды Донских шахмат – Дмитрия
+                Кряквина! Тренера, воспитавшего чемпионов, автора бестселлеров и
+                участника чемпионатов мира.
               </p>
               <p className="hero-subtitle-secondary">
-                Елена Томилова поделится бесценным опытом и секретами, которые
-                помогли ей вырастить чемпиона!
+                Дмитрий поделится уникальной методикой, которая помогла его
+                ученикам (Андрею Есипенко, Арсению Нестерову и другим) достичь
+                вершин шахматного Олимпа!
               </p>
             </div>
 
             <div className="hero-stats">
               <div className="stat-item">
-                <div className="stat-number">28.02</div>
-                <div className="stat-label">(суббота)</div>
+                <div className="stat-number">14.03</div>
+                <div className="stat-label">(пятница)</div>
               </div>
               <div className="stat-divider"></div>
               <div className="stat-item">
-                <div className="stat-number">11:00</div>
+                <div className="stat-number">12:00</div>
                 <div className="stat-label">МСК</div>
-              </div>
-              <div className="stat-divider"></div>
-              <div className="stat-item">
-                <div className="stat-number">01.03</div>
-                <div className="stat-label">(воскресенье)</div>
               </div>
             </div>
           </div>
@@ -173,9 +157,9 @@ const HolidaysWithGrandmasters = () => {
             {pricingOptions.map((option) => (
               <div
                 key={option.id}
-                className={`pricing-card ${option.recommended ? "recommended" : ""}`}
+                className={`pricing-card ${option.id === 1 ? "recommended" : ""}`}
               >
-                {option.recommended && (
+                {option.id === 1 && (
                   <div className="recommended-badge">Рекомендуем</div>
                 )}
 
@@ -199,7 +183,7 @@ const HolidaysWithGrandmasters = () => {
                     className="pricing-button"
                     onClick={() => handleChooseVariant(option)}
                   >
-                    {option.id === 3 ? "Приобрести запись" : "Записаться"}
+                    {option.id === 2 ? "Приобрести запись" : "Записаться"}
                   </button>
                 </div>
               </div>
@@ -207,23 +191,27 @@ const HolidaysWithGrandmasters = () => {
           </div>
         </div>
 
-        {/* Для кого эти лекции */}
+        {/* Для кого эта лекция */}
         <div className="target-audience-section">
           <div className="audience-header">
-            <h2>🎯 ЭТИ ЛЕКЦИИ – ДЛЯ ВАС, ЕСЛИ ВЫ:</h2>
+            <h2>🎯 ЭТА ЛЕКЦИЯ – ДЛЯ ВАС, ЕСЛИ ВЫ:</h2>
           </div>
           <div className="audience-grid">
             <div className="audience-item">
               <div className="audience-marker"></div>
-              <span>Хотите улучшить свой дебютный репертуар</span>
+              <span>Устали терять выигранные позиции из-за зевков</span>
             </div>
             <div className="audience-item">
               <div className="audience-marker"></div>
-              <span>Стремитесь играть сильнее, глубже и продуманнее</span>
+              <span>Хотите повысить концентрацию и надежность игры</span>
             </div>
             <div className="audience-item">
               <div className="audience-marker"></div>
-              <span>Мечтаете понимать шахматы на новом уровне</span>
+              <span>Мечтаете мыслить как гроссмейстер и избегать ловушек</span>
+            </div>
+            <div className="audience-item">
+              <div className="audience-marker"></div>
+              <span>Стремитесь к системному подходу в шахматах</span>
             </div>
           </div>
         </div>
@@ -231,7 +219,10 @@ const HolidaysWithGrandmasters = () => {
         <div className="tabs-container">
           <div className="tabs-header">
             <h2>Познакомьтесь с гроссмейстером</h2>
-            <p>Елена Томилова – международный гроссмейстер и мама чемпиона</p>
+            <p>
+              Дмитрий Кряквин – международный гроссмейстер и лучший тренер
+              России
+            </p>
           </div>
         </div>
 
@@ -247,7 +238,7 @@ const HolidaysWithGrandmasters = () => {
               <div className="gm-header-content">
                 <div className="gm-avatar-container">
                   <div className="gm-avatar">
-                    {!imageError.elena ? (
+                    {!imageError.dmitry ? (
                       <img
                         src={grandmaster.photo}
                         alt={`${grandmaster.name} - ${grandmaster.title}`}
@@ -308,10 +299,25 @@ const HolidaysWithGrandmasters = () => {
                 </ul>
               </div>
 
+              <div className="achievements-modern">
+                <h4>
+                  <TrophyIcon />
+                  Выдающиеся ученики
+                </h4>
+                <ul>
+                  {grandmaster.students.map((student, idx) => (
+                    <li key={idx}>
+                      <div className="achievement-marker"></div>
+                      <span>{student}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
               <div className="schedule-section">
                 <h4>
                   <CalendarIcon />
-                  Расписание лекций
+                  Расписание лекции
                 </h4>
                 <div className="schedule-list">
                   {grandmaster.schedule.map((lecture, idx) => (
@@ -323,7 +329,9 @@ const HolidaysWithGrandmasters = () => {
                       <div className="lecture-title">{lecture.title}</div>
                       {lecture.topics && lecture.topics.length > 0 && (
                         <div className="lecture-topics">
-                          <div className="topics-title">Темы лекции:</div>
+                          <div className="topics-title">
+                            На лекции вы узнаете:
+                          </div>
                           <ul>
                             {lecture.topics.map((topic, topicIdx) => (
                               <li key={topicIdx}>{topic}</li>
@@ -350,39 +358,36 @@ const HolidaysWithGrandmasters = () => {
         <div className="program-details">
           <div className="details-header">
             <h2>Детали программы</h2>
-            <p>Практический мастер-класс для шахматистов любого уровня</p>
+            <p>Практический мастер-класс от тренера чемпионов</p>
           </div>
 
           <div className="details-grid">
             <div className="detail-card">
               <div className="detail-icon">🎯</div>
-              <h3>Две тематические лекции</h3>
+              <h3>Уникальная методика</h3>
               <p>
-                Дебют и эндшпиль – ключевые стадии партии под руководством
-                гроссмейстера
+                Практические методики повышения концентрации, проверенные на
+                чемпионах
               </p>
             </div>
 
             <div className="detail-card">
               <div className="detail-icon">📅</div>
               <h3>Удобное время</h3>
-              <p>
-                Лекции проходят 28 февраля и 1 марта в 11:00 по московскому
-                времени
-              </p>
+              <p>Лекция проходит 14 марта в 12:00 по московскому времени</p>
             </div>
 
             <div className="detail-card">
               <div className="detail-icon">🏆</div>
               <h3>Практическая польза</h3>
-              <p>Готовые схемы и рекомендации для улучшения вашей игры</p>
+              <p>Готовые упражнения и методики для немедленного применения</p>
             </div>
 
             <div className="detail-card">
               <div className="detail-icon">📹</div>
               <h3>Видеозапись</h3>
               <p>
-                Возможность приобрести запись лекций, если не успеваете на
+                Возможность приобрести запись лекции, если не успеваете на
                 онлайн
               </p>
             </div>

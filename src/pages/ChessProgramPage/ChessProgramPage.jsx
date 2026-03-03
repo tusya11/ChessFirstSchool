@@ -13,42 +13,75 @@ import {
   Printer,
   BookOpen,
 } from "lucide-react";
+
+import pdfForBeginners72 from "../../assets/files/forBeginners72.pdf";
+import pdfForBeginners24 from "../../assets/files/forBeginners24.pdf";
+import pdfForBeginners16 from "../../assets/files/forBeginners16.pdf";
+import pdfForBeginners10 from "../../assets/files/forBeginners10.pdf";
 import pdfFile from "../../assets/program.pdf";
 import "./ChessProgramPage.css";
 
 const ChessProgramPage = () => {
   const [isViewingFile, setIsViewingFile] = useState(false);
+  const [activeFile, setActiveFile] = useState(null);
   const [pdfUrl, setPdfUrl] = useState("");
   const [zoom, setZoom] = useState(100);
   const [rotation, setRotation] = useState(0);
   const [isFullscreen, setIsFullscreen] = useState(false);
 
-  // Данные о программе
   const programData = {
     title: "Дополнительная общеразвивающая программа «Шахматята»",
     description:
       "Программа предназначена для детей дошкольного и младшего школьного возраста, направлена на развитие логического мышления, памяти и концентрации внимания через игру в шахматы.",
-    ageGroup: "5-8 лет",
-    duration: "36 академических часов",
-    schedule: "2 раза в неделю по 45 минут",
-    file: {
-      name: "Программа_Шахматята.pdf",
-      size: "2.9 MB",
-      lastModified: "26.01.2026",
-      pages: 69,
-    },
+    files: [
+      {
+        id: 1,
+        name: "Программа_Шахматята.pdf",
+        size: "2.9 MB",
+        pages: 69,
+        src: pdfFile,
+      },
+      {
+        id: 2,
+        name: "Шахматы_для_начинающих_72_часа.pdf",
+        size: "611 KB",
+        pages: 25,
+        src: pdfForBeginners72,
+      },
+      {
+        id: 3,
+        name: "Шахматы_для_начинающих_24_часа.pdf",
+        size: "562 KB",
+        pages: 21,
+        src: pdfForBeginners24,
+      },
+      {
+        id: 4,
+        name: "Шахматы_для_начинающих_16_часов.pdf",
+        size: "551 KB",
+        pages: 20,
+        src: pdfForBeginners16,
+      },
+      {
+        id: 5,
+        name: "Шахматы_для_начинающих_10_часов.pdf",
+        size: "541 KB",
+        pages: 18,
+        src: pdfForBeginners10,
+      },
+    ],
   };
 
-  // Загружаем PDF файл
   useEffect(() => {
-    setPdfUrl(pdfFile);
-  }, []);
+    if (activeFile) {
+      setPdfUrl(activeFile.src);
+    }
+  }, [activeFile]);
 
-  const handleGoBack = () => {
-    window.history.back();
-  };
+  const handleGoBack = () => window.history.back();
 
-  const handleViewFile = () => {
+  const handleViewFile = (file) => {
+    setActiveFile(file);
     setIsViewingFile(true);
   };
 
@@ -60,41 +93,14 @@ const ChessProgramPage = () => {
   };
 
   const handleDownload = () => {
-    if (pdfUrl) {
-      const link = document.createElement("a");
-      link.href = pdfUrl;
-      link.download = programData.file.name;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    } else {
-      alert("Файл не найден");
-    }
-  };
+    if (!activeFile) return;
 
-  const zoomIn = () => {
-    if (zoom < 300) setZoom(zoom + 25);
-  };
-
-  const zoomOut = () => {
-    if (zoom > 25) setZoom(zoom - 25);
-  };
-
-  const rotate = () => {
-    setRotation((prev) => (prev + 90) % 360);
-  };
-
-  const resetView = () => {
-    setZoom(100);
-    setRotation(0);
-  };
-
-  const toggleFullscreen = () => {
-    setIsFullscreen(!isFullscreen);
-  };
-
-  const handlePrint = () => {
-    window.print();
+    const link = document.createElement("a");
+    link.href = activeFile.src;
+    link.download = activeFile.name;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -113,13 +119,11 @@ const ChessProgramPage = () => {
           <div className="title-icon">
             <BookOpen size={28} />
           </div>
-          <div>
-            <h1>{programData.title}</h1>
-          </div>
+          <h1>{programData.title}</h1>
         </div>
       </div>
 
-      {/* Основная информация */}
+      {/* Описание */}
       <div className="program-content">
         <div className="program-description">
           <div className="description-icon">
@@ -128,193 +132,136 @@ const ChessProgramPage = () => {
           <p>{programData.description}</p>
         </div>
 
-        {/* Файл программы */}
+        {/* Документы */}
         <div className="file-section">
           <div className="section-header">
-            <h2>Документ программы</h2>
+            <h2>Документы программы</h2>
             <p className="section-subtitle">
-              Официальный документ программы для ознакомления
+              Официальные материалы для ознакомления
             </p>
           </div>
 
-          <div className="file-card">
-            <div className="file-card-content">
-              <h3>{programData.file.name}</h3>
-              <div className="file-meta-grid">
-                <div className="meta-item">
-                  <span className="meta-label">Размер</span>
-                  <span className="meta-value">{programData.file.size}</span>
-                </div>
-                <div className="meta-item">
-                  <span className="meta-label">Страниц</span>
-                  <span className="meta-value">{programData.file.pages}</span>
-                </div>
-                <div className="meta-item">
-                  <span className="meta-label">Формат</span>
-                  <span className="meta-value">PDF</span>
-                </div>
-              </div>
+          {programData.files.map((file) => (
+            <div
+              key={file.id}
+              className="file-card"
+              style={{ marginBottom: 32 }}
+            >
+              <div className="file-card-content">
+                <h3>{file.name}</h3>
 
-              <div className="file-actions">
-                <button
-                  className="action-btn view-btn"
-                  onClick={handleViewFile}
-                  disabled={!pdfUrl}
-                >
-                  <Eye size={18} />
-                  <span>Просмотреть документ</span>
-                </button>
+                <div className="file-meta-grid">
+                  <div className="meta-item">
+                    <span className="meta-label">Размер</span>
+                    <span className="meta-value">{file.size}</span>
+                  </div>
+                  <div className="meta-item">
+                    <span className="meta-label">Страниц</span>
+                    <span className="meta-value">{file.pages}</span>
+                  </div>
+                  <div className="meta-item">
+                    <span className="meta-label">Формат</span>
+                    <span className="meta-value">PDF</span>
+                  </div>
+                </div>
 
-                <button
-                  className="action-btn download-btn"
-                  onClick={handleDownload}
-                  disabled={!pdfUrl}
-                >
-                  <Download size={18} />
-                  <span>Скачать PDF</span>
-                </button>
+                <div className="file-actions">
+                  <button
+                    className="action-btn view-btn"
+                    onClick={() => handleViewFile(file)}
+                  >
+                    <Eye size={18} />
+                    <span>Просмотреть документ</span>
+                  </button>
+
+                  <button
+                    className="action-btn download-btn"
+                    onClick={() => {
+                      setActiveFile(file);
+                      handleDownload();
+                    }}
+                  >
+                    <Download size={18} />
+                    <span>Скачать PDF</span>
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
 
-      {/* PDF просмотрщик (модальное окно) */}
-      {isViewingFile && (
+      {/* PDF Viewer */}
+      {isViewingFile && activeFile && (
         <div
           className={`pdf-viewer-overlay ${isFullscreen ? "fullscreen" : ""}`}
         >
           <div className="pdf-viewer-container">
-            {/* Верхняя панель - упрощенная */}
             <div className="pdf-viewer-toolbar">
-              <div className="toolbar-left">
-                <div className="document-info">
-                  <FileText size={20} />
-                  <div className="document-title">
-                    <h3>{programData.file.name}</h3>
-                    <span className="document-meta">
-                      {programData.file.size} • PDF
-                    </span>
-                  </div>
+              <div className="document-info">
+                <FileText size={20} />
+                <div className="document-title">
+                  <h3>{activeFile.name}</h3>
+                  <span className="document-meta">{activeFile.size} • PDF</span>
                 </div>
               </div>
 
               <div className="toolbar-right">
                 <button
                   className="toolbar-btn"
-                  onClick={toggleFullscreen}
-                  title={
-                    isFullscreen ? "Выйти из полного экрана" : "Полный экран"
-                  }
+                  onClick={() => setIsFullscreen(!isFullscreen)}
                 >
-                  {isFullscreen ? (
-                    <Minimize2 size={18} />
-                  ) : (
-                    <Maximize2 size={18} />
-                  )}
+                  {isFullscreen ? <Minimize2 /> : <Maximize2 />}
                 </button>
                 <button
                   className="toolbar-btn close-btn"
                   onClick={handleCloseViewer}
-                  title="Закрыть"
                 >
-                  <X size={20} />
+                  <X />
                 </button>
               </div>
             </div>
 
-            {/* Упрощенная панель управления */}
             <div className="pdf-simple-controls">
               <div className="simple-controls-group">
-                <button
-                  className="simple-control-btn"
-                  onClick={zoomOut}
-                  disabled={zoom <= 25}
-                  title="Уменьшить"
-                >
-                  <ZoomOut size={18} />
+                <button onClick={() => setZoom((z) => Math.max(25, z - 25))}>
+                  <ZoomOut />
                 </button>
-                <div className="simple-zoom-display">
-                  <span className="simple-zoom-value">{zoom}%</span>
-                </div>
-                <button
-                  className="simple-control-btn"
-                  onClick={zoomIn}
-                  disabled={zoom >= 300}
-                  title="Увеличить"
-                >
-                  <ZoomIn size={18} />
+                <span>{zoom}%</span>
+                <button onClick={() => setZoom((z) => Math.min(300, z + 25))}>
+                  <ZoomIn />
                 </button>
               </div>
 
               <div className="simple-controls-group">
-                <button
-                  className="simple-control-btn"
-                  onClick={rotate}
-                  title="Повернуть"
-                >
-                  <RotateCw size={18} />
+                <button onClick={() => setRotation((r) => r + 90)}>
+                  <RotateCw />
                 </button>
-                <button
-                  className="simple-control-btn"
-                  onClick={resetView}
-                  title="Сбросить вид"
-                >
-                  ↺
-                </button>
-              </div>
-
-              <div className="simple-controls-group">
                 <button
                   className="simple-control-btn primary-btn"
                   onClick={handleDownload}
-                  title="Скачать"
                 >
-                  <Download size={18} />
+                  <Download />
                 </button>
-                <button
-                  className="simple-control-btn"
-                  onClick={handlePrint}
-                  title="Печать"
-                >
-                  <Printer size={18} />
+                <button onClick={() => window.print()}>
+                  <Printer />
                 </button>
               </div>
             </div>
 
-            {/* Контент PDF - увеличенная область */}
             <div className="pdf-viewer-content-expanded">
-              {pdfUrl ? (
-                <div className="pdf-container-expanded">
-                  <div
-                    className="pdf-wrapper-expanded"
-                    style={{
-                      transform: `scale(${zoom / 100}) rotate(${rotation}deg)`,
-                      transformOrigin: "center center",
-                      transition: "transform 0.3s ease",
-                    }}
-                  >
-                    <embed
-                      src={`${pdfUrl}#toolbar=0&navpanes=0&scrollbar=0`}
-                      type="application/pdf"
-                      title={programData.file.name}
-                      className="pdf-iframe-expanded"
-                    />
-                  </div>
-                </div>
-              ) : (
-                <div className="pdf-error-state">
-                  <FileText size={64} />
-                  <h4>Файл не найден</h4>
-                  <p>Не удалось загрузить документ для просмотра</p>
-                  <button
-                    className="retry-btn"
-                    onClick={() => window.location.reload()}
-                  >
-                    Попробовать снова
-                  </button>
-                </div>
-              )}
+              <div
+                className="pdf-wrapper-expanded"
+                style={{
+                  transform: `scale(${zoom / 100}) rotate(${rotation}deg)`,
+                }}
+              >
+                <embed
+                  src={`${pdfUrl}#toolbar=0&navpanes=0&scrollbar=0`}
+                  type="application/pdf"
+                  className="pdf-iframe-expanded"
+                />
+              </div>
             </div>
           </div>
         </div>
