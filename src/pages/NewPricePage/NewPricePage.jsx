@@ -79,30 +79,37 @@ const NewPricePage = ({
                 <p className="new-price-page__subtitle">{priceData.subtitle}</p>
               </div>
               <div className="new-price-page__paper-price-items">
-                {priceData.itemPrices.map((v) => (
-                  <div
-                    //TODO: убрать clsx и оставить один класс
-                    className={clsx(
-                      hasAdditional
-                        ? "new-price-page__items-2"
-                        : "new-price-page__items",
-                    )}
-                    key={v.id}
-                    onClick={() => handleClickPriceData(v.id)}
-                  >
-                    <div className="new-price-page__block-description">
-                      <p className="new-price-page__description">
-                        {v.description}
-                      </p>
-                      <p className="new-price-page__price">{v.price} ₽</p>
-                    </div>
-                    {hasAdditional && (
-                      <div className="new-price-page__additional-text">
-                        <span>{v.additional_content}</span>
+                {priceData.itemPrices.map((v) => {
+                  const isSingle = v.descriptionNumber === 1;
+                  return (
+                    <div
+                      //TODO: убрать clsx и оставить один класс
+                      className={clsx(
+                        hasAdditional
+                          ? "new-price-page__items-2"
+                          : "new-price-page__items",
+                        isSingle && "new-price-page__items--single",
+                      )}
+                      key={v.id}
+                      onClick={() => handleClickPriceData(v.id)}
+                    >
+                      <div className="new-price-page__block-description">
+                        <p className="new-price-page__description">
+                          {v.description}
+                        </p>
+                        <p className="new-price-page__price">{v.price} ₽</p>
                       </div>
-                    )}
-                  </div>
-                ))}
+                      {isSingle && (
+                        <div className="new-price-page__badge">Пробное</div>
+                      )}
+                      {hasAdditional && (
+                        <div className="new-price-page__additional-text">
+                          <span>{v.additional_content}</span>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
               </div>
 
               {!hideElements && (

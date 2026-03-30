@@ -16,11 +16,6 @@ const Preview = () => {
       <div className="preview__content">
         <div className="preview__right-content-container">
           <div className="preview__right-content__block">
-            <div className="preview__info-message">
-              <span className="preview__info-message__text">
-                Бесплатный пробный урок
-              </span>
-            </div>
             <div className="preview__main-text">
               <h1 className="preview__main-text__title">
                 Шахматная онлайн школа

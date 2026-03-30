@@ -3,7 +3,6 @@ import { Drawer } from "antd";
 import { useMediaQuery } from "@mui/material";
 import { holiday_prices } from "../NewPricePage/consts";
 import NewPayment from "../../components/NewPayment/NewPayment";
-import dmitryPhoto from "./images/dmitry.jpg";
 import "./HolidaysWithGrandmasters.scss";
 
 // Иконки
@@ -15,7 +14,7 @@ const RubleIcon = () => <span className="icon">₽</span>;
 const HolidaysWithGrandmasters = () => {
   const isXS = useMediaQuery("(max-width:700px)");
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
-  const [imageError, setImageError] = useState({ dmitry: false });
+  const [imageError, setImageError] = useState({ boris: false });
   const [tarif, setTarif] = useState({ id: 1 });
 
   const pricingOptions = useMemo(
@@ -23,7 +22,7 @@ const HolidaysWithGrandmasters = () => {
       {
         id: 1,
         title: "Одна лекция",
-        description: "Лекция 'Как избавиться от зевков?'",
+        description: "Живой мастер-класс с возможностью задать вопросы",
         originalPrice: 1000,
       },
       {
@@ -37,7 +36,7 @@ const HolidaysWithGrandmasters = () => {
   );
 
   const handleImageError = () => {
-    setImageError((prev) => ({ ...prev, dmitry: true }));
+    setImageError((prev) => ({ ...prev, boris: true }));
   };
 
   useEffect(() => {
@@ -51,47 +50,48 @@ const HolidaysWithGrandmasters = () => {
   const grandmaster = useMemo(
     () => ({
       id: 1,
-      name: "Дмитрий Кряквин",
+      name: "Борис Савченко",
       title: "Международный гроссмейстер",
       flag: "⭐️",
-      rating: 2520,
-      age: 52,
+      rating: 2735,
+      age: 0,
       description:
-        "Легенда Донских шахмат, международный гроссмейстер, шахматный литератор и журналист. Чемпион Южного, Уральского и Северо-Кавказского федеральных округов. Участник 18-го личного чемпионата Европы, чемпионатов мира по рапиду и блицу. Занял третье место в номинации «Лучший детский тренер России».",
+        "Международный гроссмейстер с максимальным рейтингом 2735, трехкратный чемпион Москвы по классическим шахматам. Чемпион России 2010 года в составе ШСМ-64. Победитель международного турнира «Russian Chess Crown» (2026) и Мемориала Алёхина (2019, Воронеж).",
       teachingStyle:
-        "Практические методики повышения концентрации, системный подход к игре, анализ типичных ошибок",
+        "Глубокий анализ эндшпильных позиций, системный подход к завершающей стадии игры, методики принятия решений в цейтноте",
       achievements: [
-        "Чемпион Южного, Уральского и Северо-Кавказского федеральных округов",
-        "Участник 18-го личного чемпионата Европы",
-        "Участник чемпионатов мира по рапиду и блицу",
-        "3-е место в номинации «Лучший детский тренер России»",
-        "Автор шахматных книг и статей",
+        "Максимальный рейтинг — 2735",
+        "Трехкратный чемпион Москвы по классическим шахматам",
+        "Чемпион России 2010 года в составе ШСМ-64",
+        "Победитель международного турнира «Russian Chess Crown» - 2026г.",
+        "Победитель Мемориала Алёхина — 2019, г. Воронеж",
       ],
       students: [
-        "Андрей Есипенко (чемпион олимпиады 2020, претендент на звание чемпиона мира 2026)",
-        "Даниил Юффа",
-        "Дмитрий Цой",
-        "Арсений Нестеров (чемпион России 2025)",
+        "Воспитанники ведущих шахматных школ Москвы",
+        "Чемпионы всероссийских и международных турниров",
+        "Мастера спорта России",
       ],
       scheduleCount: "1 лекция",
       schedule: [
         {
-          date: "14 марта",
-          time: "12:00 (мск)",
-          title: "Как избавиться от зевков? Практические методики",
+          date: "18 апреля",
+          time: "13:00 (мск)",
+          title: "Эндшпиль: как избежать обидных поражений",
           topics: [
-            "Повышение концентрации и надежности в каждой партии",
-            "Как мыслить как гроссмейстер, предугадывая и избегая ловушек",
-            "Анализ типичных зевков и паттернов ошибок",
-            "Упражнения для тренировки внимания",
+            "Почему эндшпиль — место самых обидных поражений на 4-5 часу игры",
+            "Как не терять концентрацию в решающей стадии партии",
+            "Типичные ошибки в простых и сложных окончаниях",
+            "Методики расчета вариантов в цейтноте",
+            "Практические упражнения для отработки навыков эндшпиля",
           ],
         },
       ],
-      lessonPrice: 1000,
+      lessonPrice: 1500,
       color: "#1E3A8A",
-      photo: dmitryPhoto,
+      photo:
+        "https://thumb.tildacdn.com/tild6561-3230-4366-b235-383033343536/-/cover/480x480/center/center/-/format/webp/noroot.png",
       accentColor: "#2563EB",
-      tags: ["Зевки", "Концентрация", "Практика"],
+      tags: ["Эндшпиль", "Техника", "Цейтнот"],
     }),
     [],
   );
@@ -116,25 +116,26 @@ const HolidaysWithGrandmasters = () => {
                 <span className="title-highlight"> Гроссмейстером</span>
               </h1>
               <p className="hero-subtitle">
-                Эксклюзивный мастер-класс от легенды Донских шахмат – Дмитрия
-                Кряквина! Тренера, воспитавшего чемпионов, автора бестселлеров и
-                участника чемпионатов мира.
+                Эксклюзивный мастер-класс от трехкратного чемпиона Москвы и
+                победителя «Russian Chess Crown» – Бориса Савченко!
               </p>
               <p className="hero-subtitle-secondary">
-                Дмитрий поделится уникальной методикой, которая помогла его
-                ученикам (Андрею Есипенко, Арсению Нестерову и другим) достичь
-                вершин шахматного Олимпа!
+                Борис поделится методиками, которые помогут вам уверенно
+                чувствовать себя в решающий момент.
               </p>
+              {/* Эндшпиль — заключительная стадия игры и место, где совершаются
+                самые обидные поражения. Огорчения, слезы, потерянные призовые —
+                это ждет вас, если не улучшить навыки игры в конце партии.  */}
             </div>
 
             <div className="hero-stats">
               <div className="stat-item">
-                <div className="stat-number">14.03</div>
+                <div className="stat-number">18.04</div>
                 <div className="stat-label">(суббота)</div>
               </div>
               <div className="stat-divider"></div>
               <div className="stat-item">
-                <div className="stat-number">12:00</div>
+                <div className="stat-number">13:00</div>
                 <div className="stat-label">МСК</div>
               </div>
             </div>
@@ -199,19 +200,21 @@ const HolidaysWithGrandmasters = () => {
           <div className="audience-grid">
             <div className="audience-item">
               <div className="audience-marker"></div>
-              <span>Устали терять выигранные позиции из-за зевков</span>
+              <span>
+                Теряете выигранные позиции в эндшпиле на 4-5 часу игры
+              </span>
             </div>
             <div className="audience-item">
               <div className="audience-marker"></div>
-              <span>Хотите повысить концентрацию и надежность игры</span>
+              <span>Допускаете обидные ошибки в простых окончаниях</span>
             </div>
             <div className="audience-item">
               <div className="audience-marker"></div>
-              <span>Мечтаете мыслить как гроссмейстер и избегать ловушек</span>
+              <span>Хотите научиться уверенно играть в цейтноте</span>
             </div>
             <div className="audience-item">
               <div className="audience-marker"></div>
-              <span>Стремитесь к системному подходу в шахматах</span>
+              <span>Стремитесь системно улучшить технику эндшпиля</span>
             </div>
           </div>
         </div>
@@ -220,8 +223,8 @@ const HolidaysWithGrandmasters = () => {
           <div className="tabs-header">
             <h2>Познакомьтесь с гроссмейстером</h2>
             <p>
-              Дмитрий Кряквин – международный гроссмейстер и лучший тренер
-              России
+              Борис Савченко – международный гроссмейстер с рейтингом 2735,
+              победитель крупнейших международных турниров
             </p>
           </div>
         </div>
@@ -238,7 +241,7 @@ const HolidaysWithGrandmasters = () => {
               <div className="gm-header-content">
                 <div className="gm-avatar-container">
                   <div className="gm-avatar">
-                    {!imageError.dmitry ? (
+                    {!imageError.boris ? (
                       <img
                         src={grandmaster.photo}
                         alt={`${grandmaster.name} - ${grandmaster.title}`}
@@ -358,29 +361,31 @@ const HolidaysWithGrandmasters = () => {
         <div className="program-details">
           <div className="details-header">
             <h2>Детали программы</h2>
-            <p>Практический мастер-класс от тренера чемпионов</p>
+            <p>Практический мастер-класс от гроссмейстера с рейтингом 2735</p>
           </div>
 
           <div className="details-grid">
             <div className="detail-card">
               <div className="detail-icon">🎯</div>
-              <h3>Уникальная методика</h3>
+              <h3>Секреты эндшпиля</h3>
               <p>
-                Практические методики повышения концентрации, проверенные на
-                чемпионах
+                Уникальные методики игры в заключительной стадии от
+                гроссмейстера мирового уровня
               </p>
             </div>
 
             <div className="detail-card">
               <div className="detail-icon">📅</div>
               <h3>Удобное время</h3>
-              <p>Лекция проходит 14 марта в 12:00 по московскому времени</p>
+              <p>
+                Лекция проходит <b>18 апреля</b> в 13:00 по московскому времени
+              </p>
             </div>
 
             <div className="detail-card">
               <div className="detail-icon">🏆</div>
               <h3>Практическая польза</h3>
-              <p>Готовые упражнения и методики для немедленного применения</p>
+              <p>Готовые алгоритмы принятия решений в эндшпиле и цейтноте</p>
             </div>
 
             <div className="detail-card">

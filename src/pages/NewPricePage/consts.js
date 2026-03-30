@@ -127,6 +127,14 @@ export const new_prices = [
     subtitle: "детям с 4-х до 7 лет",
     itemPrices: [
       {
+        id: 0,
+        description: "1 занятие",
+        descriptionNumber: 1,
+        price: "1200",
+        price_rub: 1200,
+        additional_content: "стоимость 1 занятия 1200р",
+      },
+      {
         id: 1,
         description: "4 занятия",
         descriptionNumber: 4,
@@ -169,6 +177,14 @@ export const new_prices = [
       "Идеальное занятие, чтобы\u00A0ребенок не\u00A0успел утомиться\u00A0и был полностью вовлечен в\u00A0процесс обучения",
     itemPrices: [
       {
+        id: 0,
+        description: "1 занятие",
+        descriptionNumber: 1,
+        price: "1650",
+        price_rub: 1650,
+        additional_content: "стоимость 1 занятия 1650р",
+      },
+      {
         id: 1,
         description: "4 занятия",
         descriptionNumber: 4,
@@ -210,6 +226,14 @@ export const new_prices = [
     subtitle:
       "Занятия для\u00A0тех, кто\u00A0хочет участвовать в\u00A0соревнованиях и побеждать",
     itemPrices: [
+      {
+        id: 0,
+        description: "1 занятие",
+        descriptionNumber: 1,
+        price: "2100",
+        price_rub: 2100,
+        additional_content: "стоимость 1 занятия 2100р",
+      },
       {
         id: 1,
         description: "4 занятия",
