@@ -1,5 +1,5 @@
 import SocialLink from "../../components/SocialLink/SocialLink";
-import offer from "../../docs/offer.pdf";
+import offer from "../../docs/offer_new.pdf";
 import privacyPolicy from "../../docs/privacy_policy.pdf";
 import consentPersonalData from "../../docs/consentPersonalData.pdf";
 import { LINK_VK, LINK_WHATS_UP } from "./consts";

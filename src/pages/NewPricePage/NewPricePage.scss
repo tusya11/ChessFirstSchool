@@ -142,7 +142,7 @@
         grid-template-columns: 1fr 1fr;
         gap: 10px;
         //нужен чтобы при border блоки не увеличивались
-        height: 156px;
+        height: 201px;
 
         @media screen and (max-width: 700px) {
           height: auto;
@@ -371,4 +371,24 @@
       }
     }
   }
+}
+
+.new-price-page__items--single {
+  border: 2px solid #464bff;
+  background: #f4f5ff;
+  position: relative;
+}
+
+.new-price-page__badge {
+  position: absolute;
+  top: -20px;
+  right: -12px;
+  // background: #dce204;
+  background: #464bff;
+  color: white;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-family: "MontserratBold";
+  // border: 1px solid white;
 }

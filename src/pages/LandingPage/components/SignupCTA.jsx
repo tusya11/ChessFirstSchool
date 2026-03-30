@@ -14,7 +14,7 @@ const SignupCTA = ({
   handleSubmit,
 }) => {
   const PRIVACY_POLICY_URL = "../../../docs/policy.pdf";
-  const OFFER_URL = "../../../docs/offer.pdf";
+  const OFFER_URL = "../../../docs/offer_new.pdf";
 
   const MessengerIcon = ({ icon, title }) => (
     <div
@@ -33,7 +33,8 @@ const SignupCTA = ({
           height="48"
           viewBox="0 0 24 24"
           fill="none"
-          xmlns="http://www.w3.org/2000/svg">
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path
             d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
             stroke="#4CAF50"
@@ -112,7 +113,8 @@ const SignupCTA = ({
                       tabIndex={0}
                       onKeyDown={(e) =>
                         e.key === "Enter" && handleMessengerSelect(messenger.id)
-                      }>
+                      }
+                    >
                       <MessengerIcon
                         icon={messenger.icon}
                         title={messenger.title}
@@ -129,7 +131,8 @@ const SignupCTA = ({
                       />
                       <span
                         id={`messenger-label-${messenger.id}`}
-                        className="visually-hidden">
+                        className="visually-hidden"
+                      >
                         {messenger.title}
                       </span>
                     </div>
@@ -152,14 +155,16 @@ const SignupCTA = ({
                     <a
                       href={PRIVACY_POLICY_URL}
                       target="_blank"
-                      rel="noopener noreferrer">
+                      rel="noopener noreferrer"
+                    >
                       политикой конфиденциальности
                     </a>
                     {" и "}
                     <a
                       href={OFFER_URL}
                       target="_blank"
-                      rel="noopener noreferrer">
+                      rel="noopener noreferrer"
+                    >
                       офертой
                     </a>
                     *
@@ -172,7 +177,8 @@ const SignupCTA = ({
                 className={`button button--secondary form-submit ${
                   !isFormValid || isLoading ? "button--disabled" : ""
                 }`}
-                disabled={!isFormValid || isLoading}>
+                disabled={!isFormValid || isLoading}
+              >
                 {isLoading ? "Отправка..." : "Отправить заявку"}
               </button>
             </form>
