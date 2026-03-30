@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.de7222f6.css",
-    "main.js": "/static/js/main.fa832ee5.js",
-    "static/css/226.42a719d2.chunk.css": "/static/css/226.42a719d2.chunk.css",
-    "static/js/226.58e84451.chunk.js": "/static/js/226.58e84451.chunk.js",
+    "main.css": "/static/css/main.2fec81a1.css",
+    "main.js": "/static/js/main.9dbe15d4.js",
+    "static/css/226.258b6764.chunk.css": "/static/css/226.258b6764.chunk.css",
+    "static/js/226.994bcc2e.chunk.js": "/static/js/226.994bcc2e.chunk.js",
     "static/css/685.98ed6e1e.chunk.css": "/static/css/685.98ed6e1e.chunk.css",
     "static/js/685.bae3c3e4.chunk.js": "/static/js/685.bae3c3e4.chunk.js",
     "static/js/596.45788d44.chunk.js": "/static/js/596.45788d44.chunk.js",
@@ -93,6 +93,7 @@
     "static/media/image3.jpg": "/static/media/image3.db07abe5e3edda127cbb.jpg",
     "static/media/videoPrivacyPolicy.pdf": "/static/media/videoPrivacyPolicy.adac7de3889282bc96ac.pdf",
     "static/media/maria_gena.jpg": "/static/media/maria_gena.49ccdac2f41442d242cd.jpg",
+    "static/media/boris.jpg": "/static/media/boris.64849f473050d4905ba9.jpg",
     "static/media/karen_vlad.png": "/static/media/karen_vlad.d7a68e5afa81b159e630.png",
     "static/media/alisa_igor.jpg": "/static/media/alisa_igor.336cfd07b3988944cbba.jpg",
     "static/media/image11.jpg": "/static/media/image11.220a8ccb2e3ec48adcc2.jpg",
@@ -119,7 +120,7 @@
     "static/media/burgerMenuBtn.svg": "/static/media/burgerMenuBtn.46d2ac73c9d2c782792db592774044c7.svg"
   },
   "entrypoints": [
-    "static/css/main.de7222f6.css",
-    "static/js/main.fa832ee5.js"
+    "static/css/main.2fec81a1.css",
+    "static/js/main.9dbe15d4.js"
   ]
 }

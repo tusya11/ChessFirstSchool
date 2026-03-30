@@ -7,7 +7,6 @@ import MainTitleWithContent from "../../new_components/MainTitleWithContent/Main
 import trophyImage from "./assets/trophy.png";
 import dolyamiImage from "./assets/dolyami_image.png";
 import dolyamiLogo from "./assets/dolyami_logo.png";
-
 import "./NewPricePage.scss";
 
 const NewPricePage = ({
@@ -20,13 +19,13 @@ const NewPricePage = ({
   const [priceData, setPriceData] = useState(prices[0]);
   const [tarif, setTarif] = useState({});
   const [valueOption, setValueOption] = useState(prices[0]?.flag);
-  const options = [prices[0]?.flag, prices[1]?.flag, prices[2]?.flag];
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
+
+  const options = [prices[0]?.flag, prices[1]?.flag, prices[2]?.flag];
 
   const handleChangeSegmented = (event) => {
     setValueOption(event);
     const foundElement = prices.find((v) => v.flag === event);
-
     if (foundElement) {
       setPriceData(foundElement);
     }
@@ -36,11 +35,12 @@ const NewPricePage = ({
     setIsOpenDrawer(true);
   };
 
-  const handleClickPriceData = (id) => {
-    const foundTarif = priceData?.itemPrices?.find((v) => v.id === id);
-    setTarif(foundTarif);
+  const handleClickPriceData = (tarifData) => {
+    setTarif(tarifData);
     handleClickButton();
   };
+
+  const hasTrialLesson = priceData?.trialLesson !== null;
 
   return (
     <>
@@ -79,19 +79,33 @@ const NewPricePage = ({
                 <p className="new-price-page__subtitle">{priceData.subtitle}</p>
               </div>
               <div className="new-price-page__paper-price-items">
+                {hasTrialLesson && hasAdditional && (
+                  <div
+                    className="new-price-page__items new-price-page__items--trial"
+                    onClick={() => handleClickPriceData(priceData.trialLesson)}
+                  >
+                    <div className="new-price-page__block-description">
+                      <p className="new-price-page__description">
+                        {priceData.trialLesson.description}
+                      </p>
+                      <p className="new-price-page__price">
+                        {priceData.trialLesson.price} ₽
+                      </p>
+                    </div>
+                    <div className="new-price-page__badge">Пробное</div>
+                  </div>
+                )}
+
                 {priceData.itemPrices.map((v) => {
-                  const isSingle = v.descriptionNumber === 1;
                   return (
                     <div
-                      //TODO: убрать clsx и оставить один класс
                       className={clsx(
                         hasAdditional
                           ? "new-price-page__items-2"
                           : "new-price-page__items",
-                        isSingle && "new-price-page__items--single",
                       )}
                       key={v.id}
-                      onClick={() => handleClickPriceData(v.id)}
+                      onClick={() => handleClickPriceData(v)}
                     >
                       <div className="new-price-page__block-description">
                         <p className="new-price-page__description">
@@ -99,9 +113,6 @@ const NewPricePage = ({
                         </p>
                         <p className="new-price-page__price">{v.price} ₽</p>
                       </div>
-                      {isSingle && (
-                        <div className="new-price-page__badge">Пробное</div>
-                      )}
                       {hasAdditional && (
                         <div className="new-price-page__additional-text">
                           <span>{v.additional_content}</span>

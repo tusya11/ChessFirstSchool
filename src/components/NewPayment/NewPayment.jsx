@@ -9,6 +9,7 @@ import { URL } from "./consts";
 // import { formatPhoneNumber } from "./utils";
 import privacyPolicy from "../../docs/privacy_policy.pdf";
 import videoPrivacyPolicy from "../../docs/videoPrivacyPolicy.pdf";
+import offerFile from "../../docs/offer_new.pdf";
 import { useResponsive } from "../../hooks/useResponsive";
 // import dolyameLogo from "./assets/dolyame_logo.png";
 // import modal from "../../store/modal";
@@ -27,6 +28,7 @@ const initialErrors = {
   rate: false,
   privacyPolicy: false,
   videoPrivacyPolicy: false,
+  offer: false,
 };
 
 const NewPayment = ({ payment = {}, tarif = {} }) => {
@@ -45,12 +47,22 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
   }, [stateRate]);
 
   useEffect(() => {
-    setStateRate(
+    const resultArray =
       payment.itemPrices?.map((v) => ({
         ...v,
         selected: v.id === tarif?.id,
-      })) || [],
-    );
+      })) || [];
+
+    if (payment.trialLesson) {
+      setStateRate(
+        [payment.trialLesson, ...payment.itemPrices].map((v) => ({
+          ...v,
+          selected: v.id === tarif?.id,
+        })),
+      );
+    } else {
+      setStateRate(resultArray);
+    }
   }, [payment, tarif]);
 
   const [objValue, setObjValue] = useState({
@@ -62,6 +74,7 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
   const [errors, setErrors] = useState(initialErrors);
   const [isCheckedPrivacy, setIsCheckedPrivacy] = useState(false);
   const [isCheckedVideoPolicy, setIsCheckedVideoPolicy] = useState(false);
+  const [isCheckedOffer, setIsCheckedOffer] = useState(false);
 
   const handleClickSelectedElement = (id, type) => {
     const changedStateRate = stateRate.map((v) => ({
@@ -82,10 +95,13 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
       setIsCheckedPrivacy(!isCheckedPrivacy);
       if (errors.privacyPolicy)
         setErrors((prev) => ({ ...prev, privacyPolicy: false }));
-    } else {
+    } else if (type === "video") {
       setIsCheckedVideoPolicy(!isCheckedVideoPolicy);
       if (errors.videoPrivacyPolicy)
         setErrors((prev) => ({ ...prev, videoPrivacyPolicy: false }));
+    } else if (type === "offer") {
+      setIsCheckedOffer(!isCheckedOffer);
+      if (errors.offer) setErrors((prev) => ({ ...prev, offer: false }));
     }
   };
 
@@ -96,7 +112,8 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
       Object.values(objValue).some((v) => v.trim() === "") ||
       !stateRate.some((v) => v.selected) ||
       !isCheckedPrivacy ||
-      !isCheckedVideoPolicy;
+      !isCheckedVideoPolicy ||
+      !isCheckedOffer;
 
     if (hasErrors) {
       setErrors({
@@ -106,6 +123,7 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
         rate: !stateRate.some((v) => v.selected),
         privacyPolicy: !isCheckedPrivacy,
         videoPrivacyPolicy: !isCheckedVideoPolicy,
+        offer: !isCheckedOffer,
       });
       return;
     }
@@ -357,6 +375,25 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
                   </span>
                 </Checkbox>
                 {errors.videoPrivacyPolicy && (
+                  <Space className="new-payment__error-text">
+                    <Text type="danger">Обязательно для заполнения</Text>
+                  </Space>
+                )}
+              </Space>
+              <Space className="new-payment__privacy-policy">
+                <Checkbox
+                  onChange={() => handleCheckboxChange("offer")}
+                  className={`new-payment__policy__checkbox ${errors.offer && "error"}`}
+                  checked={isCheckedOffer}
+                >
+                  <span className="new-payment__policy__title">
+                    Я согласен с условиями{" "}
+                    <a href={offerFile} target="_blank" rel="noreferrer">
+                      договора оферты
+                    </a>
+                  </span>
+                </Checkbox>
+                {errors.offer && (
                   <Space className="new-payment__error-text">
                     <Text type="danger">Обязательно для заполнения</Text>
                   </Space>

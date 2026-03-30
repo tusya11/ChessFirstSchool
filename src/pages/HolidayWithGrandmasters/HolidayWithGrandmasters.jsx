@@ -3,9 +3,9 @@ import { Drawer } from "antd";
 import { useMediaQuery } from "@mui/material";
 import { holiday_prices } from "../NewPricePage/consts";
 import NewPayment from "../../components/NewPayment/NewPayment";
+import borisImage from "./images/boris.jpg";
 import "./HolidaysWithGrandmasters.scss";
 
-// Иконки
 const ChessIcon = () => <span className="chess-icon">♞</span>;
 const TrophyIcon = () => <span className="icon">🏆</span>;
 const CalendarIcon = () => <span className="icon">📅</span>;
@@ -56,7 +56,7 @@ const HolidaysWithGrandmasters = () => {
       rating: 2735,
       age: 0,
       description:
-        "Международный гроссмейстер с максимальным рейтингом 2735, трехкратный чемпион Москвы по классическим шахматам. Чемпион России 2010 года в составе ШСМ-64. Победитель международного турнира «Russian Chess Crown» (2026) и Мемориала Алёхина (2019, Воронеж).",
+        "Международный гроссмейстер, трехкратный чемпион Москвы по классическим шахматам. Чемпион России 2010 года в составе ШСМ-64. Победитель международного турнира «Russian Chess Crown» (2026) и Мемориала Алёхина (2019, Воронеж).",
       teachingStyle:
         "Глубокий анализ эндшпильных позиций, системный подход к завершающей стадии игры, методики принятия решений в цейтноте",
       achievements: [
@@ -88,8 +88,7 @@ const HolidaysWithGrandmasters = () => {
       ],
       lessonPrice: 1500,
       color: "#1E3A8A",
-      photo:
-        "https://thumb.tildacdn.com/tild6561-3230-4366-b235-383033343536/-/cover/480x480/center/center/-/format/webp/noroot.png",
+      photo: borisImage,
       accentColor: "#2563EB",
       tags: ["Эндшпиль", "Техника", "Цейтнот"],
     }),
@@ -223,8 +222,8 @@ const HolidaysWithGrandmasters = () => {
           <div className="tabs-header">
             <h2>Познакомьтесь с гроссмейстером</h2>
             <p>
-              Борис Савченко – международный гроссмейстер с рейтингом 2735,
-              победитель крупнейших международных турниров
+              Борис Савченко – международный гроссмейстер, победитель крупнейших
+              международных турниров
             </p>
           </div>
         </div>
@@ -361,7 +360,7 @@ const HolidaysWithGrandmasters = () => {
         <div className="program-details">
           <div className="details-header">
             <h2>Детали программы</h2>
-            <p>Практический мастер-класс от гроссмейстера с рейтингом 2735</p>
+            <p>Практический мастер-класс от гроссмейстера</p>
           </div>
 
           <div className="details-grid">
