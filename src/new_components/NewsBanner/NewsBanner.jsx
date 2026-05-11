@@ -25,7 +25,6 @@ const DEFAULT_PROPS = {
   buttonPosition: { bottom: 85, right: 30 },
 };
 
-// Функция для проверки, является ли дата/период события завершенным
 const isEventCompleted = (newsItem) => {
   if (newsItem.period) {
     const [startDateStr, endDateStr] = newsItem.period.split(" - ");
@@ -159,11 +158,11 @@ const NewsBanner = (props) => {
     () => [
       {
         id: 1,
-        title: "🔥 Успейте записаться!",
+        title: "🔥 Новая лекция: Ферзь против нескольких фигур",
         content:
-          "18 апреля: Борис Савченко, трехкратный чемпион Москвы и победитель турнира «Russian Chess Crown». Гроссмейстер поделится уникальными методиками ведения эндшпиля.",
-        date: "30.03.26",
-        period: "18.04.2026 - 18.04.2026",
+          "6 июня в 11:00 (мск) — международный гроссмейстер Яков Геллер, лучший детский тренер России, проведет мастер-класс на тему «Ферзь против нескольких фигур».",
+        date: "11.05.26",
+        period: "06.06.2026 - 06.06.2026",
         isUrgent: true,
         link: "/holiday-with-grandmasters",
       },
@@ -198,7 +197,6 @@ const NewsBanner = (props) => {
   }, [triggerAnimation]);
 
   useEffect(() => {
-    // Автоматически открываем баннер только если есть новости
     if (!hasNews) {
       if (timerRef.current) {
         clearTimeout(timerRef.current);
@@ -249,7 +247,7 @@ const NewsBanner = (props) => {
     repeatInterval,
     showRepeat,
     triggerAnimation,
-    hasNews, // Зависимость добавлена для отключения таймеров при отсутствии новостей
+    hasNews,
   ]);
 
   const getButtonAnimationStyle = useCallback(() => {
@@ -283,7 +281,7 @@ const NewsBanner = (props) => {
           isAnimating={isAnimating}
           animationStyle={getButtonAnimationStyle()}
           onClick={handleOpen}
-          showBadge={hasUrgentNews} // Показываем бейдж только если есть срочные новости
+          showBadge={hasUrgentNews}
         />
       </div>
     );

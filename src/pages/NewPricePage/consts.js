@@ -288,8 +288,8 @@ export const holiday_prices = {
       id: 1,
       description: "Одна лекция",
       descriptionNumber: 1,
-      price: "1 000",
-      price_rub: 1000,
+      price: "1 200",
+      price_rub: 1200,
     },
     {
       id: 2,

@@ -3,7 +3,7 @@ import { Drawer } from "antd";
 import { useMediaQuery } from "@mui/material";
 import { holiday_prices } from "../NewPricePage/consts";
 import NewPayment from "../../components/NewPayment/NewPayment";
-import borisImage from "./images/boris.jpg";
+import yakovImage from "./images/yakov.jpg";
 import "./HolidaysWithGrandmasters.scss";
 
 const ChessIcon = () => <span className="chess-icon">♞</span>;
@@ -14,7 +14,7 @@ const RubleIcon = () => <span className="icon">₽</span>;
 const HolidaysWithGrandmasters = () => {
   const isXS = useMediaQuery("(max-width:700px)");
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
-  const [imageError, setImageError] = useState({ boris: false });
+  const [imageError, setImageError] = useState({ yakov: false });
   const [tarif, setTarif] = useState({ id: 1 });
 
   const pricingOptions = useMemo(
@@ -23,7 +23,7 @@ const HolidaysWithGrandmasters = () => {
         id: 1,
         title: "Одна лекция",
         description: "Живой мастер-класс с возможностью задать вопросы",
-        originalPrice: 1000,
+        originalPrice: 1200,
       },
       {
         id: 2,
@@ -36,7 +36,7 @@ const HolidaysWithGrandmasters = () => {
   );
 
   const handleImageError = () => {
-    setImageError((prev) => ({ ...prev, boris: true }));
+    setImageError((prev) => ({ ...prev, yakov: true }));
   };
 
   useEffect(() => {
@@ -50,47 +50,44 @@ const HolidaysWithGrandmasters = () => {
   const grandmaster = useMemo(
     () => ({
       id: 1,
-      name: "Борис Савченко",
+      name: "Яков Геллер",
       title: "Международный гроссмейстер",
-      flag: "⭐️",
-      rating: 2735,
-      age: 0,
       description:
-        "Международный гроссмейстер, трехкратный чемпион Москвы по классическим шахматам. Чемпион России 2010 года в составе ШСМ-64. Победитель международного турнира «Russian Chess Crown» (2026) и Мемориала Алёхина (2019, Воронеж).",
+        "Международный гроссмейстер, заслуженный тренер юношеской сборной России. Лауреат премии Правления РШФ «Лучший детский тренер России» (2010, 2019). Лауреат тренерской премии имени М. И. Дворецкого (2019) и премии FIDE имени Самуэля Решевского (2021). Победитель и призёр международных турниров в России, Германии, Франции, Чехии, Италии и Греции.",
       teachingStyle:
-        "Глубокий анализ эндшпильных позиций, системный подход к завершающей стадии игры, методики принятия решений в цейтноте",
+        "Глубокий анализ материальных соотношений, системный подход к оценке позиций с ферзем против нескольких фигур, методики принятия решений в сложных тактических схемах",
       achievements: [
-        "Максимальный рейтинг — 2735",
-        "Трехкратный чемпион Москвы по классическим шахматам",
-        "Чемпион России 2010 года в составе ШСМ-64",
-        "Победитель международного турнира «Russian Chess Crown» - 2026г.",
-        "Победитель Мемориала Алёхина — 2019, г. Воронеж",
+        "Тренер юношеской сборной России с 2009 года",
+        "Лауреат премии «Лучший детский тренер России» (2010, 2019)",
+        "Лауреат тренерской премии имени М. И. Дворецкого (2019)",
+        "Лауреат тренерской премии FIDE имени Самуэля Решевского (2021)",
+        "Участник Премьер-лиги командного чемпионата России и Кубка Европы в составе «Лады» (2004-2006)",
+        "Участник чемпионатов мира по быстрым шахматам и блицу (2018-2019)",
       ],
       students: [
-        "Воспитанники ведущих шахматных школ Москвы",
-        "Чемпионы всероссийских и международных турниров",
-        "Мастера спорта России",
+        "Международные гроссмейстеры и международные мастера",
+        "Чемпионы Европы и мира среди юношей",
+        "Призеры всероссийских и международных турниров",
       ],
-      scheduleCount: "1 лекция",
+      scheduleCount: "60 минут",
       schedule: [
         {
-          date: "18 апреля",
-          time: "13:00 (мск)",
-          title: "Эндшпиль: как избежать обидных поражений",
+          date: "6 июня",
+          time: "11:00 (мск)",
+          title: "Ферзь против нескольких фигур: стратегия и тактика",
           topics: [
-            "Почему эндшпиль — место самых обидных поражений на 4-5 часу игры",
-            "Как не терять концентрацию в решающей стадии партии",
-            "Типичные ошибки в простых и сложных окончаниях",
-            "Методики расчета вариантов в цейтноте",
-            "Практические упражнения для отработки навыков эндшпиля",
+            "Когда ферзь сильнее двух ладей, а когда — нет",
+            "Ферзь против ладьи и легкой фигуры: типовые позиции",
+            "Ферзь против трех легких фигур: скрытые опасности",
+            "Тактические удары при неравном материале",
+            "Практические примеры из партий гроссмейстеров",
+            "Упражнения для отработки навыков игры с ферзем",
           ],
         },
       ],
-      lessonPrice: 1500,
-      color: "#1E3A8A",
-      photo: borisImage,
-      accentColor: "#2563EB",
-      tags: ["Эндшпиль", "Техника", "Цейтнот"],
+      color: "#2D5A27",
+      photo: yakovImage,
+      accentColor: "#4CAF50",
     }),
     [],
   );
@@ -115,26 +112,26 @@ const HolidaysWithGrandmasters = () => {
                 <span className="title-highlight"> Гроссмейстером</span>
               </h1>
               <p className="hero-subtitle">
-                Эксклюзивный мастер-класс от трехкратного чемпиона Москвы и
-                победителя «Russian Chess Crown» – Бориса Савченко!
+                Эксклюзивный мастер-класс от наставника юношеской сборной –
+                Якова Геллера!
               </p>
               <p className="hero-subtitle-secondary">
-                Борис поделится методиками, которые помогут вам уверенно
-                чувствовать себя в решающий момент.
+                Яков разберет тему в шахматах — игру ферзя против нескольких
+                фигур.
+                <br />
+                Вы научитесь правильно оценивать позиции и находить
+                winning-ходы.
               </p>
-              {/* Эндшпиль — заключительная стадия игры и место, где совершаются
-                самые обидные поражения. Огорчения, слезы, потерянные призовые —
-                это ждет вас, если не улучшить навыки игры в конце партии.  */}
             </div>
 
             <div className="hero-stats">
               <div className="stat-item">
-                <div className="stat-number">18.04</div>
+                <div className="stat-number">06.06</div>
                 <div className="stat-label">(суббота)</div>
               </div>
               <div className="stat-divider"></div>
               <div className="stat-item">
-                <div className="stat-number">13:00</div>
+                <div className="stat-number">11:00</div>
                 <div className="stat-label">МСК</div>
               </div>
             </div>
@@ -147,7 +144,6 @@ const HolidaysWithGrandmasters = () => {
           </div>
         </header>
 
-        {/* Секция с ценами */}
         <div className="pricing-section">
           <div className="pricing-header">
             <h2>Стоимость участия</h2>
@@ -191,7 +187,6 @@ const HolidaysWithGrandmasters = () => {
           </div>
         </div>
 
-        {/* Для кого эта лекция */}
         <div className="target-audience-section">
           <div className="audience-header">
             <h2>🎯 ЭТА ЛЕКЦИЯ – ДЛЯ ВАС, ЕСЛИ ВЫ:</h2>
@@ -199,21 +194,19 @@ const HolidaysWithGrandmasters = () => {
           <div className="audience-grid">
             <div className="audience-item">
               <div className="audience-marker"></div>
-              <span>
-                Теряете выигранные позиции в эндшпиле на 4-5 часу игры
-              </span>
+              <span>Теряетесь в позициях с неравным материалом</span>
             </div>
             <div className="audience-item">
               <div className="audience-marker"></div>
-              <span>Допускаете обидные ошибки в простых окончаниях</span>
+              <span>Не уверены, когда ферзь сильнее двух ладей</span>
             </div>
             <div className="audience-item">
               <div className="audience-marker"></div>
-              <span>Хотите научиться уверенно играть в цейтноте</span>
+              <span>Хотите научиться точно оценивать жертвы ферзя</span>
             </div>
             <div className="audience-item">
               <div className="audience-marker"></div>
-              <span>Стремитесь системно улучшить технику эндшпиля</span>
+              <span>Стремитесь системно улучшить тактическое зрение</span>
             </div>
           </div>
         </div>
@@ -222,8 +215,8 @@ const HolidaysWithGrandmasters = () => {
           <div className="tabs-header">
             <h2>Познакомьтесь с гроссмейстером</h2>
             <p>
-              Борис Савченко – международный гроссмейстер, победитель крупнейших
-              международных турниров
+              Яков Геллер – международный гроссмейстер, лучший детский тренер
+              России, наставник юношеской сборной
             </p>
           </div>
         </div>
@@ -240,7 +233,7 @@ const HolidaysWithGrandmasters = () => {
               <div className="gm-header-content">
                 <div className="gm-avatar-container">
                   <div className="gm-avatar">
-                    {!imageError.boris ? (
+                    {!imageError.yakov ? (
                       <img
                         src={grandmaster.photo}
                         alt={`${grandmaster.name} - ${grandmaster.title}`}
@@ -267,10 +260,12 @@ const HolidaysWithGrandmasters = () => {
                   <h3 className="gm-name">{grandmaster.name}</h3>
                   <p className="gm-title">{grandmaster.title}</p>
                   <div className="gm-meta">
-                    <div className="meta-item lecture-count">
+                    <div className="gm-meta-item lecture-count">
                       <CalendarIcon />
                       <span>
                         Лекций: <strong>{grandmaster.schedule.length}</strong>
+                        {grandmaster.scheduleCount &&
+                          ` (${grandmaster.scheduleCount})`}
                       </span>
                     </div>
                   </div>
@@ -360,15 +355,15 @@ const HolidaysWithGrandmasters = () => {
         <div className="program-details">
           <div className="details-header">
             <h2>Детали программы</h2>
-            <p>Практический мастер-класс от гроссмейстера</p>
+            <p>Практический мастер-класс от заслуженного тренера России</p>
           </div>
 
           <div className="details-grid">
             <div className="detail-card">
-              <div className="detail-icon">🎯</div>
-              <h3>Секреты эндшпиля</h3>
+              <div className="detail-icon">👑</div>
+              <h3>Ферзь vs несколько фигур</h3>
               <p>
-                Уникальные методики игры в заключительной стадии от
+                Уникальные методики оценки позиций с неравным материалом от
                 гроссмейстера мирового уровня
               </p>
             </div>
@@ -377,14 +372,14 @@ const HolidaysWithGrandmasters = () => {
               <div className="detail-icon">📅</div>
               <h3>Удобное время</h3>
               <p>
-                Лекция проходит <b>18 апреля</b> в 13:00 по московскому времени
+                Лекция проходит <b>6 июня</b> в 11:00 по московскому времени
               </p>
             </div>
 
             <div className="detail-card">
               <div className="detail-icon">🏆</div>
               <h3>Практическая польза</h3>
-              <p>Готовые алгоритмы принятия решений в эндшпиле и цейтноте</p>
+              <p>Готовые алгоритмы принятия решений в сложных позициях</p>
             </div>
 
             <div className="detail-card">
