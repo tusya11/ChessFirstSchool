@@ -112,8 +112,8 @@ const HolidaysWithGrandmasters = () => {
                 <span className="title-highlight"> Гроссмейстером</span>
               </h1>
               <p className="hero-subtitle">
-                Эксклюзивный мастер-класс от наставника юношеской сборной –
-                Якова Геллера!
+                Эксклюзивный мастер-класс от наставника юношеской сборной России
+                – Якова Геллера!
               </p>
               <p className="hero-subtitle-secondary">
                 Яков разберет тему в шахматах — игру ферзя против нескольких
