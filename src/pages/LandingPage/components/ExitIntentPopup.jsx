@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 // Константы для localStorage и времени
 const POPUP_TIMESTAMP_KEY = "coolChessPopupLastShownTimestamp";
@@ -11,7 +11,8 @@ const TelegramIcon = () => (
     height="24"
     viewBox="0 0 240 240"
     fill="none"
-    xmlns="http://www.w3.org/2000/svg">
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <circle cx="120" cy="120" r="120" fill="#37AEE2" />
     <path
       d="M180.5 72.5L157.5 180.5C155.5 188.5 150.5 190.5 143 186.5L109.5 161.5L93.5 176.5C91 179 89 181 84.5 181L87.5 145.5L157 83.5C160.5 80.5 156 79 152 82L74.5 136.5L40.5 125.5C33 123.5 32.5 118.5 41.5 115.5L170 70.5C176.5 68.5 181.5 72.5 180.5 72.5Z"
@@ -19,7 +20,6 @@ const TelegramIcon = () => (
     />
   </svg>
 );
-
 
 const ExitIntentPopup = ({ handleClick_Tg }) => {
   const [showPopup, setShowPopup] = useState(false);
@@ -133,7 +133,8 @@ const ExitIntentPopup = ({ handleClick_Tg }) => {
           onClick={() => {
             handleClick_Tg();
             closePopup();
-          }}>
+          }}
+        >
           <span className="sn-icon">
             <TelegramIcon />
           </span>

@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from "react";
-import "./PhoneIcon.scss"; // Импортируем SCSS вместо CSS
+import React, { useEffect, useState } from "react";
+import "./PhoneIcon.scss";
+
+// Импортируем SCSS вместо CSS
 
 const PhoneIcon = ({
   phoneNumber,
@@ -16,7 +18,7 @@ const PhoneIcon = ({
   useEffect(() => {
     const checkIsMobile = () => {
       return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        navigator.userAgent
+        navigator.userAgent,
       );
     };
 

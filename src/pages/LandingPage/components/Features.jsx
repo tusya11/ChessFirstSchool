@@ -1,12 +1,11 @@
 import React from "react";
-
 import {
   FaBrain,
-  FaLaptopCode,
   FaChalkboardTeacher,
-  FaTrophy,
-  FaGlobeAmericas,
   FaChessKing,
+  FaGlobeAmericas,
+  FaLaptopCode,
+  FaTrophy,
 } from "react-icons/fa";
 
 const featuresData = [

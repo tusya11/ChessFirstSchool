@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { BiArrowBack } from "react-icons/bi";
 import clsx from "classnames";
+import { BiArrowBack } from "react-icons/bi";
 import "./SwiperSlide.scss";
 
 //FIXME: нужны ли разноцветные карточки?

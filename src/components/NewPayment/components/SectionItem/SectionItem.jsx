@@ -1,5 +1,5 @@
-import { Space, Typography } from 'antd';
-import './SectionItem.scss';
+import { Space, Typography } from "antd";
+import "./SectionItem.scss";
 
 const { Title } = Typography;
 

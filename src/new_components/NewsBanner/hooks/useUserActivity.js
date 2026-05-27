@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export const useUserActivity = (inactivityTimeout = 30000) => {
   const [isUserActive, setIsUserActive] = useState(true);
@@ -24,7 +24,7 @@ export const useUserActivity = (inactivityTimeout = 30000) => {
 
     return () => {
       events.forEach((event) =>
-        window.removeEventListener(event, handleActivity)
+        window.removeEventListener(event, handleActivity),
       );
       if (activityTimerRef.current) {
         clearTimeout(activityTimerRef.current);

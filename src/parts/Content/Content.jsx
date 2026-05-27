@@ -1,27 +1,27 @@
 import React, { Suspense, useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
 import { useMediaQuery } from "@mui/material";
 import { Spin } from "antd";
-import Preview from "../../pages/Preview/Preview";
-import RecomendedItems from "../../pages/RecomendedItems/RecomendedItems";
+import { useSearchParams } from "react-router-dom";
 import AboutUsPage from "../../pages/AboutUsPage/AboutUsPage";
-import BlockOfPossibilities from "../../pages/BlockOfPossibilities/BlockOfPossibilities";
-import FacilitateCourses from "../../pages/FacilitateCourses/FacilitateCourses";
-import { recomendedItems } from "../../pages/RecomendedItems/consts";
-import Benefit from "../../pages/Benefit/Benefit";
-import Bonuses from "../../pages/Bonuses/Bonuses";
 import AdditionalBlock from "../../pages/AdditionalBlock/AdditionalBlock";
+import Benefit from "../../pages/Benefit/Benefit";
+import BlockOfPossibilities from "../../pages/BlockOfPossibilities/BlockOfPossibilities";
+import Bonuses from "../../pages/Bonuses/Bonuses";
+import FacilitateCourses from "../../pages/FacilitateCourses/FacilitateCourses";
 // import ReviewsSection from "../../pages/GroupCoursesPage/parts/ReviewsSection/ReviewsSection";
-import ProudStudentsPage from "../../pages/ProudStudentsPage/ProudStudentsPage";
 import { new_prices } from "../../pages/NewPricePage/consts";
+import Preview from "../../pages/Preview/Preview";
+import ProudStudentsPage from "../../pages/ProudStudentsPage/ProudStudentsPage";
+import RecomendedItems from "../../pages/RecomendedItems/RecomendedItems";
+import { recomendedItems } from "../../pages/RecomendedItems/consts";
 import "./Content.scss";
 
 const NewPricePageLazy = React.lazy(
-  () => import("../../pages/NewPricePage/NewPricePage")
+  () => import("../../pages/NewPricePage/NewPricePage"),
 );
 
 const NewTeamPageLazy = React.lazy(
-  () => import("../../pages/NewTeamPage/NewTeamPage")
+  () => import("../../pages/NewTeamPage/NewTeamPage"),
 );
 
 const Content = () => {

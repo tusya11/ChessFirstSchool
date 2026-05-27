@@ -1,5 +1,5 @@
-import { Button, ConfigProvider } from "antd";
 import { useMediaQuery } from "@mui/material";
+import { Button, ConfigProvider } from "antd";
 import modal from "../../store/modal";
 import "./Preview.scss";
 

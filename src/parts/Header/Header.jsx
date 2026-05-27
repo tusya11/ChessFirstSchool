@@ -1,18 +1,18 @@
 import { useState } from "react";
-import { Button, ConfigProvider, Drawer } from "antd";
-import { useNavigate, useSearchParams } from "react-router-dom";
-import { observer } from "mobx-react-lite";
-import clsx from "classnames";
 import { useMediaQuery } from "@mui/material";
-import whatsupLogo from "../../assets/whatsup_new.svg";
+import { Button, ConfigProvider, Drawer } from "antd";
+import clsx from "classnames";
+import { observer } from "mobx-react-lite";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import menuButton from "../../assets/burgerMenuBtn.svg";
-import { urlToWhatsApp } from "../../utils/globalConstants";
-import NavigationItemsMobile from "./NavigationItemsMobile/NavigationItemsMobile";
-import { navigatePanel } from "./consts";
 import logo from "../../assets/logo.svg";
+import whatsupLogo from "../../assets/whatsup_new.svg";
 import modal from "../../store/modal";
+import { urlToWhatsApp } from "../../utils/globalConstants";
 import { openPersonalAccountCRM } from "../../utils/openPersonalAccountCRM";
 import "./Header.scss";
+import { navigatePanel } from "./consts";
+import NavigationItemsMobile from "./NavigationItemsMobile/NavigationItemsMobile";
 
 const Header = observer(({ className }) => {
   const isXS = useMediaQuery("(max-width:700px)");

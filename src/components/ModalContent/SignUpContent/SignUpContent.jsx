@@ -1,4 +1,6 @@
 import React, { forwardRef, useEffect, useState } from "react";
+import SendIcon from "@mui/icons-material/Send";
+import LoadingButton from "@mui/lab/LoadingButton";
 import {
   Button,
   Checkbox,
@@ -8,14 +10,12 @@ import {
   TextField,
   useMediaQuery,
 } from "@mui/material";
-import { IMaskInput } from "react-imask";
-import LoadingButton from "@mui/lab/LoadingButton";
-import SendIcon from "@mui/icons-material/Send";
-import { scriptURL } from "./consts";
 import dayjs from "dayjs";
-import modal from "../../../store/modal";
 import { observer } from "mobx-react-lite";
+import { IMaskInput } from "react-imask";
+import modal from "../../../store/modal";
 import "./SignUpContent.scss";
+import { scriptURL } from "./consts";
 
 const TextMaskCustom = forwardRef((props, ref) => {
   const masks = [

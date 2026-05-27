@@ -1,15 +1,15 @@
 import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
-import SuccessPage from "./pages/SuccessPage/SuccessPage";
-import FailurePage from "./pages/FailurePage/FailurePage";
-import LandingPage from "./pages/LandingPage/LandingPage";
-import Promo from "./pages/LandingPage/Promo";
+import "./App.css";
 import Wrapper from "./Wrapper";
-import GroupCoursesPage from "./pages/GroupCoursesPage/GroupCoursesPage";
 import ChessGroupsPaymentLegacy from "./pages/ChessGroupsPaymentLegacy/ChessGroupsPaymentLegacy";
+import ChessProgramPage from "./pages/ChessProgramPage/ChessProgramPage";
+import FailurePage from "./pages/FailurePage/FailurePage";
+import GroupCoursesPage from "./pages/GroupCoursesPage/GroupCoursesPage";
 import HolidaysWithGrandmasters from "./pages/HolidayWithGrandmasters/HolidayWithGrandmasters";
 import IESection from "./pages/IESection/IESection";
-import ChessProgramPage from "./pages/ChessProgramPage/ChessProgramPage";
-import "./App.css";
+import LandingPage from "./pages/LandingPage/LandingPage";
+import Promo from "./pages/LandingPage/Promo";
+import SuccessPage from "./pages/SuccessPage/SuccessPage";
 
 const App = () => (
   <div className="App">

@@ -1,5 +1,5 @@
-import metodicsImage from "../../assets/metodics.png";
 import expertImage from "../../assets/expert.png";
+import metodicsImage from "../../assets/metodics.png";
 import tournamentsImage from "../../assets/tournaments.png";
 
 export const approachToLearning = [

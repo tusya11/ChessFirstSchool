@@ -1,16 +1,13 @@
-import { ConfigProvider, Button } from "antd";
+import { Button, ConfigProvider } from "antd";
 import { useNavigate, useSearchParams } from "react-router-dom";
-
-import { navigatePanel } from "../consts";
-import { contactNumber } from "../../../utils/globalConstants";
-import whatsup from "../../../assets/whatsupMobile.svg";
 import vk_mobile from "../../../assets/VK_Mobile.svg";
-
+import whatsup from "../../../assets/whatsupMobile.svg";
 import SocialLink from "../../../components/SocialLink/SocialLink";
-import { LINK_VK, LINK_WHATS_UP } from "../../Footer/consts";
-import { openPersonalAccountCRM } from "../../../utils/openPersonalAccountCRM";
 import modal from "../../../store/modal";
-
+import { contactNumber } from "../../../utils/globalConstants";
+import { openPersonalAccountCRM } from "../../../utils/openPersonalAccountCRM";
+import { LINK_VK, LINK_WHATS_UP } from "../../Footer/consts";
+import { navigatePanel } from "../consts";
 import "./NavigationItemsMobile.scss";
 
 const NavigationItemsMobile = ({ onChoose }) => {

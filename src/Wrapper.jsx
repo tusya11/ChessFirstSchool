@@ -1,22 +1,23 @@
 import { useEffect, useState } from "react";
-import { observer } from "mobx-react-lite";
 import { Alert, debounce, useMediaQuery } from "@mui/material";
-import Content from "./parts/Content/Content";
-import Header from "./parts/Header/Header";
-import Footer from "./parts/Footer/Footer";
+import { observer } from "mobx-react-lite";
 import modal from "../src/store/modal";
+import LicenseBlock from "./components/LicenseBlock/LicenseBlock";
+import NewSignUpContentModal from "./components/ModalContent/NewSignUpContentModal/NewSignUpContentModal";
+import NewsBanner from "./new_components/NewsBanner/NewsBanner";
+import PhoneIcon from "./new_components/PhoneIcon/PhoneIcon";
+import Content from "./parts/Content/Content";
+import Footer from "./parts/Footer/Footer";
+import Header from "./parts/Header/Header";
 import ModalContent from "./parts/Modal/Modal";
 // import SignUpContent from "./components/ModalContent/SignUpContent/SignUpContent";
 // import Payment from "./components/ModalContent/Payment/Payment";
 // import FixedBtnRecord from "./new_components/FixedBtnRecord/FixedBtnRecord";
-import NewsBanner from "./new_components/NewsBanner/NewsBanner";
 // import DraggingModal from "./new_components/DraggingModal/DraggingModal";
-import NewSignUpContentModal from "./components/ModalContent/NewSignUpContentModal/NewSignUpContentModal";
 // import useIntersectionObserver from "./hooks/useIntersectionObserver";
-import PhoneIcon from "./new_components/PhoneIcon/PhoneIcon";
 import { contactNumber } from "./utils/globalConstants";
+
 // import CookieDisclaimer from "./components/CookieDisclaimer/CookieDisclaimer";
-import LicenseBlock from "./components/LicenseBlock/LicenseBlock";
 
 const Wrapper = observer(() => {
   const {

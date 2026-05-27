@@ -18,11 +18,11 @@
     position: relative;
 
     &::after {
-      content: '';
+      content: "";
       display: block;
       width: 80px;
       height: 4px;
-      background: #464BFF;
+      background: #464bff;
       margin: 15px auto 0;
     }
   }
@@ -39,7 +39,9 @@
     border-radius: 12px;
     padding: 30px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
 
@@ -49,12 +51,12 @@
     }
 
     &::before {
-      content: '“';
+      content: "“";
       position: absolute;
       top: 20px;
       right: 30px;
       font-size: 80px;
-      color: #464BFF;
+      color: #464bff;
       opacity: 0.1;
       font-family: serif;
       line-height: 1;
@@ -73,7 +75,7 @@
     border-radius: 50%;
     object-fit: cover;
     margin-right: 15px;
-    border: 3px solid #DCE204;
+    border: 3px solid #dce204;
   }
 
   .review-author {
@@ -92,7 +94,7 @@
       font-size: 1rem;
 
       &.filled {
-        color: #FFC107;
+        color: #ffc107;
       }
     }
   }
@@ -116,21 +118,22 @@
     width: fit-content;
     margin: 40px auto 0;
     padding: 12px 30px;
-    background: #464BFF;
+    background: #464bff;
     color: white;
     text-decoration: none;
     border-radius: 50px;
     font-weight: 600;
     transition: all 0.3s ease;
-    border: 2px solid #464BFF;
+    border: 2px solid #464bff;
 
     &:hover {
       background: transparent;
-      color: #464BFF;
+      color: #464bff;
     }
   }
 
-  .loading, .error {
+  .loading,
+  .error {
     text-align: center;
     padding: 50px;
     font-size: 1.2rem;

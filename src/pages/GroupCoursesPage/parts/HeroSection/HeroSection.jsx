@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import useScrollTo from './../../hooks/useScrollTo';
-import './HeroSection.scss';
+import { useEffect, useState } from "react";
+import useScrollTo from "./../../hooks/useScrollTo";
+import "./HeroSection.scss";
 
 const HeroSection = () => {
   const scrollTo = useScrollTo();
@@ -41,7 +41,8 @@ const HeroSection = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const hasDiscount = timeLeft.days + timeLeft.hours + timeLeft.minutes + timeLeft.seconds > 0;
+  const hasDiscount =
+    timeLeft.days + timeLeft.hours + timeLeft.minutes + timeLeft.seconds > 0;
 
   return (
     <section className="hero-section">
@@ -87,7 +88,11 @@ const HeroSection = () => {
               strokeWidth="3"
               className="queen"
             />
-            <path d="M500 300 L 520 350 L 500 350 L 480 350 Z" fill="#DCE204" className="pawn" />
+            <path
+              d="M500 300 L 520 350 L 500 350 L 480 350 Z"
+              fill="#DCE204"
+              className="pawn"
+            />
           </g>
         </svg>
         <div className="overlay"></div>
@@ -96,7 +101,8 @@ const HeroSection = () => {
       <div className="hero-content">
         <h1 className="fade-in">Курсы по шахматам</h1>
         <p className="subtitle fade-in">
-          Развивайте стратегическое мышление и интеллект с нашими профессиональными тренерами
+          Развивайте стратегическое мышление и интеллект с нашими
+          профессиональными тренерами
         </p>
 
         {hasDiscount ? (
@@ -105,19 +111,19 @@ const HeroSection = () => {
 
             <div className="timer fade-in">
               <div className="timer-item">
-                <span>{timeLeft.days.toString().padStart(2, '0')}</span>
+                <span>{timeLeft.days.toString().padStart(2, "0")}</span>
                 <small>дней</small>
               </div>
               <div className="timer-item">
-                <span>{timeLeft.hours.toString().padStart(2, '0')}</span>
+                <span>{timeLeft.hours.toString().padStart(2, "0")}</span>
                 <small>часов</small>
               </div>
               <div className="timer-item">
-                <span>{timeLeft.minutes.toString().padStart(2, '0')}</span>
+                <span>{timeLeft.minutes.toString().padStart(2, "0")}</span>
                 <small>минут</small>
               </div>
               <div className="timer-item">
-                <span>{timeLeft.seconds.toString().padStart(2, '0')}</span>
+                <span>{timeLeft.seconds.toString().padStart(2, "0")}</span>
                 <small>секунд</small>
               </div>
             </div>
@@ -126,7 +132,10 @@ const HeroSection = () => {
           <div className="discount-banner fade-in">СКИДКИ ЗАКОНЧИЛИСЬ</div>
         )}
 
-        <button className="cta-button fade-in" onClick={() => scrollTo('signup-form', 0)}>
+        <button
+          className="cta-button fade-in"
+          onClick={() => scrollTo("signup-form", 0)}
+        >
           ЗАПИСАТЬСЯ СЕЙЧАС!
         </button>
       </div>

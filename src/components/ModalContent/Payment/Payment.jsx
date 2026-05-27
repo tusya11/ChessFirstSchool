@@ -1,4 +1,5 @@
 import React, { forwardRef, useEffect, useState } from "react";
+import SendIcon from "@mui/icons-material/Send";
 import {
   Button,
   Checkbox,
@@ -8,18 +9,16 @@ import {
   InputLabel,
   OutlinedInput,
 } from "@mui/material";
+import axios from "axios";
 import { observer } from "mobx-react-lite";
 import { IMaskInput } from "react-imask";
-import privacyPolicy from "../../../docs/privacy_policy.pdf";
-import SendIcon from "@mui/icons-material/Send";
-import axios from "axios";
-
-import { TEXT_FORMS } from "../../../utils/globalConstants";
-import { declOfNum } from "../../../utils/declOfNum";
 import partPayment from "../../../assets/dolyami.svg";
+import privacyPolicy from "../../../docs/privacy_policy.pdf";
 import modal from "../../../store/modal";
-import { URL } from "./consts";
+import { declOfNum } from "../../../utils/declOfNum";
+import { TEXT_FORMS } from "../../../utils/globalConstants";
 import "./Payment.scss";
+import { URL } from "./consts";
 
 const domain = process.env.REACT_APP_API_URL;
 const urlRequest = process.env.REACT_APP_NEST_URL;

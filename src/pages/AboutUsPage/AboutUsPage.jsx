@@ -1,8 +1,8 @@
 import React from "react";
 import { useMediaQuery } from "@mui/material";
-import { approachToLearning } from "./consts";
-import "./AboutUsPage.scss";
 import MainTitleWithContent from "../../new_components/MainTitleWithContent/MainTitleWithContent";
+import "./AboutUsPage.scss";
+import { approachToLearning } from "./consts";
 
 const AboutUsPage = () => {
   const isXS = useMediaQuery("(max-width:700px)");

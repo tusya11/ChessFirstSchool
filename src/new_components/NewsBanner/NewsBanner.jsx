@@ -1,8 +1,8 @@
-import { useState, useEffect, useRef, useCallback, useMemo } from "react";
-import { useNavigate } from "react-router-dom";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { BellOutlined, CloseOutlined } from "@ant-design/icons";
 import { useMediaQuery } from "@mui/material";
 import { Button, Card, Space, Typography } from "antd";
-import { CloseOutlined, BellOutlined } from "@ant-design/icons";
+import { useNavigate } from "react-router-dom";
 import { useUserActivity } from "./hooks/useUserActivity";
 import styles from "./NewsBanner.module.scss";
 

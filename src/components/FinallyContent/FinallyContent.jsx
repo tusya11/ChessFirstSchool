@@ -1,8 +1,7 @@
 import React from "react";
 import { Button, ConfigProvider, Space, Typography } from "antd";
-import finallyImage from "./assets/done_finally.png";
-
 import "./FinallyContent.scss";
+import finallyImage from "./assets/done_finally.png";
 
 const { Title, Text } = Typography;
 

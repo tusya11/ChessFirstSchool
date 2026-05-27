@@ -1,15 +1,13 @@
 import React, { useState } from "react";
 import { useMediaQuery } from "@mui/material";
 import { Drawer } from "antd";
-
-import { teamData } from "./consts";
-import line from "./assets/line_white.png";
-import lineArrow from "../AdditionalBlock/assets/arrow.svg";
-import DraggingModal from "../../new_components/DraggingModal/DraggingModal";
-import TeamMemberContent from "./components/TeamMemberContent/TeamMemberContent";
 import BlurredPhoto from "../../new_components/BlurredPhoto/BlurredPhoto";
-
+import DraggingModal from "../../new_components/DraggingModal/DraggingModal";
+import lineArrow from "../AdditionalBlock/assets/arrow.svg";
 import "./NewTeamPage.scss";
+import line from "./assets/line_white.png";
+import TeamMemberContent from "./components/TeamMemberContent/TeamMemberContent";
+import { teamData } from "./consts";
 
 const NewTeamPage = () => {
   const isXS = useMediaQuery("(max-width:700px)");

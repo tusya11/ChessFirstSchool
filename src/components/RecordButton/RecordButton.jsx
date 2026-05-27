@@ -1,4 +1,4 @@
-import './RecordButton.scss';
+import "./RecordButton.scss";
 
 const RecordButton = ({ onClick }) => (
   <div className="record-button__container">

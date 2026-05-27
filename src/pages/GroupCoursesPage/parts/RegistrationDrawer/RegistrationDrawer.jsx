@@ -1,15 +1,15 @@
-import React, { useState, useRef } from 'react';
-import privacyPolicy from '../../../../docs/privacy_policy.pdf';
-import videoPrivacyPolicy from '../../../../docs/videoPrivacyPolicy.pdf';
-import { URL } from '../../../../components/NewPayment/consts';
-import styles from './RegistrationDrawer.module.scss';
+import React, { useRef, useState } from "react";
+import { URL } from "../../../../components/NewPayment/consts";
+import privacyPolicy from "../../../../docs/privacy_policy.pdf";
+import videoPrivacyPolicy from "../../../../docs/videoPrivacyPolicy.pdf";
+import styles from "./RegistrationDrawer.module.scss";
 
 const RegistrationDrawer = ({ isOpen, onClose, totalSum }) => {
   const overlayRef = useRef();
   const [form, setForm] = React.useState({
-    name: '',
-    email: '',
-    phone: '',
+    name: "",
+    email: "",
+    phone: "",
     privacy: false,
     policy: false,
   });
@@ -20,7 +20,7 @@ const RegistrationDrawer = ({ isOpen, onClose, totalSum }) => {
     const { name, value, type, checked } = e.target;
     setForm((prev) => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value,
+      [name]: type === "checkbox" ? checked : value,
     }));
   };
 
@@ -33,15 +33,16 @@ const RegistrationDrawer = ({ isOpen, onClose, totalSum }) => {
   const validate = () => {
     const newErrors = {};
 
-    if (!form.name.trim()) newErrors.name = 'Введите ФИО';
+    if (!form.name.trim()) newErrors.name = "Введите ФИО";
     if (!form.email.trim()) {
-      newErrors.email = 'Введите email';
+      newErrors.email = "Введите email";
     } else if (!/\S+@\S+\.\S+/.test(form.email)) {
-      newErrors.email = 'Некорректный email';
+      newErrors.email = "Некорректный email";
     }
-    if (!form.phone.trim()) newErrors.phone = 'Введите телефон';
-    if (!form.privacy) newErrors.privacy = 'Подтвердите политику конфиденциальности';
-    if (!form.policy) newErrors.policy = 'Подтвердите политику видеоматериалов';
+    if (!form.phone.trim()) newErrors.phone = "Введите телефон";
+    if (!form.privacy)
+      newErrors.privacy = "Подтвердите политику конфиденциальности";
+    if (!form.policy) newErrors.policy = "Подтвердите политику видеоматериалов";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -53,7 +54,7 @@ const RegistrationDrawer = ({ isOpen, onClose, totalSum }) => {
       e.target.submit();
       //отправка статистики в Яндекс Метрику
       if (window.ym) {
-        window.ym(96915259, 'reachGoal', 'BUTTON_CLICK');
+        window.ym(96915259, "reachGoal", "BUTTON_CLICK");
       }
     }
   };
@@ -62,7 +63,7 @@ const RegistrationDrawer = ({ isOpen, onClose, totalSum }) => {
 
   return (
     <div
-      className={`${styles.overlay} ${isOpen ? styles.open : ''}`}
+      className={`${styles.overlay} ${isOpen ? styles.open : ""}`}
       ref={overlayRef}
       onClick={handleOverlayClick}
     >
@@ -77,11 +78,11 @@ const RegistrationDrawer = ({ isOpen, onClose, totalSum }) => {
         <form
           className={styles.form}
           method="POST"
-          action={URL + '/create/'}
+          action={URL + "/create/"}
           onSubmit={handleSubmit}
         >
           <input
-            style={{ display: 'none' }}
+            style={{ display: "none" }}
             type="text"
             name="service_name"
             value="Оплата летнего интенсива"
@@ -89,7 +90,7 @@ const RegistrationDrawer = ({ isOpen, onClose, totalSum }) => {
           />
           <input
             style={{
-              display: 'none',
+              display: "none",
             }}
             type="text"
             name="sum"
@@ -107,7 +108,7 @@ const RegistrationDrawer = ({ isOpen, onClose, totalSum }) => {
           />
           {/* Задизейблен */}
           <input
-            style={{ display: 'none' }}
+            style={{ display: "none" }}
             type="text"
             name="clientid"
             value={form.name}
@@ -124,7 +125,7 @@ const RegistrationDrawer = ({ isOpen, onClose, totalSum }) => {
             required
           />
           <input
-            style={{ display: 'none' }}
+            style={{ display: "none" }}
             type="text"
             name="client_email"
             value={form.email}
@@ -141,7 +142,7 @@ const RegistrationDrawer = ({ isOpen, onClose, totalSum }) => {
             required
           />
           <input
-            style={{ display: 'none' }}
+            style={{ display: "none" }}
             type="text"
             name="client_phone"
             value={form.phone}
@@ -157,18 +158,30 @@ const RegistrationDrawer = ({ isOpen, onClose, totalSum }) => {
                 onChange={handleChange}
               />
               <span>
-                Я согласен с{' '}
-                <a href={privacyPolicy} className={styles.link} target="_blank" rel="noreferrer">
+                Я согласен с{" "}
+                <a
+                  href={privacyPolicy}
+                  className={styles.link}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   политикой конфиденциальности
                 </a>
               </span>
             </label>
-            {errors.privacy && <div className={styles.error}>{errors.privacy}</div>}
+            {errors.privacy && (
+              <div className={styles.error}>{errors.privacy}</div>
+            )}
 
             <label className={styles.checkbox}>
-              <input type="checkbox" name="policy" checked={form.policy} onChange={handleChange} />
+              <input
+                type="checkbox"
+                name="policy"
+                checked={form.policy}
+                onChange={handleChange}
+              />
               <span>
-                Я согласен с{' '}
+                Я согласен с{" "}
                 <a
                   href={videoPrivacyPolicy}
                   className={styles.link}
@@ -179,10 +192,16 @@ const RegistrationDrawer = ({ isOpen, onClose, totalSum }) => {
                 </a>
               </span>
             </label>
-            {errors.policy && <div className={styles.error}>{errors.policy}</div>}
+            {errors.policy && (
+              <div className={styles.error}>{errors.policy}</div>
+            )}
           </div>
 
-          <button type="submit" className={styles.submit} disabled={!form.privacy || !form.policy}>
+          <button
+            type="submit"
+            className={styles.submit}
+            disabled={!form.privacy || !form.policy}
+          >
             ОПЛАТИТЬ КАРТОЙ
           </button>
         </form>

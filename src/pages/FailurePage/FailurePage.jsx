@@ -1,12 +1,12 @@
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import failIcon from '../../assets/fail.svg';
-import { Button } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
-import { observer } from 'mobx-react-lite';
-import axios from 'axios';
-import modal from '../../store/modal';
-import './FailurePage.scss';
+import { useEffect } from "react";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import { Button } from "@mui/material";
+import axios from "axios";
+import { observer } from "mobx-react-lite";
+import { useNavigate } from "react-router-dom";
+import failIcon from "../../assets/fail.svg";
+import modal from "../../store/modal";
+import "./FailurePage.scss";
 
 const urlRequest = process.env.REACT_APP_NEST_URL;
 
@@ -14,10 +14,10 @@ const FailurePage = observer(() => {
   const { setAlertMsg } = modal;
   const navigate = useNavigate();
 
-  const orderItems = JSON.parse(localStorage.getItem('order') || '{}');
+  const orderItems = JSON.parse(localStorage.getItem("order") || "{}");
 
   const handleClickBack = () => {
-    navigate('/main');
+    navigate("/main");
   };
 
   const getInfoAboutOrder = async () => {
@@ -28,9 +28,9 @@ const FailurePage = observer(() => {
       // window.open(response.data.link, "_blank");
       // window.location.href = response.data.link;
     } catch (e) {
-      console.error('---e', e);
+      console.error("---e", e);
       setAlertMsg({
-        status: 'error',
+        status: "error",
         message: e.response.data.message,
         visible: true,
       });

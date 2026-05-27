@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { useMediaQuery } from "@mui/material";
-import { Col, Drawer, Row, Segmented, ConfigProvider, Button } from "antd";
+import { Button, Col, ConfigProvider, Drawer, Row, Segmented } from "antd";
 import clsx from "classnames";
 import NewPayment from "../../components/NewPayment/NewPayment";
 import MainTitleWithContent from "../../new_components/MainTitleWithContent/MainTitleWithContent";
-import trophyImage from "./assets/trophy.png";
+import "./NewPricePage.scss";
 import dolyamiImage from "./assets/dolyami_image.png";
 import dolyamiLogo from "./assets/dolyami_logo.png";
-import "./NewPricePage.scss";
+import trophyImage from "./assets/trophy.png";
 
 const NewPricePage = ({
   prices = [],

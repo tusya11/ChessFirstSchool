@@ -1,12 +1,12 @@
+import logoWhite from "../../assets/logoWhite.svg";
+import whatsup from "../../assets/vk_white.svg";
+import vk_mobile from "../../assets/whatsup_white.svg";
 import SocialLink from "../../components/SocialLink/SocialLink";
+import consentPersonalData from "../../docs/consentPersonalData.pdf";
 import offer from "../../docs/offer_new.pdf";
 import privacyPolicy from "../../docs/privacy_policy.pdf";
-import consentPersonalData from "../../docs/consentPersonalData.pdf";
-import { LINK_VK, LINK_WHATS_UP } from "./consts";
-import vk_mobile from "../../assets/whatsup_white.svg";
-import whatsup from "../../assets/vk_white.svg";
-import logoWhite from "../../assets/logoWhite.svg";
 import "./Footer.scss";
+import { LINK_VK, LINK_WHATS_UP } from "./consts";
 
 const Footer = () => (
   <footer className="footer__container">

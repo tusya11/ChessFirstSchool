@@ -1,5 +1,5 @@
-import { MdCall, MdSettingsAccessibility, MdConnectedTv } from "react-icons/md";
 import { BiSolidHappyHeartEyes } from "react-icons/bi";
+import { MdCall, MdConnectedTv, MdSettingsAccessibility } from "react-icons/md";
 
 export const lessons = [
   {

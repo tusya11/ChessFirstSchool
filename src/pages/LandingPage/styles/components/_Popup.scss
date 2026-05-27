@@ -8,7 +8,8 @@
   z-index: 9999;
   opacity: 0;
   visibility: hidden;
-  transition: opacity $transition-duration $transition-timing-function,
+  transition:
+    opacity $transition-duration $transition-timing-function,
     visibility $transition-duration $transition-timing-function;
 
   &.show {
@@ -34,7 +35,8 @@
   border: 2px solid $popup-border-color;
   transform: scale(0.9);
   opacity: 0;
-  transition: transform $transition-duration $transition-timing-function,
+  transition:
+    transform $transition-duration $transition-timing-function,
     opacity $transition-duration $transition-timing-function;
 
   .popup-overlay.show & {
@@ -63,7 +65,9 @@
   line-height: 1;
   cursor: pointer;
   color: $popup-close-color;
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
 
   &:hover {
     color: $popup-close-hover-color;

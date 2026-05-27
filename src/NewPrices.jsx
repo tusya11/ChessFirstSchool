@@ -2,8 +2,8 @@ import React, { Suspense } from "react";
 import { Spin } from "antd";
 import { prices } from "./pages/NewPricePage/consts";
 
-const NewPricePageLazy = React.lazy(() =>
-  import("./pages/NewPricePage/NewPricePage")
+const NewPricePageLazy = React.lazy(
+  () => import("./pages/NewPricePage/NewPricePage"),
 );
 
 const NewPrices = () => (

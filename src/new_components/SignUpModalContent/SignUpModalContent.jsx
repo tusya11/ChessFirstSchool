@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import dayjs from "dayjs";
 import { useMediaQuery } from "@mui/material";
 import {
   Button,
@@ -9,13 +8,14 @@ import {
   Spin,
   Typography,
 } from "antd";
-import modal from "../../store/modal";
+import dayjs from "dayjs";
 import FinallyContent from "../../components/FinallyContent/FinallyContent";
 import InputCustom from "../../components/InputCustom/InputCustom";
-import SelectedElement from "../../components/SelectedElement/SelectedElement";
-import privacyPolicy from "../../docs/privacy_policy.pdf";
 import { messengersData } from "../../components/ModalContent/NewSignUpContentModal/consts";
 import { scriptURL } from "../../components/ModalContent/SignUpContent/consts";
+import SelectedElement from "../../components/SelectedElement/SelectedElement";
+import privacyPolicy from "../../docs/privacy_policy.pdf";
+import modal from "../../store/modal";
 import "./SignUpModalContent.scss";
 
 const { Title, Text } = Typography;

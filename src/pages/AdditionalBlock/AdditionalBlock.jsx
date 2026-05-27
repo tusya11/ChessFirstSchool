@@ -1,6 +1,6 @@
-import { additionalItems } from "./consts";
 import MainTitleWithContent from "../../new_components/MainTitleWithContent/MainTitleWithContent";
 import "./AdditionalBlock.scss";
+import { additionalItems } from "./consts";
 
 const AdditionalBlock = () => {
   return (

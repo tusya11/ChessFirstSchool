@@ -1,8 +1,8 @@
-$primary: #464BFF;
-$accent: #DCE204;
-$background: #FFFFFF;
-$text-dark: #2C2C2C;
-$text-light: #FFFFFF;
+$primary: #464bff;
+$accent: #dce204;
+$background: #ffffff;
+$text-dark: #2c2c2c;
+$text-light: #ffffff;
 
 .trainers-section {
   padding: 60px 20px;
@@ -10,7 +10,7 @@ $text-light: #FFFFFF;
   margin: 0 auto;
   position: relative;
   background-color: $background;
-  
+
   .section-title {
     text-align: center;
     margin-bottom: 40px;
@@ -38,47 +38,47 @@ $text-light: #FFFFFF;
   padding: 20px;
   transition: transform 0.5s ease-in-out;
   opacity: 0;
-  
+
   &.active {
     opacity: 1;
   }
-  
+
   .trainer-image {
     width: 300px;
     height: 300px;
     border-radius: 50%;
     overflow: hidden;
     border: 5px solid $accent;
-    
+
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
   }
-  
+
   .trainer-info {
     max-width: 500px;
-    
+
     h3 {
       font-size: 28px;
       color: $primary;
       margin-bottom: 10px;
     }
-    
+
     .position {
       font-weight: bold;
       color: $text-dark;
       margin-bottom: 15px;
       font-size: 18px;
     }
-    
+
     .experience {
       color: $primary;
       margin-bottom: 15px;
       font-style: italic;
     }
-    
+
     .qualification {
       color: $text-dark;
       line-height: 1.5;
@@ -93,7 +93,7 @@ $text-light: #FFFFFF;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  
+
   .dot {
     width: 12px;
     height: 12px;
@@ -103,11 +103,11 @@ $text-light: #FFFFFF;
     margin: 0 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-    
+
     &.active {
       background-color: $primary;
     }
-    
+
     &:hover {
       background-color: $accent;
     }
@@ -120,7 +120,7 @@ $text-light: #FFFFFF;
     text-align: center;
     justify-content: flex-start;
     padding: 0;
-    
+
     .trainer-image {
       width: 200px;
       height: 200px;
@@ -132,7 +132,7 @@ $text-light: #FFFFFF;
     max-height: 165px;
     overflow: hidden;
   }
-  
+
   .trainers-slider {
     height: 550px;
   }

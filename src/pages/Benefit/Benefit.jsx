@@ -1,10 +1,10 @@
-import { useMediaQuery } from '@mui/material';
-import { cards_1, cards_2 } from './consts';
-import horseIcon from './assets/horseIcon.svg';
-import './Benefit.scss';
+import { useMediaQuery } from "@mui/material";
+import "./Benefit.scss";
+import horseIcon from "./assets/horseIcon.svg";
+import { cards_1, cards_2 } from "./consts";
 
 const Benefit = () => {
-  const isXS = useMediaQuery('(max-width:700px)');
+  const isXS = useMediaQuery("(max-width:700px)");
 
   return (
     <div id="benefit" className="benefit__container">

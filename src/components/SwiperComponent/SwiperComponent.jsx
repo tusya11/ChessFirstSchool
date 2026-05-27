@@ -1,15 +1,14 @@
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { useMediaQuery } from "@mui/material";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
-import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
-import SwiperSlideComponent from "../Slider/SwiperSlide/SwiperSlide";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
 import "swiper/css/navigation";
-
+import "swiper/css/pagination";
+import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperSlideComponent from "../Slider/SwiperSlide/SwiperSlide";
 import "./SwiperComponent.scss";
-import { useMediaQuery } from "@mui/material";
 
 const SwiperComponent = ({ data }) => {
   const isXS = useMediaQuery("(max-width:700px)");

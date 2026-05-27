@@ -1,20 +1,19 @@
 import { useEffect, useMemo, useState } from "react";
 // import axios from "axios";
 import { Button, Checkbox, ConfigProvider, Space, Typography } from "antd";
-import SectionItem from "./components/SectionItem/SectionItem";
-import SelectedElement from "../SelectedElement/SelectedElement";
-import { PaymentLogos } from "./components/PaymentLogos/PaymentLogos";
-import InputCustom from "../InputCustom/InputCustom";
-import { URL } from "./consts";
-// import { formatPhoneNumber } from "./utils";
+import offerFile from "../../docs/offer_new.pdf";
 import privacyPolicy from "../../docs/privacy_policy.pdf";
 import videoPrivacyPolicy from "../../docs/videoPrivacyPolicy.pdf";
-import offerFile from "../../docs/offer_new.pdf";
 import { useResponsive } from "../../hooks/useResponsive";
+import InputCustom from "../InputCustom/InputCustom";
+import SelectedElement from "../SelectedElement/SelectedElement";
+// import { formatPhoneNumber } from "./utils";
 // import dolyameLogo from "./assets/dolyame_logo.png";
 // import modal from "../../store/modal";
-
 import "./NewPayment.scss";
+import { PaymentLogos } from "./components/PaymentLogos/PaymentLogos";
+import SectionItem from "./components/SectionItem/SectionItem";
+import { URL } from "./consts";
 
 const { Title, Text } = Typography;
 

@@ -1,11 +1,11 @@
 // Реализация анимации на 275 строке
 
-$primary: #464BFF;
-$accent: #DCE204;
-$dark: #2C2C2C;
-$light: #FFFFFF;
-$bg-light: #F8F9FF;
-$bg-color: #FAF5F1;
+$primary: #464bff;
+$accent: #dce204;
+$dark: #2c2c2c;
+$light: #ffffff;
+$bg-light: #f8f9ff;
+$bg-color: #faf5f1;
 
 @keyframes fadeInUp {
   from {
@@ -25,17 +25,25 @@ $bg-color: #FAF5F1;
   padding: 80px 0;
   position: relative;
   overflow: hidden;
-  
+
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: -50%;
     left: -50%;
     width: 200%;
     height: 200%;
-    background: 
-      radial-gradient(circle at 70% 30%, rgba($primary, 0.05) 0%, transparent 30%),
-      radial-gradient(circle at 30% 70%, rgba($accent, 0.05) 0%, transparent 30%);
+    background:
+      radial-gradient(
+        circle at 70% 30%,
+        rgba($primary, 0.05) 0%,
+        transparent 30%
+      ),
+      radial-gradient(
+        circle at 30% 70%,
+        rgba($accent, 0.05) 0%,
+        transparent 30%
+      );
     z-index: 0;
   }
 }
@@ -60,16 +68,16 @@ $bg-color: #FAF5F1;
   margin-bottom: 24px;
   line-height: 1.2;
   letter-spacing: -0.5px;
-  
+
   .title-accent {
     background: linear-gradient(90deg, $primary 0%, darken($primary, 10%) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     position: relative;
-    
+
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       bottom: -8px;
       left: 50%;
@@ -87,14 +95,14 @@ $bg-color: #FAF5F1;
   margin-bottom: 40px;
   line-height: 1.6;
   color: lighten($dark, 20%);
-  
+
   .text-highlight {
     color: $dark;
     font-weight: 600;
     position: relative;
-    
+
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       bottom: 2px;
       left: 0;
@@ -113,7 +121,7 @@ $bg-color: #FAF5F1;
   padding: 2px;
   margin-bottom: 40px;
   box-shadow: 0 4px 20px rgba($primary, 0.1);
-  
+
   .badge-content {
     background: linear-gradient(90deg, $primary 0%, darken($primary, 5%) 100%);
     border-radius: 50px;
@@ -122,13 +130,13 @@ $bg-color: #FAF5F1;
     align-items: center;
     gap: 12px;
   }
-  
+
   .badge-text {
     color: $light;
     font-weight: 600;
     letter-spacing: 1px;
   }
-  
+
   .badge-discount {
     background: $accent;
     color: $dark;
@@ -197,20 +205,20 @@ $bg-color: #FAF5F1;
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  
+
   .button-text {
     position: relative;
     z-index: 2;
   }
-  
+
   .button-icon {
     position: relative;
     z-index: 2;
     transition: transform 0.3s ease;
   }
-  
+
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -220,20 +228,20 @@ $bg-color: #FAF5F1;
     z-index: 1;
     transition: opacity 0.3s ease;
   }
-  
+
   &:hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 28px rgba($dark, 0.3);
-    
+
     .button-icon {
       transform: translateX(4px);
     }
-    
+
     &::before {
       opacity: 0.9;
     }
   }
-  
+
   &:active {
     transform: translateY(0);
   }
@@ -243,15 +251,15 @@ $bg-color: #FAF5F1;
   .chess-promo-modern {
     padding: 60px 0;
   }
-  
+
   .promo-title {
     font-size: 2.4rem;
   }
-  
+
   .promo-subtitle {
     font-size: 1.2rem;
   }
-  
+
   .timer-item {
     padding: 16px 12px;
     // min-width: 70px;
@@ -261,16 +269,16 @@ $bg-color: #FAF5F1;
   .timer-grid {
     gap: 1px;
   }
-  
+
   .timer-value {
     font-size: 2rem;
   }
-  
+
   .timer-separator {
     font-size: 1.5rem;
     margin-top: -12px;
   }
-  
+
   .cta-button {
     padding: 16px 32px;
     font-size: 1.1rem;

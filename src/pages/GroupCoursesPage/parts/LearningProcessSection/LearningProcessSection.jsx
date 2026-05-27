@@ -1,9 +1,9 @@
 import {
   FaCalendarAlt,
-  FaVideo,
+  FaChessBoard,
   FaClock,
   FaUserGraduate,
-  FaChessBoard,
+  FaVideo,
 } from "react-icons/fa";
 // import useScrollTo from '../../hooks/useScrollTo';
 // import { urlToSummerIntensiveRegisterForm } from "../../../../utils/globalConstants";

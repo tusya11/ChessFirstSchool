@@ -27,7 +27,8 @@ const FinalCTA = () => {
         <div className="final-cta-button-wrap">
           <a
             href={signupLink}
-            className="button button--secondary final-cta-button">
+            className="button button--secondary final-cta-button"
+          >
             Записаться на бесплатный урок
           </a>
         </div>

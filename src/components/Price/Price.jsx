@@ -1,9 +1,9 @@
 import React from "react";
-import { prices } from "./consts";
+import modal from "../../store/modal";
 import { declOfNum } from "../../utils/declOfNum";
 import { TEXT_FORMS } from "../../utils/globalConstants";
-import modal from "../../store/modal";
 import "./Price.scss";
+import { prices } from "./consts";
 
 const Price = () => {
   const { setIsOpenModalTransaction, setModalInfo } = modal;

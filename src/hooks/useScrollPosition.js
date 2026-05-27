@@ -1,5 +1,5 @@
-import { debounce } from '@mui/material';
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
+import { debounce } from "@mui/material";
 
 export const useScrollPosition = () => {
   const [prevScrollPosition, setPrevScrollPosition] = useState(0);
@@ -18,10 +18,10 @@ export const useScrollPosition = () => {
   );
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [prevScrollPosition, visible, handleScroll]);
 

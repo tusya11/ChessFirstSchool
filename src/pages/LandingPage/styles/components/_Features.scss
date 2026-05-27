@@ -21,7 +21,8 @@
     padding: 24px;
     box-shadow: $box-shadow-base;
     border: 1px solid $border-color-base;
-    transition: transform $transition-duration ease-out,
+    transition:
+      transform $transition-duration ease-out,
       box-shadow $transition-duration ease-out;
     display: flex;
     flex-direction: column;

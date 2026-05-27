@@ -9,7 +9,8 @@ const CheckIcon = () => (
     stroke="#4f46e5"
     strokeWidth="3"
     strokeLinecap="round"
-    strokeLinejoin="round">
+    strokeLinejoin="round"
+  >
     <polyline points="20 6 9 17 4 12"></polyline>
   </svg>
 );
@@ -55,7 +56,8 @@ const TrialInfo = () => {
         <div className="trial-info-cta">
           <a
             href={signupLink}
-            className="button button--secondary trial-info-button">
+            className="button button--secondary trial-info-button"
+          >
             ЗАПИСАТЬСЯ НА ПРОБНЫЙ УРОК
           </a>
           <p className="trial-info-note">

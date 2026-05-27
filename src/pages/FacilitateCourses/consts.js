@@ -1,7 +1,7 @@
-import zoomImg from "./assets/zoom.svg";
 import connectImg from "./assets/connect.svg";
-import settingImg from "./assets/setting.svg";
 import imgHorse from "./assets/imgHorse.svg";
+import settingImg from "./assets/setting.svg";
+import zoomImg from "./assets/zoom.svg";
 
 export const facilitateItems = [
   {

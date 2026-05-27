@@ -1,6 +1,6 @@
-import { team } from "./utils";
 import SwiperComponent from "../../components/SwiperComponent/SwiperComponent";
 import "./Team.scss";
+import { team } from "./utils";
 
 const Team = () => {
   return (

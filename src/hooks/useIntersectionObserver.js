@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const useIntersectionObserver = (elementId, options = {}) => {
   const [isIntersecting, setIsIntersecting] = useState(false);
@@ -17,7 +17,7 @@ const useIntersectionObserver = (elementId, options = {}) => {
         root: options.root || null,
         rootMargin: options.rootMargin || "0px",
         threshold: options.threshold || 0,
-      }
+      },
     );
 
     observer.observe(element);

@@ -87,7 +87,9 @@
       text-decoration: none;
       padding: 8px 12px;
       border-radius: $border-radius-sm;
-      transition: color 0.2s ease, background-color 0.2s ease;
+      transition:
+        color 0.2s ease,
+        background-color 0.2s ease;
 
       &:hover {
         color: $primary-color;

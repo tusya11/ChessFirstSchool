@@ -1,5 +1,5 @@
+import { ChevronLeft, User } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { User, ChevronLeft } from "lucide-react";
 import "./IPSection.css";
 
 const IPSection = () => {

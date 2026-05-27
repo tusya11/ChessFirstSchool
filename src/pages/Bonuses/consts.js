@@ -1,7 +1,7 @@
 import fireImg from "./assets/fire.svg";
 import friendImg from "./assets/friend.svg";
-import lightningImg from "./assets/lightning.svg";
 import giftImg from "./assets/gift.svg";
+import lightningImg from "./assets/lightning.svg";
 
 export const bonuses = [
   {

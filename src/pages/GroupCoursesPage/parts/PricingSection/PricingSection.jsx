@@ -1,11 +1,17 @@
 // import useScrollTo from '../../hooks/useScrollTo';
-import { useState } from 'react';
-import RegistrationDrawer from '../RegistrationDrawer/RegistrationDrawer';
-import './PricingSection.scss';
+import { useState } from "react";
+import RegistrationDrawer from "../RegistrationDrawer/RegistrationDrawer";
+import "./PricingSection.scss";
 
 const PricingSection = ({ price }) => {
   // const scrollTo = useScrollTo();
-  const { total, discountedTotal, discount, oneLessonTotal, discountedTotalNumber } = price;
+  const {
+    total,
+    discountedTotal,
+    discount,
+    oneLessonTotal,
+    discountedTotalNumber,
+  } = price;
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const handlerClickOnBtn = () => {
@@ -13,7 +19,7 @@ const PricingSection = ({ price }) => {
 
     // Отправка статистики в Яндекс Метрику
     if (window.ym) {
-      window.ym(96915259, 'reachGoal', 'lead_form');
+      window.ym(96915259, "reachGoal", "lead_form");
     }
   };
 

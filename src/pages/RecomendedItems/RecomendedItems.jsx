@@ -1,7 +1,6 @@
-import PropTypes from "prop-types";
 import { useMediaQuery } from "@mui/material";
+import PropTypes from "prop-types";
 import CardRecommend from "./CardRecommend/CardRecommend";
-
 import "./RecomendedItems.scss";
 
 const RecomendedItems = ({ items = [], padding, isSwiperScroll = false }) => {

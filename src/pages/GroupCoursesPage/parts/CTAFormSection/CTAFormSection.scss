@@ -1,6 +1,6 @@
 .cta-section {
   padding: 80px 0;
-  background: linear-gradient(135deg, #464BFF 0%, #6A6DFF 100%);
+  background: linear-gradient(135deg, #464bff 0%, #6a6dff 100%);
   color: white;
   position: relative;
   overflow: hidden;
@@ -49,10 +49,10 @@
       font-size: 1rem;
 
       &::before {
-        content: '✓';
+        content: "✓";
         position: absolute;
         left: 0;
-        color: #DCE204;
+        color: #dce204;
         font-weight: bold;
       }
     }
@@ -100,7 +100,7 @@
     }
 
     a {
-      color: #DCE204;
+      color: #dce204;
       text-decoration: underline;
 
       &:hover {
@@ -110,7 +110,7 @@
   }
 
   .submit-btn {
-    background: #DCE204;
+    background: #dce204;
     color: #2c2c2c;
     border: none;
     padding: 18px;

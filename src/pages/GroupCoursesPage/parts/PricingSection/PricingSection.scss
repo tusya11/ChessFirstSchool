@@ -1,7 +1,7 @@
 .pricing-section {
   padding: 80px 0;
   // background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
-  background-image: url('./assets/chess-pawn.png');
+  background-image: url("./assets/chess-pawn.png");
   background-size: cover; /* Масштабирует изображение, чтобы оно заполнило блок */
   background-position: center; /* Выравнивает изображение по центру */
   background-repeat: no-repeat; /* Отключает повторение фона */
@@ -44,13 +44,13 @@
     border: 1px solid rgba(70, 75, 255, 0.1);
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 5px;
-      background: linear-gradient(90deg, #464BFF 0%, #DCE204 100%);
+      background: linear-gradient(90deg, #464bff 0%, #dce204 100%);
     }
   }
 
@@ -70,7 +70,7 @@
 
   .old-price {
     font-size: 1.5rem;
-    color: #FFC107;
+    color: #ffc107;
     text-decoration: line-through;
     font-weight: bold;
     position: relative;
@@ -81,7 +81,7 @@
     position: absolute;
     right: 0;
     top: 0;
-    background: #DCE204;
+    background: #dce204;
     color: #2c2c2c;
     padding: 5px 10px;
     border-radius: 20px;
@@ -99,7 +99,7 @@
 
     .lesson-price {
       font-weight: 700;
-      color: #464BFF;
+      color: #464bff;
     }
   }
 
@@ -119,7 +119,7 @@
   .feature-icon {
     width: 20px;
     height: 20px;
-    fill: #464BFF;
+    fill: #464bff;
     margin-right: 15px;
     flex-shrink: 0;
   }
@@ -128,7 +128,7 @@
     display: block;
     width: 100%;
     padding: 18px;
-    background: linear-gradient(90deg, #464BFF 0%, #6A6DFF 100%);
+    background: linear-gradient(90deg, #464bff 0%, #6a6dff 100%);
     color: white;
     border: none;
     border-radius: 8px;

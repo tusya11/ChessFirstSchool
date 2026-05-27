@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
-import { urlToSummerIntensiveRegisterForm } from '../../../../utils/globalConstants';
+import { useEffect, useState } from "react";
+import { urlToSummerIntensiveRegisterForm } from "../../../../utils/globalConstants";
 // import useScrollTo from './../../hooks/useScrollTo'
-import './ChessPromo.scss';
+import "./ChessPromo.scss";
 
 const ChessPromo = () => {
   // const scrollTo = useScrollTo();
@@ -52,11 +52,15 @@ const ChessPromo = () => {
   }, [discountExpired]);
 
   const handleClickOnBtn = () => {
-    window.open(urlToSummerIntensiveRegisterForm, '_blank', 'noopener,noreferrer');
+    window.open(
+      urlToSummerIntensiveRegisterForm,
+      "_blank",
+      "noopener,noreferrer",
+    );
 
     // Отправка статистики в Яндекс Метрику
     if (window.ym) {
-      window.ym(96915259, 'reachGoal', 'lead_form');
+      window.ym(96915259, "reachGoal", "lead_form");
     }
   };
 
@@ -69,8 +73,9 @@ const ChessPromo = () => {
           </h1>
 
           <p className="promo-subtitle">
-            Развивайте <span className="text-highlight">стратегическое мышление</span> и интеллект с
-            нашими профессиональными тренерами
+            Развивайте{" "}
+            <span className="text-highlight">стратегическое мышление</span> и
+            интеллект с нашими профессиональными тренерами
           </p>
 
           {!discountExpired && (

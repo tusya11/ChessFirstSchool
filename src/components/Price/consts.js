@@ -1,4 +1,4 @@
-import { BiTimer, BiSolidTimeFive } from "react-icons/bi";
+import { BiSolidTimeFive, BiTimer } from "react-icons/bi";
 import { CiTimer } from "react-icons/ci";
 
 export const prices = [

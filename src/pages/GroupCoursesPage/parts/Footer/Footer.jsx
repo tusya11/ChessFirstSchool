@@ -1,13 +1,13 @@
-import {
-  LINK_VK,
-  LINK_WHATS_UP,
-  LINK_TELEGRAMM,
-} from "../../../../parts/Footer/consts";
+import consentMailingList from "../../../../docs/consentMailingList.pdf";
+import consentPersonalData from "../../../../docs/consentPersonalData.pdf";
 import offer from "../../../../docs/offer_new.pdf";
 import privacyPolicy from "../../../../docs/privacy_policy.pdf";
-import consentPersonalData from "../../../../docs/consentPersonalData.pdf";
 import videoPrivacyPolicy from "../../../../docs/videoPrivacyPolicy.pdf";
-import consentMailingList from "../../../../docs/consentMailingList.pdf";
+import {
+  LINK_TELEGRAMM,
+  LINK_VK,
+  LINK_WHATS_UP,
+} from "../../../../parts/Footer/consts";
 import { contactNumber } from "../../../../utils/globalConstants";
 import "./Footer.scss";
 

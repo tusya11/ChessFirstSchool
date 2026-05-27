@@ -1,5 +1,5 @@
-import PricingSection from '../GroupCoursesPage/parts/PricingSection/PricingSection';
-import { oldPrice } from '../GroupCoursesPage/consts/consts';
+import { oldPrice } from "../GroupCoursesPage/consts/consts";
+import PricingSection from "../GroupCoursesPage/parts/PricingSection/PricingSection";
 
 const ChessGroupsPaymentLegacy = () => {
   return (

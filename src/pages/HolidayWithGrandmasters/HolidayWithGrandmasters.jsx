@@ -1,10 +1,10 @@
-import { useState, useEffect, useMemo } from "react";
-import { Drawer } from "antd";
+import { useEffect, useMemo, useState } from "react";
 import { useMediaQuery } from "@mui/material";
-import { holiday_prices } from "../NewPricePage/consts";
+import { Drawer } from "antd";
 import NewPayment from "../../components/NewPayment/NewPayment";
-import yakovImage from "./images/yakov.jpg";
+import { holiday_prices } from "../NewPricePage/consts";
 import "./HolidaysWithGrandmasters.scss";
+import yakovImage from "./images/yakov.jpg";
 
 const ChessIcon = () => <span className="chess-icon">♞</span>;
 const TrophyIcon = () => <span className="icon">🏆</span>;

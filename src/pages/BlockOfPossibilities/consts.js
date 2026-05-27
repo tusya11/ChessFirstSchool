@@ -1,8 +1,8 @@
+import bulbIcon from "./images/bulb_icon.png";
 import calendarIcon from "./images/calendar_icon.png";
 import chartIcon from "./images/chart_icon.png";
 import computerIcon from "./images/computer_icon.png";
 import handIcon from "./images/hand_icon.png";
-import bulbIcon from "./images/bulb_icon.png";
 import networkingIcon from "./images/networking_icon.png";
 
 export const possibilities = [

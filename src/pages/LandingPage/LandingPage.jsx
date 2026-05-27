@@ -1,20 +1,18 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-
+import React, { useEffect, useState } from "react";
+import "./LandingPage.scss";
 // Импортируем компоненты
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import Features from "./components/Features";
-import TrialInfo from "./components/TrialInfo";
-import SignupCTA from "./components/SignupCTA";
-import FAQ from "./components/FAQ";
-import FinalCTA from "./components/FinalCTA";
-import ExitIntentPopup from "./components/ExitIntentPopup";
 import telegram from "./assets/telegram_logo.svg";
 import whatsapp from "./assets/whatsapp_logo.svg";
-
-import "./LandingPage.scss";
+import ExitIntentPopup from "./components/ExitIntentPopup";
+import FAQ from "./components/FAQ";
+import Features from "./components/Features";
+import FinalCTA from "./components/FinalCTA";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import SignupCTA from "./components/SignupCTA";
+import TrialInfo from "./components/TrialInfo";
 
 const LandingPage = () => {
   // --- Логика формы ---
@@ -68,7 +66,7 @@ const LandingPage = () => {
     const submitData = new FormData();
     submitData.append(
       "Messenger",
-      messengers.find((m) => m.id === selectedMessenger)?.title || "Не выбран"
+      messengers.find((m) => m.id === selectedMessenger)?.title || "Не выбран",
     );
     submitData.append("Telephone", formData.telephone);
 
@@ -82,7 +80,7 @@ const LandingPage = () => {
           // Попытка прочитать тело ошибки для диагностики
           return response.text().then((text) => {
             throw new Error(
-              `Network response was not ok. Status: ${response.status}, Body: ${text}`
+              `Network response was not ok. Status: ${response.status}, Body: ${text}`,
             );
           });
         }
@@ -94,7 +92,7 @@ const LandingPage = () => {
         console.error("Error during form submission!", error);
         // Показываем более user-friendly сообщение
         alert(
-          "Произошла ошибка при отправке заявки. Пожалуйста, попробуйте еще раз или свяжитесь с нами другим удобным способом."
+          "Произошла ошибка при отправке заявки. Пожалуйста, попробуйте еще раз или свяжитесь с нами другим удобным способом.",
         );
       })
       .finally(() => {
@@ -144,7 +142,7 @@ const LandingPage = () => {
       console.warn(
         "Yandex Metrika (window.ym) is not defined. Goal not sent:",
         goal,
-        params
+        params,
       );
     }
   };
@@ -155,7 +153,7 @@ const LandingPage = () => {
   const handleClick_Tg = () => {
     sendToYandexMetrika("leadTg", { source: "LandingPage_Tg_Button" });
   };
-  
+
   const handleClick_Phone = () => {
     sendToYandexMetrika("leadPhone", { source: "LandingPage_Phone_Link" });
   };

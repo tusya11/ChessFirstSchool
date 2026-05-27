@@ -1,8 +1,8 @@
 import React from "react";
 import { useMediaQuery } from "@mui/material";
 import MainTitleWithContent from "../../new_components/MainTitleWithContent/MainTitleWithContent";
-import { possibilities } from "./consts";
 import "./BlockOfPossibilities.scss";
+import { possibilities } from "./consts";
 
 const BlockOfPossibilities = () => {
   const isXS = useMediaQuery("(max-width:700px)");

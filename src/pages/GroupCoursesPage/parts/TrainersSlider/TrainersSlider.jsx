@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import { teamData } from '../../../../pages/NewTeamPage/consts';
-import './TrainersSlider.scss';
+import { useEffect, useState } from "react";
+import { teamData } from "../../../../pages/NewTeamPage/consts";
+import "./TrainersSlider.scss";
 
 const TrainersSlider = () => {
   const trainers = teamData
@@ -57,8 +57,10 @@ const TrainersSlider = () => {
         {trainers.map((trainer, index) => (
           <div
             key={trainer.id}
-            className={`trainer-slide ${index === currentSlide ? 'active' : ''}`}
-            style={{ transform: `translateX(${100 * (index - currentSlide)}%)` }}
+            className={`trainer-slide ${index === currentSlide ? "active" : ""}`}
+            style={{
+              transform: `translateX(${100 * (index - currentSlide)}%)`,
+            }}
           >
             <div className="trainer-image">
               <img src={trainer.image} alt={trainer.name} />
@@ -76,7 +78,7 @@ const TrainersSlider = () => {
           {trainers.map((_, index) => (
             <button
               key={index}
-              className={`dot ${index === currentSlide ? 'active' : ''}`}
+              className={`dot ${index === currentSlide ? "active" : ""}`}
               onClick={() => setCurrentSlide(index)}
             />
           ))}

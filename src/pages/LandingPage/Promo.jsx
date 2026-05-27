@@ -28,7 +28,8 @@ const Promo = () => {
                 href={TELEGRAM_URL}
                 className="button button--secondary promo-button promo-button--telegram"
                 target="_blank"
-                rel="noopener noreferrer">
+                rel="noopener noreferrer"
+              >
                 <span className="icon-telegram"></span>
                 Прочитать статью
               </a>
@@ -67,7 +68,8 @@ const Promo = () => {
                 href={TELEGRAM_URL}
                 className="button button--secondary promo-button promo-button--telegram"
                 target="_blank"
-                rel="noopener noreferrer">
+                rel="noopener noreferrer"
+              >
                 <span className="icon-telegram"></span>
                 Прочитать статью
               </a>

@@ -1,23 +1,22 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
+  BookOpen,
   ChevronLeft,
-  FileText,
-  Eye,
   Download,
-  X,
-  ZoomIn,
-  ZoomOut,
-  RotateCw,
+  Eye,
+  FileText,
   Maximize2,
   Minimize2,
   Printer,
-  BookOpen,
+  RotateCw,
+  X,
+  ZoomIn,
+  ZoomOut,
 } from "lucide-react";
-
-import pdfForBeginners72 from "../../assets/files/forBeginners72.pdf";
-import pdfForBeginners24 from "../../assets/files/forBeginners24.pdf";
-import pdfForBeginners16 from "../../assets/files/forBeginners16.pdf";
 import pdfForBeginners10 from "../../assets/files/forBeginners10.pdf";
+import pdfForBeginners16 from "../../assets/files/forBeginners16.pdf";
+import pdfForBeginners24 from "../../assets/files/forBeginners24.pdf";
+import pdfForBeginners72 from "../../assets/files/forBeginners72.pdf";
 import pdfFile from "../../assets/program.pdf";
 import "./ChessProgramPage.css";
 

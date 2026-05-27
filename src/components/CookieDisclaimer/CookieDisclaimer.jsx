@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import privacyPolicy from "../../docs/privacy_policy.pdf";
+import { useEffect, useState } from "react";
 import consentPersonalData from "../../docs/consentPersonalData.pdf";
+import privacyPolicy from "../../docs/privacy_policy.pdf";
 import "./CookieDisclaimer.css";
 
 const CookieDisclaimer = ({

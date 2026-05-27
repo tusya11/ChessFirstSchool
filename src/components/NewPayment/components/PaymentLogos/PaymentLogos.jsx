@@ -1,6 +1,5 @@
 import masterCardImg from "../../assets/masterCard.png";
 import payKeeperLogo from "../../assets/paykeeperLogo.png";
-
 import "./PaymentLogos.scss";
 
 export const PaymentLogos = () => {

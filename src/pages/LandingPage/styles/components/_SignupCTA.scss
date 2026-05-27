@@ -120,7 +120,8 @@
   background-color: $input-bg-color;
   font-size: $font-size-base;
   color: $text-color;
-  transition: border-color $transition-duration $transition-timing-function,
+  transition:
+    border-color $transition-duration $transition-timing-function,
     box-shadow $transition-duration $transition-timing-function,
     background-color $transition-duration $transition-timing-function;
 
