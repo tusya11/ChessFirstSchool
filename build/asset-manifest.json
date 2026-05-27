@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.7512811c.css",
-    "main.js": "/static/js/main.cb67d8cd.js",
+    "main.css": "/static/css/main.a4b40ae3.css",
+    "main.js": "/static/js/main.70845752.js",
     "static/css/226.258b6764.chunk.css": "/static/css/226.258b6764.chunk.css",
     "static/js/226.994bcc2e.chunk.js": "/static/js/226.994bcc2e.chunk.js",
     "static/css/685.98ed6e1e.chunk.css": "/static/css/685.98ed6e1e.chunk.css",
@@ -120,7 +120,7 @@
     "static/media/burgerMenuBtn.svg": "/static/media/burgerMenuBtn.46d2ac73c9d2c782792db592774044c7.svg"
   },
   "entrypoints": [
-    "static/css/main.7512811c.css",
-    "static/js/main.cb67d8cd.js"
+    "static/css/main.a4b40ae3.css",
+    "static/js/main.70845752.js"
   ]
 }
