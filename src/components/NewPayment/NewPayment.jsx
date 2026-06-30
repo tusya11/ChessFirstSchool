@@ -15,6 +15,7 @@ import { useResponsive } from "../../hooks/useResponsive";
 // import modal from "../../store/modal";
 
 import "./NewPayment.scss";
+import InfoMessage from "../InfoMessage/InfoMessage";
 
 const { Title, Text } = Typography;
 
@@ -401,6 +402,7 @@ const NewPayment = ({ payment = {}, tarif = {} }) => {
               </Space>
             </Space>
           </Space>
+          <InfoMessage />
           <div className="new-payment__payment-methods">
             <PaymentLogos />
           </div>

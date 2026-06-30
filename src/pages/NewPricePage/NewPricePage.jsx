@@ -65,14 +65,22 @@ const NewPricePage = ({
               )}
             </Col>
             <Col flex={1.5} className="new-price-page__main-content">
-              <div className="new-price-page__segmented">
-                <Segmented
-                  options={options}
-                  block
-                  value={valueOption}
-                  onChange={handleChangeSegmented}
-                  className="new-price-page__segmented-component"
-                />
+              <div className="new-price-page__segmented-wrapper">
+                <div className="new-price-page__segmented-hint">
+                  <span className="new-price-page__hint-text">
+                    Выберите длительность занятия
+                  </span>
+                  <span className="new-price-page__hint-arrow">👇</span>
+                </div>
+                <div className="new-price-page__segmented">
+                  <Segmented
+                    options={options}
+                    block
+                    value={valueOption}
+                    onChange={handleChangeSegmented}
+                    className="new-price-page__segmented-component"
+                  />
+                </div>
               </div>
               <div className="new-price-page__paper-text">
                 <h3 className="new-price-page__main-text">{priceData.title}</h3>

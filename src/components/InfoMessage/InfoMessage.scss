@@ -1,0 +1,226 @@
+.info-message {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, #f6f9ff 0%, #e8f0fe 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(70, 75, 255, 0.15);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: default;
+  box-shadow: 0 2px 12px rgba(70, 75, 255, 0.08);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(
+      circle,
+      rgba(70, 75, 255, 0.05) 0%,
+      transparent 70%
+    );
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(70, 75, 255, 0.15);
+    border-color: rgba(70, 75, 255, 0.3);
+  }
+
+  &.fade-in {
+    animation: slideIn 0.6s ease-out forwards;
+  }
+
+  &__icon-wrapper {
+    position: relative;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__icon-pulse {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #464bff, #6c70ff);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    animation: pulse 2s ease-in-out infinite;
+    box-shadow: 0 4px 12px rgba(70, 75, 255, 0.3);
+  }
+
+  &__icon {
+    font-size: 24px;
+    color: white;
+  }
+
+  &__icon-ring {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border: 2px solid rgba(70, 75, 255, 0.2);
+    border-radius: 50%;
+    animation: ring 2s ease-in-out infinite;
+  }
+
+  &__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 1;
+  }
+
+  &__title {
+    font-family: "MontserratSemiBold";
+    font-size: 13px;
+    color: #464bff;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  &__clock-icon {
+    font-size: 14px;
+  }
+
+  &__text {
+    font-family: "MontserratRegular";
+    font-size: 15px;
+    color: #1a1a1a;
+    line-height: 1.6;
+
+    strong {
+      font-family: "MontserratSemiBold";
+      color: #464bff;
+      background: rgba(70, 75, 255, 0.1);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+  }
+
+  &__emoji {
+    margin-left: 6px;
+    display: inline-block;
+    animation: wave 2s ease-in-out infinite;
+  }
+
+  &__badge {
+    margin-top: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(70, 75, 255, 0.1);
+    padding: 4px 12px;
+    border-radius: 20px;
+    width: fit-content;
+  }
+
+  &__badge-text {
+    font-family: "MontserratRegular";
+    font-size: 12px;
+    color: #464bff;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    &::before {
+      content: "✉️";
+      font-size: 14px;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+
+    &__icon-wrapper {
+      width: 40px;
+      height: 40px;
+    }
+
+    &__icon-pulse {
+      width: 40px;
+      height: 40px;
+
+      .info-message__icon {
+        font-size: 20px;
+      }
+    }
+
+    &__text {
+      font-size: 14px;
+    }
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes ring {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-10px, -10px);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+}
