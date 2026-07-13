@@ -1,0 +1,1286 @@
+$primary-bg: #0a0e1a;
+$card-bg: #ffffff;
+$text-primary: #ffffff;
+$text-secondary: #b0b7d4;
+$text-tertiary: #6b7a8f;
+$main-color: #7c3aed;
+$main-color-light: #8b5cf6;
+$main-color-dark: #5b21b6;
+$accent-gold: #f59e0b;
+$border-color: rgba(255, 255, 255, 0.08);
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+$shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+$shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.5);
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-lg: 16px;
+$radius-xl: 24px;
+
+@keyframes summer-tournament__fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes summer-tournament__float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(5deg);
+  }
+}
+
+@keyframes summer-tournament__pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes summer-tournament__pulse-border {
+  0%,
+  100% {
+    border-color: rgba(239, 68, 68, 0.3);
+  }
+  50% {
+    border-color: rgba(239, 68, 68, 0.8);
+  }
+}
+
+@keyframes summer-tournament__shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes summer-tournament__slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Блок: summer-tournament
+.summer-tournament {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: $primary-bg;
+  color: $text-primary;
+  min-height: 100vh;
+  line-height: 1.6;
+  overflow-x: hidden;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  // Элемент: icon
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: inherit;
+
+    &--chess-king {
+      font-size: 1.2rem;
+    }
+
+    &--trophy {
+      font-size: 1.8rem;
+      margin-right: 8px;
+    }
+
+    &--calendar {
+      font-size: 1.8rem;
+      margin-right: 8px;
+    }
+
+    &--clock {
+      font-size: 1.8rem;
+      margin-right: 8px;
+    }
+
+    &--prize {
+      font-size: 1.2rem;
+    }
+
+    &--checkmark {
+      font-size: 1.1rem;
+      color: $accent-gold;
+      flex-shrink: 0;
+    }
+
+    &--info {
+      font-size: 1.8rem;
+    }
+  }
+
+  // Элемент: section-header
+  &__section-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  &__section-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+
+    @media (max-width: 768px) {
+      font-size: 1.75rem;
+    }
+  }
+
+  &__section-subtitle {
+    color: $text-secondary;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+
+    strong {
+      color: $accent-gold;
+    }
+  }
+
+  // Элемент: button
+  &__button {
+    padding: 16px 36px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: $radius-md;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    &--primary {
+      padding: 16px 48px;
+      background: linear-gradient(135deg, $main-color, $main-color-light);
+      color: white;
+      border: none;
+      box-shadow: 0 4px 25px rgba(124, 58, 237, 0.4);
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 35px rgba(124, 58, 237, 0.5);
+      }
+    }
+
+    &--secondary {
+      padding: 16px 36px;
+      background: transparent;
+      color: $text-primary;
+      border: 2px solid $border-color;
+
+      &:hover {
+        border-color: $main-color-light;
+        color: $main-color-light;
+        transform: translateY(-3px);
+      }
+    }
+  }
+
+  // Блок: hero
+  &__hero {
+    position: relative;
+    padding: 80px 20px 80px;
+    overflow: hidden;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, #0a0e1a 0%, #1a1040 50%, #0a0e1a 100%);
+  }
+
+  &__hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__hero-title-wrapper {
+    margin-bottom: 24px;
+  }
+
+  &__hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(124, 58, 237, 0.2);
+    border: 1px solid rgba(124, 58, 237, 0.3);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: $main-color-light;
+    margin-bottom: 24px;
+  }
+
+  &__hero-title {
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1.05;
+    margin-bottom: 16px;
+    letter-spacing: -0.03em;
+
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__hero-title-highlight {
+    background: linear-gradient(135deg, $main-color-light, $accent-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+  }
+
+  &__hero-subtitle {
+    font-size: 1.3rem;
+    color: $text-secondary;
+    max-width: 700px;
+    margin: 0 auto;
+    font-weight: 500;
+
+    @media (max-width: 768px) {
+      font-size: 1.1rem;
+    }
+  }
+
+  &__hero-subtitle-secondary {
+    font-size: 1.1rem;
+    color: $accent-gold;
+    margin-top: 12px;
+    font-weight: 500;
+
+    strong {
+      color: #fff;
+    }
+  }
+
+  &__hero-stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+  }
+
+  &__hero-stat {
+    text-align: center;
+  }
+
+  &__hero-stat-number {
+    font-size: 2.8rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, $main-color-light, $accent-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+  }
+
+  &__hero-stat-label {
+    font-size: 0.85rem;
+    color: $text-secondary;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 4px;
+  }
+
+  &__hero-stat-divider {
+    width: 1px;
+    height: 50px;
+    background: $border-color;
+  }
+
+  &__hero-cta {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 12px;
+  }
+
+  &__hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  &__hero-bg-element {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.15;
+
+    &--1 {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, $main-color, transparent);
+      top: -200px;
+      right: -100px;
+      animation: summer-tournament__float 8s ease-in-out infinite;
+    }
+
+    &--2 {
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, $main-color-light, transparent);
+      bottom: -100px;
+      left: -50px;
+      animation: summer-tournament__float 10s ease-in-out infinite reverse;
+    }
+
+    &--3 {
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, $accent-gold, transparent);
+      top: 30%;
+      left: 30%;
+      animation: summer-tournament__float 6s ease-in-out infinite;
+      opacity: 0.08;
+    }
+  }
+
+  // Блок: leagues
+  &__leagues {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 40px 24px;
+    animation: summer-tournament__slideUp 0.6s ease-out;
+  }
+
+  &__leagues-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 32px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__league-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: $radius-xl;
+    padding: 32px 28px;
+    border: 1px solid $border-color;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: $shadow-lg;
+    }
+
+    &--a {
+      border-color: rgba(124, 58, 237, 0.3);
+      background: linear-gradient(
+        135deg,
+        rgba(124, 58, 237, 0.08),
+        rgba(124, 58, 237, 0.02)
+      );
+    }
+
+    &--b {
+      border-color: rgba(245, 158, 11, 0.3);
+      background: linear-gradient(
+        135deg,
+        rgba(245, 158, 11, 0.08),
+        rgba(245, 158, 11, 0.02)
+      );
+    }
+  }
+
+  &__league-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  &__league-icon {
+    font-size: 2rem;
+  }
+
+  &__league-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  &__league-description {
+    color: $text-secondary;
+    font-size: 1rem;
+    margin-bottom: 16px;
+  }
+
+  &__league-requirements {
+    margin-bottom: 16px;
+  }
+
+  &__league-requirement-badge {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.08);
+    color: $text-secondary;
+  }
+
+  &__league-prize {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $accent-gold;
+    margin-bottom: 16px;
+  }
+
+  &__league-features {
+    list-style: none;
+    padding: 0;
+  }
+
+  &__league-feature-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid $border-color;
+    font-size: 0.95rem;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__league-feature-place {
+    color: $text-secondary;
+  }
+
+  &__league-feature-amount {
+    font-weight: 600;
+    color: #fff;
+  }
+
+  // Блок: schedule
+  &__schedule {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 0 24px;
+  }
+
+  &__schedule-stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+
+  &__schedule-stat {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 4px 14px;
+    border-radius: 20px;
+    border: 1px solid $border-color;
+
+    &--ongoing {
+      border-color: rgba(239, 68, 68, 0.3);
+      background: rgba(239, 68, 68, 0.1);
+    }
+
+    &--upcoming {
+      border-color: rgba(124, 58, 237, 0.3);
+      background: rgba(124, 58, 237, 0.1);
+    }
+  }
+
+  &__schedule-stat-number {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  &__schedule-stat-label {
+    font-size: 0.8rem;
+    color: $text-secondary;
+  }
+
+  &__schedule-stat-divider {
+    width: 1px;
+    height: 24px;
+    background: $border-color;
+  }
+
+  &__schedule-legend {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+
+  &__schedule-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: $text-secondary;
+  }
+
+  &__schedule-legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+
+    &--past {
+      background: $text-tertiary;
+    }
+
+    &--ongoing {
+      background: #ef4444;
+      box-shadow: 0 0 16px rgba(239, 68, 68, 0.6);
+      animation: summer-tournament__pulse 1s ease-in-out infinite;
+    }
+
+    &--upcoming {
+      background: $main-color-light;
+      box-shadow: 0 0 12px rgba(124, 58, 237, 0.5);
+    }
+  }
+
+  &__schedule-next-info {
+    margin-top: 12px;
+    font-size: 1rem;
+    color: $accent-gold;
+    background: rgba(245, 158, 11, 0.1);
+    padding: 8px 20px;
+    border-radius: $radius-md;
+    display: inline-block;
+    border: 1px solid rgba(245, 158, 11, 0.2);
+
+    strong {
+      color: #fff;
+    }
+  }
+
+  &__schedule-today-badge {
+    color: #ef4444;
+    font-weight: 700;
+    animation: summer-tournament__pulse 1s ease-in-out infinite;
+  }
+
+  &__schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 16px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    @media (max-width: 480px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__schedule-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: $radius-md;
+    padding: 16px;
+    text-align: center;
+    border: 1px solid $border-color;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: $shadow-sm;
+    }
+
+    &--past {
+      opacity: 0.5;
+      border-color: rgba(255, 255, 255, 0.05);
+      background: rgba(255, 255, 255, 0.02);
+
+      &:hover {
+        opacity: 0.7;
+        transform: translateY(-2px);
+      }
+
+      .summer-tournament__schedule-date {
+        color: $text-tertiary;
+      }
+
+      .summer-tournament__schedule-time {
+        color: $text-tertiary;
+      }
+    }
+
+    &--upcoming {
+      border-color: rgba(124, 58, 237, 0.2);
+      background: rgba(124, 58, 237, 0.05);
+
+      &:hover {
+        border-color: rgba(124, 58, 237, 0.5);
+        box-shadow: 0 4px 25px rgba(124, 58, 237, 0.2);
+      }
+
+      .summer-tournament__schedule-date {
+        color: #fff;
+      }
+
+      .summer-tournament__schedule-time {
+        color: $main-color-light;
+      }
+    }
+
+    &--ongoing {
+      border-color: #ef4444;
+      background: rgba(239, 68, 68, 0.1);
+      animation: summer-tournament__pulse-border 2s ease-in-out infinite;
+
+      &:hover {
+        border-color: #ef4444;
+        box-shadow: 0 4px 30px rgba(239, 68, 68, 0.3);
+        transform: translateY(-4px);
+      }
+
+      .summer-tournament__schedule-date {
+        color: #fff;
+      }
+
+      .summer-tournament__schedule-time {
+        color: #ef4444;
+      }
+    }
+  }
+
+  &__schedule-status {
+    margin-bottom: 8px;
+  }
+
+  &__schedule-status-badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 3px 12px;
+    border-radius: 12px;
+    display: inline-block;
+
+    &--past {
+      color: $text-tertiary;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    &--upcoming {
+      color: $main-color-light;
+      background: rgba(124, 58, 237, 0.15);
+    }
+
+    &--today {
+      color: $accent-gold;
+      background: rgba(245, 158, 11, 0.2);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      animation: summer-tournament__pulse 2s ease-in-out infinite;
+    }
+
+    &--ongoing {
+      color: #ef4444;
+      background: rgba(239, 68, 68, 0.2);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      animation: summer-tournament__pulse 1s ease-in-out infinite;
+    }
+  }
+
+  &__schedule-next {
+    margin-top: 8px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: $accent-gold;
+    background: rgba(245, 158, 11, 0.15);
+    padding: 2px 12px;
+    border-radius: 12px;
+    display: inline-block;
+    border: 1px solid rgba(245, 158, 11, 0.2);
+  }
+
+  &__schedule-number {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: $text-tertiary;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+
+  &__schedule-date {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  &__schedule-time {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  &__schedule-day {
+    font-size: 0.75rem;
+    color: $text-tertiary;
+    text-transform: uppercase;
+  }
+
+  // Сообщение о завершении серии
+  &__schedule-completed {
+    margin-top: 16px;
+    padding: 16px 24px;
+    background: linear-gradient(
+      135deg,
+      rgba(245, 158, 11, 0.1),
+      rgba(245, 158, 11, 0.05)
+    );
+    border: 2px solid $accent-gold;
+    border-radius: $radius-lg;
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    text-align: left;
+
+    @media (max-width: 640px) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  &__schedule-completed-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+  }
+
+  &__schedule-completed-text {
+    color: $text-secondary;
+    font-size: 1rem;
+
+    strong {
+      color: $accent-gold;
+      font-size: 1.1rem;
+    }
+
+    a {
+      color: $main-color-light;
+      text-decoration: none;
+      font-weight: 600;
+
+      &:hover {
+        color: $accent-gold;
+      }
+    }
+  }
+
+  &__schedule-completed-badge {
+    margin-top: 8px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: $accent-gold;
+    background: rgba(245, 158, 11, 0.15);
+    padding: 2px 12px;
+    border-radius: 12px;
+    display: inline-block;
+    border: 1px solid rgba(245, 158, 11, 0.2);
+  }
+
+  // Блок: format
+  &__format {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 40px 24px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: $radius-xl;
+    border: 1px solid $border-color;
+  }
+
+  &__format-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 32px;
+  }
+
+  &__format-card {
+    text-align: center;
+  }
+
+  &__format-icon {
+    font-size: 3rem;
+    margin-bottom: 12px;
+  }
+
+  &__format-card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  &__format-card-description {
+    color: $text-secondary;
+    font-size: 0.95rem;
+  }
+
+  // Блок: participation
+  &__participation {
+    max-width: 900px;
+    margin: 0 auto 60px;
+    padding: 0 24px;
+  }
+
+  &__steps {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__step {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 24px 28px;
+    border-radius: $radius-lg;
+    border: 1px solid $border-color;
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-color: $main-color-light;
+    }
+
+    @media (max-width: 640px) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  &__step-number {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, $main-color, $main-color-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: white;
+  }
+
+  &__step-content {
+    flex: 1;
+  }
+
+  &__step-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  &__step-description {
+    color: $text-secondary;
+    margin-bottom: 8px;
+  }
+
+  &__step-link {
+    color: $main-color-light;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $accent-gold;
+    }
+  }
+
+  // Блок: pricing
+  &__pricing {
+    max-width: 1000px;
+    margin: 0 auto 60px;
+    padding: 0 24px;
+  }
+
+  &__pricing-description {
+    color: $text-secondary;
+  }
+
+  &__free-badge {
+    color: $accent-gold;
+    display: inline-block;
+  }
+
+  &__pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+  }
+
+  &__pricing-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: $radius-xl;
+    padding: 32px 24px;
+    text-align: center;
+    border: 1px solid $border-color;
+    transition: all 0.3s ease;
+    position: relative;
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: $shadow-md;
+    }
+
+    &--recommended {
+      border: 2px solid $accent-gold;
+      transform: scale(1.02);
+
+      &:hover {
+        transform: scale(1.02) translateY(-6px);
+      }
+
+      @media (max-width: 768px) {
+        transform: scale(1);
+        &:hover {
+          transform: translateY(-6px);
+        }
+      }
+    }
+  }
+
+  &__pricing-card-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    white-space: nowrap;
+
+    &--recommended {
+      background: $accent-gold;
+      color: #1a1a2e;
+    }
+  }
+
+  &__pricing-card-header {
+    margin-bottom: 16px;
+  }
+
+  &__pricing-card-label {
+    display: inline-block;
+    padding: 2px 12px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: rgba(124, 58, 237, 0.2);
+    color: $main-color-light;
+    margin-bottom: 8px;
+  }
+
+  &__pricing-card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  &__pricing-card-description {
+    color: $text-secondary;
+    font-size: 0.9rem;
+  }
+
+  &__pricing-card-price {
+    margin-bottom: 20px;
+  }
+
+  &__pricing-card-amount {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #fff;
+  }
+
+  &__pricing-card-button {
+    width: 100%;
+    padding: 14px 24px;
+    background: linear-gradient(135deg, $main-color, $main-color-light);
+    color: white;
+    border: none;
+    border-radius: $radius-md;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(124, 58, 237, 0.4);
+    }
+  }
+
+  // Блок: important
+  &__important {
+    max-width: 900px;
+    margin: 0 auto 60px;
+    padding: 0 24px;
+  }
+
+  &__important-content {
+    background: rgba(245, 158, 11, 0.05);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    border-radius: $radius-xl;
+    padding: 32px 36px;
+  }
+
+  &__important-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  &__important-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  &__important-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 24px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__important-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: $text-secondary;
+    font-size: 0.95rem;
+  }
+
+  // Блок: series-prizes
+  &__series-prizes {
+    max-width: 900px;
+    margin: 0 auto 60px;
+    padding: 0 24px;
+  }
+
+  &__series-points {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: $radius-xl;
+    padding: 32px 36px;
+    border: 1px solid $border-color;
+    margin-bottom: 24px;
+  }
+
+  &__points-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 8px 16px;
+  }
+
+  &__points-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px;
+    border-radius: $radius-sm;
+    background: rgba(255, 255, 255, 0.03);
+    transition: background 0.3s;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+  }
+
+  &__points-place {
+    color: $text-secondary;
+    font-size: 0.9rem;
+  }
+
+  &__points-value {
+    font-weight: 700;
+    color: $accent-gold;
+  }
+
+  &__points-note {
+    color: $text-tertiary;
+    font-size: 0.85rem;
+    margin-top: 16px;
+    text-align: center;
+    font-style: italic;
+  }
+
+  &__random-prize {
+    background: rgba(124, 58, 237, 0.08);
+    border: 1px solid rgba(124, 58, 237, 0.2);
+    border-radius: $radius-lg;
+    padding: 20px 28px;
+  }
+
+  &__random-prize-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    @media (max-width: 640px) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  &__random-prize-icon {
+    font-size: 2rem;
+  }
+
+  &__random-prize-text {
+    color: $text-secondary;
+    font-size: 0.95rem;
+
+    strong {
+      color: #fff;
+    }
+  }
+
+  &__random-prize-link {
+    color: $main-color-light;
+    text-decoration: none;
+
+    &:hover {
+      color: $accent-gold;
+    }
+  }
+
+  // Блок: final-cta
+  &__final-cta {
+    max-width: 1000px;
+    margin: 0 auto 60px;
+    padding: 0 24px;
+  }
+
+  &__final-cta-content {
+    background: linear-gradient(
+      135deg,
+      rgba(124, 58, 237, 0.15),
+      rgba(124, 58, 237, 0.05)
+    );
+    border: 1px solid rgba(124, 58, 237, 0.2);
+    border-radius: $radius-xl;
+    padding: 48px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(124, 58, 237, 0.05),
+        transparent
+      );
+      animation: summer-tournament__shimmer 3s infinite;
+      pointer-events: none;
+    }
+  }
+
+  &__final-cta-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__final-cta-subtitle {
+    color: $text-secondary;
+    font-size: 1.1rem;
+    margin-bottom: 28px;
+  }
+
+  &__final-cta-link {
+    color: $main-color-light;
+    text-decoration: none;
+    font-weight: 600;
+
+    &:hover {
+      color: $accent-gold;
+      text-decoration: underline;
+    }
+  }
+
+  &__final-cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__final-cta-decoration {
+    display: none;
+  }
+}
