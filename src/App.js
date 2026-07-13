@@ -7,6 +7,7 @@ import Wrapper from "./Wrapper";
 import GroupCoursesPage from "./pages/GroupCoursesPage/GroupCoursesPage";
 import ChessGroupsPaymentLegacy from "./pages/ChessGroupsPaymentLegacy/ChessGroupsPaymentLegacy";
 import HolidaysWithGrandmasters from "./pages/HolidayWithGrandmasters/HolidayWithGrandmasters";
+import SummerTournamentSeries from "./pages/SummerTournamentSeries/SummerTournamentSeries";
 import IESection from "./pages/IESection/IESection";
 import ChessProgramPage from "./pages/ChessProgramPage/ChessProgramPage";
 import "./App.css";
@@ -22,6 +23,7 @@ const App = () => (
           path="/holiday-with-grandmasters/*"
           element={<HolidaysWithGrandmasters />}
         />
+        <Route path="/competition/*" element={<SummerTournamentSeries />} />
         <Route path="/contacts" element={<IESection />} />
         <Route path="/additional-program" element={<ChessProgramPage />} />
         <Route path="/chess-groups/*" element={<GroupCoursesPage />} />
