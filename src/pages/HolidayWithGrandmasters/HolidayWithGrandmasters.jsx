@@ -3,7 +3,7 @@ import { Drawer } from "antd";
 import { useMediaQuery } from "@mui/material";
 import { holiday_prices } from "../NewPricePage/consts";
 import NewPayment from "../../components/NewPayment/NewPayment";
-import yakovImage from "./images/yakov.jpg";
+import elenaImage from "./images/elena.jpg"; // Замените на путь к вашему изображению
 import "./HolidaysWithGrandmasters.scss";
 
 const ChessIcon = () => <span className="chess-icon">♞</span>;
@@ -14,14 +14,14 @@ const RubleIcon = () => <span className="icon">₽</span>;
 const HolidaysWithGrandmasters = () => {
   const isXS = useMediaQuery("(max-width:700px)");
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
-  const [imageError, setImageError] = useState({ yakov: false });
+  const [imageError, setImageError] = useState({ elena: false });
   const [tarif, setTarif] = useState({ id: 1 });
 
   const pricingOptions = useMemo(
     () => [
       {
         id: 1,
-        title: "Одна лекция",
+        title: "Онлайн-лекция",
         description: "Живой мастер-класс с возможностью задать вопросы",
         originalPrice: 1200,
       },
@@ -36,7 +36,7 @@ const HolidaysWithGrandmasters = () => {
   );
 
   const handleImageError = () => {
-    setImageError((prev) => ({ ...prev, yakov: true }));
+    setImageError((prev) => ({ ...prev, elena: true }));
   };
 
   useEffect(() => {
@@ -49,46 +49,43 @@ const HolidaysWithGrandmasters = () => {
 
   const grandmaster = useMemo(
     () => ({
-      id: 1,
-      name: "Яков Геллер",
-      title: "Международный гроссмейстер",
+      id: 2,
+      name: "Елена Томилова",
+      title: "Женский Международный Гроссмейстер",
       description:
-        "Международный гроссмейстер, заслуженный тренер юношеской сборной России. Лауреат премии Правления РШФ «Лучший детский тренер России» (2010, 2019). Лауреат тренерской премии имени М. И. Дворецкого (2019) и премии FIDE имени Самуэля Решевского (2021). Победитель и призёр международных турниров в России, Германии, Франции, Чехии, Италии и Греции.",
+        "Женский международный гроссмейстер, чемпионка Уральского федерального округа и бронзовый призёр России по блицу. Елена Томилова — яркий представитель уральской шахматной школы, известная своим глубоким стратегическим пониманием и виртуозной тактической игрой.",
       teachingStyle:
-        "Системный подход к оценке позиций, глубокий анализ типовых структур, методики принятия решений в зависимости от соотношения фигур на доске",
+        "Структурированный подход к позиционной оценке, акцент на понимание ключевых планов в зависимости от структуры центра, развитие навыков стратегического мышления.",
       achievements: [
-        "Тренер юношеской сборной России с 2009 года",
-        "Лауреат премии «Лучший детский тренер России» (2010, 2019)",
-        "Лауреат тренерской премии имени М. И. Дворецкого (2019)",
-        "Лауреат тренерской премии FIDE имени Самуэля Решевского (2021)",
-        "Участник Премьер-лиги командного чемпионата России и Кубка Европы в составе «Лады» (2004-2006)",
-        "Участник чемпионатов мира по быстрым шахматам и блицу (2018-2019)",
+        "Чемпионка Уральского федерального округа",
+        "Бронзовый призёр чемпионата России по блицу",
+        "Победительница и призёр множества всероссийских и международных турниров",
       ],
       students: [
-        "Международные гроссмейстеры и международные мастера",
-        "Чемпионы Европы и мира среди юношей",
-        "Призеры всероссийских и международных турниров",
+        "Чемпионы и призеры всероссийских турниров среди юношей и девушек",
+        "Мастера ФИДЕ и кандидаты в мастера спорта",
+        "Призеры первенств Уральского федерального округа",
       ],
       scheduleCount: "60 минут",
       schedule: [
         {
-          date: "12 июля",
-          time: "11:00 (мск)",
+          date: "15 августа",
+          time: "13:00 (мск)",
           title:
-            "Закономерности игры в миттельшпиле в зависимости от соотношения фигур",
+            "Особенности выбора плана в зависимости от типа позиции (открытый / закрытый центр)",
           topics: [
-            "Типовые позиции при равном материале: стратегия и тактика",
-            "Игра с лишней пешкой: как реализовать преимущество",
-            "Позиции с разноцветными слонами: особенности розыгрыша",
-            "Материальный перевес и его реализация в миттельшпиле",
-            "Анализ типовых структур из практики гроссмейстеров",
-            "Практические упражнения для закрепления материала",
+            "Сравнительная характеристика открытого и закрытого центра",
+            "Типовые планы в позициях с закрытым центром",
+            "Манёвры фигур и пешечные прорывы в открытом центре",
+            "Оценка динамики и вскрытие линий",
+            "Практические примеры из партий гроссмейстеров",
+            "Интерактивные упражнения для закрепления",
           ],
         },
       ],
-      color: "#2D5A27",
-      photo: yakovImage,
-      accentColor: "#4CAF50",
+      color: "#C2185B",
+      photo: elenaImage,
+      accentColor: "#E91E63",
     }),
     [],
   );
@@ -109,30 +106,30 @@ const HolidaysWithGrandmasters = () => {
           <div className="hero-content">
             <div className="title-container">
               <h1 className="main-title">
-                Мастер-класс с Международным
-                <span className="title-highlight"> Гроссмейстером</span>
+                Мастер-класс с Женским
+                <span className="title-highlight">
+                  {" "}
+                  Международным Гроссмейстером
+                </span>
               </h1>
               <p className="hero-subtitle">
-                Эксклюзивный мастер-класс от наставника юношеской сборной России
-                – Якова Геллера!
+                Мастер-класс от чемпионки Уральского федерального округа – Елены
+                Томиловой!
               </p>
               <p className="hero-subtitle-secondary">
-                Яков разберет ключевые закономерности игры в миттельшпиле в
-                зависимости от соотношения фигур на доске.
-                <br />
-                Вы научитесь правильно оценивать позиции и выбирать верный план
-                игры.
+                Елена разберет особенности выбора плана в зависимости от типа
+                позиции: открытый или закрытый центр.
               </p>
             </div>
 
             <div className="hero-stats">
               <div className="stat-item">
-                <div className="stat-number">12.07</div>
-                <div className="stat-label">(воскресенье)</div>
+                <div className="stat-number">15.08</div>
+                <div className="stat-label">(суббота)</div>
               </div>
               <div className="stat-divider"></div>
               <div className="stat-item">
-                <div className="stat-number">11:00</div>
+                <div className="stat-number">13:00</div>
                 <div className="stat-label">МСК</div>
               </div>
             </div>
@@ -195,19 +192,27 @@ const HolidaysWithGrandmasters = () => {
           <div className="audience-grid">
             <div className="audience-item">
               <div className="audience-marker"></div>
-              <span>Не знаете, как строить план в миттельшпиле</span>
+              <span>
+                Не знаете, как строить план в зависимости от типа центра
+              </span>
             </div>
             <div className="audience-item">
               <div className="audience-marker"></div>
-              <span>Теряетесь при оценке соотношения фигур на доске</span>
+              <span>
+                Теряетесь при выборе между позиционной и тактической игрой
+              </span>
             </div>
             <div className="audience-item">
               <div className="audience-marker"></div>
-              <span>Хотите научиться реализовывать материальный перевес</span>
+              <span>
+                Хотите понимать, когда вскрывать позицию, а когда закрывать
+              </span>
             </div>
             <div className="audience-item">
               <div className="audience-marker"></div>
-              <span>Стремитесь системно улучшить понимание миттельшпиля</span>
+              <span>
+                Стремитесь системно улучшить стратегическое понимание шахмат
+              </span>
             </div>
           </div>
         </div>
@@ -216,8 +221,8 @@ const HolidaysWithGrandmasters = () => {
           <div className="tabs-header">
             <h2>Познакомьтесь с гроссмейстером</h2>
             <p>
-              Яков Геллер – международный гроссмейстер, лучший детский тренер
-              России, наставник юношеской сборной
+              Елена Томилова – женский международный гроссмейстер, чемпионка
+              Уральского федерального округа, бронзовый призёр России по блицу
             </p>
           </div>
         </div>
@@ -234,7 +239,7 @@ const HolidaysWithGrandmasters = () => {
               <div className="gm-header-content">
                 <div className="gm-avatar-container">
                   <div className="gm-avatar">
-                    {!imageError.yakov ? (
+                    {!imageError.elena ? (
                       <img
                         src={grandmaster.photo}
                         alt={`${grandmaster.name} - ${grandmaster.title}`}
@@ -356,16 +361,16 @@ const HolidaysWithGrandmasters = () => {
         <div className="program-details">
           <div className="details-header">
             <h2>Детали программы</h2>
-            <p>Практический мастер-класс от заслуженного тренера России</p>
+            <p>Мастер-класс от известного шахматного педагога</p>
           </div>
 
           <div className="details-grid">
             <div className="detail-card">
-              <div className="detail-icon">♝</div>
-              <h3>Закономерности миттельшпиля</h3>
+              <div className="detail-icon">♟️</div>
+              <h3>Выбор плана в миттельшпиле</h3>
               <p>
-                Системный подход к оценке позиций в зависимости от соотношения
-                фигур от гроссмейстера мирового уровня
+                Изучите ключевые принципы выбора плана в зависимости от типа
+                позиции — открытый или закрытый центр
               </p>
             </div>
 
@@ -373,14 +378,17 @@ const HolidaysWithGrandmasters = () => {
               <div className="detail-icon">📅</div>
               <h3>Удобное время</h3>
               <p>
-                Лекция проходит <b>12 июля</b> в 11:00 по московскому времени
+                Лекция проходит <b>15 августа</b> в 13:00 по московскому времени
               </p>
             </div>
 
             <div className="detail-card">
               <div className="detail-icon">🏆</div>
               <h3>Практическая польза</h3>
-              <p>Готовые алгоритмы принятия решений в миттельшпиле</p>
+              <p>
+                Готовые алгоритмы принятия решений в зависимости от структуры
+                пешечного центра
+              </p>
             </div>
 
             <div className="detail-card">

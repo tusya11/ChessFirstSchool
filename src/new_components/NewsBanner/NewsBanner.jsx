@@ -166,6 +166,16 @@ const NewsBanner = (props) => {
         isUrgent: true,
         link: "/competition",
       },
+      {
+        id: 2,
+        title: "Мастер-класс с Женским Международным Гроссмейстером",
+        content:
+          "15 августа в 13:00 по московскому времени приглашаем вас на эксклюзивный мастер-класс от Елены Томиловой.",
+        date: "04.08.26",
+        period: "15.08.2026 - 15.08.2026",
+        isUrgent: true,
+        link: "/holiday-with-grandmasters",
+      },
     ],
     [],
   );
