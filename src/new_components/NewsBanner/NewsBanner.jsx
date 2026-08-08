@@ -157,16 +157,6 @@ const NewsBanner = (props) => {
   const rawNewsItems = useMemo(
     () => [
       {
-        id: 1,
-        title: "🏆 Летняя шахматная серия CoolChess — 50 000 ₽ призовых!",
-        content:
-          "С 5 июля по 30 августа 2026 года пройдёт Большая шахматная серия из 9 турниров. Две лиги — для опытных игроков (Лига А) и всех желающих (Лига Б). Призовой фонд: 31 000 ₽ в Лиге А и 19 000 ₽ в Лиге Б. Формат: 7 туров по швейцарской системе, контроль 5+3 на Lichess. Ученики CoolChess — бесплатно!",
-        date: "23.06.26",
-        period: "05.07.2026 - 30.08.2026",
-        isUrgent: true,
-        link: "/competition",
-      },
-      {
         id: 2,
         title: "Мастер-класс с Женским Международным Гроссмейстером",
         content:
@@ -175,6 +165,16 @@ const NewsBanner = (props) => {
         period: "15.08.2026 - 15.08.2026",
         isUrgent: true,
         link: "/holiday-with-grandmasters",
+      },
+      {
+        id: 1,
+        title: "🏆 Летняя шахматная серия CoolChess — 50 000 ₽ призовых!",
+        content:
+          "С 5 июля по 30 августа 2026 года пройдёт Большая шахматная серия из 9 турниров. Две лиги — для опытных игроков (Лига А) и всех желающих (Лига Б). Призовой фонд: 31 000 ₽ в Лиге А и 19 000 ₽ в Лиге Б. Формат: 7 туров по швейцарской системе, контроль 5+3 на Lichess. Ученики CoolChess — бесплатно!",
+        date: "23.06.26",
+        period: "05.07.2026 - 30.08.2026",
+        isUrgent: true,
+        link: "/competition",
       },
     ],
     [],
@@ -298,7 +298,7 @@ const NewsBanner = (props) => {
   }
 
   const bannerStyle = {
-    bottom: isXS ? 68 : bannerPosition.bottom,
+    bottom: isXS ? 20 : bannerPosition.bottom,
     right: isXS ? 20 : bannerPosition.right,
   };
 

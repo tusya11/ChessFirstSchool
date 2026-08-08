@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo, useCallback } from "react";
-import { Drawer } from "antd";
+import { Drawer, Table, Spin, Alert, Button, Space, Tag } from "antd";
 import { useMediaQuery } from "@mui/material";
 import NewPayment from "../../components/NewPayment/NewPayment";
 import "./SummerTournamentSeries.scss";
@@ -44,6 +44,15 @@ const SummerTournamentSeries = () => {
   const isXS = useMediaQuery("(max-width:700px)");
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
   const [tarif, setTarif] = useState({ id: 1 });
+
+  // Состояния для данных из Google Sheets
+  const [tableData, setTableData] = useState([]);
+  const [tableLoading, setTableLoading] = useState(false);
+  const [tableError, setTableError] = useState(null);
+  const [lastUpdate, setLastUpdate] = useState(null);
+  const [selectedLeague, setSelectedLeague] = useState("ЛИГА А");
+
+  const SCRIPT_URL = process.env.REACT_APP_GOOGLE_SCRIPT_URL;
 
   // Функция для получения текущей даты и времени в московском часовом поясе
   const getCurrentDate = () => {
@@ -181,6 +190,287 @@ const SummerTournamentSeries = () => {
     const ongoing = tournaments.filter((t) => t.isOngoing).length;
     return { past, upcoming, ongoing, total: tournaments.length };
   }, [tournaments]);
+
+  // Функция для получения данных из Google Sheets через Apps Script
+  const fetchGoogleSheetData = useCallback(
+    async (league = selectedLeague) => {
+      if (!SCRIPT_URL) {
+        setTableError("Не указан URL Google Apps Script");
+        return;
+      }
+
+      setTableLoading(true);
+      setTableError(null);
+
+      try {
+        const params = new URLSearchParams();
+        params.append("t", Date.now());
+        params.append("sheet", league);
+
+        const url = `${SCRIPT_URL}?${params.toString()}`;
+
+        console.log("Запрос к:", url);
+
+        const response = await fetch(url, {
+          method: "GET",
+          headers: {
+            Accept: "application/json",
+          },
+        });
+
+        if (!response.ok) {
+          const errorText = await response.text();
+          throw new Error(
+            `HTTP ${response.status}: ${errorText || response.statusText}`,
+          );
+        }
+
+        const responseText = await response.text();
+        let data;
+        try {
+          data = JSON.parse(responseText);
+        } catch (parseError) {
+          console.error("Ошибка парсинга JSON:", parseError);
+          throw new Error("Некорректный ответ от сервера. Ожидался JSON.");
+        }
+
+        if (!data.success) {
+          throw new Error(data.error || "Неизвестная ошибка");
+        }
+
+        if (data.data && data.data[league]) {
+          const rows = data.data[league];
+          if (Array.isArray(rows)) {
+            const mappedRows = rows.map((item, index) => ({
+              ...item,
+              key: `${league}-${index}`,
+              league: league,
+            }));
+            setTableData(mappedRows);
+          } else {
+            setTableData([]);
+          }
+          setLastUpdate(data.timestamp || new Date().toISOString());
+        } else {
+          setTableData([]);
+        }
+      } catch (error) {
+        console.error("Ошибка при загрузке данных:", error);
+
+        let errorMessage = error.message;
+
+        if (error.message.includes("Failed to fetch")) {
+          errorMessage =
+            "Не удается подключиться к серверу. Проверьте: 1) URL скрипта 2) Интернет-соединение";
+        } else if (error.message.includes("HTTP 404")) {
+          errorMessage =
+            "Скрипт не найден. Проверьте правильность URL. Возможно, нужно переопубликовать скрипт.";
+        } else if (error.message.includes("HTTP 403")) {
+          errorMessage =
+            'Доступ запрещен. Убедитесь, что скрипт опубликован с доступом "Все, у кого есть ссылка"';
+        } else if (error.message.includes("HTTP 500")) {
+          errorMessage = "Внутренняя ошибка сервера. Проверьте код скрипта.";
+        }
+
+        setTableError(errorMessage);
+        setTableData([]);
+      } finally {
+        setTableLoading(false);
+      }
+    },
+    [SCRIPT_URL, selectedLeague],
+  );
+
+  // Загружаем данные при монтировании
+  useEffect(() => {
+    fetchGoogleSheetData();
+  }, [fetchGoogleSheetData]);
+
+  // Автообновление каждые 5 минут
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!tableLoading) {
+        fetchGoogleSheetData(selectedLeague);
+      }
+    }, 300000);
+
+    return () => clearInterval(interval);
+  }, [fetchGoogleSheetData, selectedLeague, tableLoading]);
+
+  const tableColumns = useMemo(() => {
+    if (tableData.length === 0) return [];
+
+    const excludedKeys = ["key", "_row"];
+    const headers = Object.keys(tableData[0]).filter(
+      (key) => !excludedKeys.includes(key),
+    );
+
+    const formatDateHeader = (dateStr) => {
+      try {
+        const date = new Date(dateStr);
+        if (isNaN(date.getTime())) return dateStr;
+
+        const day = date.getDate();
+        const months = [
+          "янв",
+          "фев",
+          "мар",
+          "апр",
+          "мая",
+          "июн",
+          "июл",
+          "авг",
+          "сен",
+          "окт",
+          "ноя",
+          "дек",
+        ];
+        const month = months[date.getMonth()];
+        const weekdays = ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"];
+        const weekday = weekdays[date.getDay()];
+
+        return `${day} ${month} (${weekday})`;
+      } catch (e) {
+        return dateStr;
+      }
+    };
+
+    // Определяем колонки с датами
+    const dateColumns = headers.filter((header) =>
+      /[A-Za-z]{3}\s[A-Za-z]{3}\s\d{2}\s\d{4}/.test(header),
+    );
+
+    // Сортируем колонки с датами по порядку
+    const sortedDateColumns = dateColumns.sort((a, b) => {
+      const dateA = new Date(a);
+      const dateB = new Date(b);
+      return dateA - dateB;
+    });
+
+    // Функция для получения правильного порядка колонок
+    const getSortedHeaders = () => {
+      const nonDateHeaders = headers.filter(
+        (header) => !/[A-Za-z]{3}\s[A-Za-z]{3}\s\d{2}\s\d{4}/.test(header),
+      );
+
+      const order = ["№", "Логин на lichess", "league"];
+      const orderedNonDate = [];
+      const otherNonDate = [];
+
+      nonDateHeaders.forEach((header) => {
+        if (order.includes(header)) {
+          orderedNonDate.push(header);
+        } else if (header !== "Сумма всех очков") {
+          otherNonDate.push(header);
+        }
+      });
+
+      otherNonDate.sort();
+
+      return [
+        ...orderedNonDate,
+        ...otherNonDate,
+        ...sortedDateColumns,
+        "Сумма всех очков",
+      ].filter(Boolean);
+    };
+
+    const sortedHeaders = getSortedHeaders();
+
+    return sortedHeaders.map((header) => {
+      let render = (text) => text || "-";
+      let title = header;
+      let align = "left";
+      let width;
+
+      // Проверяем, является ли заголовок датой
+      const isDateHeader = /[A-Za-z]{3}\s[A-Za-z]{3}\s\d{2}\s\d{4}/.test(
+        header,
+      );
+
+      if (isDateHeader) {
+        title = formatDateHeader(header);
+        align = "center";
+        width = 90;
+
+        render = (text) => {
+          if (!text) return <span style={{ color: "#6b7a8f" }}>—</span>;
+          const num = parseInt(text);
+          if (isNaN(num)) return text;
+
+          let color = "#6b7a8f";
+          if (num >= 10) color = "#52c41a";
+          else if (num >= 7) color = "#faad14";
+          else if (num > 0) color = "#ff4d4f";
+
+          return <span style={{ fontWeight: 700, color }}>{num}</span>;
+        };
+      }
+
+      // Для колонки с лигой
+      if (header === "league") {
+        render = (text) => {
+          const color = text === "ЛИГА А" ? "#f50" : "#1890ff";
+          return (
+            <Tag color={color} style={{ fontWeight: 600 }}>
+              {text}
+            </Tag>
+          );
+        };
+        title = "Лига";
+        align = "center";
+        width = 100;
+      }
+
+      // Для колонки с логином
+      if (header === "Логин на lichess") {
+        render = (text) => (
+          <span style={{ fontWeight: 500, color: "#fff" }}>{text || "-"}</span>
+        );
+        title = "Игрок";
+        width = 150;
+      }
+
+      // Для колонки с номером
+      if (header === "№") {
+        render = (text) => <strong style={{ color: "#fff" }}>{text}</strong>;
+        title = "№";
+        align = "center";
+        width = 60;
+      }
+
+      // Для колонки с суммой очков
+      if (header === "Сумма всех очков") {
+        render = (text) => (
+          <strong style={{ color: "#f59e0b", fontSize: "16px" }}>
+            {text || "0"}
+          </strong>
+        );
+        title = "⭐ Итого";
+        align = "center";
+        width = 100;
+      }
+
+      // Для колонки "Место" (если есть)
+      if (header === "Место") {
+        render = (text) => <strong style={{ color: "#fff" }}>{text}</strong>;
+        title = "Место";
+        align = "center";
+        width = 80;
+      }
+
+      return {
+        title,
+        dataIndex: header,
+        key: header,
+        align,
+        width,
+        ellipsis: true,
+        render,
+        // Убираем responsive - показываем все колонки на всех устройствах
+      };
+    });
+  }, [tableData]);
 
   const pricingOptions = useMemo(
     () => [
@@ -328,6 +618,170 @@ const SummerTournamentSeries = () => {
           </div>
         </header>
 
+        {/* Секция с данными из Google Sheets */}
+        <section className="summer-tournament__google-sheet">
+          <div className="summer-tournament__section-header">
+            <h2 className="summer-tournament__section-title">
+              📊 Турнирная таблица
+            </h2>
+            <p className="summer-tournament__section-subtitle">
+              Актуальные данные из Google Sheets
+            </p>
+          </div>
+
+          <div className="summer-tournament__google-sheet-controls">
+            <Space wrap>
+              <div className="summer-tournament__google-sheet-filter">
+                <span style={{ marginRight: 8, color: "#b0b7d4" }}>Лига:</span>
+                <div
+                  style={{ display: "flex", gap: "8px", alignItems: "center" }}
+                >
+                  <Button
+                    type={selectedLeague === "ЛИГА А" ? "primary" : "default"}
+                    onClick={() => {
+                      setSelectedLeague("ЛИГА А");
+                      fetchGoogleSheetData("ЛИГА А");
+                    }}
+                    disabled={tableLoading}
+                    style={{
+                      fontWeight:
+                        selectedLeague === "ЛИГА А" ? "bold" : "normal",
+                      background:
+                        selectedLeague === "ЛИГА А" ? "#f50" : undefined,
+                      borderColor:
+                        selectedLeague === "ЛИГА А" ? "#f50" : undefined,
+                      color: selectedLeague === "ЛИГА А" ? "#fff" : "#b0b7d4",
+                    }}
+                  >
+                    Лига А
+                  </Button>
+                  <Button
+                    type={selectedLeague === "ЛИГА Б" ? "primary" : "default"}
+                    onClick={() => {
+                      setSelectedLeague("ЛИГА Б");
+                      fetchGoogleSheetData("ЛИГА Б");
+                    }}
+                    disabled={tableLoading}
+                    style={{
+                      fontWeight:
+                        selectedLeague === "ЛИГА Б" ? "bold" : "normal",
+                      background:
+                        selectedLeague === "ЛИГА Б" ? "#1890ff" : undefined,
+                      borderColor:
+                        selectedLeague === "ЛИГА Б" ? "#1890ff" : undefined,
+                      color: selectedLeague === "ЛИГА Б" ? "#fff" : "#b0b7d4",
+                    }}
+                  >
+                    Лига Б
+                  </Button>
+                </div>
+              </div>
+              <Button
+                onClick={() => fetchGoogleSheetData(selectedLeague)}
+                type="default"
+                loading={tableLoading}
+                icon={<span>🔄</span>}
+                style={{
+                  color: "#b0b7d4",
+                  borderColor: "rgba(255,255,255,0.08)",
+                }}
+              >
+                Обновить
+              </Button>
+            </Space>
+          </div>
+
+          <div className="summer-tournament__google-sheet-content">
+            {tableError ? (
+              <Alert
+                message="Ошибка загрузки данных"
+                description={
+                  <div>
+                    <p>{tableError}</p>
+                    <p style={{ marginTop: 8, fontSize: 12, color: "#6b7a8f" }}>
+                      💡 Попробуйте:
+                      <br />
+                      1. Обновить страницу
+                      <br />
+                      2. Проверить URL скрипта в коде
+                      <br />
+                      3. Убедиться, что скрипт опубликован с доступом "Все, у
+                      кого есть ссылка"
+                    </p>
+                  </div>
+                }
+                type="error"
+                showIcon
+                action={
+                  <Button
+                    onClick={() => fetchGoogleSheetData(selectedLeague)}
+                    type="primary"
+                    size="small"
+                    loading={tableLoading}
+                  >
+                    Повторить
+                  </Button>
+                }
+              />
+            ) : tableLoading ? (
+              <div className="summer-tournament__google-sheet-loading">
+                <Spin size="large" />
+                <p>Загрузка данных из Google Sheets...</p>
+              </div>
+            ) : tableData.length > 0 ? (
+              <div className="summer-tournament__google-sheet-table-wrapper">
+                <div className="summer-tournament__google-sheet-stats">
+                  <span>
+                    Лига: <strong>{selectedLeague}</strong>
+                  </span>
+                  <span>
+                    Всего записей: <strong>{tableData.length}</strong>
+                  </span>
+                  {lastUpdate && (
+                    <span>
+                      Обновлено:{" "}
+                      <strong>
+                        {new Date(lastUpdate).toLocaleString("ru-RU")}
+                      </strong>
+                    </span>
+                  )}
+                </div>
+                <Table
+                  columns={tableColumns}
+                  dataSource={tableData}
+                  pagination={false}
+                  scroll={{
+                    x: "max-content",
+                    y: 500,
+                  }}
+                  bordered={false}
+                  size={isXS ? "small" : "middle"}
+                  locale={{
+                    emptyText: "Нет данных для отображения",
+                  }}
+                  rowClassName={(record) => {
+                    if (record.league === "ЛИГА А")
+                      return "summer-tournament__row-league-a";
+                    if (record.league === "ЛИГА Б")
+                      return "summer-tournament__row-league-b";
+                    return "";
+                  }}
+                  style={{
+                    minWidth: isXS ? "100%" : "auto",
+                  }}
+                />
+              </div>
+            ) : (
+              <Alert
+                message="Нет данных"
+                description={`В Google Sheets нет данных для Лиги ${selectedLeague}. Добавьте данные в таблицу и обновите страницу.`}
+                type="info"
+                showIcon
+              />
+            )}
+          </div>
+        </section>
+
         {/* Информация о лигах */}
         <section className="summer-tournament__leagues">
           <div className="summer-tournament__section-header">
@@ -420,7 +874,6 @@ const SummerTournamentSeries = () => {
               Все турниры проходят в воскресенье (время московское)
             </p>
 
-            {/* Статистика турниров */}
             <div className="summer-tournament__schedule-stats">
               <span className="summer-tournament__schedule-stat">
                 <span className="summer-tournament__schedule-stat-number">
@@ -482,7 +935,6 @@ const SummerTournamentSeries = () => {
               </span>
             </div>
 
-            {/* Информация о ближайшем турнире или о завершении серии */}
             {allTournamentsPassed ? (
               <div className="summer-tournament__schedule-completed">
                 <span className="summer-tournament__schedule-completed-icon">

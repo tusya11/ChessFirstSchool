@@ -35,6 +35,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:gen": "craco build && node generate-sitemap.js",
     "build:dev": "cp .env.development .env && react-scripts build",
     "build:prod": "cp .env.production .env && craco build && node generate-sitemap.js",
     "test": "react-scripts test",

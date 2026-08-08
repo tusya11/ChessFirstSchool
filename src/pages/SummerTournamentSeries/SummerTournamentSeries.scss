@@ -1284,3 +1284,469 @@ $radius-xl: 24px;
     display: none;
   }
 }
+
+// Секция с Google Sheets
+.summer-tournament__google-sheet {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .summer-tournament__section-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+}
+
+.summer-tournament__google-sheet-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.summer-tournament__google-sheet-filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .ant-btn {
+    font-weight: 600;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+
+.summer-tournament__google-sheet-content {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: $radius-xl;
+  padding: 24px;
+  border: 1px solid $border-color;
+  backdrop-filter: blur(10px);
+  min-height: 300px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: rgba(124, 58, 237, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.summer-tournament__google-sheet-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  gap: 16px;
+
+  p {
+    color: $text-secondary;
+    font-size: 16px;
+    margin: 0;
+  }
+}
+
+.summer-tournament__google-sheet-table-wrapper {
+  .summer-tournament__google-sheet-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0 16px;
+    font-size: 14px;
+    color: $text-secondary;
+    flex-wrap: wrap;
+    gap: 8px;
+    border-bottom: 1px solid $border-color;
+    margin-bottom: 16px;
+
+    strong {
+      color: #fff;
+    }
+  }
+}
+.summer-tournament__google-sheet-content {
+  .ant-table-wrapper {
+    .ant-table {
+      background: transparent;
+      color: $text-primary;
+
+      // Контейнер таблицы с max-height и скроллом
+      .ant-table-container {
+        max-height: 500px;
+        overflow-y: auto;
+
+        // Кастомизация скроллбара
+        &::-webkit-scrollbar {
+          width: 8px;
+          height: 8px;
+        }
+
+        &::-webkit-scrollbar-track {
+          background: rgba(255, 255, 255, 0.05);
+          border-radius: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: $main-color;
+          border-radius: 4px;
+
+          &:hover {
+            background: $main-color-light;
+          }
+        }
+      }
+
+      .ant-table-thead {
+        .ant-table-cell {
+          background: rgba(124, 58, 237, 0.15);
+          color: #fff;
+          font-weight: 700;
+          font-size: 14px;
+          border-bottom: 2px solid $main-color;
+          padding: 12px 16px;
+          position: sticky;
+          top: 0;
+          z-index: 10;
+          backdrop-filter: blur(10px);
+
+          &::before {
+            display: none; // Убираем разделитель
+          }
+        }
+      }
+
+      .ant-table-tbody {
+        .ant-table-row {
+          transition: all 0.3s ease;
+
+          .ant-table-cell {
+            border-bottom: 1px solid $border-color;
+            padding: 12px 16px;
+            color: $text-secondary;
+            font-size: 14px;
+          }
+
+          // Стили для строк Лиги А
+          &.summer-tournament__row-league-a {
+            background: rgba(245, 85, 0, 0.04);
+
+            &:hover {
+              background: rgba(245, 85, 0, 0.12) !important;
+              transform: scale(1.01);
+              box-shadow: 0 2px 12px rgba(245, 85, 0, 0.1);
+            }
+
+            .ant-table-cell {
+              &:first-child {
+                border-left: 3px solid #f50;
+              }
+            }
+          }
+
+          // Стили для строк Лиги Б
+          &.summer-tournament__row-league-b {
+            background: rgba(24, 144, 255, 0.04);
+
+            &:hover {
+              background: rgba(24, 144, 255, 0.12) !important;
+              transform: scale(1.01);
+              box-shadow: 0 2px 12px rgba(24, 144, 255, 0.1);
+            }
+
+            .ant-table-cell {
+              &:first-child {
+                border-left: 3px solid #1890ff;
+              }
+            }
+          }
+
+          // Анимация появления строк
+          animation: summer-tournament__fadeIn 0.5s ease-out forwards;
+          opacity: 0;
+
+          @for $i from 1 through 30 {
+            &:nth-child(#{$i}) {
+              animation-delay: #{$i * 0.03}s;
+            }
+          }
+        }
+      }
+
+      // Стили для тегов
+      .ant-tag {
+        font-weight: 600;
+        padding: 2px 12px;
+        border-radius: 12px;
+        font-size: 12px;
+
+        &-color-f50 {
+          background: rgba(245, 85, 0, 0.2);
+          border-color: rgba(245, 85, 0, 0.3);
+          color: #f50;
+        }
+
+        &-color-1890ff {
+          background: rgba(24, 144, 255, 0.2);
+          border-color: rgba(24, 144, 255, 0.3);
+          color: #1890ff;
+        }
+      }
+
+      // Стили для чисел
+      .ant-table-cell {
+        strong {
+          color: #fff;
+          font-weight: 700;
+        }
+      }
+    }
+
+    // Стили для пагинации (если она будет использоваться)
+    .ant-pagination {
+      margin-top: 16px;
+
+      .ant-pagination-item {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: $border-color;
+
+        a {
+          color: $text-secondary;
+        }
+
+        &:hover {
+          border-color: $main-color;
+
+          a {
+            color: #fff;
+          }
+        }
+
+        &-active {
+          border-color: $main-color;
+          background: $main-color;
+
+          a {
+            color: #fff;
+          }
+        }
+      }
+
+      .ant-pagination-prev,
+      .ant-pagination-next {
+        .ant-pagination-item-link {
+          background: rgba(255, 255, 255, 0.05);
+          border-color: $border-color;
+          color: $text-secondary;
+
+          &:hover {
+            border-color: $main-color;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Стили для пустого состояния
+.summer-tournament__google-sheet-content {
+  .ant-empty {
+    color: $text-secondary;
+
+    .ant-empty-image {
+      filter: brightness(0.5);
+    }
+
+    .ant-empty-description {
+      color: $text-secondary;
+    }
+  }
+}
+
+.summer-tournament__google-sheet-content {
+  .ant-table-wrapper {
+    .ant-table {
+      .ant-table-tbody > tr.ant-table-row:hover > td {
+        background: transparent !important;
+      }
+
+      .ant-table-tbody > tr.ant-table-row-selected:hover > td {
+        background: transparent !important;
+      }
+
+      .ant-table-tbody > tr.ant-table-row-selected > td {
+        background: transparent !important;
+      }
+
+      .ant-table-tbody > tr > td.ant-table-cell-row-hover {
+        background: transparent !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .summer-tournament__google-sheet {
+    padding: 30px 8px;
+
+    .summer-tournament__section-title {
+      font-size: 20px;
+    }
+  }
+
+  .summer-tournament__google-sheet-content {
+    padding: 12px 8px;
+    border-radius: $radius-md;
+
+    .ant-table-wrapper {
+      .ant-table {
+        .ant-table-container {
+          max-height: 450px; // Немного больше высоты для мобилок
+
+          // Улучшаем скроллбар для мобилок
+          &::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+          }
+        }
+
+        .ant-table-thead .ant-table-cell,
+        .ant-table-tbody .ant-table-cell {
+          padding: 8px 12px;
+          font-size: 12px;
+          white-space: nowrap; // Предотвращаем перенос текста
+        }
+
+        // Уменьшаем размер шрифта для колонок с датами
+        .ant-table-thead .ant-table-cell {
+          font-size: 11px;
+          padding: 8px 10px;
+        }
+      }
+    }
+  }
+
+  // Стили для статистики на мобилках
+  .summer-tournament__google-sheet-stats {
+    font-size: 11px;
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 4px;
+
+    span {
+      display: block;
+    }
+  }
+
+  // Управляющие элементы на мобилках
+  .summer-tournament__google-sheet-controls {
+    .ant-space {
+      width: 100%;
+      flex-wrap: wrap;
+
+      .ant-space-item {
+        flex: 1;
+        min-width: auto;
+      }
+    }
+  }
+
+  .summer-tournament__google-sheet-filter {
+    flex: 1;
+
+    .ant-btn {
+      font-size: 12px;
+      padding: 4px 12px;
+      height: 32px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .summer-tournament__google-sheet-content {
+    padding: 8px 4px;
+
+    .ant-table-wrapper {
+      .ant-table {
+        .ant-table-container {
+          max-height: 400px;
+        }
+
+        .ant-table-thead .ant-table-cell,
+        .ant-table-tbody .ant-table-cell {
+          padding: 6px 8px;
+          font-size: 10px;
+        }
+
+        .ant-table-thead .ant-table-cell {
+          font-size: 10px;
+          padding: 6px 8px;
+        }
+      }
+    }
+  }
+
+  .summer-tournament__google-sheet-filter {
+    .ant-btn {
+      font-size: 10px;
+      padding: 2px 10px;
+      height: 28px;
+      min-width: 60px;
+    }
+  }
+}
+
+// Стили для индикатора загрузки
+.summer-tournament__google-sheet-loading {
+  .ant-spin {
+    .ant-spin-dot-item {
+      background: $main-color-light;
+    }
+  }
+}
+
+// Стили для алертов в темной теме
+.summer-tournament__google-sheet-content {
+  .ant-alert {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid $border-color;
+    border-radius: $radius-md;
+
+    .ant-alert-message {
+      color: #fff;
+    }
+
+    .ant-alert-description {
+      color: $text-secondary;
+    }
+
+    &-error {
+      border-color: rgba(239, 68, 68, 0.3);
+      background: rgba(239, 68, 68, 0.1);
+
+      .ant-alert-icon {
+        color: #ef4444;
+      }
+    }
+
+    &-info {
+      border-color: rgba(124, 58, 237, 0.3);
+      background: rgba(124, 58, 237, 0.1);
+
+      .ant-alert-icon {
+        color: $main-color-light;
+      }
+    }
+  }
+}
