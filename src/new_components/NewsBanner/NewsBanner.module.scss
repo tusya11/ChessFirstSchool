@@ -250,25 +250,36 @@
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 8px;
+
+  .ant-typography {
+    flex: 1;
+    min-width: 0;
+    margin-bottom: 0 !important;
+  }
 }
 
 .urgentTitle {
-  color: #cf1322;
-  margin-bottom: 0;
+  color: #ff4d4f !important;
+  font-weight: 600;
+  margin-bottom: 0 !important;
 }
 
 .normalTitle {
-  color: #262626;
-  margin-bottom: 0;
+  color: inherit;
+  margin-bottom: 0 !important;
 }
 
 .urgentLabel {
+  flex-shrink: 0;
   background: #ff4d4f;
   color: white;
-  padding: 2px 6px;
+  padding: 2px 8px;
   border-radius: 4px;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: bold;
+  line-height: 1.5;
+  white-space: nowrap;
+  align-self: center;
 }
 
 .newsContent {
