@@ -1,5 +1,6 @@
 // craco.config.js
 const TerserPlugin = require("terser-webpack-plugin");
+const packageJson = require("./package.json");
 
 module.exports = {
   webpack: {
@@ -40,11 +41,13 @@ module.exports = {
           ].includes(plugin.constructor?.name),
       );
 
+      const version = packageJson.version.replace(/\./g, "_");
+
       // 3. Настройка имен JS-файлов с хэшем
       webpackConfig.output = {
         ...webpackConfig.output,
-        filename: "static/js/[name].[contenthash:8].js",
-        chunkFilename: "static/js/[name].[contenthash:8].chunk.js",
+        filename: `static/js/[name].[contenthash:8].v${version}.js`,
+        chunkFilename: `static/js/[name].[contenthash:8].v${version}.chunk.js`,
       };
 
       // 4. Настройка имен CSS-файлов с хэшем
@@ -53,10 +56,8 @@ module.exports = {
       );
 
       if (miniCssExtractPlugin) {
-        miniCssExtractPlugin.options.filename =
-          "static/css/[name].[contenthash:8].css";
-        miniCssExtractPlugin.options.chunkFilename =
-          "static/css/[name].[contenthash:8].chunk.css";
+        miniCssExtractPlugin.options.filename = `static/css/[name].[contenthash:8].v${version}.css`;
+        miniCssExtractPlugin.options.chunkFilename = `static/css/[name].[contenthash:8].v${version}.chunk.css`;
       }
 
       const fileLoaderRules = webpackConfig.module.rules

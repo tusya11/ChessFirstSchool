@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/static/css/main.4749e68a.css",
-    "main.js": "/static/js/main.61f6a765.js",
-    "static/css/971.62139a6b.chunk.css": "/static/css/971.62139a6b.chunk.css",
-    "static/js/971.0bef3068.chunk.js": "/static/js/971.0bef3068.chunk.js",
-    "static/css/685.98ed6e1e.chunk.css": "/static/css/685.98ed6e1e.chunk.css",
-    "static/js/685.7a9a78b2.chunk.js": "/static/js/685.7a9a78b2.chunk.js",
-    "static/js/596.45788d44.chunk.js": "/static/js/596.45788d44.chunk.js",
+    "main.css": "/static/css/main.4749e68a.v1_0_6.css",
+    "main.js": "/static/js/main.53fc393b.v1_0_6.js",
+    "static/css/971.62139a6b.v1_0_6.chunk.css": "/static/css/971.62139a6b.v1_0_6.chunk.css",
+    "static/js/971.0bef3068.v1_0_6.chunk.js": "/static/js/971.0bef3068.v1_0_6.chunk.js",
+    "static/css/685.98ed6e1e.v1_0_6.chunk.css": "/static/css/685.98ed6e1e.v1_0_6.chunk.css",
+    "static/js/685.7a9a78b2.v1_0_6.chunk.js": "/static/js/685.7a9a78b2.v1_0_6.chunk.js",
+    "static/js/596.45788d44.v1_0_6.chunk.js": "/static/js/596.45788d44.v1_0_6.chunk.js",
     "static/media/chess-pawn.png": "/static/media/chess-pawn.98ddaf573a4a5b918217.png",
     "static/media/program.pdf": "/static/media/program.de61d12dbae4ed848455.pdf",
     "static/media/calendar.svg": "/static/media/calendar.00e686a64a8c474ebd3854411d62411b.svg",
@@ -120,7 +120,7 @@
     "static/media/burgerMenuBtn.svg": "/static/media/burgerMenuBtn.46d2ac73c9d2c782792db592774044c7.svg"
   },
   "entrypoints": [
-    "static/css/main.4749e68a.css",
-    "static/js/main.61f6a765.js"
+    "static/css/main.4749e68a.v1_0_6.css",
+    "static/js/main.53fc393b.v1_0_6.js"
   ]
 }
