@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.4749e68a.v1_0_6.css",
-    "main.js": "/static/js/main.53fc393b.v1_0_6.js",
+    "main.css": "/static/css/main.9fb0c667.v1_0_6.css",
+    "main.js": "/static/js/main.486a224c.v1_0_6.js",
     "static/css/971.62139a6b.v1_0_6.chunk.css": "/static/css/971.62139a6b.v1_0_6.chunk.css",
     "static/js/971.0bef3068.v1_0_6.chunk.js": "/static/js/971.0bef3068.v1_0_6.chunk.js",
     "static/css/685.98ed6e1e.v1_0_6.chunk.css": "/static/css/685.98ed6e1e.v1_0_6.chunk.css",
@@ -100,7 +100,6 @@
     "static/media/kirill_alex.png": "/static/media/kirill_alex.4bc9f870255d35078ff3.png",
     "static/media/hero-desk.png": "/static/media/hero-desk.4fe8a3c47cf296fa8d54.png",
     "static/media/conference.jpg": "/static/media/conference.25e7e37a89b85ac8a19b.jpg",
-    "static/media/elena.jpg": "/static/media/elena.82bf316a08b45af780fc.jpg",
     "static/media/trophy.png": "/static/media/trophy.2ca74b80db8ac4b8b33e.png",
     "static/media/hero-mobile.png": "/static/media/hero-mobile.e705f7e6354d26accca9.png",
     "static/media/masterCard.png": "/static/media/masterCard.8ab93d6d024df326004d.png",
@@ -120,7 +119,7 @@
     "static/media/burgerMenuBtn.svg": "/static/media/burgerMenuBtn.46d2ac73c9d2c782792db592774044c7.svg"
   },
   "entrypoints": [
-    "static/css/main.4749e68a.v1_0_6.css",
-    "static/js/main.53fc393b.v1_0_6.js"
+    "static/css/main.9fb0c667.v1_0_6.css",
+    "static/js/main.486a224c.v1_0_6.js"
   ]
 }
