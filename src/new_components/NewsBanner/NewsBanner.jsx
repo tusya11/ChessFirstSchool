@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { useMediaQuery } from "@mui/material";
-import { Button, Card, Space, Typography } from "antd";
-import { CloseOutlined, BellOutlined } from "@ant-design/icons";
+import { Button, Card, Tooltip, Typography } from "antd";
+import { CloseOutlined, BellOutlined, RightOutlined } from "@ant-design/icons";
 import { useUserActivity } from "./hooks/useUserActivity";
 import styles from "./NewsBanner.module.scss";
 
@@ -71,39 +71,84 @@ const NotificationButton = ({
       className={styles.notificationButton}
       style={{ ...animationStyle, minWidth: 44 }}
     />
-    {showBadge && <div className={styles.notificationBadge}>!</div>}
+    {showBadge && <div className={styles.notificationBadge} />}
   </div>
 );
 
-const NewsItem = ({ news, onNavigate }) => {
+const NewsItem = ({ news, onNavigate, index }) => {
   const { title, content, date, period, isUrgent, link } = news;
+  const contentRef = useRef(null);
+  const [isOverflowing, setIsOverflowing] = useState(false);
+
+  useEffect(() => {
+    if (contentRef.current) {
+      setIsOverflowing(
+        contentRef.current.scrollHeight > contentRef.current.clientHeight,
+      );
+    }
+  }, [content]);
 
   return (
-    <div className={`${styles.newsItem} ${isUrgent ? styles.urgent : ""}`}>
-      <div className={styles.newsHeader}>
-        <Title
-          level={5}
-          className={isUrgent ? styles.urgentTitle : styles.normalTitle}
-        >
-          {title}
-        </Title>
-        {isUrgent && <span className={styles.urgentLabel}>СРОЧНО</span>}
-      </div>
-      <Paragraph className={styles.newsContent}>{content}</Paragraph>
-      <div className={styles.newsFooter}>
-        <Paragraph type="secondary" className={styles.newsDate}>
-          📅 {period || date}
-        </Paragraph>
-        {link && (
-          <Button
-            type="link"
-            size="small"
-            className={styles.detailsButton}
-            onClick={() => onNavigate(link)}
+    <div
+      className={`${styles.newsItem} ${isUrgent ? styles.urgent : ""}`}
+      style={{ animationDelay: `${index * 0.12}s` }}
+    >
+      <div className={styles.newsItemGlow} />
+      <div className={styles.newsItemContent}>
+        <div className={styles.newsHeader}>
+          <div className={styles.newsTitleWrapper}>
+            {isUrgent && (
+              <span className={styles.urgentPulse}>
+                <span className={styles.urgentPulseInner} />
+              </span>
+            )}
+            <Tooltip
+              title={title}
+              placement="top"
+              overlayClassName={styles.tooltipOverlay}
+            >
+              <Title
+                level={5}
+                className={`${styles.newsTitle} ${isUrgent ? styles.urgentTitle : ""}`}
+                ellipsis={{ rows: 1, tooltip: false }}
+              >
+                {title}
+              </Title>
+            </Tooltip>
+          </div>
+          {isUrgent && <span className={styles.urgentLabel}>🔥</span>}
+        </div>
+
+        <div className={styles.newsContentWrapper}>
+          <Tooltip
+            title={content}
+            placement="bottom"
+            overlayClassName={styles.tooltipOverlay}
+            open={isOverflowing ? undefined : false}
           >
-            Подробнее →
-          </Button>
-        )}
+            <Paragraph
+              ref={contentRef}
+              className={styles.newsContent}
+              ellipsis={{ rows: 2, tooltip: false }}
+            >
+              {content}
+            </Paragraph>
+          </Tooltip>
+        </div>
+
+        <div className={styles.newsFooter}>
+          <span className={styles.newsDate}>📅 {period || date}</span>
+          {link && (
+            <Button
+              type="link"
+              size="small"
+              className={styles.detailsButton}
+              onClick={() => onNavigate(link)}
+            >
+              Подробнее <RightOutlined />
+            </Button>
+          )}
+        </div>
       </div>
     </div>
   );
@@ -111,19 +156,25 @@ const NewsItem = ({ news, onNavigate }) => {
 
 const NoNewsMessage = () => (
   <div className={styles.noNewsMessage}>
-    <Text type="secondary">Новостей пока нет</Text>
+    <Text>Новостей пока нет</Text>
   </div>
 );
 
 const BannerHeader = ({ urgentCount, onClose, hasNews }) => (
-  <Space className={styles.bannerHeader}>
-    <Space>
-      <BellOutlined />
-      <span className={styles.bannerTitle}>Новости</span>
-    </Space>
-    <Space>
+  <div className={styles.bannerHeader}>
+    <div className={styles.bannerTitleWrapper}>
+      <div className={styles.bannerIconWrapper}>
+        <BellOutlined className={styles.headerIcon} />
+        <span className={styles.bannerIconPulse} />
+      </div>
+      <span className={styles.bannerTitle}>Анонсы</span>
+    </div>
+    <div className={styles.bannerActions}>
       {hasNews && urgentCount > 0 && (
-        <div className={styles.urgentCounter}>{urgentCount} СРОЧНО</div>
+        <div className={styles.urgentCounter}>
+          <span className={styles.counterPulse} />
+          {urgentCount}
+        </div>
       )}
       <Button
         type="text"
@@ -132,8 +183,8 @@ const BannerHeader = ({ urgentCount, onClose, hasNews }) => (
         className={styles.closeButton}
         size="small"
       />
-    </Space>
-  </Space>
+    </div>
+  </div>
 );
 
 const NewsBanner = (props) => {
@@ -158,19 +209,19 @@ const NewsBanner = (props) => {
     () => [
       {
         id: 2,
-        title: "Мастер-класс с Женским Международным Гроссмейстером",
+        title: "Типовые ошибки в миттельшпиле",
         content:
-          "15 августа в 13:00 по московскому времени приглашаем вас на эксклюзивный мастер-класс от Елены Томиловой.",
-        date: "04.08.26",
-        period: "15.08.2026 - 15.08.2026",
+          "Мастер-класс с гроссмейстером Дмитрием Кряквиным 23 августа, 14:00 (мск). Разбираем ошибки, учимся их не повторять и побеждать!",
+        date: "16.08.26",
+        period: "23.08.2026 - 23.08.2026",
         isUrgent: true,
         link: "/holiday-with-grandmasters",
       },
       {
         id: 1,
-        title: "🏆 Летняя шахматная серия CoolChess — 50 000 ₽ призовых!",
+        title: "🏆 Летняя шахматная серия CoolChess",
         content:
-          "С 5 июля по 30 августа 2026 года пройдёт Большая шахматная серия из 9 турниров. Две лиги — для опытных игроков (Лига А) и всех желающих (Лига Б). Призовой фонд: 31 000 ₽ в Лиге А и 19 000 ₽ в Лиге Б. Формат: 7 туров по швейцарской системе, контроль 5+3 на Lichess. Ученики CoolChess — бесплатно!",
+          "С 5 июля по 30 августа 2026 года пройдёт Большая шахматная серия из 9 турниров. Две лиги — для опытных игроков (Лига А) и всех желающих (Лига Б). Призовой фонд: 31 000 ₽ в Лиге А и 19 000 ₽ в Лиге Б.",
         date: "23.06.26",
         period: "05.07.2026 - 30.08.2026",
         isUrgent: true,
@@ -307,36 +358,41 @@ const NewsBanner = (props) => {
       className={`${styles.bannerContainer} ${styles.visible}`}
       style={bannerStyle}
     >
-      <Card
-        title={
-          <BannerHeader
-            urgentCount={urgentCount}
-            onClose={handleClose}
-            hasNews={hasNews}
-          />
-        }
-        className={styles.newsCard}
-        styles={{
-          body: {
-            padding: 16,
-          },
-        }}
-      >
-        <div className={styles.newsList}>
-          {hasNews ? (
-            newsItems.map((news, index) => (
-              <NewsItem
-                key={news.id}
-                news={news}
-                onNavigate={navigate}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              />
-            ))
-          ) : (
-            <NoNewsMessage />
-          )}
+      <div className={styles.bannerWrapper}>
+        <div className={styles.bannerBackground}>
+          <div className={styles.bgOrb1} />
+          <div className={styles.bgOrb2} />
+          <div className={styles.bgOrb3} />
+          <div className={styles.bgOrb4} />
+          <div className={styles.bgOrb5} />
+          <div className={styles.bgGrid} />
         </div>
-      </Card>
+
+        <Card className={styles.newsCard}>
+          <div className={styles.newsCardGlow} />
+          <div className={styles.bannerHeaderWrapper}>
+            <BannerHeader
+              urgentCount={urgentCount}
+              onClose={handleClose}
+              hasNews={hasNews}
+            />
+          </div>
+          <div className={styles.newsList}>
+            {hasNews ? (
+              newsItems.map((news, index) => (
+                <NewsItem
+                  key={news.id}
+                  news={news}
+                  onNavigate={navigate}
+                  index={index}
+                />
+              ))
+            ) : (
+              <NoNewsMessage />
+            )}
+          </div>
+        </Card>
+      </div>
     </div>
   );
 };

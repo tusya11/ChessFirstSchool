@@ -3,7 +3,6 @@ import { Drawer } from "antd";
 import { useMediaQuery } from "@mui/material";
 import { holiday_prices } from "../NewPricePage/consts";
 import NewPayment from "../../components/NewPayment/NewPayment";
-import elenaImage from "./images/elena.jpg"; // Замените на путь к вашему изображению
 import "./HolidaysWithGrandmasters.scss";
 
 const ChessIcon = () => <span className="chess-icon">♞</span>;
@@ -14,7 +13,7 @@ const RubleIcon = () => <span className="icon">₽</span>;
 const HolidaysWithGrandmasters = () => {
   const isXS = useMediaQuery("(max-width:700px)");
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
-  const [imageError, setImageError] = useState({ elena: false });
+  const [imageError, setImageError] = useState({ dmitry: false });
   const [tarif, setTarif] = useState({ id: 1 });
 
   const pricingOptions = useMemo(
@@ -36,7 +35,7 @@ const HolidaysWithGrandmasters = () => {
   );
 
   const handleImageError = () => {
-    setImageError((prev) => ({ ...prev, elena: true }));
+    setImageError((prev) => ({ ...prev, dmitry: true }));
   };
 
   useEffect(() => {
@@ -50,42 +49,44 @@ const HolidaysWithGrandmasters = () => {
   const grandmaster = useMemo(
     () => ({
       id: 2,
-      name: "Елена Томилова",
-      title: "Женский Международный Гроссмейстер",
+      name: "Дмитрий Кряквин",
+      title: "Международный гроссмейстер",
       description:
-        "Женский международный гроссмейстер, чемпионка Уральского федерального округа и бронзовый призёр России по блицу. Елена Томилова — яркий представитель уральской шахматной школы, известная своим глубоким стратегическим пониманием и виртуозной тактической игрой.",
+        "Международный гроссмейстер, шахматный литератор и журналист. Чемпион Южного, Уральского и Северо-Кавказского федеральных округов. Участник 18-го личного чемпионата Европы, чемпионатов мира по рапиду и блицу. Занял третье место в номинации «Лучший детский тренер России».",
       teachingStyle:
-        "Структурированный подход к позиционной оценке, акцент на понимание ключевых планов в зависимости от структуры центра, развитие навыков стратегического мышления.",
+        "Доступное объяснение сложных шахматных концепций, акцент на практические рекомендации по устранению типовых ошибок, развитие позиционного чутья и тактической зоркости.",
       achievements: [
-        "Чемпионка Уральского федерального округа",
-        "Бронзовый призёр чемпионата России по блицу",
-        "Победительница и призёр множества всероссийских и международных турниров",
+        "Чемпион Южного федерального округа",
+        "Чемпион Уральского федерального округа",
+        "Чемпион Северо-Кавказского федерального округа",
+        "Участник 18-го личного чемпионата Европы",
+        "Участник чемпионатов мира по рапиду и блицу",
+        "3-е место в номинации «Лучший детский тренер России»",
       ],
       students: [
-        "Чемпионы и призеры всероссийских турниров среди юношей и девушек",
+        "Чемпионы и призеры детских турниров всероссийского уровня",
         "Мастера ФИДЕ и кандидаты в мастера спорта",
-        "Призеры первенств Уральского федерального округа",
+        "Ученики — победители первенств федеральных округов",
       ],
       scheduleCount: "60 минут",
       schedule: [
         {
-          date: "15 августа",
-          time: "13:00 (мск)",
-          title:
-            "Особенности выбора плана в зависимости от типа позиции (открытый / закрытый центр)",
+          date: "23 августа",
+          time: "14:00 (мск)",
+          title: "Типовые ошибки в миттельшпиле",
           topics: [
-            "Сравнительная характеристика открытого и закрытого центра",
-            "Типовые планы в позициях с закрытым центром",
-            "Манёвры фигур и пешечные прорывы в открытом центре",
-            "Оценка динамики и вскрытие линий",
-            "Практические примеры из партий гроссмейстеров",
-            "Интерактивные упражнения для закрепления",
+            "Ошибки в позиционной оценке и их последствия",
+            "Типичные тактические просмотры и как их избежать",
+            "Неправильный выбор плана в пешечных структурах",
+            "Ошибки при расчёте вариантов",
+            "Практические рекомендации по устранению слабых мест",
+            "Разбор примеров из партий гроссмейстеров и учеников",
           ],
         },
       ],
-      color: "#C2185B",
-      photo: elenaImage,
-      accentColor: "#E91E63",
+      color: "#1565C0",
+      photo: null,
+      accentColor: "#1E88E5",
     }),
     [],
   );
@@ -106,30 +107,30 @@ const HolidaysWithGrandmasters = () => {
           <div className="hero-content">
             <div className="title-container">
               <h1 className="main-title">
-                Мастер-класс с Женским
+                Мастер-класс с
                 <span className="title-highlight">
                   {" "}
                   Международным Гроссмейстером
                 </span>
               </h1>
               <p className="hero-subtitle">
-                Мастер-класс от чемпионки Уральского федерального округа – Елены
-                Томиловой!
+                Мастер-класс от чемпиона Южного, Уральского и Северо-Кавказского
+                федеральных округов – Дмитрия Кряквина!
               </p>
               <p className="hero-subtitle-secondary">
-                Елена разберет особенности выбора плана в зависимости от типа
-                позиции: открытый или закрытый центр.
+                Дмитрий разберет типовые ошибки в миттельшпиле и даст
+                практические рекомендации по их устранению.
               </p>
             </div>
 
             <div className="hero-stats">
               <div className="stat-item">
-                <div className="stat-number">15.08</div>
-                <div className="stat-label">(суббота)</div>
+                <div className="stat-number">23.08</div>
+                <div className="stat-label">(воскресенье)</div>
               </div>
               <div className="stat-divider"></div>
               <div className="stat-item">
-                <div className="stat-number">13:00</div>
+                <div className="stat-number">14:00</div>
                 <div className="stat-label">МСК</div>
               </div>
             </div>
@@ -193,25 +194,25 @@ const HolidaysWithGrandmasters = () => {
             <div className="audience-item">
               <div className="audience-marker"></div>
               <span>
-                Не знаете, как строить план в зависимости от типа центра
+                Часто допускаете ошибки в миттельшпиле и не понимаете их причины
+              </span>
+            </div>
+            <div className="audience-item">
+              <div className="audience-marker"></div>
+              <span>Теряете инициативу из-за неправильного выбора плана</span>
+            </div>
+            <div className="audience-item">
+              <div className="audience-marker"></div>
+              <span>
+                Хотите систематизировать знания и перестать делать типичные
+                ошибки
               </span>
             </div>
             <div className="audience-item">
               <div className="audience-marker"></div>
               <span>
-                Теряетесь при выборе между позиционной и тактической игрой
-              </span>
-            </div>
-            <div className="audience-item">
-              <div className="audience-marker"></div>
-              <span>
-                Хотите понимать, когда вскрывать позицию, а когда закрывать
-              </span>
-            </div>
-            <div className="audience-item">
-              <div className="audience-marker"></div>
-              <span>
-                Стремитесь системно улучшить стратегическое понимание шахмат
+                Стремитесь повысить свой уровень игры и научиться анализировать
+                ошибки
               </span>
             </div>
           </div>
@@ -221,8 +222,9 @@ const HolidaysWithGrandmasters = () => {
           <div className="tabs-header">
             <h2>Познакомьтесь с гроссмейстером</h2>
             <p>
-              Елена Томилова – женский международный гроссмейстер, чемпионка
-              Уральского федерального округа, бронзовый призёр России по блицу
+              Дмитрий Кряквин – международный гроссмейстер, шахматный литератор
+              и журналист, чемпион трёх федеральных округов и призёр в номинации
+              «Лучший детский тренер России»
             </p>
           </div>
         </div>
@@ -239,7 +241,7 @@ const HolidaysWithGrandmasters = () => {
               <div className="gm-header-content">
                 <div className="gm-avatar-container">
                   <div className="gm-avatar">
-                    {!imageError.elena ? (
+                    {!imageError.dmitry && grandmaster.photo ? (
                       <img
                         src={grandmaster.photo}
                         alt={`${grandmaster.name} - ${grandmaster.title}`}
@@ -357,7 +359,6 @@ const HolidaysWithGrandmasters = () => {
           </div>
         </div>
 
-        {/* Дополнительная информация */}
         <div className="program-details">
           <div className="details-header">
             <h2>Детали программы</h2>
@@ -367,10 +368,10 @@ const HolidaysWithGrandmasters = () => {
           <div className="details-grid">
             <div className="detail-card">
               <div className="detail-icon">♟️</div>
-              <h3>Выбор плана в миттельшпиле</h3>
+              <h3>Типовые ошибки в миттельшпиле</h3>
               <p>
-                Изучите ключевые принципы выбора плана в зависимости от типа
-                позиции — открытый или закрытый центр
+                Изучите основные ошибки, которые допускают шахматисты в
+                миттельшпиле, и узнайте, как их избегать
               </p>
             </div>
 
@@ -378,7 +379,7 @@ const HolidaysWithGrandmasters = () => {
               <div className="detail-icon">📅</div>
               <h3>Удобное время</h3>
               <p>
-                Лекция проходит <b>15 августа</b> в 13:00 по московскому времени
+                Лекция проходит <b>23 августа</b> в 14:00 по московскому времени
               </p>
             </div>
 
@@ -386,8 +387,8 @@ const HolidaysWithGrandmasters = () => {
               <div className="detail-icon">🏆</div>
               <h3>Практическая польза</h3>
               <p>
-                Готовые алгоритмы принятия решений в зависимости от структуры
-                пешечного центра
+                Готовые алгоритмы для анализа своих партий и устранения
+                системных ошибок в миттельшпиле
               </p>
             </div>
 
