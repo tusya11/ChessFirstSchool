@@ -71,8 +71,8 @@ const HolidaysWithGrandmasters = () => {
       scheduleCount: "60 минут",
       schedule: [
         {
-          date: "23 августа",
-          time: "14:00 (мск)",
+          date: "28 августа",
+          time: "15:00 (мск)",
           title: "Типовые ошибки в миттельшпиле",
           topics: [
             "Ошибки в позиционной оценке и их последствия",
@@ -125,12 +125,12 @@ const HolidaysWithGrandmasters = () => {
 
             <div className="hero-stats">
               <div className="stat-item">
-                <div className="stat-number">23.08</div>
-                <div className="stat-label">(воскресенье)</div>
+                <div className="stat-number">28.08</div>
+                <div className="stat-label">(пятница)</div>
               </div>
               <div className="stat-divider"></div>
               <div className="stat-item">
-                <div className="stat-number">14:00</div>
+                <div className="stat-number">15:00</div>
                 <div className="stat-label">МСК</div>
               </div>
             </div>
@@ -379,7 +379,7 @@ const HolidaysWithGrandmasters = () => {
               <div className="detail-icon">📅</div>
               <h3>Удобное время</h3>
               <p>
-                Лекция проходит <b>23 августа</b> в 14:00 по московскому времени
+                Лекция проходит <b>28 августа</b> в 15:00 по московскому времени
               </p>
             </div>
 
