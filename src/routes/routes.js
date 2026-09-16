@@ -3,7 +3,7 @@ import Wrapper from "../Wrapper";
 import LandingPage from "../pages/LandingPage/LandingPage";
 import Promo from "../pages/LandingPage/Promo";
 import HolidaysWithGrandmasters from "../pages/HolidayWithGrandmasters/HolidayWithGrandmasters";
-import SummerTournamentSeries from "../pages/SummerTournamentSeries/SummerTournamentSeries";
+// import SummerTournamentSeries from "../pages/SummerTournamentSeries/SummerTournamentSeries";
 import GroupCoursesPage from "../pages/GroupCoursesPage/GroupCoursesPage";
 import ChessGroupsPaymentLegacy from "../pages/ChessGroupsPaymentLegacy/ChessGroupsPaymentLegacy";
 import IESection from "../pages/IESection/IESection";
@@ -31,10 +31,11 @@ export const routes = [
     path: "/holiday-with-grandmasters",
     element: <HolidaysWithGrandmasters />,
   },
-  {
-    path: "/competition",
-    element: <SummerTournamentSeries />,
-  },
+  //TODO: временно выключено, тк событие закончилось (update: 16.09.26)
+  // {
+  //   path: "/competition",
+  //   element: <SummerTournamentSeries />,
+  // },
   {
     path: "/contacts",
     element: <IESection />,
