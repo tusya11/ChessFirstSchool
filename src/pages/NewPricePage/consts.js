@@ -300,3 +300,50 @@ export const holiday_prices = {
     },
   ],
 };
+
+export const common_prices = {
+  id: 1,
+  itemPrices: [
+    {
+      id: 1,
+      title: "Одна запись",
+      description: "Доступ к записи одной лекции",
+      descriptionNumber: 1,
+      price: "890",
+      price_rub: 890,
+    },
+    {
+      id: 2,
+      title: "Одна лекция",
+      description: "Live-участие + запись этой лекции",
+      descriptionNumber: 2,
+      price: "1 090",
+      price_rub: 1090,
+    },
+    {
+      id: 3,
+      title: "Две записи",
+      description: "Доступ к записям обеих лекций",
+      descriptionNumber: 3,
+      price: "1 590",
+      price_rub: 1590,
+    },
+    {
+      id: 4,
+      title: "Две лекции",
+      description: "Live-участие в обеих лекциях + записи обеих лекций",
+      descriptionNumber: 4,
+      price: "1 890",
+      price_rub: 1890,
+    },
+    {
+      id: 5,
+      title: "Всё включено",
+      description: "Обе live-лекции + обе записи + бонусная запись от МГ",
+      descriptionNumber: 5,
+      price: "2 490",
+      price_rub: 2490,
+      recommended: true,
+    },
+  ],
+};
