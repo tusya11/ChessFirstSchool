@@ -76,6 +76,7 @@ const HolidaysWithGrandmasters = () => {
         date: "18 октября",
         title: "«Сколько слабостей у соперника?»",
         speaker: "Ярослав Призант",
+        time: "12:00 по МСК",
         rank: "Международный мастер",
         rating: "Рейтинг ФИДЕ до 2553",
         bio: "Лауреат премии «Лучший детский тренер России» (2014, 2015). Тренер самого молодого гроссмейстера России Ивана Землянского, чемпионов мира и Европы Ильи Маковеева и Алины Бивол.",
@@ -83,9 +84,10 @@ const HolidaysWithGrandmasters = () => {
       },
       {
         id: 2,
-        date: "23 октября",
+        date: "21 октября",
         title: "По итогам Суперфинала ЧР",
         speaker: "Дмитрий Кряквин",
+        time: "19:00 по МСК",
         rank: "Гроссмейстер",
         rating: "Рейтинг 2600+",
         bio: "Серебряный призёр Кубка Петра Великого (2025), участник Высшей лиги чемпионата России.",
@@ -126,7 +128,7 @@ const HolidaysWithGrandmasters = () => {
                   {index > 0 && <div className="stat-divider" />}
                   <div className="stat-item">
                     <div className="stat-number">{lecture.date}</div>
-                    <div className="stat-label">{lecture.speaker}</div>
+                    <div className="stat-label">{lecture.time}</div>
                   </div>
                 </div>
               ))}
@@ -265,7 +267,7 @@ const HolidaysWithGrandmasters = () => {
             </article>
             <article className="detail-card">
               <div className="detail-icon">♟️</div>
-              <h3>23 октября</h3>
+              <h3>21 октября</h3>
               <p>Дмитрий Кряквин: лекция по итогам Суперфинала ЧР.</p>
             </article>
             <article className="detail-card">
