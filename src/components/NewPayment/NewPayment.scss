@@ -38,11 +38,14 @@
       }
 
       .new-payment__selected-elements {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
 
         .ant-space-item {
-          height: 50px;
+          width: 100%;
+          height: auto;
 
           @media screen and (max-width: 700px) {
             height: auto;
@@ -56,6 +59,8 @@
           justify-content: space-between;
           height: 100%;
           gap: 16px;
+          padding: 4px 0;
+          box-sizing: border-box;
 
           @media screen and (max-width: 700px) {
             flex-direction: column;
@@ -68,16 +73,15 @@
             font-size: 16px;
             line-height: 24px;
 
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            flex: 1;
+            white-space: normal;
+            word-break: break-word;
+            overflow-wrap: anywhere;
+
+            flex: 1 1 auto;
             min-width: 0;
 
             @media screen and (max-width: 700px) {
               width: 100%;
-              white-space: normal;
-              word-break: break-word;
             }
           }
 
